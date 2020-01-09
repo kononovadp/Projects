@@ -1,0 +1,25 @@
+﻿/*Напишите программу копирования файлов, которая предлагает пользователю ввести имя текстового файла, выступающего в роли исходного, и имя выходного файла. Программа должна использовать функцию TOUPPER() из CTYPE.H для перевода текста в верхний регистр во время его записи в выходной файл. Применяйте стандартный ввод-вывод и текстовый режим.*/
+#INCLUDE <STDIO.H>
+#INCLUDE <STDLIB.H>
+#INCLUDE <CTYPE.H>
+INT MAIN(VOID)
+{
+	CHAR SOURCE_FILENAME[200],TARGET_FILENAME[200];
+	INT CH;
+    FILE *SOURCE_FILE, *TARGET_FILE;
+	PRINTF("Имя исходного файла: ");
+	SCANF("%S",&SOURCE_FILENAME);
+	IF((SOURCE_FILE=FOPEN(SOURCE_FILENAME,"R"))==NULL)
+	{
+		PRINTF("Не удалось найти файл.");
+		EXIT(EXIT_FAILURE);
+	}
+	PRINTF("Имя целевого файла: ");
+	SCANF("%S",&TARGET_FILENAME);
+	TARGET_FILE=FOPEN(TARGET_FILENAME,"W");
+	WHILE ((CH = GETC(SOURCE_FILE)) != EOF)
+		PUTC(TOUPPER(CH),TARGET_FILE);
+	FCLOSE(SOURCE_FILE);
+	FCLOSE(TARGET_FILE);
+    RETURN 0;
+}

@@ -1,0 +1,201 @@
+Microsoft (R) Macro Assembler Version 5.00                  4/15/15 19:57:39
+                                                             Page     1-1
+
+
+       1				; програмний модуль BigShow.asm 
+       2				.386 
+       3 0000				_text segment word public 'text' use16 
+       4				 assume cs:_text 
+       5				; 
+       6				;**************************************
+					*** 
+       7				; п/п виведення на екран в hex-форматi 
+					даних iз регiстра ebx: 
+       8				; якщо di=28 – виводяться усі 4 байти 
+       9				; якщо di=20 – виводяться 3 молодших ба
+					йти 
+      10				; якщо di=12 – виводяться 2 молодших ба
+					йти 
+      11				; якщо di=4 – виводиться один молодший 
+					байт 
+      12 0000				show_bt proc 
+      13 0000  66| 60			 pushad 
+      14 0002  8B CF			 mov cx,di 
+      15 0004  B4 02			 mov ah,2 
+      16 0006				bt0: 
+      17 0006  66| 8B D3		 mov edx,ebx 
+      18 0009  66| D3 EA		 shr edx,cl 
+      19 000C  80 E2 0F			 and dl,00001111b 
+      20 000F  80 FA 0A			 cmp dl,10 
+      21 0012  0F 8C 0019 R		 jl bt1 
+      22 0016  80 C2 07			 add dl,7 
+      23 0019				bt1: 
+      24 0019  80 C2 30			 add dl,30h 
+      25 001C  CD 21			 int 21h 
+      26 001E  80 E9 04			 sub cl,4 
+      27 0021  73 E3			 jnc bt0 
+      28 0023  66| 61			 popad 
+      29 0025  C3			 ret 
+      30 0026				show_bt endp 
+      31 0026				BigShow proc far ; procedure BigShow(va
+					r mas, len:word) 
+      32				 public BigShow 
+      33				; mas - адреса байтового масиву 
+      34 =				@mas equ [bp+8] ; адреса адреси 
+      35				; len - кiлькiсть байт масива, якi необ
+					хiдно вивести на екран 
+      36 =				@len equ [bp+6] ; адреса кiлькостi 
+      37 0026  55			 push bp 
+      38 0027  8B EC			 mov  bp,sp ; базова адреса фактичних п
+					араметрiв 
+      39				; перехiд на новий рядок екрану 
+      40 0029  B4 02			 mov ah,2 
+      41 002B  B2 0D			 mov dl,13 
+      42 002D  CD 21			 int 21h 
+      43 002F  B2 0A			 mov dl,10 
+      44 0031  CD 21			 int 21h 
+      45				; обчислення кiлькостi пробілів у першо
+					му рядку 
+Microsoft (R) Macro Assembler Version 5.00                  4/15/15 19:57:39
+                                                             Page     1-2
+
+
+      46 0033  8B 46 06			 mov ax,@len 
+      47 0036  A9 0003			 test ax,00000011b 
+      48 0039  9C			 pushf 
+      49 003A  C1 E8 02			 shr ax,2 
+      50 003D  9D			 popf 
+      51 003E  0F 84 0043 R		 jz @1 
+      52 0042  40			 inc ax 
+      53 0043				@1: 
+      54 0043  33 C9			 xor cx,cx 
+      55 0045  BF 001C			 mov di,28 
+      56 0048  25 0007			 and ax,00000111b 
+      57 004B  0F 84 005C R		 jz  @2 
+      58				; формування пробілiв на вiдсутнiх подв
+					iйних словах 
+      59 004F  B4 08			 mov ah,8 
+      60 0051  2A E0			 sub ah,al 
+      61 0053  8A C4			 mov al,ah 
+      62 0055  32 E4			 xor ah,ah 
+      63 0057  6B C0 09			 imul ax,8+1 
+      64 005A  8B C8			 mov cx,ax 
+      65 005C				 @2: 
+      66 005C  8B 56 06			 mov dx,@len 
+      67 005F  83 E2 03			 and dx,00000011b 
+      68 0062  0F 84 007B R		 jz l000 
+      69				; формування початкового значення кiльк
+					остi зсувiв 
+      70 0066  8B FA			 mov di,dx ;di - 1 2 3 
+      71 0068  4F			 dec di ;di - 0 1 2 
+      72 0069  C1 E7 03			 shl di,3 ;di - 0 8 16 
+      73 006C  83 C7 04			 add di,4 ;di - 4 12 20 
+      74				; формування пробілів на вiдсутнiх байт
+					ах у подвiйному словi 
+      75 006F  B6 04			 mov dh,4 
+      76 0071  86 F2			 xchg dh,dl ;dh - 1 2 3 
+      77 0073  2A D6			 sub dl,dh ;dl - 3 2 1 
+      78 0075  D0 E2			 shl dl,1 ;dl - 6 4 2 
+      79 0077  32 F6			 xor dh,dh ;dx - 6 4 2 
+      80 0079  03 CA			  add cx,dx 
+      81 007B				l000: 
+      82 007B  E3 08			 jcxz l002 
+      83				; виведення початкових пробілiв у першо
+					му рядку 
+      84 007D				l001: 
+      85 007D  B4 02			 mov ah,2 
+      86 007F  B2 20			 mov dl," " 
+      87 0081  CD 21			 int 21h 
+      88 0083  E2 F8			 loop l001 
+      89 0085				l002: 
+      90 0085  8B 4E 06			 mov cx,@len 
+      91 0088  C1 E9 02			 shr cx,2 
+      92 008B  83 FF 1C			 cmp di,28 
+      93 008E  0F 84 0093 R		 jz @3 
+      94 0092  41			 inc cx 
+      95 0093				@3: 
+Microsoft (R) Macro Assembler Version 5.00                  4/15/15 19:57:39
+                                                             Page     1-3
+
+
+      96 0093  66| 33 F6		 xor esi,esi 
+      97 0096  C5 76 08			 lds si,@mas 
+      98 0099  67| 66| 8D 748E FC	 lea esi,[esi+ecx*4]-4 
+      99 009F  FD			 std 
+     100				; виведення масиву 
+     101 00A0				l004: 
+     102 00A0  66| AD			 lodsd 
+     103 00A2  66| 8B D8		 mov ebx , eax 
+     104 00A5  E8 0000 R		 call show_bt 
+     105 00A8  BF 001C			 mov di,28 
+     106 00AB  B4 02			 mov ah , 2 
+     107 00AD  B2 20			 mov dl,20h 
+     108 00AF  CD 21			 int 21h 
+     109 00B1  66| 49			 dec ecx 
+     110 00B3  66| F7 C1 00000007	 test ecx,7 
+     111 00BA  0F 85 00C8 R		 jne l005 
+     112				; перехiд на новий рядок 
+     113 00BE  B4 02			 mov ah,2 
+     114 00C0  B2 0D			  mov dl,13 
+     115 00C2  CD 21			 int 21h 
+     116 00C4  B2 0A			 mov dl,10 
+     117 00C6  CD 21			 int 21h 
+     118 00C8				l005: 
+     119 00C8  E3 02			 jcxz L006 
+     120 00CA  EB D4			 jmp l004 
+     121 00CC				l006: 
+     122 00CC  B4 02			 mov ah,2 
+     123 00CE  B2 0D			 mov dl,13 
+     124 00D0  CD 21			 int 21h 
+     125 00D2  B2 0A			 mov  dl,10 
+     126 00D4  CD 21			 int 21h 
+     127				; mov ah,1 
+     128				; int 21h 
+     129 00D6  5D			 pop bp 
+     130 00D7  CA 0006			 ret 6 
+     131 00DA				BigShow endp 
+     132 00DA				_text ends 
+     133				 end 
+Microsoft (R) Macro Assembler Version 5.00                  4/15/15 19:57:39
+                                                             Symbols-1
+
+
+
+
+                N a m e         	Size	Length	 Align	Combine Class
+
+_TEXT  . . . . . . . . . . . . .  	16 Bit	00DA	WORD	PUBLIC	'TEXT'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+BIGSHOW  . . . . . . . . . . . .  	F PROC	0026	_TEXT	Global	Length = 00B4
+BT0  . . . . . . . . . . . . . .  	L NEAR	0006	_TEXT
+BT1  . . . . . . . . . . . . . .  	L NEAR	0019	_TEXT
+
+L000 . . . . . . . . . . . . . .  	L NEAR	007B	_TEXT
+L001 . . . . . . . . . . . . . .  	L NEAR	007D	_TEXT
+L002 . . . . . . . . . . . . . .  	L NEAR	0085	_TEXT
+L004 . . . . . . . . . . . . . .  	L NEAR	00A0	_TEXT
+L005 . . . . . . . . . . . . . .  	L NEAR	00C8	_TEXT
+L006 . . . . . . . . . . . . . .  	L NEAR	00CC	_TEXT
+
+SHOW_BT  . . . . . . . . . . . .  	N PROC	0000	_TEXT	Length = 0026
+
+@1 . . . . . . . . . . . . . . .  	L NEAR	0043	_TEXT
+@2 . . . . . . . . . . . . . . .  	L NEAR	005C	_TEXT
+@3 . . . . . . . . . . . . . . .  	L NEAR	0093	_TEXT
+@FILENAME  . . . . . . . . . . .  	TEXT  1		
+@LEN . . . . . . . . . . . . . .  	TEXT  [bp+6]		
+@MAS . . . . . . . . . . . . . .  	TEXT  [bp+8]		
+
+
+    133 Source  Lines
+    133 Total   Lines
+     19 Symbols
+
+  48980 + 434716 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

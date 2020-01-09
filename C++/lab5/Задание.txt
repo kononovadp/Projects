@@ -1,0 +1,117 @@
+Вариант 3.
+Сконструировать класс cArray со следующим интерфейсом:
+/*!
+ * file: cArray.h
+ * cArray class declaration
+ * written: 01/06/2012
+ * Copyright (c) 2012 by Yu.Zorin
+ */
+#pragma once
+#include <string.h>
+#include <stdio.h>
+
+class cArray{
+//The minimum number of element slots to allocate if a size increase is necessary. 
+#define GROWBY 10
+public:
+	//Constructs an empty array.
+	cArray(void);
+	~cArray(void);
+
+		//Attributes
+	//Gets the number of elements in this array.
+	int GetSize() const;
+	//Gets the number of elements in this array.
+	int GetCount() const;
+
+
+	//Returns the largest valid index.
+	int GetUpperBound() const;
+	//Determines whether the array is empty.
+	bool IsEmpty()const;
+	//Establishes the size of an empty or existing array; allocates memory if necessary.
+	void SetSize( int nNewSize );
+
+
+
+		//Operations
+	//Frees all unused memory above the current upper bound.
+	//This function has no effect on the upper bound of the array.
+	void FreeExtra();
+
+	//Removes all the elements from this array.
+	void RemoveAll();
+
+		//Element Access
+	//Returns the value at a given index.
+	int GetAt(int )const;
+	//Sets the value for a given index; array not allowed to grow.
+	void SetAt(int n, int indx);
+
+		//Growing the Array
+	//Adds an element to the end of the array; grows the array if necessary.
+	void Add(int);
+	//Appends another array to the array; grows the array if necessary
+	void Append(cArray *);
+	//Copies another array to the array; grows the array if necessary.
+	void Copy(cArray *);
+
+		//Insertion/Removal
+	//Inserts an element at a specified index.
+	void InsertAt(int n, int indx);
+	//Removes an element at a specific index.
+	void RemoveAt(int );
+
+	//Operators
+	//Sets or gets the element at the specified index.
+	int& operator [](int);
+private:
+	//put your own data members here
+
+};
+
+Mетоды.
+
+cArray(void) ; – создает пустой вектор
+~cArray(void) ; – деструктор
+
+int GetSize() const ;– возвращает число элементов, которые могут быть размещены в векторе.
+int GetCount() const; - возвращает число элементов, размещенных в векторе.
+int GetUpperBound() const; - возвращает наибольший допустимый индекс вектора.
+bool IsEmpty()const; - проверка вектора на пустоту
+void SetSize( int nNewSize ); - изменение размера вектора. 
+Параметры
+nNewSize – новый размер вектора. Если nNewSize меньше текущего – длина вектора уменьшается и “лишние” элементы в конце вектора удаляются.
+
+void FreeExtra(); - освобождает память выше наибольшего допустимого индекса. 
+void RemoveAll(); - удаляет все элементы вектора (наибольший допустимый индекс - 0)
+int GetAt(int indx)const; - возвращет элемент c индексом indx.
+void SetAt(int n, int indx); - устанавливает значение элемента c индексом indx равным n.
+
+
+void Add(int n); - добавляет элемент со значением n в конец вектора (изменяет значение наибольшего допустимого индекса). Если свободных позиций в векторе нет – его размер увеличивается на GROWBY.
+void Append(cArray *ar); - добавляет элементы ar в конец вектора. При необходимости размнр вектора увеличивается на значение кратное GROWBY.
+void Copy(cArray * ar); - копирует ar в текущий вектор из изменяя надлежащим образом его размер на значение кратное GROWBY.
+
+void InsertAt(int n, int indx); - вставляет элемент n в позицию с индексом indx (изменяет значение наибольшего допустимого индекса).
+
+void RemoveAt(int indx); - удаляет элемент в позиции с индексом indx (изменяет значение наибольшего допустимого индекса).
+
+int& operator [](int indx); - устанавливает/возвращает значение элемента в позиции с индексом indx.
+
+Примечание. cArray – целочисленный вектор с динамически изменяемой длиной. С целью уменьшения числа операций распределения/перераспределения памяти используется следующий механизм.
+Как правило объем памяти, выделенной под вектор (возвращается функцией GetSize()), превышает число элементов (возвращается функцией GetCount()), размещенных в нем. При добавлении элементов функциями Add или, например, Append выполняется проверка есть ли “свободное” место в векторе, если да – элемент размещается в векторе .  При этом  увеличивается значение,  возвращаемое функциями  GetCount() и GetUpperBound() и не изменяется значение,  возвращаемое функцией GetSize(). Иначе – размер вектора увеличивается на GROWBY элементов. Для этого выделяется новая область памяти требуемого размера, в нее копируется содержание прежней памяти и последняя освобождается. Например,
+cArray *pa = new cArray;
+pa->SetSize( 3 );// GetSize() returns 3, GetCount()returns 0, 
+//GetUpperBound()returns -1
+pa->SetAt( 10, 0);// GetSize() returns 3, GetCount()returns 1, 
+			//GetUpperBound()returns 0 
+pa->SetAt( 11, 1);// GetSize() returns 3, GetCount()returns 2, 
+			//GetUpperBound()returns 1 
+pa->SetAt( 12, 2);// GetSize() returns 3, GetCount()returns 3, 
+			//GetUpperBound()returns 2
+
+pa->Add( 13 ); //reallocation needed
+// GetSize() returns 13 (GROWBY == 10)
+// GetCount()returns 4
+// GetUpperBound()returns 3

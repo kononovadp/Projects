@@ -1,0 +1,939 @@
+/*-- BOTH: form / inner container table --*/
+table.wolframAlphaWidgetContent {
+  background: transparent none;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 auto; 
+  width: auto;
+}
+
+table.wolframAlphaWidgetContent tr {
+  height: 23px;
+  background: transparent none;  
+}
+
+table.wolframAlphaWidgetContent td {
+  padding-right: 2px;
+  font-size: 11px;
+  vertical-align: middle;
+  background: transparent none;
+}
+
+
+
+/*-- SMALL --*/
+table.WolframAlphaWidget {
+  width: auto;
+  border: 0 none;
+  border-collapse: separate;
+  margin: 0 auto;
+  text-transform: none;
+}
+
+table.WolframAlphaWidget tr td {
+  border: 0 none;
+  background: white;
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* header */
+table.WolframAlphaWidget tr th {
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_vertical.png) repeat-x scroll -1px -1px;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 26px;
+  height: 26px;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+table.WolframAlphaWidget tr th.l,
+table.WolframAlphaWidget tr th.r {
+  width: 16px;
+  min-width: 16px;
+  height: 26px;
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_crn.png) no-repeat scroll -1px -1px;
+}
+
+table.WolframAlphaWidget tr th.r {
+  background-position: -18px -1px;
+}
+
+/* header no title */
+table.WolframAlphaWidget tr.sm th {
+  background-position: -1px -28px;
+  height: 7px;
+}
+
+.WolframAlphaWidget tr.sm th.r {
+  background-position: -18px -28px;
+}
+
+/* body */
+table.WolframAlphaWidget tr td.l {
+  border-left: 1px solid #bebebe;
+}
+
+table.WolframAlphaWidget tr td.r {
+  border-right: 1px solid #bebebe;
+}
+
+/* footer */
+table.WolframAlphaWidget tr.wawf_bot td {
+  height: 27px;
+}
+
+table.WolframAlphaWidget tr.wawf_bot td.l,
+table.WolframAlphaWidget tr.wawf_bot td.r {
+  width: 16px;
+  min-width: 16px;
+  border: 0 none;
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_crn.png) no-repeat scroll -1px -57px;
+}
+
+table.WolframAlphaWidget tr.wawf_bot td.m {
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_vertical.png) repeat-x scroll 0 -57px;
+}
+
+table.WolframAlphaWidget tr.wawf_bot td.r {
+  background-position: -18px -57px;
+}
+
+
+
+
+
+
+
+/*-- LARGE --*/
+.WolframAlphaWidgetLarge {
+  font-family: verdana, sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  word-wrap: normal;
+  white-space: auto;
+  color: #000;
+  margin: 12px auto 0;
+  padding: 0;
+  min-width: 140px;
+  background: transparent;
+ -webkit-text-size-adjust: none;
+}
+
+.WolframAlphaWidgetLarge tr,
+.WolframAlphaWidgetLarge th,
+.WolframAlphaWidgetLarge td,
+.WolframAlphaWidgetLarge form {
+  margin: 0;
+  padding: 0;
+}
+
+.WolframAlphaWidgetLarge table.wolframAlphaWidgetContent td {
+  background: none repeat scroll 0 0 transparent;
+  padding-right: 2px;
+}
+
+.WolframAlphaWidgetLarge table.wolframAlphaWidgetContent table.submit td {
+  padding: 0;
+}
+
+.WolframAlphaWidgetLarge table,
+.WolframAlphaWidgetLarge form,
+.WolframAlphaWidgetLarge fieldset,
+.WolframAlphaWidgetLarge table.wolframAlphaWidgetContent table.submit {
+  border: 0 none;
+  background: transparent none;
+}
+
+
+
+
+/* header */
+.WolframAlphaWidgetLarge .waw_header {
+  position: relative;
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_vertical.png) repeat-x scroll -1px -1px;
+  color: #fff;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 26px;
+  height: 26px;
+  text-align: left;
+  margin: 0 16px;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.WolframAlphaWidgetLarge .waw_header .l,
+.WolframAlphaWidgetLarge .waw_header .r {
+  width: 16px;
+  min-width: 16px;
+  height: 26px;
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_crn.png) no-repeat scroll -1px -1px;
+  position: absolute;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.WolframAlphaWidgetLarge .waw_header .l {
+  left: -16px;
+}
+
+.WolframAlphaWidgetLarge .waw_header .r {
+  background-position: -18px -1px;
+  right: -16px;
+}
+
+.WolframAlphaWidgetLarge .waw_header .close {
+  display: none;
+  position: absolute;
+  top: 7px;
+  right: -12px;
+  cursor: pointer;
+  width: 15px;
+  height: 14px;
+  padding: 0;
+  margin: 0;
+  background: transparent url(//www.wolframcdn.com/widget/widget_close.png) no-repeat scroll 0 0;
+  z-index: 3;
+}
+
+/* header (no title) */
+.WolframAlphaWidgetLarge .waw_header.sm {
+  background-position: -1px -28px;
+  height: 7px;
+  font-size: 1px;
+}
+
+.WolframAlphaWidgetLarge .waw_header.sm .l,
+.WolframAlphaWidgetLarge .waw_header.sm .r {
+  height: 7px;
+  font-size: 1px;
+}
+
+.WolframAlphaWidgetLarge .waw_header.sm .l {
+  background-position: -1px -28px;
+}
+
+.WolframAlphaWidgetLarge .waw_header.sm .r {
+  background-position: -18px -28px;
+}
+
+.WolframAlphaWidgetLarge .waw_header.sm .close {
+  background-image: url(//www.wolframcdn.com/widget/orange_theme_crn.png);
+  background-position: -4px -84px;
+  height: 25px;
+  width: 25px;
+  right: -17px;
+  top: -1px;
+  padding: 0;
+  margin: 0;
+}
+
+/* body */
+.WolframAlphaWidgetLarge .wolframAlphaWidgetBody,
+.WolframAlphaWidgetLarge .wolframAlphaWidgetOutput {
+  border-left: 1px solid #bebebe;
+  border-right: 1px solid #bebebe;
+  padding: 0;
+  background: white;
+}
+
+.WolframAlphaWidgetLarge .wolframAlphaBody {
+  border-bottom: none 0;
+  position: relative;
+  z-index: 2;
+}
+
+.WolframAlphaWidgetLarge .widgetOutput {
+  display: none;
+}
+
+/* footer */
+.WolframAlphaWidgetLarge .waWidgetFooter {
+  height: 27px;
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_vertical.png) repeat-x scroll -18px -57px;
+  margin: 0 16px;
+  z-index: 3;
+  position: relative;
+}
+
+.WolframAlphaWidgetLarge .waWidgetFooter .l,
+.WolframAlphaWidgetLarge .waWidgetFooter .r {
+  height: 27px;
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_crn.png) no-repeat scroll -1px -57px;
+  width: 16px;
+  min-width: 16px;
+  border: 0 none;
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+
+.WolframAlphaWidgetLarge .waWidgetFooter .l {
+  left: -16px;
+}
+
+.WolframAlphaWidgetLarge .waWidgetFooter .r {
+  background-position: -18px -57px;
+  right: -16px;
+}
+
+.WolframAlphaWidgetLarge .waWidgetFooter .logo:hover {
+  background-position: 0 0;
+}
+
+.WolframAlphaWidgetLarge .waWidgetFooter .wawf_rate {
+  display: none;
+}
+
+
+
+/* Large - expanded */
+.WolframAlphaWidgetLarge.expand .waw_header .close, 
+.WolframAlphaWidgetLarge.expand .widgetOutput,
+.WolframAlphaWidgetLarge.expand .wawf_getstripe {
+  display: block;
+}
+
+.WolframAlphaWidgetLarge.expand .wolframAlphaWidgetBody {
+  border-bottom: 1px solid #9e9e9e; 
+  background: #f7f7f7 url(//www.wolframcdn.com/widget/widget-large-background.gif) repeat-x scroll 0 bottom;
+  position: relative;
+  z-index: 2;
+}
+
+.WolframAlphaWidgetLarge.expand .wolframAlphaWidgetOutput {
+  background: transparent;
+}
+
+/* footer - expanded */
+.WolframAlphaWidgetLarge.expand .waWidgetFooter {
+  height: 38px;
+  background: transparent url(//www.wolframcdn.com/widget/widget-large-footer-back.png) repeat-x scroll 0 0;
+  margin: 0 15px;
+  padding: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .l,
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .r {
+  min-width: 16px;
+  height: 38px;
+  background: transparent url(//www.wolframcdn.com/widget/widget-large-footer-crn.png) no-repeat scroll 0 0;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .l {
+  left: -16px;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .r {
+  background-position: -17px 0;
+  right: -16px;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .wawf_rate {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: normal;
+  font-size: 10px;
+  color: #747474;
+  position: relative;
+  top: 12px;
+}
+
+.WolframAlphaWidgetLarge .waWidgetFooter .wawf_rate a,
+.WolframAlphaWidgetLarge .wawf_getstripe a {
+  font-family: arial, sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  text-decoration: none;
+  color: #555;
+}
+
+/* large-only footer content */
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .alphaInput {
+  display: none;
+  background: transparent url(//www.wolframcdn.com/widget/alpha-bar-mid.gif) repeat-x scroll 0 0; /* -23px */
+  position: absolute;
+  bottom: 9px;
+  right: -4px;
+  height: 23px;
+  margin: 0 20px 0 175px;
+  padding: 0;
+  color: #555;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .alphaInput .left,
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .alphaInput .right {
+  height: 23px;
+  background: transparent url(//www.wolframcdn.com/widget/alpha-bar.gif) no-repeat scroll 0 0; /* -23px */
+  position: absolute;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .alphaInput .left {
+  width: 5px;
+  left: -5px;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .alphaInput .right {
+  background-position: -6px 0; /* -23px */
+  width: 20px;
+  right: -20px;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .alphaInput:hover,
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .alphaInput.active {
+  background-position: 0 0;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .alphaInput .input {
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  top: 5px;
+  border: 0 none;
+  margin: 0 2px;
+  padding: 0;
+  height: 12px;
+  font-size: 10px;
+  font-family: arial, sans-serif;
+  color: #555;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .alphaInput:hover .input {
+  color: #000;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .equal {
+  cursor: pointer;
+  width: 13px;
+  height: 14px;
+  background: transparent url(//www.wolframcdn.com/widget/equal.gif) no-repeat scroll 0 0;
+  position: absolute;
+  bottom: 13px;
+  right: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* hide form when collapsing pre-computed iframe form */
+.WolframAlphaWidgetLarge .wolframAlphaWidgetBody.collapse {
+  height: 4px;
+}
+
+.WolframAlphaWidgetLarge .wolframAlphaWidgetBody.collapse form {
+  display: none;
+}
+
+
+/* BOTH - common footer content */
+table.WolframAlphaWidget tr.wawf_bot .waWidgetFooter {
+  margin: 0;
+  padding: 0;
+  height: 27px;
+  position: relative;
+  background: transparent;
+}
+
+table.WolframAlphaWidget tr.wawf_bot .logo,
+.WolframAlphaWidgetLarge .waWidgetFooter .logo {
+  width: 66px;
+  height: 11px;
+  padding: 0;
+  margin: 0;
+  border: 0 none;
+  background: transparent url(//www.wolframcdn.com/widget/logo-sm.png) no-repeat scroll 0 0;
+  outline: none;
+  position: absolute;
+  left: -6px;
+  bottom: 7px;
+}
+
+table.WolframAlphaWidget tr.wawf_bot .wolframAlphaWidgetInfo,
+.WolframAlphaWidgetLarge .waWidgetFooter .wolframAlphaWidgetInfo,
+table.WolframAlphaWidget tr.wawf_bot .wolframAlphaWidgetShare,
+.WolframAlphaWidgetLarge .waWidgetFooter .wolframAlphaWidgetShare {
+  margin: 0;
+  padding: 0;
+  width: 17px;
+  height: 17px;
+  background: transparent url(//www.wolframcdn.com/widget/share-info-icons2.png) no-repeat scroll 0 0;
+  display: block;
+  position: absolute;
+  bottom: 11px;
+}
+
+table.WolframAlphaWidget tr.wawf_bot .wolframAlphaWidgetShare,
+.WolframAlphaWidgetLarge .waWidgetFooter .wolframAlphaWidgetShare {
+  background-position: -18px 0;
+}
+
+/* hover states */
+table.WolframAlphaWidget tr.wawf_bot .wolframAlphaWidgetInfo:hover,
+.WolframAlphaWidgetLarge .waWidgetFooter .wolframAlphaWidgetInfo:hover {
+  background-position: 0 -17px;
+}
+
+table.WolframAlphaWidget tr.wawf_bot .wolframAlphaWidgetShare:hover,
+.WolframAlphaWidgetLarge .waWidgetFooter .wolframAlphaWidgetShare:hover {
+  background-position: -18px -17px;
+}
+
+/* positions - small */
+table.WolframAlphaWidget tr.wawf_bot .wolframAlphaWidgetInfo,
+.WolframAlphaWidgetLarge .waWidgetFooter .wolframAlphaWidgetInfo {
+  bottom: 5px;
+  right: 13px;
+}
+
+table.WolframAlphaWidget tr.wawf_bot .wolframAlphaWidgetShare,
+.WolframAlphaWidgetLarge .waWidgetFooter .wolframAlphaWidgetShare {
+  bottom: 5px;
+  right: -7px;
+}
+
+/* expanded */
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .logo {
+  height: 16px;
+  width: 91px;
+  left: -2px;
+  bottom: 13px;
+  background: transparent url(//www.wolframcdn.com/widget/logo-lg.png) no-repeat scroll 0 0;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .logo:hover {
+  cursor: pointer;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .logo.tiny {
+  width: 66px;
+  height: 11px;
+  background-image: url(//www.wolframcdn.com/widget/logo-sm.png);
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .wolframAlphaWidgetInfo {
+  right: 37px;
+}
+ 
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .wolframAlphaWidgetShare {
+  right: 17px;
+}
+
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .wolframAlphaWidgetInfo,
+.WolframAlphaWidgetLarge.expand .waWidgetFooter .wolframAlphaWidgetShare {
+  bottom: 11px;
+}
+
+
+/* footer popups common */
+.wolframAlphaWidgetInfoPopup,
+.wolframAlphaWidgetSharePopup {
+  width: 155px;
+  padding: 4px 31px 0 22px;
+  margin: 15px 0 33px;
+  background: transparent url(//www.wolframcdn.com/widget/info-share-back-mid.png) repeat-y scroll 1px 0;
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: -34px;
+  text-align: left;
+  z-index: 105;
+}
+
+.wolframAlphaWidgetInfoPopup .wawfp_top,
+.wolframAlphaWidgetInfoPopup .wawfp_bot,
+.wolframAlphaWidgetSharePopup .wawfp_top,
+.wolframAlphaWidgetSharePopup .wawfp_bot {
+  position: absolute;
+  width: 209px;
+  background: transparent url(//www.wolframcdn.com/widget/info-share-back.png) no-repeat scroll 0 0;
+}
+
+.wolframAlphaWidgetInfoPopup .wawfp_top,
+.wolframAlphaWidgetSharePopup .wawfp_top {
+  width: 209px;
+  height: 15px;
+  top: -15px;
+  left: 0;
+}
+
+.wolframAlphaWidgetInfoPopup .wawfp_bot,
+.wolframAlphaWidgetSharePopup .wawfp_bot{
+  background-position: 0 -16px;
+  height: 33px;
+  bottom: -33px;
+  left: 0;
+}
+
+.wolframAlphaWidgetInfoPopup p,
+.wolframAlphaWidgetSharePopup p,
+.wolframAlphaWidgetInfoPopup a,
+.wolframAlphaWidgetSharePopup a {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  line-height: 17px;
+  color: #555;
+  text-decoration: none;
+  outline: none;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
+
+.wolframAlphaWidgetInfo,
+.wolframAlphaWidgetShare,
+.wolframAlphaWidgetInfo a,
+.wolframAlphaWidgetShare a {
+  font-size: 11px;
+  line-height: 17px;
+  color: #555; 
+  text-decoration: none;
+  outline: none;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+}
+
+.wolframAlphaWidgetInfoPopup a:hover,
+.wolframAlphaWidgetSharePopup a:hover {
+  color: #ed602f;
+}
+
+.wolframAlphaWidgetInfoPopup a b,
+.wolframAlphaWidgetSharePopup a b {
+  font-weight: normal;
+  color: #ed602f;
+}
+
+/* info-specific */
+.wolframAlphaWidgetInfoPopup .poweredby {
+  font-family: arial, sans-serif;
+  font-size: 10px;
+  color: #555;
+} 
+
+.wolframAlphaWidgetInfoPopup .poweredby a {
+  display: inline;
+  font-size: 10px;
+  font-weight: normal;
+  color: #fe6518;
+}
+
+.wolframAlphaWidgetInfoPopup .poweredby a:hover {
+  color: #db0303;
+}
+
+.wolframAlphaWidgetInfoPopup a.wawipl_1,
+.wolframAlphaWidgetInfoPopup a.wawipl_2,
+.wolframAlphaWidgetInfoPopup a.wawipl_3,
+.wolframAlphaWidgetInfoPopup a.wawipl_4{
+  padding-left: 14px;
+  background: transparent url(//www.wolframcdn.com/widget/info-icons.png) no-repeat scroll 0 4px;
+}
+
+.wolframAlphaWidgetInfoPopup a.wawipl_2 {
+  background-position: 0 -11px;
+}
+
+.wolframAlphaWidgetInfoPopup a.wawipl_3 {
+  background-position: 0 -27px;
+}
+
+.wolframAlphaWidgetInfoPopup a.wawipl_4 {
+  background-position: 1px -43px;
+  margin: 0 0 6px;
+}
+
+/* share-specific */
+.wolframAlphaWidgetSharePopup a {
+  font-weight: bold;
+  color: #fe6518;
+}
+
+.wolframAlphaWidgetSharePopup a:hover {
+  color: #db0303;
+}
+
+.wolframAlphaWidgetSharePopup .wawfp_share {
+  border-bottom: 1px solid #dadada;
+  padding: 7px 0 11px;
+  margin-bottom: 4px;
+}
+
+.wolframAlphaWidgetSharePopup .wawfp_share a {
+   font-weight: normal;
+   font-size: 12px;
+}
+
+a.wawfp_fb,
+a.wawfp_tw,
+a.wawfp_dl,
+a.wawfp_dg,
+a.wawfp_more {
+  width: 16px;
+  height: 16px;
+  background: transparent url(//www.wolframcdn.com/widget/share-icons.png) no-repeat scroll 0 -1px;
+  float: left;
+  margin-right: 10px;
+}
+
+a.wawfp_fb {
+  background-position: 0 -1px;
+}
+a.wawfp_tw {
+  background-position: -26px -1px;
+}
+a.wawfp_dl {
+  background-position: -52px -1px;
+}
+a.wawfp_dg {
+  background-position: -78px -1px;
+}
+a.wawfp_more {
+  background-position: -104px -1px;
+  padding-left: 20px;
+}
+
+/* hovers to show popups */
+table.WolframAlphaWidget tr.wawf_bot .wolframAlphaWidgetInfo:hover .wolframAlphaWidgetInfoPopup,
+.WolframAlphaWidgetLarge .waWidgetFooter .wolframAlphaWidgetInfo:hover .wolframAlphaWidgetInfoPopup{
+  display: block;
+}
+
+table.WolframAlphaWidget tr.wawf_bot .wolframAlphaWidgetShare:hover .wolframAlphaWidgetSharePopup,
+.WolframAlphaWidgetLarge .waWidgetFooter .wolframAlphaWidgetShare:hover .wolframAlphaWidgetSharePopup{
+  display: block;
+}
+
+/* extra Get This stripe for small widgets */
+.wawf_getstripe {
+  border-top: 1px solid #cdcdcd;
+  border-left: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
+  background: #e9e9e9;
+  text-align: center;
+  padding: 6px 0;
+}
+
+.WolframAlphaWidgetLarge .wawf_getstripe {
+  display: none;
+}
+
+
+/* common elements - form stuff */
+table.WolframAlphaWidget form fieldset,
+.WolframAlphaWidgetLarge form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 14px 0;
+  background: transparent;
+}
+
+table.WolframAlphaWidget .submit,
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent .submit {
+  height: 20px;
+  width: auto;
+  margin: 0;
+  padding: 6px;
+  border: 0 none;
+  cursor: pointer;
+  display: inline;
+}
+
+table.WolframAlphaWidget .submit tr,
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent .submit tr{
+  height: 20px;
+}
+
+table.WolframAlphaWidget .submit .l,
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent .submit .l {
+  height: 20px;
+  width: 6px;
+  min-width: 6px;
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_crn.png) no-repeat scroll  -11px -36px;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+table.WolframAlphaWidget .submit .m,
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent .submit .m {
+  height: 20px;
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_vertical.png) repeat-x scroll -1px -36px;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 11px;
+  color: #fff;
+  white-space: nowrap;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+table.WolframAlphaWidget .submit .r,
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent .submit .r {
+  height: 20px;
+  width: 6px;
+  min-width: 6px;
+  background: transparent url(//www.wolframcdn.com/widget/orange_theme_crn.png) no-repeat scroll -18px -36px;
+  border: 0 none;
+}
+
+table.WolframAlphaWidget label, 
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent label {
+  vertical-align: middle;
+}
+
+
+/* all inputs */
+table.WolframAlphaWidget input,
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent input,
+table.WolframAlphaWidget select,
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent select {
+  font-size: 11px;
+  margin: 6px;
+  border: 0 none; 
+  z-index: 0;
+}
+
+table.WolframAlphaWidget input[type="text"],
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent input[type="text"]{
+  font-family: Verdana, sans-serif;
+  font-size: 10px;
+  line-height: 11px;
+  border: 1px solid #999;
+  padding: 2px 1px;
+}
+
+table.WolframAlphaWidget select,
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent select {
+  position: relative;
+  border: 1px solid #999;
+}
+
+table.WolframAlphaWidget  .multipleChoice, 
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent .multipleChoice {
+    padding: 2px 4px 2px 2px;
+}
+ 
+table.WolframAlphaWidget .multipleChoice input[type="radio"],
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent .multipleChoice input[type="radio"]{
+    margin: 3px 6px 1px 2px;
+    border: 0 none; !important
+}
+  
+
+table.WolframAlphaWidget input[type="checkbox"],
+.WolframAlphaWidgetLarge .wolframAlphaWidgetContent input[type="checkbox"] {
+  border: 0 none;
+  margin: 10px 6px 9px;
+  vertical-align: middle;
+}
+
+
+/* pre-computed iframe form collapser */
+.WolframAlphaWidgetLarge .expander {
+  display: block;
+  position: absolute;
+  right: 17px;
+  bottom: -11px;
+  width: 17px;
+  height: 11px;
+  cursor: pointer;
+  background: transparent url(//www.wolframcdn.com/widget/expander.png) no-repeat scroll 0 0;
+  z-index: 3;
+}
+
+.WolframAlphaWidgetLarge .expander.expand {
+  background-position: -18px 0;
+}
+
+
+/* Output : Computing / Results */
+.wolframAlphaWidgetOutput {
+  position: relative;
+  overflow: hidden;
+}
+
+.wolframAlphaWidgetComputingOverlay {
+  width: 100%; 
+  height: 100%; 
+  padding: 0;  
+  margin: 0; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #72716e;
+  z-index: 1;
+}
+
+.wolframAlphaWidgetComputingSpinner {
+  width: 100px;
+  height: 20px;
+  background: transparent url(//www.wolframcdn.com/widget/computing.gif) no-repeat scroll 50% top;
+  margin: -40px 0 0 -50px;
+  padding: 60px 0 0 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  font: bold 15px arial;
+  color: white;
+  text-align: center;
+}
+
+.wolframAlphaWidgetResults {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: transparent none;
+  z-index: 1;
+}
+
+.WolframAlphaWidgetLarge.collapse .wolframAlphaWidgetComputingOverlay,
+.WolframAlphaWidgetLarge.collapse .wolframAlphaWidgetResults {
+  display: none;
+}
+
+
+/* BETA */
+.wolframAlphaWidgetBeta {
+  margin: 0;
+  padding: 0;
+  width: 33px;
+  height: 12px;
+  background: transparent url(//www.wolframcdn.com/widget/beta.png) no-repeat scroll 0 0;
+  position: absolute;
+  top: -25px;
+  right: 6px;
+  z-index: 1;
+}
+
+table.WolframAlphaWidget tr.sm .wolframAlphaWidgetBeta {
+  top: -16px;
+}
+
+.WolframAlphaWidgetLarge .wolframAlphaWidgetBeta {
+  top: -12px;
+}
+
+
+

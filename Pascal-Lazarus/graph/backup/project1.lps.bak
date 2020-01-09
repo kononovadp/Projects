@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="project1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="10"/>
+        <CursorPos X="23" Y="15"/>
+        <UsageCount Value="202"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="3" Y="41"/>
+        <UsageCount Value="22"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\AppData\Local\Temp\HZ$D.972.1956\HZ$D.972.1957\all systems\project1.lpr"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit2>
+    </Units>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="project1.pas"/>
+        <Caret Line="259" Column="2" TopLine="259"/>
+      </Position1>
+      <Position2>
+        <Filename Value="project1.pas"/>
+        <Caret Line="25" Column="46" TopLine="18"/>
+      </Position2>
+      <Position3>
+        <Filename Value="project1.pas"/>
+        <Caret Line="12" Column="42" TopLine="5"/>
+      </Position3>
+      <Position4>
+        <Filename Value="project1.pas"/>
+        <Caret Line="26" Column="49" TopLine="14"/>
+      </Position4>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[ru_UA]=
+Comment=
+Exec=bash -c '$0 script.sh'
+GenericName[ru_UA]=
+GenericName=
+Icon=exec
+MimeType=
+Name[ru_UA]=
+Name=
+Path=/home/maximka/prog/
+StartupNotify=true
+Terminal=true
+TerminalOptions=\s--noclose
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=none
+X-KDE-SubstituteUID=false
+X-KDE-Username=

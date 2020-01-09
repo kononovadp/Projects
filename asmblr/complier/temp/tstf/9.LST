@@ -1,0 +1,127 @@
+Microsoft (R) Macro Assembler Version 5.00                  5/19/15 12:04:51
+                                                             Page     1-1
+
+
+       1				.386 
+       2 0000				data segment 
+       3 0000				Data1 segment 
+       4 0000  0D			const db 1101b 
+       5 0001  7D			const1 db 125 
+       6 0002  85			const2 db 85h 
+       7 0003  48 65 6C 6C 6F		const3 db 'Hello' 
+       8 0008  000A			const4 dw 1010b 
+       9 000A  07DF			const5 dw 2015d 
+      10 000C  0098			const6 dw 98h 
+      11 000E  0B000000			const7 dd 1011b 
+      12 0012  F2030000			const8 dd 1010 
+      13 0016  00100000			const9 dd 1000h 
+      14 001A				Data1 ends 
+      15 0000				data ends 
+      16 0000				code segment 
+      17 0000				code1 segment 
+      18				assume ds:data1,cs:code1 
+      19 0000  FA			m1: cli 
+      20 0001  FE C7			inc bh 
+      21 0003  66| 41			inc cx 
+      22 0005  46			inc esi 
+      23 0006  FE 0D 00000000 R		dec const 
+      24 000C  FE 0D 00000001 R		dec const1 
+      25 0012  FE 0D 00000002 R		dec const2 
+      26 0018  FE 0D 00000003 R		dec const3 
+      27 001E  66| FF 0D 00000008 R	dec const4 
+      28 0025  66| FF 0D 0000000A R	dec const5 
+      29 002C  66| FF 0D 0000000C R	dec const6 
+      30 0033  FF 0D 0000000E R		dec const7 
+      31 0039  FF 0D 00000012 R		dec const8 
+      32 003F  FF 0D 00000016 R		dec const9 
+      33 0045  12 F9			adc bh,cl 
+      34 0047  66| 13 DA		adc bx,dx 
+      35 004A  13 CB			adc ecx,ebx 
+      36 004C  3A 3D 00000000 R		cmp bh,const 
+      37 0052  3A 1D 00000001 R		cmp bl,const1 
+      38 0058  3A 0D 00000002 R		cmp cl,const2 
+      39 005E  3A 35 00000003 R		cmp dh,const3 
+      40 0064  66| 3B 15 00000008 R	cmp dx,const4 
+      41 006B  66| 3B 1D 0000000A R	cmp bx,const5 
+      42 0072  66| 3B 0D 0000000C R	cmp cx,const6 
+      43 0079  3B 35 0000000E R		cmp esi,const7 
+      44 007F  3B 15 00000012 R		cmp edx,const8 
+      45 0085  3B 0D 00000016 R		cmp ecx,const9 
+      46 008B  0F 82 000000D0 R		jb m2 
+      47 0091  32 3D 00000000 R		xor bh,const 
+      48 0097  32 1D 00000001 R		xor bl,const1 
+      49 009D  32 0D 00000002 R		xor cl,const2 
+      50 00A3  32 35 00000003 R		xor dh,const3 
+      51 00A9  66| 33 15 00000008 R	xor dx,const4 
+      52 00B0  66| 33 1D 0000000A R	xor bx,const5 
+      53 00B7  66| 33 0D 0000000C R	xor cx,const6 
+      54 00BE  33 35 0000000E R		xor esi,const7 
+Microsoft (R) Macro Assembler Version 5.00                  5/19/15 12:04:51
+                                                             Page     1-2
+
+
+      55 00C4  33 15 00000012 R		xor edx,const8 
+      56 00CA  33 0D 00000016 R		xor ecx,const9 
+      57 00D0  C0 E1 0A			m2: sal cl,1010b 
+      58 00D3  66| C1 E1 E8		sal cx,232 
+      59 00D7  C1 E3 79			sal ebx,79h 
+      60 00DA  80 0D 00000000 R 0A	or const,1010b 
+      61 00E1  80 0D 00000001 R 68	or const1,68h 
+      62 00E8  80 0D 00000002 R AA	or const2,10101010b 
+      63 00EF  80 0D 00000003 R 66	or const3,66h 
+      64 00F6  66| 83 0D 00000008 R	or const4,123d 
+      65       7B			
+      66 00FE  66| 83 0D 0000000A R	or const5,1101b 
+      67       0D			
+      68 0106  66| 81 0D 0000000C R	or const6,457ah 
+      69       457A			
+      70 010F  81 0D 00000012 R 0000	or const8,234 
+      71       00EA			
+      72 0119  81 0D 00000016 R 0000	or const9,1011 
+      73       03F3			
+      74 0123  0F 82 00000000 R		jb m1 
+      75 0129				code1 ends 
+      76 0000				code ends 
+      77				end 
+Microsoft (R) Macro Assembler Version 5.00                  5/19/15 12:04:51
+                                                             Symbols-1
+
+
+
+
+                N a m e         	Size	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	32 Bit	0000	PARA	NONE	
+CODE1  . . . . . . . . . . . . .  	32 Bit	0129	PARA	NONE	
+DATA . . . . . . . . . . . . . .  	32 Bit	0000	PARA	NONE	
+DATA1  . . . . . . . . . . . . .  	32 Bit	001A	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+CONST  . . . . . . . . . . . . .  	L BYTE	0000	DATA1
+CONST1 . . . . . . . . . . . . .  	L BYTE	0001	DATA1
+CONST2 . . . . . . . . . . . . .  	L BYTE	0002	DATA1
+CONST3 . . . . . . . . . . . . .  	L BYTE	0003	DATA1
+CONST4 . . . . . . . . . . . . .  	L WORD	0008	DATA1
+CONST5 . . . . . . . . . . . . .  	L WORD	000A	DATA1
+CONST6 . . . . . . . . . . . . .  	L WORD	000C	DATA1
+CONST7 . . . . . . . . . . . . .  	L DWORD	000E	DATA1
+CONST8 . . . . . . . . . . . . .  	L DWORD	0012	DATA1
+CONST9 . . . . . . . . . . . . .  	L DWORD	0016	DATA1
+
+M1 . . . . . . . . . . . . . . .  	L NEAR	0000	CODE1
+M2 . . . . . . . . . . . . . . .  	L NEAR	00D0	CODE1
+
+@FILENAME  . . . . . . . . . . .  	TEXT  9		
+
+
+     72 Source  Lines
+     72 Total   Lines
+     18 Symbols
+
+  49134 + 434370 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

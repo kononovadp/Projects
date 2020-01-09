@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://
+www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style>@import url("styles.css"); </style>
+<head>
+<script type="text/javascript" src="nicetitle.js"></script> 
+<style type="text/css"> 
+.block1 
+{ 
+width: 200px;
+background: #ccc; 
+padding: 5px; 
+padding-right: 20px; 
+border: solid 1px black; 
+float: left; 
+} 
+.block2 
+{ 
+width: 200px; 
+background: #fc0; 
+padding: 5px; 
+border: solid 1px black; 
+float: left; 
+position: fixed; 
+top: 40px; 
+left: -70px;  
+} </style>
+<title>Основні роботи</title>
+</head>
+<body>
+<div class="main_page">
+<a href="main.htm">
+Головна сторінка </a> </div>
+<h1 onmouseover="tooltip(this,'Заголовок')" onmouseout="hide_info(this)">
+Основні роботи</h1>
+<div class="image1">
+<img src="foto2.jpg"
+onmouseover="tooltip(this,'Основний вміст')" 
+onmouseout="hide_info(this)"></div>
+<div class="main_menu" 
+onmouseover="tooltip(this,'Головне меню')" onmouseout="hide_info(this)">
+<div class="menu1"> 
+<ul>
+<ol> <a href="1.htm"> 1. Про автора </a> </ol>
+<ol> <a href="2.htm"> 2. Контакти </a> </ol>
+</ul> </a> </div>
+<div class="menu2">
+<ul>
+<ol> <a href="3.htm">3. Основні роботи </a> </ol>
+<ol> <a href="4.htm">4. Корисні посилання </a> </ol>
+</ul> </div> </div>
+<div class="textcontent">
+<p>
+<ul onmouseover="tooltip(this,'Основний вміст')" onmouseout="hide_info(this)">
+<li> Пісні про любов і вічність </li>
+<li> Намір </li>
+<li> Голова Якова </li>
+<li> Трохи пітьми </li>
+<li> Остання любов Асури Махараджа </li>
+<li> Дивні дні Гані Грак </li>
+<li> Культ </li>
+<li> Поклоніння ящірці </li>
+<li> Архе: Монолог, який усе ще триває </li>
+<li> Трициліндровий двигун любові </li>
+</ul>
+</p> <div class="block2" id="mess"></div> <div class="adw">
+<img src="ad.jpg"
+onmouseover="tooltip(this,'Додаткова секція')" onmouseout="hide_info(this)"> </div>
+<div class="footer">
+<footer onmouseover="tooltip(this,'Нижній колонтикул')" onmouseout="hide_info(this)">
+<p>Виконав студент заочного відділення групи ЗКІ-31 Кононов М. А.</p></footer>
+</div> </div>
+
+
+</body>
+</html>

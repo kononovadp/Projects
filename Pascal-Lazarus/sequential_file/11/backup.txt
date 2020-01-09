@@ -1,0 +1,55 @@
+{11. Записати у файл g усі парні числа файлу f типу integer, а у файл 6 - усі непарні.
+Порядок проходження чисел зберігається. Формула № 11.}
+program z1;
+uses crt;
+var f,b,g:file of integer; x:integer; n,i:byte;
+    procedure file_f_creation;//створюємо файл f за формулою
+    begin
+    n:=10; x:=0;
+    assign(f,'file-f.dat');rewrite(f);
+    for i:=1 to n do begin
+    x:=i+round(exp(ln(2)*i));
+    write(f,x); end;
+    end;
+    procedure writing_of_files;//записуємо у файл g усі парні числа, а у файл b - усі непарні
+    begin
+    reset(f);
+    assign(g,'file-g.dat');rewrite(g);
+    assign(b,'file-b.dat');rewrite(b);
+    while not (eof(f)) do  begin
+    read(f,x);
+    if x mod 2 = 0 then
+    write(g,x) else write(b,x); end;
+    end;
+    procedure read_f;//зчитуємо файл f
+    begin
+    write('current file'); writeln;
+    reset(f);
+    while not (eof(f)) do  begin
+    read(f,x);writeln(x); end;
+    end;
+    procedure read_g;//зчитуємо файл g з парними числами
+    begin
+    write('file G of even numbers'); writeln;
+    reset(g);
+    while not (eof(g)) do  begin
+    read(g,x);writeln(x); end;
+    end;
+    procedure read_b;//зчитуємо файл b з непарними числами
+    begin
+    write('file B of odd numbers'); writeln;
+    reset(b);
+    while not (eof(b)) do  begin
+    read(b,x);writeln(x); end;
+    end;
+    begin
+    file_f_creation;
+    writing_of_files;
+    read_f;
+    readln;
+    read_g;
+    readln;
+    read_b;
+    readln;
+    close(f); close(g); close(b);
+end.              

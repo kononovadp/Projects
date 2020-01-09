@@ -1,0 +1,11 @@
+inc cx 
+dec di 
+adc bh bl
+cmp dx 80h
+jb  
+xor al 01h
+cmp dx 1010b
+jb  
+sal di 1
+or dh cl
+cli  

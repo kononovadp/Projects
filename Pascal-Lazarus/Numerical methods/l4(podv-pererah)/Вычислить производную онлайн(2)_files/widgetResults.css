@@ -1,0 +1,463 @@
+/* Global stylesheet for widget results - used by the builder and the deployed widget */
+body {
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+.pod h1,
+.pod h2,
+#warnings,
+#assuming, #recalcLoading {
+  width: auto;
+  min-height: 25px;
+  line-height: 25px;
+  padding-left: 15px;
+  margin: 0 0 3px;
+  font-size: 10px;
+  font-family: Verdana, arial, sans-serif;
+  font-weight: normal;
+}
+
+/*-- Warnings --*/
+#warnings {
+  font-size: 10px;
+  background: transparent url(/images/widget/result/changeinput-bar.gif) repeat-x scroll 0 0;
+}
+
+#warnings p {
+  margin: 0;
+}
+
+
+/*-- Assuming --*/
+#assuming {
+  background: #fffdf2;
+  border-top: 1px solid #d7d7d7;      
+  border-bottom: 1px solid #e6e6e6;
+  margin: 3px 0 0;
+  position: relative;
+}
+
+.separator {
+  color: #999;
+}
+
+#assuming td {
+  vertical-align: middle;
+}
+
+#assuming .input {
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+#assuming td.input input[type="text"] {
+  border: 1px solid #999;
+  margin: 0;
+  padding: 2px;
+  width: 111px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+#assuming hr.div {
+  background-image: none;
+  border: 0 none;
+  margin-right: 15px;
+  height: 1px;
+  background-color: #CCC;
+  color: #CCC;
+}
+
+
+#assuming td.title {
+  padding: 0;
+}
+
+#assuming td.title img {
+  position: relative;
+  left: -5px;
+  top: 0;
+}
+
+#assuming td.input .aimg {
+  vertical-align: middle;
+}
+
+
+/* -- Results --*/
+#content {
+  margin: 0;
+  width: auto;
+  left: 0;
+}
+
+.progress {
+  height: 15px;
+  position: absolute;
+  top: 5px;
+}
+
+.pod h1 > .progress {
+  left: 0;
+  top: 6px;
+}
+.pod h1 > .progress .img {
+  vertical-align: top;
+}
+
+.pod {
+  margin: 3px 0 0;
+  padding: 0;
+  position: relative;
+  background: none;
+  width: auto;
+  padding-bottom: 1px;
+}
+
+.pod h1,
+.pod h2, #recalcLoading {
+  background: transparent url(/images/widget/result/result-bar.gif) repeat-x scroll 0 0;
+  color: #4b4b4b;
+  margin: 0;
+  float: none;
+  z-index: 1;
+}
+
+div.stepByStep {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  z-index: 10;
+  padding-bottom: 5px;
+}
+
+a.stepByStep span {
+  font-family: Trebuchet MS,Verdana,sans-serif;
+  position: relative;
+  letter-spacing: -1px;
+  margin-left: 3px;
+}
+
+a,
+.pod h1 > ul a,
+.pod h2 + ul a,
+.right a {
+  line-height: 14px;
+  font-size: 10px;
+  font-family: Verdana,sans-serif;
+  text-decoration: none;
+  color: #FE6518;
+}
+
+a:hover,
+.pod h1 > ul a:hover,
+.pod h2 + ul a:hover,
+.right a:hover {
+  color:#DB0303;
+}
+
+.pod .top,
+.pod .bot {
+  display: none;
+}
+
+.sub {
+  margin: 11px 0 14px;
+  position: relative;
+}
+
+.sub .output {
+  margin: 11px 0 14px;
+}
+
+.output {
+  padding: 4px 0 1px 25px;
+}
+
+.output img {
+  border: 0;
+}
+
+.pod hr.div {
+  border: 0 none;
+  height: 1px;
+  margin: 2px 25px;
+  background-color: #EDE8D8;
+  color: #EDE8D8;
+  border-top: 1px solid #EDE8D8;
+  width: 90%;
+}
+
+.pod hr.div:last-child {
+  display: none;
+}
+
+.sub .output hr.div {
+  margin: 2px 0;
+  width: 95%;
+}
+
+.right, .note, .annotpod {
+  text-align: right;
+}
+
+.pod .note img {
+  display: inline;
+}
+
+#i, .pod .note img, .assuming td.input input[type="text"] {
+  vertical-align: middle;
+}
+
+.note > span, .note:hover > em {
+  display: none;
+}
+
+.note:hover > span, .note em {
+  display: inline;
+}
+
+.note em {
+  text-align: right;
+  font-size: 11px;
+  color: #FE6518;
+}
+
+#doesntknow { margin-top: 20px; }
+#timeout    { margin: 40px 0; }
+
+#results, #footer, #sidebar, #debug-wrapper, #searchWeb {
+  left: 0px;
+}
+
+/*--- pod header link lists ---*/
+.h {
+  min-height: 17px;
+  font-size: 10px;
+  overflow: visible;
+  padding-right: 1px;
+  position: relative;
+  margin: 5px 5px 0 0;
+  text-align: right;
+  z-index: 100;
+}
+/*.div + .sub > .h { top: -1px; }
+*/
+
+.pod h2 + div a {
+  padding-right: 8px;
+}
+
+.h > li > a {
+  text-align: right;
+  position: relative;
+  white-space: nowrap;
+}
+
+.h > li {
+  background: transparent url(//www.wolframcdn.com/bulletSprite.png) no-repeat scroll -1px -142px;
+  display: inline;
+  overflow: visible;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 10px !important;
+  padding-right: 6px !important;
+  position: relative;
+  list-style: none;
+}
+
+.h > li.first {
+  background: none;
+  padding-left: 0;
+}
+
+.sub .h > li {
+  /*top: -5px;*/
+}
+
+.sub > h2 {
+  padding-left: 25px;
+}
+
+/*--- pull down menus ---*/
+  .h a[rel=jump], #assuming a[rel=jump] {
+    /* This selector is supported by all browsers > ie6 
+       The following styles add the border and menu arrow */
+    background: #FFF url('//www.wolframcdn.com/bulletSprite.2.png') no-repeat scroll right -336px;
+    border: 1px solid #C0C0C0;
+    display: inline-block;
+    height: 14px;
+    /*left: 2px;*/
+    line-height: 13px;
+    padding: 0 16px 0 4px;
+    text-decoration: none;
+    text-indent: 0px;
+    top: -1px;
+    white-space: nowrap;
+    z-index: 301;
+  }
+
+   ul.menu {
+    background-color: #fff;
+    border:1px solid #C0C0C0;
+    display: block;
+    left: -10000px;
+    list-style:none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-indent: 0px;
+    top: 14px;
+    z-index: 300;
+  }
+
+  .s ul.menu { top: 14px; }
+ 
+  #assuming ul.menu {
+    top: 20px;
+  }
+
+  a[rel=jump]:hover + ul.menu {
+    left: auto;
+    right: 6px !important;
+  }
+ 
+  #assuming a[rel=jump]:hover + ul.menu {
+    left: auto;
+    right: 0px !important;
+    z-index: 1000;
+  }
+  
+  ul.menu:hover {
+     left: auto;
+     right: 6px !important;
+   }
+   #assuming ul.menu:hover {
+     left: auto;
+     right: 0px !important;
+   }
+
+  ul.menu:target  {
+    /* The target selector is useful for browsers other than IE.  
+       Allows a menu to be opened and remain open without a mouse */
+    left: 10px;
+ }
+
+  ul.menu li {
+    background-image: none;
+    background-color: transparent;
+    display: block;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-align:left;
+    width: auto;
+    z-index: 400;
+  }
+
+  ul.menu li a {
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    display: block;
+    overflow: visible;
+    padding: 4px 6px;
+    white-space: nowrap;
+    z-index: 500;
+  }
+
+  .menuContainer {
+    display: inline-block;
+    margin: 0 1px;
+    overflow: visible;
+    position: relative;
+    text-indent: 0px;
+    z-index: 1000;
+  }
+  /*---  END pull down menu styles ---*/
+
+  .h .menu {
+    /*bottom: -1px;*/
+  }
+  .h:hover {z-index: 1000;}
+
+
+#mathsource,
+.annotpod,
+.fish,
+#popanchor{
+  display: none;
+}
+
+iframe {
+  position: absolute;
+  left: -5000px;
+  height: 1px;
+}
+
+/* async loading bars */
+.pod.loading {
+  height: 8px; 
+  background: url(//www.wolframcdn.com/podLoading.gif) no-repeat;
+}
+
+#recalcLoading img {
+	position: relative;
+	top: 3px;
+	padding-right: 6px;	
+}
+
+#recalcLoading {
+	margin-bottom: 20px;
+}
+
+#loadingResultsRecalc.wolframAlphaWidgetComputingOverlay {
+	background:none repeat scroll 0 0 #72716E;
+	height:100%;
+	left:0;
+	margin:0;
+	padding:0;
+	position:absolute;
+	top:0;
+	width:100%;
+	z-index:1;
+}
+
+#loadingResultsRecalc .wolframAlphaWidgetComputingSpinner {
+	background:url("http://www.wolframcdn.com/widget/computing.gif") no-repeat scroll 50% top transparent;
+	color:white;
+	font:bold 15px arial;
+	height:20px;
+	left:50%;
+	margin:-40px 0 0 -50px;
+	padding:60px 0 0;
+	position:absolute;
+	text-align:center;
+	top:50%;
+	width:100px;
+	z-index:1;
+}
+
+body.splat {
+	background:url("/images/widget/result/stripe-back.gif") repeat scroll 0 0 transparent;
+}
+
+
+#sourceContainer {
+  display: none;
+  background-color: #f9f9f9;
+  border-top: #ccc 1px solid;
+  clear: both;
+  left: 0;
+} 
+
+#sourceLink {
+  color: #DB0303;
+  display: block;
+  padding: 10px 15px;
+  outline: none;
+}
+
+

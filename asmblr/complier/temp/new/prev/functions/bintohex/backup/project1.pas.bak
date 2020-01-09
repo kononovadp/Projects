@@ -1,0 +1,34 @@
+program hextodec;
+uses sysutils;
+var p:string;
+function hextodec(s:string):string;
+var n,i,k,b,r,j:integer; s10:set of char;
+begin
+for i:= 48 to 57 do s10:=s10+[chr(i)];  i:=0;
+k:= length(s)-1; i:=1; b:=0;
+while i<>length(s) do begin
+if s[i] in s10 then n:=strtoint(s[i]); {else begin
+if s[i]='A' then n:=10; if s[i]='B' then n:=11;
+if s[i]='C' then n:=12; if s[i]='D' then n:=13;
+if s[i]='D' then n:=14; if s[i]='E' then n:=15;
+end;}
+r:=1; for j:=1 to k do r:=r*n; k:=k-1;
+b:=b+(r*n); inc(i);
+end;
+hextodec:=inttostr(b); //bintohex:=hxd(b);
+end;
+begin
+readln(p); writeln(hextodec(p));
+readln;
+end.
+{uses sysutils;
+var s:string; n,i,k,b,r,j:integer;
+begin
+readln(s);
+k:= length(s)-1; i:=1;
+while i<>length(s)+1 do begin
+n:=strtoint(s[i]); inc(i);
+r:=1; for j:=1 to k do r:=r*2; k:=k-1;
+b:=b+(r*n); end;  writeln(b);
+readln;
+end.}

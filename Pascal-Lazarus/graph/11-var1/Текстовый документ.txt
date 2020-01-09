@@ -1,0 +1,33 @@
+ //шкала по осі X
+ for i:=-num to num do
+  Line(round(mx*i+xc),yc+10,round(mx*i+xc),yc-10);
+ {for i:=num div 2+1 to num-1 do
+  Line(dx*i,yc+10,dx*i,yc-10);}
+ //шкала по осі Y
+ for i:=-num to num do
+  Line(xc-10,round(yc+my*i),xc+10,round(yc+my*i));
+ //нумерація шкали справа наліво
+ for i:= 1 to num div 2-1 do begin
+  Str(i-num div 2,m);
+  OutTextXY(getmaxx div num*i-7,yc+20,m);
+  end;
+ //нумерація шкали зліва направо
+ for i:= num div 2+1 to num-1 do begin
+  Str(i-num div 2,m);
+  OutTextXY(dx*i-2,yc+20,m);
+ end;
+ //нумерація шкали від центра вгору
+ for i:= 1 to num div 2-1 do begin;
+  Str(-i+num div 2,m);
+  OutTextXY(xc+25,getmaxy div num*i-3,m)
+ end;
+ //нумерація шкали від центра вниз
+ for i:= num div 2+1 to num-1 do begin;
+  Str(-i+num div 2,m);
+  OutTextXY(xc-25,dy*i-3,m)
+ end;          
+
+var b,a,num,x0,y0,k,vga,vgahi,xc,yc,l,i,s,dy,xend,yend,xbeg,ybeg,xp,yp,f,g,max1,dx,c,cx,cy:smallint;
+    r,hl,hr,t,mx,my,xmin,xmax,ymin,ymax,x,y:real;
+    m,sa,sb,scx,scy: string; q,q2:boolean;
+  cord:array[1..1000,1..2] of real;                                                                  

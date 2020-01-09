@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\2.6.4\bin\i386-win32\fpc.exe" Date="1184004117"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq -FiF:\Projects\asmblr\complier\DataInit\lib\i386-win32 -FuF:\Projects\asmblr\complier\DataInit\ -FUF:\Projects\asmblr\complier\DataInit\lib\i386-win32\ project1.pas"/>
+</CONFIG>

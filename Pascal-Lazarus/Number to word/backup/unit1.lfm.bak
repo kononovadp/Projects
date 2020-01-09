@@ -1,0 +1,33 @@
+object Form1: TForm1
+  Left = 258
+  Height = 218
+  Top = 147
+  Width = 414
+  Caption = 'Form1'
+  ClientHeight = 218
+  ClientWidth = 414
+  LCLVersion = '1.4.2.0'
+  object result: TMemo
+    Left = 8
+    Height = 168
+    Top = 40
+    Width = 400
+    TabOrder = 0
+  end
+  object number: TMemo
+    Left = 8
+    Height = 23
+    Top = 8
+    Width = 308
+    TabOrder = 1
+  end
+  object convert: TButton
+    Left = 328
+    Height = 23
+    Top = 8
+    Width = 80
+    Caption = 'Convert'
+    OnClick = convertClick
+    TabOrder = 2
+  end
+end

@@ -1,0 +1,82 @@
+https://ru.stackoverflow.com/questions/706061/%D0%9D%D0%B0%D0%B8%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B5%D0%B5-%D1%87%D0%B8%D1%81%D0%BB%D0%BE-%D0%BF%D0%B0%D0%BB%D0%B8%D0%BD%D0%B4%D1%80%D0%BE%D0%BC-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%BE%D0%B5-%D1%8F%D0%B2%D0%BB%D1%8F%D0%B5%D1%82%D1%81%D1%8F-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC-%D0%B4%D0%B2%D1%83%D1%85-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%8B%D1%85-%D0%BF%D1%8F%D1%82%D0%B8%D0%B7%D0%BD%D0%B0%D1%87
+Вот правильный ответ на задачу, также встречал на собесе:
+палиндром - 999949999
+множитель1 - 33211
+множитель2 - 30109
+Реализовал алгоритм так:
+Метод поиска наибольшего палиндрома (на входе список простых чисел)
+
+static void palindrome(ArrayList<Integer> primeNumbers) 
+{
+    long palindrome = 0;
+    long multiplier1 = 0;
+    long multiplier2 = 0;
+    for (int j = 0; j < primeNumbers.size(); j++) 
+	{
+        for (int k = 0; k < primeNumbers.size(); k++) 
+		{
+            long i = (long) primeNumbers.get(j) * (long) primeNumbers.get(k);
+            if (palindromeCheck(i)) 
+			{
+                if (i > palindrome) 
+				{
+                    palindrome = i;
+                    multiplier1 = primeNumbers.get(j);
+                    multiplier2 = primeNumbers.get(k);
+                }
+            }
+        }
+    }
+    System.out.println("palindrome = " + palindrome
+            + "\nmultiplier1 = " + multiplier1
+            + "\nmultiplier2 = " + multiplier2);
+}  
+
+Метод поиска простых чисел (на входе максимальное и минимальное значения из проверяемого диапазона чисел):
+
+static ArrayList eratosthenesPrimeNumbers(int max, int min) {
+    ArrayList<Integer> primeNumbers = new ArrayList<>();
+    boolean[] array = new boolean[max];
+
+    for (int i = 2; Math.pow(i, 2) <= max; i++) {
+        if (!array[i]) {
+            for (int j = (int) Math.pow(i, 2); j < max; j += i) {
+                array[j] = true;
+            }
+        }
+    }
+    for (int i = max - 1; i >= min; i--) {
+        if (!array[i]) {
+            primeNumbers.add(i);
+        }
+    }
+    return primeNumbers;
+}  
+
+Проверка на то, что найденное число является палиндромом (на входе проверяемое число):
+
+static boolean palindromeCheck(long i) {
+    char[] palindrome = String.valueOf(i).toCharArray();
+    int fromBegin = 0;
+    int fromEnd = palindrome.length - 1;
+    while (fromBegin < fromEnd) {
+        if (palindrome[fromBegin] == palindrome[fromEnd]) {
+            fromBegin++;
+            fromEnd--;
+        } else return false;
+    }
+    return true;
+}
+
+Да и еще забыл написать, что эти методы надо вызывать :)
+У меня это сделано так:
+
+public class Main {
+static final int MAX_MULTIPLIER = 99999;
+static final int MIN_MULTIPLIER = 10000;
+
+public static void main(String[] args) {
+
+    ArrayList<Integer> primeNumbers2 = new ArrayList<>(eratosthenesPrimeNumbers(MAX_MULTIPLIER, MIN_MULTIPLIER));
+    palindrome(primeNumbers2);
+}

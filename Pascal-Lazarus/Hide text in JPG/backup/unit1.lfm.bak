@@ -1,0 +1,68 @@
+object Form1: TForm1
+  Left = 216
+  Height = 206
+  Top = 164
+  Width = 287
+  Caption = 'Form1'
+  ClientHeight = 206
+  ClientWidth = 287
+  LCLVersion = '1.6.2.0'
+  object Button1: TButton
+    Left = 8
+    Height = 46
+    Top = 154
+    Width = 128
+    Caption = 'Write text to file'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 150
+    Height = 48
+    Top = 152
+    Width = 128
+    Caption = 'Read text from file'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Sfile: TEdit
+    Left = 88
+    Height = 28
+    Top = 8
+    Width = 190
+    AutoSize = False
+    TabOrder = 2
+    Text = '1.jpg'
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 20
+    Top = 16
+    Width = 70
+    Caption = 'Source file'
+    ParentColor = False
+  end
+  object Tfile: TEdit
+    Left = 88
+    Height = 28
+    Top = 44
+    Width = 190
+    TabOrder = 3
+    Text = 'res.jpg'
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 20
+    Top = 52
+    Width = 68
+    Caption = 'Target file'
+    ParentColor = False
+  end
+  object mytext: TMemo
+    Left = 8
+    Height = 68
+    Top = 80
+    Width = 270
+    TabOrder = 4
+  end
+end

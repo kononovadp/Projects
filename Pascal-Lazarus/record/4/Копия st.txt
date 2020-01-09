@@ -1,0 +1,5 @@
+Ivanov Ivan Ivanovich terezy 3 4 5 4
+Ivanova Ludmila Ivanovna oven 5 4 5 4
+Kononov Ivan Ivanovich strilez 3 4 5 4
+Kokareva Ludmila Ivanovna lev 5 4 5 4
+Vasil Pavel Petrovich terezy 5 4 5 4

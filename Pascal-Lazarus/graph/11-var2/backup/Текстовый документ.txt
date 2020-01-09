@@ -1,0 +1,28 @@
+uses crt,graph;
+var a,l,gd,gm,xc,yc,x,y,k,i,n:smallint;
+    r,hl,hr,t:real;
+begin
+clrscr;
+repeat
+write('a [20..250] a=');readln(a);
+until a in [20..250];
+repeat
+write('L< ',a,' L=');readln(l);
+until l<a;
+gd:=0;
+initgraph(gd,gm,'');
+xc:=getmaxx div 3;
+yc:=getmaxY div 2;
+t:=0;
+while t<=2*pi do
+ begin
+  r:=a*cos(t)+l;
+  x:=round(xc+r*cos(t));
+  y:=round(yc-r*sin(t));
+  putpixel(x,y,14);
+  t:=t+0.001;
+ end;
+setfillstyle(8,14);
+floodfill(xc+2,yc,14);
+readln
+end.      

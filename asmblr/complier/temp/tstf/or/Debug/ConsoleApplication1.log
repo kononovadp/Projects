@@ -1,0 +1,11 @@
+﻿Сборка начата 27.05.2015 12:09:06.
+     1>Проект "D:\Projects\asmblr\complier\tstf\or\ConsoleApplication1.vcxproj" в узле 2 (целевые объекты _MASM).
+     1>_MASM:
+         Assembling 1.asm...
+         cmd.exe /C "C:\Users\Maximka\AppData\Local\Temp\tmp918e073ae507423792428ab055eb058d.cmd"
+         ml.exe /c /nologo /Sa /Sf /Sg /Sx /Zf /Zi /Fo"Debug\1.obj" /Fl"123" /W3 /errorReport:prompt  /Ta1.asm
+     1>Сборка проекта "D:\Projects\asmblr\complier\tstf\or\ConsoleApplication1.vcxproj" завершена (целевые объекты _MASM).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:09.24

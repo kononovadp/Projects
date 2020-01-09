@@ -1,0 +1,162 @@
+Microsoft (R) Macro Assembler Version 5.00                  11/26/15 22:17:58
+                                                             Page     1-1
+
+
+       1				.model compact 
+       2				.386 
+       3 0000				.data 
+       4 0400				.stack 
+       5 0000  FF			db 255 
+       6 0000				data1 segment 
+       7 0000  46 69 72 73 74 20 73	mes1 db 'First string: Hello, World',13
+					,10,'$' 
+       8       74 72 69 6E 67 3A 20	
+       9       48 65 6C 6C 6F 2C 20	
+      10       57 6F 72 6C 64 0D 0A	
+      11       24			
+      12 001D  53 65 63 6F 6E 64 20	mes2 db 'Second string: Hello, Assemble
+					r',13,10,'$' 
+      13       73 74 72 69 6E 67 3A	
+      14       20 48 65 6C 6C 6F 2C	
+      15       20 41 73 73 65 6D 62	
+      16       6C 65 72 0D 0A 24	
+      17 003F				data1 ends 
+      18 0000				.code 
+      19 0000				code1: 
+      20 0000  B8 ---- R		mov ax,data1 
+      21 0003  8E D8			mov ds,ax 
+      22 0005  B8 000C			mov ax,12 
+      23 0008  CD 10			int 10h 
+      24				;--------вывод на экран символа NUL раз
+					ными цветами-------- 
+      25 000A  B6 00			mov dh,0 ;номер строки 
+      26 000C  B2 FF			mov dl,-1 ;номер столбца 
+      27 000E  B7 00			mov bh,0 ;номер страницы 
+      28 0010  B0 00			mov al,0h ;выводимый символ 
+      29 0012  B9 0001			mov cx,1 ;количество выводимых символов
+					 
+      30 0015  B3 13			mov bl,19 ;атрибуты (цвет и фон) 
+      31 0017  BE 0000			mov si,0 ;счетчик 
+      32 001A  B4 00			mov ah,0 
+      33 001C  B0 03			mov al,3 
+      34 001E  CD 10			int 10h 
+      35 0020  B0 00			mov al,0h 
+      36 0022				m2: 
+      37 0022  B4 02			mov ah,2 ;графический режим 
+      38 0024  FE C2			inc dl ;подвинуть курсор 
+      39 0026  CD 10			int 10h ;вывод на экран 
+      40 0028  B4 09			mov ah,9 ;установить другой режим 
+      41 002A  80 C3 96			add bl,150 ;изменить атрибут символа 
+      42 002D  CD 10			int 10h ;вывести символ на экран 
+      43 002F  46			inc si ;увеличить счетчик 
+      44 0030  83 FE 10			cmp si,16 ;сравнить счетчик с 16 
+      45 0033  75 ED			jne m2 ;если он меньше 16, то повторить
+					 цикл снова 
+      46				 
+      47				;--------вывод текста на экран-------- 
+      48				;первая строка 
+      49 0035  B6 01			mov dh,1 ;номер строки 
+Microsoft (R) Macro Assembler Version 5.00                  11/26/15 22:17:58
+                                                             Page     1-2
+
+
+      50 0037  B2 00			mov dl,0 ;номер столбца 
+      51 0039  B4 02			mov ah,2 
+      52 003B  CD 10			int 10h ;подвинуть курсор на следующую 
+					строку 
+      53 003D  B4 09			mov ah,9 
+      54 003F  BA 0000 R		mov dx,offset mes1 
+      55 0042  CD 21			int 21h 
+      56				;вторая строка 
+      57 0044  B6 02			mov dh,2 ;номер строки 
+      58 0046  B2 00			mov dl,0 ;номер столбца 
+      59 0048  B4 02			mov ah,2 
+      60 004A  CD 10			int 10h ;подвинуть курсор на следующую 
+					строку 
+      61 004C  B4 09			mov ah,9 
+      62 004E  BA 001D R		mov dx,offset mes2 
+      63 0051  CD 21			int 21h 
+      64				;--------работа с мышью-------- 
+      65 0053  33 C0			xor ax,ax 
+      66 0055  CD 33			int 33h 
+      67 0057  B8 0001			mov ax,1 
+      68 005A  CD 33			int 33h 
+      69 005C  B8 000C			mov ax,0Ch 
+      70 005F  B9 0009			mov cx,1001b 
+      71 0062  06			push es 
+      72 0063  0E			push cs 
+      73 0064  07			pop es 
+      74 0065  8D 16 0070 R		lea dx,prm 
+      75 0069  CD 33			int 33h 
+      76 006B  07			pop es 
+      77				;--------ожидание ввода-------- 
+      78 006C  B4 01			mov ah,1 
+      79 006E  CD 21			int 21h 
+      80				;--------действие мыши-------- 
+      81 0070				prm proc far 
+      82 0070  1E			push ds 
+      83 0071  06			push es 
+      84 0072  60			pusha 
+      85 0073  B8 B800			mov ax, 0B800h 
+      86 0076  8E C0			mov es,ax 
+      87 0078  07			pop es 
+      88 0079  B8 ---- R		mov ax, data1 
+      89 007C  8E D8			mov ds,ax 
+      90 007E  1F			pop ds 
+      91				;действия мыши 
+      92 007F  B4 02			mov ah,2 ;выбрать 2-ю функцию 
+      93 0081  8A D1			mov dl,cx;inc dl ;передвинуть курсор 
+2.ASM(85): warning A4031: Operand types must match
+      94 0083  8A F2			mov dh,dx 
+2.ASM(86): warning A4031: Operand types must match
+      95 0085  CD 10			int 10h ;вывести курсор 
+      96 0087  61			popa 
+      97 0088  07			pop es 
+      98 0089  1F			pop ds 
+      99 008A  CB			retf 
+Microsoft (R) Macro Assembler Version 5.00                  11/26/15 22:17:58
+                                                             Page     1-3
+
+
+     100 008B				prm endp 
+     101 008B				end code1 
+Microsoft (R) Macro Assembler Version 5.00                  11/26/15 22:17:58
+                                                             Symbols-1
+
+
+
+
+                N a m e         	Size	Length	 Align	Combine Class
+
+DATA1  . . . . . . . . . . . . .  	32 Bit	003F	PARA	NONE	
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	16 Bit	0001	WORD	PUBLIC	'DATA'
+  STACK  . . . . . . . . . . . .  	16 Bit	0400	PARA	STACK	'STACK'
+_TEXT  . . . . . . . . . . . . .  	16 Bit	008B	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+CODE1  . . . . . . . . . . . . .  	L NEAR	0000	_TEXT
+
+M2 . . . . . . . . . . . . . . .  	L NEAR	0022	_TEXT
+MES1 . . . . . . . . . . . . . .  	L BYTE	0000	DATA1
+MES2 . . . . . . . . . . . . . .  	L BYTE	001D	DATA1
+
+PRM  . . . . . . . . . . . . . .  	F PROC	0070	_TEXT	Length = 001B
+
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  1		
+@FILENAME  . . . . . . . . . . .  	TEXT  2		
+
+
+     93 Source  Lines
+     93 Total   Lines
+     20 Symbols
+
+  49766 + 445498 Bytes symbol space free
+
+      2 Warning Errors
+      0 Severe  Errors

@@ -1,0 +1,4 @@
+Iteration: 1 x= -1.8646
+Iteration: 2 x= -1.8505
+Iteration: 3 x= -1.8503
+Iteration: 4 x= -1.8503

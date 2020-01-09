@@ -1,0 +1,2 @@
+data . . . . . 16 bit 001A
+code . . . . . 16 bit 00E5

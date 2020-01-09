@@ -1,0 +1,101 @@
+Microsoft (R) Macro Assembler Version 12.00.31101.0	    05/19/15 15:04:09
+							     First Pass 1 - 1
+
+
+ 0000				data segment
+ 0000				Data1 segment
+				const db 1101b
+				const1 db 125
+				const2 db 85h
+				const3 db 'Hello'
+				const4 dw 1010b
+				const5 dw 2015d
+				const6 dw 98h
+				const7 dd 1011b
+				const8 dd 1010
+				const9 dd 1000h
+ 0000				Data1 ends
+ 0000				data ends
+ 0000				code segment
+ 0000				code1 segment
+				assume ds:data1,cs:code1
+				m1: cli
+				or const4,1010
+				or const5,1010
+				or const6,1010
+				or const7,1010
+				or const8,1010
+				or const9,1010
+				jb m1
+ 0000				code1 ends
+ 0000				code ends
+				end
+Microsoft (R) Macro Assembler Version 12.00.31101.0	    05/19/15 15:04:09
+1.asm							     Page 1 - 1
+
+
+ 0000				data segment
+ 0000				Data1 segment
+ 0000 0D			const db 1101b
+ 0001 7D			const1 db 125
+ 0002 85			const2 db 85h
+ 0003 48 65 6C 6C 6F		const3 db 'Hello'
+ 0008 000A			const4 dw 1010b
+ 000A 07DF			const5 dw 2015d
+ 000C 0098			const6 dw 98h
+ 000E 0000000B			const7 dd 1011b
+ 0012 000003F2			const8 dd 1010
+ 0016 00001000			const9 dd 1000h
+ 0000				Data1 ends
+ 0000				data ends
+ 0000				code segment
+ 0000				code1 segment
+				assume ds:data1,cs:code1
+ 0000  FA			m1: cli
+ 0001  81 0E 0008 R 03F2  1	or const4,1010  +1
+ 0007  81 0E 000A R 03F2  6	or const5,1010  +5
+ 000D  81 0E 000C R 03F2  13	or const6,1010  +7
+ 0013  66| 81 0E 000E R	  19	or const7,1010  +6
+       000003F2
+ 001C  66| 81 0E 0012 R	  28	or const8,1010  +9
+       000003F2
+ 0025  66| 81 0E 0016 R	  37	or const9,1010  +9
+       000003F2
+ 002E  72 D0	46		jb m1  +9
+ 0000				code1 ends
+ 0000				code ends
+				end
+Microsoft (R) Macro Assembler Version 12.00.31101.0	    05/19/15 15:04:09
+1.asm							     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+Data1  . . . . . . . . . . . . .	16 Bit	 001A	  	  Private 
+code1  . . . . . . . . . . . . .	16 Bit	 0030	  	  Private 
+code . . . . . . . . . . . . . .	16 Bit	 0000	  	  Private 
+data . . . . . . . . . . . . . .	16 Bit	 0000	  	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+const1 . . . . . . . . . . . . .	Byte	 0001	  Data1	
+const2 . . . . . . . . . . . . .	Byte	 0002	  Data1	
+const3 . . . . . . . . . . . . .	Byte	 0003	  Data1	
+const4 . . . . . . . . . . . . .	Word	 0008	  Data1	
+const5 . . . . . . . . . . . . .	Word	 000A	  Data1	
+const6 . . . . . . . . . . . . .	Word	 000C	  Data1	
+const7 . . . . . . . . . . . . .	DWord	 000E	  Data1	
+const8 . . . . . . . . . . . . .	DWord	 0012	  Data1	
+const9 . . . . . . . . . . . . .	DWord	 0016	  Data1	
+const  . . . . . . . . . . . . .	Byte	 0000	  Data1	
+m1 . . . . . . . . . . . . . . .	L Near	 0000	  code1	
+
+	   0 Warnings
+	   0 Errors

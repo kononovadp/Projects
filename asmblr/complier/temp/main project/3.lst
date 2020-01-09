@@ -1,0 +1,20 @@
+Assembler complier variant 11                    06.05.2015 19:20:44
+ 1  0001  data segment
+ 2  0002  qwer db 1010b
+ 3  0003  asdf db 1010b
+ 4  0004  zxcv db 2020b
+ 5  0005  rtyu db 1010b
+ 6  0006  qwer1 dw 1010h
+ 7  0007  asdf1 dw 1010h
+ 8  0008  zxcv1 dw 2020h
+ 9  0009  rtyu1 dw 1010
+10  000A  qwer2 dd 1010
+11  000B  asdf2 dd 1010h
+12  000C  zxcv2 dd 2020
+13  000D  rtyu2 dd 1010b
+14  000E  qwer5 db 1010b
+15  000F  asdf5 db 1010b
+16  0010  zxcv7 dw 2020h
+17  0011  zxcv9 dw 2020
+18  0012  data ends
+19  0013  code segment

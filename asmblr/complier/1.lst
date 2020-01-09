@@ -1,0 +1,88 @@
+Assembler complier variant 11                    23.07.2017 21:33:27
+0000   data segment
+0000 0D  CONST db 1101b
+0001 7D  CONST1 db 125
+0002 85  CONST2 db 85h
+0003 48 65 6C 6C 6F  CONST3 db 'Hello'
+0008 000A  CONST4 dw 1010b
+000A 07DF  CONST5 dw 2015d
+000C 0098  CONST6 dw 98h
+000E 000B  CONST7 dd 1011b
+0012 03F2  CONST8 dd 1010
+0016 00001000  CONST9 dd 1000h
+001A   data ends
+0000   code segment
+assume ds:data,cs:code
+0000 FA m1: m1: cli
+0001 FE C7  inc bh
+0003 41  inc cx
+0004 66| 46  inc esi
+0006 FE 0E 0002 R  dec CONST2
+000A 66| FF 0E 0016 R  dec CONST9
+000F FE 8C 0000 R  dec CONST[si]
+0013 FE 8C 0010 R  dec CONST1[si+15]
+0017 FE 8D 007F R  dec CONST2[di+125]
+001B FE 8D 00BD R  dec CONST3[di+186]
+001F FF 8F 001C R  dec CONST4[bx+20]
+0023 FF 8F 3CCF R  dec CONST5[bx+15557]
+0027 67& FF 8E 0000FFB2 R  dec CONST6[esi+65446]
+002E 67& 66| FF 8F 00000060 R  dec CONST7[edi+82]
+0036 67& 66| FF 8B 00000029 R  dec CONST8[ebx+23]
+003E 67& 66| FF 8E 00000094 R  dec CONST9[esi+126]
+0046 12 F9  adc bh,cl
+0048 13 DA  adc bx,dx
+004A 66| 13 CB  adc ecx,ebx
+004D 3A 3E 0000 R  cmp bh,CONST
+0051 3A 9F 0001 R  cmp bl,CONST1[bx]
+0055 3A 8F 0057 R  cmp cl,CONST2[bx+85]
+0059 3A B1 F6F5 R  cmp dh,CONST3[bx+di+63218]
+005D 67& 3B 96 00000008 R  cmp dx,CONST4[esi]
+0064 67& 3B 9F 00000026 R  cmp bx,CONST5[edi+28]
+006B 3E: 3B 8E 006D R  cmp cx,CONST6[bp+97]
+0070 67& 66| 3E: 3B B5 0000008B R  cmp esi,CONST7[ebp+125]
+0079 67& 66| 3B 97 000000E9 R  cmp edx,CONST8[edi+215]
+0081 67& 66| 3E: 3B 8D 0000CC72 R  cmp ecx,CONST9[ebp+52316]
+008A 72 2B  jb m2
+008C 32 3E 0000 R  xor bh,CONST
+0090 32 1E 0001 R  xor bl,CONST1
+0094 32 0E 0002 R  xor cl,CONST2
+0098 32 36 0003 R  xor dh,CONST3
+009C 33 16 0008 R  xor dx,CONST4
+00A0 33 1E 000A R  xor bx,CONST5
+00A4 33 0E 000C R  xor cx,CONST6
+00A8 66| 33 36 000E R  xor esi,CONST7
+00AD 66| 33 16 0012 R  xor edx,CONST8
+00B2 66| 33 0E 0016 R  xor ecx,CONST9
+00B7 C0 E1 0A m2: m2: sal cl,1010b
+00BA C1 E1 E8  sal cx,232
+00BD 66| C1 E3 79  sal ebx,79h
+00C1 80 0E 0001 R FF  or CONST1,11111111b ;8-8
+00C6 81 0E 000A R FF7F  or CONST5,65407 ;16-16
+00CC 66| 81 0E 0012 R 00009fff  or CONST8,9fffh ;32-32
+00D5 83 0E 000A R 7F  or CONST5,127 ;16-8
+00DA 66| 83 0E 0012 R 7f  or CONST8,7fh ;32-8
+00E0 0F 82 FF1C  jb m1
+00E4 FA  cli
+00E5   code ends
+0000   end
+
+     LIST OF SEGMENTS
+data . . . . . 16 bit 001A
+code . . . . . 16 bit 00E5
+
+   LIST OF IDENTIFIERS AND LABELS
+Name            Type  Offset  Attr
+CONST . . . . . byte   0000   data
+CONST1 . . . . . byte   0001   data
+CONST2 . . . . . byte   0002   data
+CONST3 . . . . . byte   0003   data
+CONST4 . . . . . word   0008   data
+CONST5 . . . . . word   000A   data
+CONST6 . . . . . word   000C   data
+CONST7 . . . . . dword   000E   data
+CONST8 . . . . . dword   0012   data
+CONST9 . . . . . dword   0016   data
+m1 . . . . . . . Near    0000   code
+m2 . . . . . . . Near    00B7   code
+
+Warning errors: 0  Severe errors: 0

@@ -1,0 +1,26 @@
+    {AddHead(phead);
+    AddMiddle(pmiddle);
+    AddEnd;(pend); }
+    //writeln('----------Output of entered list----------');
+    AddHead(phead);
+    AddMiddle(pmiddle);
+    AddEnd(pend);
+    ListOutput;
+    {q:=phead;
+    while q<>nil do begin
+      writeln(q^.Info_head);
+      q:=q^.next;
+    end;
+    q:=pmiddle;
+    while q<>nil do begin
+      k:=k+1;
+      writeln('st ',k,':    ',q^.Info_middle);
+      q:=q^.next;
+    end;
+    q:=pend;
+    while q<>nil do begin
+      writeln(q^.Info_end);
+      q:=q^.next;
+    end;}
+    readln;
+    end.

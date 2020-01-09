@@ -1,0 +1,74 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 000AFH 000B0H PROGRAM            CODE
+ 000B0H 00950H 008A1H System             CODE
+ 00960H 00C17H 002B8H DATA               DATA
+ 00C20H 04C1FH 04000H STACK              STACK
+ 04C20H 04C20H 00000H HEAP               HEAP
+
+  Address         Publics by Value
+
+ 0000:0000       @
+ 0096:0002       OvrCodeList
+ 0096:0004       OvrHeapSize
+ 0096:0006       OvrDebugPtr
+ 0096:000A       OvrHeapOrg
+ 0096:000C       OvrHeapPtr
+ 0096:000E       OvrHeapEnd
+ 0096:0010       OvrLoadList
+ 0096:0012       OvrDosHandle
+ 0096:0014       OvrEmsHandle
+ 0096:0016       HeapOrg
+ 0096:001A       HeapPtr
+ 0096:001E       HeapEnd
+ 0096:0022       FreeList
+ 0096:0026       FreeZero
+ 0096:002A       HeapError
+ 0096:002E       ExitProc
+ 0096:0032       ExitCode
+ 0096:0034       ErrorAddr
+ 0096:0038       PrefixSeg
+ 0096:003A       StackLimit
+ 0096:003C       InOutRes
+ 0096:003E       RandSeed
+ 0096:0042       SelectorInc
+ 0096:0044       Seg0040
+ 0096:0046       SegA000
+ 0096:0048       SegB000
+ 0096:004A       SegB800
+ 0096:004C       Test8086
+ 0096:004D       Test8087
+ 0096:004E       FileMode
+ 0096:0052       k
+ 0096:0054       j
+ 0096:0056       A
+ 0096:006C       Input
+ 0096:016C       Output
+ 0096:026C       SaveInt00
+ 0096:0270       SaveInt02
+ 0096:0274       SaveInt1B
+ 0096:0278       SaveInt21
+ 0096:027C       SaveInt23
+ 0096:0280       SaveInt24
+ 0096:0284       SaveInt34
+ 0096:0288       SaveInt35
+ 0096:028C       SaveInt36
+ 0096:0290       SaveInt37
+ 0096:0294       SaveInt38
+ 0096:0298       SaveInt39
+ 0096:029C       SaveInt3A
+ 0096:02A0       SaveInt3B
+ 0096:02A4       SaveInt3C
+ 0096:02A8       SaveInt3D
+ 0096:02AC       SaveInt3E
+ 0096:02B0       SaveInt3F
+ 0096:02B4       SaveInt75
+
+Line numbers for PROGRAM(\1.PAS) segment PROGRAM
+
+     4 0000:0000     5 0000:000F     6 0000:001A     8 0000:0021
+     9 0000:0028    10 0000:0034    11 0000:0045    12 0000:004E
+    13 0000:0050    14 0000:005B    15 0000:0099    16 0000:00A8
+
+Program entry point at 0000:0000

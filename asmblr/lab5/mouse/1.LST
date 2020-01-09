@@ -1,0 +1,213 @@
+Microsoft (R) Macro Assembler Version 5.00                  12/18/15 19:43:43
+                                                             Page     1-1
+
+
+       1 0000				Dat Segment			 
+       2 0000  48 65 6C 6C 6F 20 57	Greet DB 'Hello Word', 13,10,'$'  
+       3       6F 72 64 0D 0A 24	
+       4 000D  29 2A 2B 2C 2D		DB 41, 42, 43, 44, 45	 
+       5 0012  0000			x dw 0   
+       6 0014  0000			y dw 0 
+       7 0016  0000			z dw 0 
+       8 0018  09			masc db 9	 
+       9 0019  46 69 72 73 74 20 73	mes1 db 'First string: Hello, World',13
+					,10,'$' 
+      10       74 72 69 6E 67 3A 20	
+      11       48 65 6C 6C 6F 2C 20	
+      12       57 6F 72 6C 64 0D 0A	
+      13       24			
+      14 0036  53 65 63 6F 6E 64 20	mes2 db 'Second string: Hello, Assemble
+					r',13,10,'$' 
+      15       73 74 72 69 6E 67 3A	
+      16       20 48 65 6C 6C 6F 2C	
+      17       20 41 73 73 65 6D 62	
+      18       6C 65 72 0D 0A 24	
+      19 0058  00			col db 0h 
+      20 0059  00			sym db 0h 
+      21 005A  00			sym2 db 0h	 
+      22 005B				Dat Ends			 
+      23 0000				Code Segment			 
+      24				Assume cs:Code, ds:Dat 
+      25 0000				mouse proc far 
+      26 0000  1E			push ds 
+      27 0001  0E			push cs 
+      28 0002  1F			pop ds 
+      29 0003  B8 B800			mov ax,0b800h 
+      30 0006  8E C0			mov es,ax 
+      31 0008  B8 ---- R		mov ax,seg greet 
+      32 000B  8E D8			mov ds,ax 
+      33 000D  B8 0003			mov ax,0003h 
+      34 0010  CD 33			int 33h 
+      35 0012  89 0E 0012 R		mov x,cx 
+      36 0016  89 16 0014 R		mov y,dx 
+      37 001A  89 1E 0016 R		mov z,bx 
+      38 001E  A1 0012 R		mov ax,x 
+      39 0021  B3 08			mov bl,8 
+      40 0023  F6 F3			div bl 
+      41 0025  A2 0012 R		mov x,al 
+1.ASM(32): warning A4031: Operand types must match
+      42 0028  89 16 0014 R		mov y,dx 
+      43 002C  A1 0014 R		mov ax,y 
+      44 002F  B3 08			mov bl,8 
+      45 0031  F6 F3			div bl 
+      46 0033  A2 0014 R		mov y,al 
+1.ASM(37): warning A4031: Operand types must match
+      47 0036  B4 02			mov ah,2 
+      48 0038  8A 16 0012 R		mov dl,x 
+1.ASM(39): warning A4031: Operand types must match
+      49 003C  8A 36 0014 R		mov dh,y 
+1.ASM(40): warning A4031: Operand types must match
+Microsoft (R) Macro Assembler Version 5.00                  12/18/15 19:43:43
+                                                             Page     1-2
+
+
+      50 0040  CD 10			int 10h 
+      51 0042  83 3E 0016 R 08		cmp z,1000b 
+      52 0047  74 07			je lkm 
+      53 0049  83 3E 0016 R 02		cmp z,10b 
+      54 004E  74 0C			je rkm 
+      55				;левая кнопка мыши 
+      56 0050				lkm: 
+      57 0050  B4 08			mov ah,8 
+      58 0052  B7 00			mov bh,0 
+      59 0054  CD 10			int 10h 
+      60 0056  88 26 0058 R		mov col,ah 
+      61 005A  1F			pop ds 
+      62 005B  CB			ret 
+      63				;правая кнопка мыши 
+      64 005C				rkm: 
+      65 005C  B4 08			mov ah,8 
+      66 005E  B7 00			mov bh,0 
+      67 0060  CD 10			int 10h 
+      68 0062  A2 005A R		mov sym2,al 
+      69 0065  B4 09			mov ah,9 
+      70 0067  A0 005A R		mov al,sym2 
+      71 006A  8A 1E 0058 R		mov bl,col 
+      72 006E  B1 04			mov cl,4 
+      73 0070  D2 EB			shr bl,cl 
+      74 0072  B7 00			mov bh,0 
+      75 0074  B9 0001			mov cx,1 
+      76 0077  CD 10			int 10h 
+      77 0079  1F			pop ds 
+      78 007A  CB			ret 
+      79 007B				mouse endp 
+      80				 
+      81 007B				Start:  
+      82				Assume cs:Code, ds:Dat 
+      83 007B  B8 ---- R		mov ax, Dat	         
+      84 007E  8E D8			mov ds, ax 
+      85				;--------вывод на экран символа NUL раз
+					ными цветами-------- 
+      86 0080  B6 00			mov dh,0 ;строка 
+      87 0082  B2 FF			mov dl,-1 ;столбец 
+      88 0084  B7 00			mov bh,0 ;страница 
+      89 0086  B0 00			mov al,0h 
+      90 0088  B9 0001			mov cx,1 
+      91 008B  B3 00			mov bl,0b 
+      92 008D  BE 0000			mov si,0 
+      93 0090  B4 00			mov ah,0 
+      94 0092  B0 03			mov al,3 
+      95 0094  CD 10			int 10h 
+      96 0096  B0 00			mov al,0h 
+      97 0098				m2: 
+      98 0098  B4 02			mov ah,2 
+      99 009A  FE C2			inc dl 
+     100 009C  CD 10			int 10h 
+     101 009E  B4 09			mov ah,9 
+Microsoft (R) Macro Assembler Version 5.00                  12/18/15 19:43:43
+                                                             Page     1-3
+
+
+     102 00A0  80 C3 10			add bl,10000b 
+     103 00A3  CD 10			int 10h 
+     104 00A5  46			inc si 
+     105 00A6  83 FE 10			cmp si,16 
+     106 00A9  75 ED			jne m2 
+     107				;--------вывод текста на экран-------- 
+     108				;первая строка 
+     109 00AB  B6 01			mov dh,1 
+     110 00AD  B2 00			mov dl,0 
+     111 00AF  B4 02			mov ah,2 
+     112 00B1  CD 10			int 10h 
+     113 00B3  B4 09			mov ah,9 
+     114 00B5  BA 0019 R		mov dx,offset mes1 
+     115 00B8  CD 21			int 21h 
+     116				;вторая строка 
+     117 00BA  B6 02			mov dh,2 
+     118 00BC  B2 00			mov dl,0 
+     119 00BE  B4 02			mov ah,2 
+     120 00C0  CD 10			int 10h 
+     121 00C2  B4 09			mov ah,9 
+     122 00C4  BA 0036 R		mov dx,offset mes2 
+     123 00C7  CD 21			int 21h 
+     124 00C9  B4 02			mov ah,2 
+     125 00CB  B6 00			mov dh,0 
+     126 00CD  B2 00			mov dl,0 
+     127 00CF  CD 10			int 10h 
+     128				;--------работа с мышью-------- 
+     129 00D1  B8 0000			mov ax,0000h 
+     130 00D4  CD 33			int 33h 
+     131 00D6  B8 0001			mov ax,0001h 
+     132 00D9  CD 33			int 33h 
+     133 00DB  B8 000C			mov	ax,000ch	 
+     134 00DE  B9 000A			mov	cx,1010b 
+     135 00E1  BA 0000 R		mov	dx,offset mouse 
+     136 00E4  0E			push cs 
+     137 00E5  07			pop es 
+     138 00E6  CD 33			int	33h 
+     139 00E8  B4 01			mov ah,1 
+     140 00EA  CD 21			int 21h 
+     141 00EC  B4 4C			mov ah, 4ch		  
+     142 00EE  CD 21			int 21h		 
+     143 00F0				Code Ends 
+     144				End Start 
+Microsoft (R) Macro Assembler Version 5.00                  12/18/15 19:43:43
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	00F0	PARA	NONE	
+DAT  . . . . . . . . . . . . . .  	005B	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+COL  . . . . . . . . . . . . . .  	L BYTE	0058	DAT
+
+GREET  . . . . . . . . . . . . .  	L BYTE	0000	DAT
+
+LKM  . . . . . . . . . . . . . .  	L NEAR	0050	CODE
+
+M2 . . . . . . . . . . . . . . .  	L NEAR	0098	CODE
+MASC . . . . . . . . . . . . . .  	L BYTE	0018	DAT
+MES1 . . . . . . . . . . . . . .  	L BYTE	0019	DAT
+MES2 . . . . . . . . . . . . . .  	L BYTE	0036	DAT
+MOUSE  . . . . . . . . . . . . .  	F PROC	0000	CODE	Length = 007B
+
+RKM  . . . . . . . . . . . . . .  	L NEAR	005C	CODE
+
+START  . . . . . . . . . . . . .  	L NEAR	007B	CODE
+SYM  . . . . . . . . . . . . . .  	L BYTE	0059	DAT
+SYM2 . . . . . . . . . . . . . .  	L BYTE	005A	DAT
+
+X  . . . . . . . . . . . . . . .  	L WORD	0012	DAT
+
+Y  . . . . . . . . . . . . . . .  	L WORD	0014	DAT
+
+Z  . . . . . . . . . . . . . . .  	L WORD	0016	DAT
+
+@FILENAME  . . . . . . . . . . .  	TEXT  1		
+
+
+    135 Source  Lines
+    135 Total   Lines
+     19 Symbols
+
+  49388 + 434916 Bytes symbol space free
+
+      4 Warning Errors
+      0 Severe  Errors

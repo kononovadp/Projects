@@ -1,0 +1,167 @@
+Microsoft (R) Macro Assembler Version 12.00.31101.0	    05/18/15 21:31:24
+							     First Pass 1 - 1
+
+
+ 0000				data segment
+ 0000				Data1 segment
+				const db 1101b
+				const1 db 125
+				const2 db 85h
+				const3 db 'Hello'
+				const4 dw 1010b
+				const5 dw 2015d
+				const6 dw 98h
+				const7 dd 1011b
+				const8 dd 1989
+				const9 dd 239h
+ 0000				Data1 ends
+ 0000				Dat2 segment
+				const10 db 'world!'
+				const11 db 14h
+				const12 db 57
+				const13 db 101110b
+				const14 dw 980h
+				const15 dw 205d
+				const16 dw 110011b
+				const17 dd 4568h
+				const18 dd 2010
+				const19 dd 11110001b
+ 0000				Dat2 ends
+ 0000				data ends
+ 0000				code segment
+ 0000				code1 segment
+				assume ds:data1,cs:code1
+				m1: cli
+				inc bh
+				inc cx
+				inc esi
+				dec const1
+				dec const6
+				jb m2
+				dec const7
+				adc bh,cl
+				adc bx,dx
+				adc ebx,ecx
+				cmp cl,[8]
+				cmp bx,15
+				cmp ecx,[33]
+				xor [const1],bl
+				xor [const6],dx
+				m2: xor [const7],ebx
+				sal bh, 128
+				sal dx, 10101010b
+				sal ebx, 89h
+				or const1,98h
+				or const5,1010b
+				jb m1
+				or const8,1025
+ 0000				code1 ends
+ 0000				code ends
+				end
+Microsoft (R) Macro Assembler Version 12.00.31101.0	    05/18/15 21:31:24
+1.asm							     Page 1 - 1
+
+
+ 0000				data segment
+ 0000				Data1 segment
+ 0000 0D			const db 1101b
+ 0001 7D			const1 db 125
+ 0002 85			const2 db 85h
+ 0003 48 65 6C 6C 6F		const3 db 'Hello'
+ 0008 000A			const4 dw 1010b
+ 000A 07DF			const5 dw 2015d
+ 000C 0098			const6 dw 98h
+ 000E 0000000B			const7 dd 1011b
+ 0012 000007C5			const8 dd 1989
+ 0016 00000239			const9 dd 239h
+ 0000				Data1 ends
+ 0000				Dat2 segment
+ 0000 77 6F 72 6C 64 21		const10 db 'world!'
+ 0006 14			const11 db 14h
+ 0007 39			const12 db 57
+ 0008 2E			const13 db 101110b
+ 0009 0980			const14 dw 980h
+ 000B 00CD			const15 dw 205d
+ 000D 0033			const16 dw 110011b
+ 000F 00004568			const17 dd 4568h
+ 0013 000007DA			const18 dd 2010
+ 0017 000000F1			const19 dd 11110001b
+ 0000				Dat2 ends
+ 0000				data ends
+ 0000				code segment
+ 0000				code1 segment
+				assume ds:data1,cs:code1
+ 0000  FA			m1: cli
+ 0001  FE C7			inc bh
+ 0003  41			inc cx
+ 0004  66| 46			inc esi
+ 0006  FE 0E 0001 R		dec const1
+ 000A  FF 0E 000C R		dec const6
+ 000E  72 1E			jb m2
+ 0010  66| FF 0E 000E R		dec const7
+ 0015  12 F9			adc bh,cl
+ 0017  13 DA			adc bx,dx
+ 0019  66| 13 D9		adc ebx,ecx
+ 001C  80 F9 08			cmp cl,[8]
+ 001F  83 FB 0F			cmp bx,15
+ 0022  66| 83 F9 21		cmp ecx,[33]
+ 0026  30 1E 0001 R		xor [const1],bl
+ 002A  31 16 000C R		xor [const6],dx
+ 002E  66| 31 1E 000E R		m2: xor [const7],ebx
+ 0033  C0 E7 80			sal bh, 128
+ 0036  C1 E2 AA			sal dx, 10101010b
+ 0039  66| C1 E3 89		sal ebx, 89h
+ 003D  80 0E 0001 R 98		or const1,98h
+ 0042  83 0E 000A R 0A		or const5,1010b
+ 0047  72 B7			jb m1
+ 0049  66| 81 0E 0012 R		or const8,1025
+       00000401
+ 0000				code1 ends
+ 0000				code ends
+				end
+Microsoft (R) Macro Assembler Version 12.00.31101.0	    05/18/15 21:31:24
+1.asm							     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+Dat2 . . . . . . . . . . . . . .	16 Bit	 001B	  	  Private 
+Data1  . . . . . . . . . . . . .	16 Bit	 001A	  	  Private 
+code1  . . . . . . . . . . . . .	16 Bit	 0052	  	  Private 
+code . . . . . . . . . . . . . .	16 Bit	 0000	  	  Private 
+data . . . . . . . . . . . . . .	16 Bit	 0000	  	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+const10  . . . . . . . . . . . .	Byte	 0000	  Dat2	
+const11  . . . . . . . . . . . .	Byte	 0006	  Dat2	
+const12  . . . . . . . . . . . .	Byte	 0007	  Dat2	
+const13  . . . . . . . . . . . .	Byte	 0008	  Dat2	
+const14  . . . . . . . . . . . .	Word	 0009	  Dat2	
+const15  . . . . . . . . . . . .	Word	 000B	  Dat2	
+const16  . . . . . . . . . . . .	Word	 000D	  Dat2	
+const17  . . . . . . . . . . . .	DWord	 000F	  Dat2	
+const18  . . . . . . . . . . . .	DWord	 0013	  Dat2	
+const19  . . . . . . . . . . . .	DWord	 0017	  Dat2	
+const1 . . . . . . . . . . . . .	Byte	 0001	  Data1	
+const2 . . . . . . . . . . . . .	Byte	 0002	  Data1	
+const3 . . . . . . . . . . . . .	Byte	 0003	  Data1	
+const4 . . . . . . . . . . . . .	Word	 0008	  Data1	
+const5 . . . . . . . . . . . . .	Word	 000A	  Data1	
+const6 . . . . . . . . . . . . .	Word	 000C	  Data1	
+const7 . . . . . . . . . . . . .	DWord	 000E	  Data1	
+const8 . . . . . . . . . . . . .	DWord	 0012	  Data1	
+const9 . . . . . . . . . . . . .	DWord	 0016	  Data1	
+const  . . . . . . . . . . . . .	Byte	 0000	  Data1	
+m1 . . . . . . . . . . . . . . .	L Near	 0000	  code1	
+m2 . . . . . . . . . . . . . . .	L Near	 002E	  code1	
+
+	   0 Warnings
+	   0 Errors

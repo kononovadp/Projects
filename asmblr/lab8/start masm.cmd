@@ -1,0 +1,1 @@
+complier\masm.exe 1.asm 1.obj 1.lst 1.crf

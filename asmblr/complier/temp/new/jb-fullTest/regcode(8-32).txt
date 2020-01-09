@@ -1,0 +1,19 @@
+//функции определения кода регистра
+function creg8(s:string):string;
+begin
+case s of
+'al':creg8:='000'; 'cl':creg8:='001'; 'dl':creg8:='010'; 'bl':creg8:='011';
+'ah':creg8:='100'; 'ch':creg8:='101'; 'dh':creg8:='110'; 'bh':creg8:='111';
+end; end;
+function creg16(s:string):string;
+begin
+case s of
+'ax':creg16:='000'; 'cx':creg16:='001'; 'dx':creg16:='010'; 'bx':creg16:='011';
+'sp':creg16:='100'; 'bp':creg16:='101'; 'si':creg16:='110'; 'di':creg16:='111';
+end; end;
+function creg32(s:string):string;
+begin
+case s of
+'eax':creg32:='000'; 'ecx':creg32:='001'; 'edx':creg32:='010'; 'ebx':creg32:='011';
+'esp':creg32:='100'; 'ebp':creg32:='101'; 'esi':creg32:='110'; 'edi':creg32:='111';
+end; end;

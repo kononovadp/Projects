@@ -1,0 +1,30 @@
+Assembler complier variant 11                    04.05.2015 23:12:19
+ 1  0001  data segment
+ 2  0002  Data1 segment
+ 3  0003  name1 db 'Hello'
+ 4  0004  field1 dw 3131h
+ 5  0005  Data1 ends
+ 6  0006  data2 segment
+ 7  0007  const dd 4242q
+ 8  0008  const2 db 1011b
+ 9  0009  data2 ends
+10  000A  data ends
+11  000B  code segment
+12  000C  code1 segment
+13  000D  assume ds:data1,cs:code1 
+14  000E  inc cx
+15  000F  dec di
+16  0010  adc bh,bl
+17  0011  cmp dx,80h
+18  0012  jb
+19  0013  assume ds:data2,cs:code1
+20  0014  xor al,01h
+21  0015  adc ax,si
+22  0016  cmp dx,1010b
+23  0017  jb
+24  0018  sal di,1
+25  0019  or dh,cl
+26  001A  cli
+27  001B  code1 ends
+28  001C  code ends
+29  001D  end

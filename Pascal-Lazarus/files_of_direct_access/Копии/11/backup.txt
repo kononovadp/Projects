@@ -1,0 +1,29 @@
+{11. Сформувати файл з n дійсних чисел. Переписати файл так, щоб його
+компоненти розташовувались в наступному порядку: }
+program z1;
+var f,h:file of real; x:real; k,i:byte;
+  begin
+    assign(f,'text.dat');reset(f);
+    assign(h,'text1.dat');rewrite(h);
+    k:=filesize(f);
+    for i:=0 to (k div 2)-1 do
+    begin
+    seek(f,i); read(f,x); write(h,x);
+    seek(f,k-i-1); read(f,x); write(h,x);
+    end;
+    if k mod 2>0 then    begin
+    seek(f,i+1); read(f,x); write(h,x);
+
+    end;
+
+     seek(f,5); write(f,1);
+    close(f); close(h); writeln;
+      assign(h,'text.dat');reset(h);
+      while not (eof(h)) do begin read(h,x); writeln(x:0:3); end;
+      close(h); readln;
+
+      assign(h,'text1.dat');reset(h);
+      while not (eof(h)) do begin read(h,x); writeln(x:0:3); end;
+      close(h);
+      readln;
+      end.

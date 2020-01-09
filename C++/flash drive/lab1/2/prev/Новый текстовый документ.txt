@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string>
+#include <cstring>
+#include <iostream> 
+using namespace std;
+int kch;
+
+int error_t_argz_create_sep (const  char *s, int sep,  char **argz,int *argz_len)
+{ int j=0,sl=0;
+  kch=0; 
+  argz[0]=new char[10];
+  for (int i=0; i<=strlen(s);i++)
+	{  
+		if (s[i]==sep) 
+		{
+			sl++;
+			argz[sl]=new char[10];
+			j=0;	
+			
+		}
+		else// other
+		{
+			argz[sl][j]=s[i];
+			argz[sl][j+1]='\0';
+			j++;
+			kch++;
+		}
+	}
+kch--;
+
+ argz_len=&kch;
+ cout<<*argz_len<<endl;
+return sl;
+}	
+
+int main()
+{ 
+	char s1[] = "abc:degd:efhf"; 
+	int sep=58;
+	int *al; 
+	char **ar;
+	ar= new char * [10];
+	
+	//int argz_len=16;
+	int k=error_t_argz_create_sep (s1, sep, ar,al);
+	
+  for (int i=0; i<=k;i++) 
+	cout<<ar[i]<<"\n";
+    cout<<*al<<endl;
+	
+	cin.get();	
+}

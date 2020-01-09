@@ -1,0 +1,79 @@
+http://filonenko-mikhail.github.io/cltl2-doc/ru/clmse84.html
+http://www.cardarmy.ru/proekt/lisp/art5.htm
+11. Зі списку (a b c d) отримати список (c a b d) за допомогою базових функцій.
+list (nth (-(list-length x) 2) x) (butlast x 2) (last x)
+nconc (list (nth (-(list-length x) 2) x)) (butlast x 2) (last x)
+(if (> (list-length x) 2)
+    (nconc (list (nth (-(list-length x) 2) x))
+           (butlast x 2)
+           (last x)))
+11. Видаляє зі списку (a b c d e f g…) кожний другий елемент
+(defun del (x)
+(if (null x)
+    (return-from del))
+(pop (cddr x))
+(if (equal (cddr x) nil) nil
+    (del (cdr x)))
+(setq del x))
+
+(defun delwr (x)
+(if (null x)
+    (return-from delwr))
+(setq y (/(list-length x) 2))
+(setq temp (round y))
+(setq t1 2) (setq y (nth t1 x))
+(loop for i from 0 to temp do (setq x (remove y x))
+    (setq x (remove y x))
+(setq t1(+ t1 1))
+(setq y (nth t1 x)))
+(setq delwr x))
+
+11. Написати предикат r(Xs Y Zs), який закінчується успіхом, якщо  Zs - список елементів, розташований  після елементу Y в списку Xs.
+Наприклад: r((a c d e c a b) c (a b))
+T
+(defun r (xs y zs) (setq temp nil)
+(if (or (null xs) (null y) (null zs))
+    (return-from r))
+(if (and (equal (car xs) (car y)) t
+    (equal (cdr xs) zs) t)
+        (setq temp t))
+(if (eq temp t) nil
+    (if (>(list-length xs) (list-length zs)) 
+        (r (cdr xs) y zs)))
+(setq r temp))
+
+(defun rwm (x y z) (setq temp nil)
+(if (or (null x) (null y) (null z))
+    (return-from rwm))
+(if (>(list-length x) (+(list-length z)1)) 
+    (pop x))
+(if (>(list-length x) (+(list-length z)1))
+    (setq x (r x y z))) (setq r nil)
+(if (equal (car x) (car y))
+    (if (equal (cdr x) z)
+        (setq r t))))
+
+(defun wr (x y z)
+(if (or (null x) (null y) (null z))
+    (return-from wr))
+(setq var (-(list-length x) (list-length z)))
+(setq x (nthcdr (- var 1) x))
+(if (equal (car x) (car y))
+    (if (equal (cdr x) z)
+        (setq wr t))))
+r '(a b c d e f g) '(c) '(d e f g)
+
+(defun func (i)
+(if (equal i 1) 1
+   (if (< i 11)
+       (+ (log (func (- i 1))) (/ i 2))
+     (if (equal i 11) 1
+       (if (< i 21)
+           (* 2 (cos(+ (func (- i 1))  (sin (* 2 i))))))))))
+
+(defun funccall (first last)
+(if (or (< first 1)
+        (> last 20))
+    (return-from funccall))
+(loop for i from first to last do
+(setq temp (func i)) (print temp)))

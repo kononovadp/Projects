@@ -1,0 +1,19 @@
+      27 0000			0	code segment 
+      28 0000			0	code1 segment 
+      29			0	assume ds:data1,cs:code1 
+      30 0000  41		0	inc cx 
+      31 0001  4F		1	m1: dec di 
+      32 0002  12 FB		2	adc bh,bl 
+      33 0004  81 FA 0080	4	cmp dx,80h 
+      34 0008  72 0B		8	jb m2 
+      35			0	assume ds:Dat2,cs:code1 
+      36 000A  34 01		10	xor al,01h 
+      37 000C  13 C6		12	adc ax,si 
+      38 000E  83 FA 0A		14	cmp dx,1010b 
+      39 0011  72 EE		17	jb m1 
+      40 0013  D1 E7		19	sal di,1 
+      41 0015  0A F1		21	m2: or dh,cl 
+      42 0017  FA		23	cli 
+      43 0018			24	code1 ends 
+      44 0000			0	code ends 
+      45			0	end

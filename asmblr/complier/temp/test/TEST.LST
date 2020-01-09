@@ -1,0 +1,92 @@
+Microsoft (R) Macro Assembler Version 5.00                  4/18/15 20:50:49
+                                                             Page     1-1
+
+
+
+test.ASM(30): warning A4085: End of file, no END directive
+Microsoft (R) Macro Assembler Version 5.00                  4/18/15 20:50:49
+                                                             Page     1-1
+
+
+       1 0000				Data1 Segment 
+       2 0000  13			Vb db 10011b 
+       3 0001  00			String db Д–€док Ц new? 
+test.ASM(3): warning A4001: Extra characters on line
+       4 0002  11D7			Vw dw 4567d 
+       5 0004  DA6F85D7			Vd dd 0d7856fdah 
+       6 0008				Data1 ends 
+       7 0000				Data2 Segment 
+       8 0000  02A6			Doublesg dw 678 
+       9 0002  89FF6700			QWERTY dd 67ff89h 
+      10 0006  89			Zxcv db 89h 
+      11 0007				Data2 Ends 
+      12				Assume cs:Code,Ds:Data1,Gs:Data2 
+test.ASM(12): error A2009: Symbol not defined: GS
+      13 0000				Code Segment 
+      14 0000				label1: 
+      15 0000  FA			Cli 
+      16 0001  FE C1			Inc cl 
+      17 0003  72 27			Jb Label2 
+      18 0005  43			Inc Bx 
+      19 0006  FF 8C 0002 R		Dec Vw[si] 
+      20 000A  FE 8E 0006 R U		Dec gs:zxCV[bp] 
+test.ASM(20): error A2009: Symbol not defined: GS
+      21				Add Eax, Esi 
+test.ASM(21): error A2009: Symbol not defined: EAX
+      22 000E  3B 06 0000 R U		Cmp Ax, Doublesg[edi] 
+test.ASM(22): error A2009: Symbol not defined: EDI
+      23				Cmp ebx, qwerty[ebx] 
+test.ASM(23): error A2009: Symbol not defined: EBX
+      24 0012  30 06 0000 R U		Xor vb[edx], al 
+test.ASM(24): error A2009: Symbol not defined: EDX
+      25 0016  BA 5634			Mov dx, 5634h 
+      26 0019  83 0E 0004 R U 05	Or Vd[esp], 0101b 
+test.ASM(26): error A2009: Symbol not defined: ESP
+      27 001E  72 E0			Jb label1 
+      28				Label2: 
+test.ASM(28): error A2006: Phase error between passes
+      29 002C				Code ends 
+      30				 
+test.ASM(30): warning A4085: End of file, no END directive
+Microsoft (R) Macro Assembler Version 5.00                  4/18/15 20:50:49
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	002C	PARA	NONE	
+DATA1  . . . . . . . . . . . . .  	0008	PARA	NONE	
+DATA2  . . . . . . . . . . . . .  	0007	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+DOUBLESG . . . . . . . . . . . .  	L WORD	0000	DATA2
+
+LABEL1 . . . . . . . . . . . . .  	L NEAR	0000	CODE
+LABEL2 . . . . . . . . . . . . .  	L NEAR	002C	CODE
+
+QWERTY . . . . . . . . . . . . .  	L DWORD	0002	DATA2
+
+STRING . . . . . . . . . . . . .  	L BYTE	0001	DATA1
+
+VB . . . . . . . . . . . . . . .  	L BYTE	0000	DATA1
+VD . . . . . . . . . . . . . . .  	L DWORD	0004	DATA1
+VW . . . . . . . . . . . . . . .  	L WORD	0002	DATA1
+
+ZXCV . . . . . . . . . . . . . .  	L BYTE	0006	DATA2
+
+@FILENAME  . . . . . . . . . . .  	TEXT  test		
+
+
+     29 Source  Lines
+     30 Total   Lines
+     14 Symbols
+
+  48908 + 434596 Bytes symbol space free
+
+      2 Warning Errors
+      9 Severe  Errors

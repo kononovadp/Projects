@@ -1,0 +1,149 @@
+Turbo Assembler	 Version 3.2	    28/12/15 21:10:13	    Page 1
+2.asm
+
+
+
+      1	    0000			 model small
+      2	    0000			 .stack	100h
+      3					 .386
+      4	    0000			 .data
+      5	    0000  C00CCCCCCCCCCCCD	 min_x dq -3.6 ;мінімальне значення по осі х
+      6	    0008  400CCCCCCCCCCCCD	 max_x dq 3.6 ;максимальне значення по осі х
+      7	    0010  0140			 max_crt_x dw 320 ;максимальна кількість точок	на екрані   +
+      8					 по осі х
+      9	    0012  ????			 crt_x dw ? ;екранна координата по осі х
+     10	    0014  ????????????????	 scale_x dq ? ;масштаб по осі х
+     11	    001C  BFF1999999999999	 min_y dq -1.1
+     12	    0024  3FF1999999999999	 max_y dq 1.1
+     13	    002C  00C8			 max_crt_y dw 200
+     14	    002E  ????			 crt_y dw ?
+     15	    0030  ????????????????	 scale_y dq ?
+     16	    0038			 .code
+     17	    0000			 start:
+     18					 scale macro p1
+     19					 ; обчислення	масштабного коефіцієнта по осі p1
+     20					 ; наприклад, для осі х
+     21					 : (max_x - min_x) / max_crt_x
+     22					 ; top=0
+     23					 fld		 max_&p1	 ; st0=max_&p1;	top=7
+     24					 fsub		 min_&p1	 ; st0=max_&p1 - min_&p1; ;top=7
+     25					 fild	 max_crt_&p1	 ; st0=max_crt_&p1,
+     26					 ; st1=max_&p1-min_&p1;	top=6
+     27					 fdivp		 st (1), st (0)		 ; 1-й	крок st1=st1/st0
+     28					 ; 2-й	крок st1 стає st0; top=7
+     29					 ; і містить масштаб
+     30					 fstp scale_&p1	;top=0
+     31					 endm
+     32	    0000			 x_proc	proc
+     33					 ; перетворення екранної координати в дійсну.
+     34					 ; top=0
+     35	    0000  DD 06	0014r		 fld		 scale_x	 ; st0 - масштаб
+     36	    0004  DF 06	0012r		 fild		 crt_x			 ; st0=crt_x, st1-масштаб
+     37					  ;top=6
+     38	    0008  DE C9			 fmulp	 st (1), st (0)		 ; top=7
+     39	    000A  DC 06	0000r		 fadd		 min_x		 ; st0 - реальне	зн. Х; top=7
+     40	    000E			 x_proc	endp
+     41
+     42	    000E			 y_proc	proc
+     43					 ; контроль діапазону (top не змінюється)
+     44	    000E  DC 16	001Cr		 fcom		 min_y;	 порівняння ST (0) та min_y
+     45	    0012  9B DF	E0		 fstsw		 ax; результат	порівняння в	ax
+     46	    0015  9E			 sahf				 ; результат порівняння
+     47					 ;ST (0) та min_y в регістр Flags
+     48	    0016  0F 82	FFE6		 jc		 @minus		 ; st0 < min_y
+**Error** 2.asm(47) Undefined symbol: @MINUS
+     49					 ; поза видимим діапазоном
+     50					 ; по	@minus забезпечити top=0 і
+     51					 ; crt_y=max_crt_y
+     52
+     53	    001A  DC 16	0024r		 fcom		 max_y		 ; порівняння	ST (0) та max_y
+     54	    001E  9B DF	E0		 fstsw		 ax
+     55	    0021  9E			 sahf
+     56	    0022  0F 87	FFDA		 ja		 @plus		 ; st0 > max_y (zf=cf=0)
+Turbo Assembler	 Version 3.2	    28/12/15 21:10:13	    Page 2
+2.asm
+
+
+
+**Error** 2.asm(55) Undefined symbol: @PLUS
+     57					 ; поза видимим діапазоном
+     58					 ; по	@plus -	забезпечити top=0
+     59					 ; і встановити crt_y=0
+     60	    0026  DC 26	001Cr		 fsub		 min_y;
+     61	    002A  DC 36	0030r		 fdiv		 scale_y
+     62	    002E  D9 FC			 frndint			 ; округлення	до цілого
+     63	    0030  DF 1E	002Er		 fistp		  crt_y			 ; TOP=0!!!
+     64	    0034  A1 002Cr		 mov		 ax,max_crt_y
+     65	    0037  2B 06	002Er		 sub		 ax,crt_y
+     66	    003B  A3 002Er		 mov		 crt_y,ax		 ; дзеркальне	відображення
+     67	    003E			 y_proc	endp
+     68					 ;scale	x
+     69					 ;scale	y
+     70	    003E  9B DB	E3		 finit
+     71	    0041  E8 FFBC		 call x_proc
+     72	    0044  B4 00			 mov ah,0
+     73	    0046  CD 16			 int 16h
+     74					 ;mov ah,0
+     75					 ;mov al,saveMode
+     76					 ;int 10h
+     77	    0048  B8 4C00		 mov ax,4c00h
+     78	    004B  CD 21			 int 21h
+     79					 ;call main
+     80
+     81					 end start
+Turbo Assembler	 Version 3.2	    28/12/15 21:10:13	    Page 3
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "28/12/15"
+??FILENAME			  Text	 "2	  "
+??TIME				  Text	 "21:10:13"
+??VERSION			  Number 0314
+@32BIT				  Text	 0
+@CODE				  Text	 _TEXT
+@CODESIZE			  Text	 0
+@CPU				  Text	 0F0FH
+@CURSEG				  Text	 _TEXT
+@DATA				  Text	 DGROUP
+@DATASIZE			  Text	 0
+@FILENAME			  Text	 2
+@INTERFACE			  Text	 00H
+@MODEL				  Text	 2
+@STACK				  Text	 DGROUP
+@WORDSIZE			  Text	 2
+CRT_X				  Word	 DGROUP:0012
+CRT_Y				  Word	 DGROUP:002E
+MAX_CRT_X			  Word	 DGROUP:0010
+MAX_CRT_Y			  Word	 DGROUP:002C
+MAX_X				  Qword	 DGROUP:0008
+MAX_Y				  Qword	 DGROUP:0024
+MIN_X				  Qword	 DGROUP:0000
+MIN_Y				  Qword	 DGROUP:001C
+SCALE_X				  Qword	 DGROUP:0014
+SCALE_Y				  Qword	 DGROUP:0030
+START				  Near	 _TEXT:0000
+X_PROC				  Near	 _TEXT:0000
+Y_PROC				  Near	 _TEXT:000E
+
+Macro Name
+
+SCALE
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  STACK				  16  0100 Para	  Stack	  STACK
+  _DATA				  16  0038 Word	  Public  DATA
+_TEXT				  16  004D Word	  Public  CODE
+Turbo Assembler	 Version 3.2	    28/12/15 21:10:13	    Page 4
+Error Summary
+
+
+
+**Error** 2.asm(47) Undefined symbol: @MINUS
+**Error** 2.asm(55) Undefined symbol: @PLUS
+

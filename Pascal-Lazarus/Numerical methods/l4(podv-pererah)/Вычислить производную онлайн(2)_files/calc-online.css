@@ -1,0 +1,24 @@
+.treeview,.treeview UL{list-style:none;margin:0;padding:0;line-height:13px;}
+.treeview UL{background-color:transparent;margin-top:4px;}
+.treeview LI{font-family:Arial, Helvetica, sans-serif;font-size:12px;margin:0;padding:3px 0pt 3px 16px;}
+.treeview .hitarea{background:url("/kabinet/images/css/treeview.gif") -64px -25px no-repeat;cursor:pointer;float:left;height:16px;margin-left:-16px;width:16px;}
+.treeview LI{background:url("/kabinet/images/css/line.gif") 0 0 no-repeat;}
+.treeview LI.collapsable,.treeview LI.expandable{background-position:0 -176px;}
+.treeview .expandable-hitarea{background-position:-80px -3px;}
+.treeview LI.last{background-position:0 -1766px;}
+.treeview LI.lastCollapsable,.treeview LI.lastExpandable{background-image:url("/kabinet/images/css/treeview.gif");}
+.treeview LI.lastCollapsable{background-position:0 -111px;}
+.treeview LI.lastExpandable{background-position:-32px -67px;}
+.treeview DIV.lastCollapsable-hitarea,.treeview DIV.lastExpandable-hitarea{background-position:0;}
+UL.nontreeview {line-height: 13px;list-style: none outside none;margin:5px 0px;color:#000}
+UL.nontreeview > LI {padding-left:0}
+UL.nontreeview LI.activ A {text-decoration:none;font-weight:bold}
+.filetree SPAN.selected{background-color:#3BF !important;}
+.treeview .hover,.filetree A:link,.filetree A:visited,.filetree A:hover,.filetree A:active{border-bottom:0px;color:#000;cursor:pointer;text-decoration:underline;}
+.filetree SPAN.folder,.filetree SPAN.file,.filetree SPAN.new,#placeholder.last SPAN{display:block;padding:1px 0 1px 22px;text-align:left;}
+.filetree LI{padding:3px 0 2px 16px;}
+.filetree SPAN.folder{background:url("/kabinet/images/css/folder.gif") 0 0 no-repeat;}
+.filetree LI.expandable SPAN.folder{background:url("/kabinet/images/css/folder-closed.gif") 0 0 no-repeat;}
+.filetree SPAN.file{background:url("/kabinet/images/css/file.gif") 0 0 no-repeat;}
+.filetree SPAN.new{background:url("/kabinet/images/css/new.gif") 0 0 no-repeat;}
+#placeholder.last SPAN{background:url("/kabinet/images/css/loading.gif") 0 0 no-repeat;}

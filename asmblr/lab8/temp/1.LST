@@ -1,0 +1,1172 @@
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-1
+
+
+       1				; -------------------------------------
+					----------------------- 
+       2				; Определения структур данных и констан
+					т 
+       3				; -------------------------------------
+					----------------------- 
+       4				 
+       5				STRUC   desc_struc              ; струк
+					тура дескриптора 
+1.ASM(5): error A2105: Expected: instruction or directive
+       6 0000  0000			        limit   dw      0       ; преде
+					л 
+1.ASM(6): error A2086: Data emitted with no segment
+       7 0002  0000			        base_l  dw      0       ; мл. с
+					лово физического адреса 
+1.ASM(7): error A2086: Data emitted with no segment
+       8 0004  00			        base_h  db      0       ; ст. б
+					айт физического адреса 
+1.ASM(8): error A2086: Data emitted with no segment
+       9 0005  00			        access  db      0       ; байт 
+					доступа 
+1.ASM(9): error A2086: Data emitted with no segment
+      10 0006  0000			        rsrv    dw      0       ; зарез
+					ервировано 
+1.ASM(10): error A2086: Data emitted with no segment
+      11				ENDS    desc_struc 
+1.ASM(11): error A2105: Expected: instruction or directive
+      12				 
+      13				; Биты байта доступа 
+      14				 
+      15 = 0080				ACC_PRESENT     EQU     10000000b ; сег
+					мент есть в памяти 
+      16 = 0018				ACC_CSEG        EQU     00011000b ; сег
+					мент кода 
+      17 = 0010				ACC_DSEG        EQU     00010000b ; сег
+					мент данных 
+      18 = 0004				ACC_EXPDOWN     EQU     00000100b ; сег
+					мент расширяется вниз 
+      19 = 0004				ACC_CONFORM     EQU     00000100b ; сог
+					ласованный сегмент 
+      20 = 0002				ACC_DATAWR      EQU     00000010b ; раз
+					решена запись 
+      21				 
+      22				; Типы сегментов 
+      23				 
+      24				; сегмент данных 
+      25 = 0092				DATA_ACC = ACC_PRESENT OR ACC_DSEG OR A
+					CC_DATAWR 
+      26				 
+      27				; сегмент кода 
+      28 = 009C				CODE_ACC = ACC_PRESENT OR ACC_CSEG OR A
+					CC_CONFORM 
+      29				 
+      30				; сегмент стека 
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-2
+
+
+      31 = 0096				STACK_ACC = ACC_PRESENT OR ACC_DSEG OR 
+					ACC_DATAWR OR ACC_EXPDOWN 
+      32				 
+      33				 
+      34				; Константы 
+      35				 
+      36 = 0190				STACK_SIZE      EQU     0400    ; разме
+					р стека 
+      37 = 012C				B_DATA_SIZE     EQU     0300    ; разме
+					р области данных BIOS 
+      38 = 0190				B_DATA_ADDR     EQU     0400    ; адрес
+					 области данных BIOS 
+      39 =				MONO_SEG        EQU     0b000   ; сегме
+					нт видеопамяти  
+      40				                                ;  моно
+					хромного видеоадаптера 
+      41 =				COLOR_SEG       EQU     0b800   ; сегме
+					нт видеопамяти 
+      42				                                ; цветн
+					ого видеоадаптера 
+      43 = 0FA0				CRT_SIZE        EQU     4000    ; разме
+					р сегмента видеопамяти 
+      44				                                ;  цвет
+					ного видеоадаптера 
+      45 = 03E8				MONO_SIZE       EQU     1000    ; разме
+					р сегмента видеопамяти 
+      46				                                ;  моно
+					хромного видеоадаптера 
+      47				 
+      48 = 1F40				CRT_LOW         EQU     8000    ; мл. б
+					айт физического адреса 
+      49				                                ;  сегм
+					ента видеопамяти 
+      50				                                ;  цвет
+					ного видеоадаптера 
+      51 = 0000				MONO_LOW        EQU     0000    ; мл. б
+					айт физического адреса 
+      52				                                ;  сегм
+					ента видеопамяти 
+      53				                                ;  моно
+					хромного видеоадаптера 
+      54				 
+      55 = 000B				CRT_SEG         EQU     0Bh     ; ст. б
+					айт физического адреса 
+      56				                                ;  сегм
+					ента видеопамяти 
+      57				 
+      58				; Селекторы, определённые в таблице GDT
+					 
+      59				 
+      60 = 0000				DS_DESCR        =       (gdt_ds - gdt_0
+					) 
+1.ASM(60): error A2009: Symbol not defined: GDT_DS
+      61 = 0000				CS_DESCR        =       (gdt_cs - gdt_0
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-3
+
+
+					) 
+1.ASM(61): error A2009: Symbol not defined: GDT_CS
+      62 = 0000				SS_DESCR        =       (gdt_ss - gdt_0
+					) 
+1.ASM(62): error A2009: Symbol not defined: GDT_SS
+      63 = 0000				BIOS_DESCR      =       (gdt_bio - gdt_
+					0) 
+1.ASM(63): error A2009: Symbol not defined: GDT_BIO
+      64 = 0000				CRT_DESCR       =       (gdt_crt - gdt_
+					0) 
+1.ASM(64): error A2009: Symbol not defined: GDT_CRT
+      65 = 0000				MDA_DESCR       =       (gdt_mda - gdt_
+					0) 
+1.ASM(65): error A2009: Symbol not defined: GDT_MDA
+      66				 
+      67 = 0070				CMOS_PORT       EQU     70h     ; порт 
+					для доступа к CMOS-памяти 
+      68 = 0063				PORT_6845       EQU     0063h   ; адрес
+					 области данных BIOS, 
+      69				                                ; где з
+					аписано значение адреса 
+      70				                                ; порта
+					 контроллера 6845 
+      71 = 03D4				COLOR_PORT      EQU     03d4h   ; порт 
+					цветного видеоконтроллера 
+      72 = 03B4				MONO_PORT       EQU     03b4h   ; порт 
+					монохромного видеоконтроллера 
+      73 = 0064				STATUS_PORT     EQU     64h     ; порт 
+					состояния клавиатуры 
+      74 = 00FE				SHUT_DOWN       EQU     0feh    ; коман
+					да сброса процессора 
+      75 = 0001				VIRTUAL_MODE    EQU     0001h   ; бит п
+					ерехода в защищённый режим 
+      76 = 00D1				A20_PORT        EQU     0d1h    ; коман
+					да управления линией A20 
+      77 = 00DF				A20_ON          EQU     0dfh    ; откры
+					ть A20 
+      78 = 00DD				A20_OFF         EQU     0ddh    ; закры
+					ть A20 
+      79 = 0060				KBD_PORT_A      EQU     60h     ; адрес
+					а клавиатурных 
+      80 = 0061				KBD_PORT_B      EQU     61h     ;   пор
+					тов 
+      81 = 0021				INT_MASK_PORT   EQU     21h     ; порт 
+					для маскирования прерываний 
+      82				 
+      83				STACK   STACK_SIZE      ; сегмент стека
+					 
+1.ASM(83): error A2105: Expected: instruction or directive
+      84				 
+      85				DATASEG                 ; начало сегмен
+					та данных 
+1.ASM(85): error A2105: Expected: instruction or directive
+      86				 
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-4
+
+
+      87 = 0008				DSEG_BEG        =       THIS WORD 
+      88				 
+      89				; Память для хранения регистров SS, SP,
+					 ES. Содержимое 
+      90				; этих регистров будет записано здесь п
+					еред входом в 
+      91				; защищённый режим и восстановлено отсю
+					да после возврата 
+      92				; из защищённого режима в реальный. 
+      93				 
+      94 0008  ????			        real_ss dw      ? 
+1.ASM(94): error A2086: Data emitted with no segment
+      95 000A  ????			        real_sp dw      ? 
+1.ASM(95): error A2086: Data emitted with no segment
+      96 000C  ????			        real_es dw      ? 
+1.ASM(96): error A2086: Data emitted with no segment
+      97				 
+      98				; Глобальная таблица дескрипторов GDT, 
+      99				; содержит следующие дескрипторы: 
+     100				; 
+     101				;       gdt_0   - дескриптор для пустог
+					о селектора 
+     102				;       gdt_gdt - дескриптор для GDT 
+     103				;       gdt_ds  - дескриптор для сегмен
+					та, адресуемого DS 
+     104				;       gdt_cs  - дескриптор для сегмен
+					та кода 
+     105				;       gdt_ss  - дескриптор для сегмен
+					та стека 
+     106				;       gdt_bio         - дескриптор дл
+					я области данных BIOS 
+     107				;       gdt_crt         - дескриптор дл
+					я видеопамяти цветного дисплея 
+     108				;       gdt_mda         - дескриптор дл
+					я видеопамяти монохромного дисплея 
+     109				 
+     110 = 000E				GDT_BEG         = $ 
+     111				LABEL   gdtr            WORD 
+1.ASM(111): error A2105: Expected: instruction or directive
+     112				 
+     113				        gdt_0   desc_struc      <0,0,0,
+					0,0>  
+1.ASM(113): error A2105: Expected: instruction or directive
+     114				        gdt_gdt desc_struc      <GDT_SI
+					ZE-1,,,DATA_ACC,0> 
+1.ASM(114): error A2105: Expected: instruction or directive
+     115				        gdt_ds  desc_struc      <DSEG_S
+					IZE-1,,,DATA_ACC,0> 
+1.ASM(115): error A2105: Expected: instruction or directive
+     116				        gdt_cs  desc_struc      <CSEG_S
+					IZE-1,,,CODE_ACC,0> 
+1.ASM(116): error A2105: Expected: instruction or directive
+     117				        gdt_ss  desc_struc      <STACK_
+					SIZE-1,,,DATA_ACC,0> 
+1.ASM(117): error A2105: Expected: instruction or directive
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-5
+
+
+     118				        gdt_bio         desc_struc     
+					 <B_DATA_SIZE-1,B_DATA_ADDR,0,DATA_ACC,
+					0> 
+1.ASM(118): error A2105: Expected: instruction or directive
+     119				        gdt_crt         desc_struc     
+					 <CRT_SIZE-1,CRT_LOW,CRT_SEG,DATA_ACC,0
+					> 
+1.ASM(119): error A2105: Expected: instruction or directive
+     120				        gdt_mda         desc_struc     
+					 <MONO_SIZE-1,MONO_LOW,CRT_SEG,DATA_ACC
+					,0> 
+1.ASM(120): error A2105: Expected: instruction or directive
+     121				 
+     122 = 0000				GDT_SIZE        = ($ - GDT_BEG) ; разме
+					р таблицы дескрипторов 
+     123				 
+     124				CODESEG         ; сегмент кода 
+1.ASM(124): error A2105: Expected: instruction or directive
+     125				 
+     126				PROC    start 
+1.ASM(126): error A2105: Expected: instruction or directive
+     127				 
+     128				; Инициализируем регистр сегмента данны
+					х 
+     129				; для реального режима 
+     130				 
+     131 000E  A1 ---- R U		        mov     ax,DGROUP 
+1.ASM(131): error A2009: Symbol not defined: DGROUP
+     132 0011  8E D8			        mov     ds,ax 
+1.ASM(132): error A2086: Data emitted with no segment
+     133				 
+     134				; Определяем базовый адрес видеопамяти 
+     135				 
+     136 0013  E8 0000 U		        call    set_crt_base 
+1.ASM(136): error A2009: Symbol not defined: SET_CRT_BASE
+     137				 
+     138				; Стираем экран дисплея (устанавливаем 
+					серый фон) 
+     139				 
+     140 0016  B7 77			        mov     bh, 77h 
+1.ASM(140): error A2086: Data emitted with no segment
+     141 0018  E8 0000 U		        call    clrscr 
+1.ASM(141): error A2009: Symbol not defined: CLRSCR
+     142				 
+     143				; Выполняем все подготовительные действ
+					ия для перехода 
+     144				; в защищённый режим и обеспечения возм
+					ожности возврата 
+     145				; в реальный режим 
+     146				 
+     147 001B  E8 0000 U		        call    init_protected_mode 
+1.ASM(147): error A2009: Symbol not defined: INIT_PROTECTED_MODE
+     148				 
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-6
+
+
+     149				; Переключаемся в защищённый режим 
+     150				 
+     151 001E  E8 0000 U		        call    set_protected_mode 
+1.ASM(151): error A2009: Symbol not defined: SET_PROTECTED_MODE
+     152				 
+     153				; --------- * Программа работает в защи
+					щённом режиме! * --------- 
+     154				 
+     155 0021  E8 0000 U		        call    write_hello_msg ; вывод
+					им сообщение на экран 
+1.ASM(155): error A2009: Symbol not defined: WRITE_HELLO_MSG
+     156 0024  E8 0000 U		        call    pause           ; ждём 
+					некоторое время 
+1.ASM(156): error A2009: Symbol not defined: PAUSE
+     157				 
+     158				; Возвращаемся в реальный режим 
+     159				 
+     160 0027  E8 0000 U		        call    set_real_mode 
+1.ASM(160): error A2009: Symbol not defined: SET_REAL_MODE
+     161				 
+     162				; --------- * Программа работает в реал
+					ьном режиме! * --------- 
+     163				 
+     164				; Стираем экран и возвращаемся в DOS 
+     165 002A  B7 07			        mov     bh, 07h 
+1.ASM(165): error A2086: Data emitted with no segment
+     166 002C  E8 0000 U		        call    clrscr 
+1.ASM(166): error A2009: Symbol not defined: CLRSCR
+     167 002F  B4 4C			        mov     ah,4Ch 
+1.ASM(167): error A2086: Data emitted with no segment
+     168 0031  CD 21			        int     21h 
+1.ASM(168): error A2086: Data emitted with no segment
+     169				 
+     170				ENDP    start 
+1.ASM(170): error A2105: Expected: instruction or directive
+     171				 
+     172				 
+     173				; -------------------------------------
+					----------------------- 
+     174				; Макрокоманда для записи в дескриптор 
+					24-битового 
+     175				; базового адреса сегмента 
+     176				; -------------------------------------
+					----------------------- 
+     177				 
+     178				MACRO setgdtentry 
+1.ASM(178): error A2105: Expected: instruction or directive
+     179 0033  89 87 0002 U		        mov     [(desc_struc bx).base_l
+					],ax 
+1.ASM(179): error A2009: Symbol not defined: DESC_STRUC
+     180 0037  88 97 0004 U		        mov     [(desc_struc bx).base_h
+					],dl 
+1.ASM(180): error A2009: Symbol not defined: DESC_STRUC
+     181				ENDM 
+1.ASM(181): error A2000: Block nesting error
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-7
+
+
+     182				 
+     183				; -------------------------------------
+					----------------------- 
+     184				; Процедура подготовки процессора к пер
+					еходу в защищённый 
+     185				; режим с последующим возвратом в реаль
+					ный режим 
+     186				; -------------------------------------
+					----------------------- 
+     187				 
+     188				PROC    init_protected_mode     NEAR 
+1.ASM(188): error A2105: Expected: instruction or directive
+     189				 
+     190				; Заполняем глобальную таблицу дескрипт
+					оров GDT 
+     191				 
+     192				; Вычисляем 24-битовый базовый адрес се
+					гмента данных 
+     193				 
+     194 003B  A1 ---- R U		        mov     ax,DGROUP 
+1.ASM(194): error A2009: Symbol not defined: DGROUP
+     195 003E  8A D4			        mov     dl,ah 
+1.ASM(195): error A2086: Data emitted with no segment
+     196 0040  EA			        shr     dl,4 
+1.ASM(196): error A2052: Improper operand type
+     197 0041  E0			        shl     ax,4 
+1.ASM(197): error A2052: Improper operand type
+     198				 
+     199				; Регистры dl:ax содержат базовый адрес
+					, сохраняем его в di:si 
+     200				 
+     201 0042  8B F0			        mov     si,ax 
+1.ASM(201): error A2086: Data emitted with no segment
+     202 0044  8B FA			        mov     di,dx 
+1.ASM(202): error A2086: Data emitted with no segment
+     203				 
+     204				; Подготавливаем дескриптор для GDT 
+     205				 
+     206 0046  05 0000 U		        add     ax,OFFSET gdtr 
+1.ASM(206): error A2009: Symbol not defined: GDTR
+     207 0049  80 D2 00			        adc     dl,0 
+1.ASM(207): error A2086: Data emitted with no segment
+     208 004C  BB 0000 U		        mov     bx,OFFSET gdt_gdt 
+1.ASM(208): error A2009: Symbol not defined: GDT_GDT
+     209				        setgdtentry 
+1.ASM(209): error A2105: Expected: instruction or directive
+     210				 
+     211				; Подготавливаем дескриптор для сегмент
+					а ds 
+     212				 
+     213 004F  BB 0000 U		        mov     bx,OFFSET gdt_ds 
+1.ASM(213): error A2009: Symbol not defined: GDT_DS
+     214 0052  8B C6			        mov     ax,si 
+1.ASM(214): error A2086: Data emitted with no segment
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-8
+
+
+     215 0054  8B D7			        mov     dx,di 
+1.ASM(215): error A2086: Data emitted with no segment
+     216				        setgdtentry 
+1.ASM(216): error A2105: Expected: instruction or directive
+     217				 
+     218				; Подготавливаем дескриптор для сегмент
+					а cs 
+     219				 
+     220 0056  BB 0000 U		        mov     bx,OFFSET gdt_cs 
+1.ASM(220): error A2009: Symbol not defined: GDT_CS
+     221 0059  8C C8			        mov     ax,cs 
+1.ASM(221): error A2086: Data emitted with no segment
+     222 005B  8A D4			        mov     dl,ah 
+1.ASM(222): error A2086: Data emitted with no segment
+     223 005D  EA			        shr     dl,4 
+1.ASM(223): error A2052: Improper operand type
+     224 005E  E0			        shl     ax,4 
+1.ASM(224): error A2052: Improper operand type
+     225				        setgdtentry 
+1.ASM(225): error A2105: Expected: instruction or directive
+     226				 
+     227				; Подготавливаем дескриптор для сегмент
+					а стека 
+     228				 
+     229 005F  BB 0000 U		        mov     bx,OFFSET gdt_ss 
+1.ASM(229): error A2009: Symbol not defined: GDT_SS
+     230 0062  8C D0			        mov     ax,ss 
+1.ASM(230): error A2086: Data emitted with no segment
+     231 0064  8A D4			        mov     dl,ah 
+1.ASM(231): error A2086: Data emitted with no segment
+     232 0066  EA			        shr     dl,4 
+1.ASM(232): error A2052: Improper operand type
+     233 0067  E0			        shl     ax,4 
+1.ASM(233): error A2052: Improper operand type
+     234				        setgdtentry 
+1.ASM(234): error A2105: Expected: instruction or directive
+     235				 
+     236				; Записываем адрес возврата в реальный 
+					режим в область 
+     237				; данных BIOS по адресу 0040h:0067h 
+     238				 
+     239 0068  1E			        push    ds 
+1.ASM(239): error A2086: Data emitted with no segment
+     240 0069  B8 0028			        mov     ax,40 
+1.ASM(240): error A2086: Data emitted with no segment
+     241 006C  8E D8			        mov     ds,ax 
+1.ASM(241): error A2086: Data emitted with no segment
+     242 006E  C7 86 0045 0000 U	        mov     [WORD 67],OFFSET shutdo
+					wn_return 
+1.ASM(242): error A2028: Operator expected
+     243 0074  8C 8E 0047		        mov     [WORD 69],cs 
+1.ASM(243): error A2028: Operator expected
+     244 0078  1F			        pop     ds 
+1.ASM(244): error A2086: Data emitted with no segment
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-9
+
+
+     245				 
+     246				; Маскируем все прерывания, в том числе
+					 немаскируемые. 
+     247				; Записываем в CMOS-память в ячейку 0Fh
+					 код 5, 
+     248				; этот код обеспечит после выполнения с
+					броса процессора 
+     249				; передачу управления по адресу, подгот
+					овленному нами 
+     250				; в области данных BIOS по адресу 0040h
+					:0067h. 
+     251				; Для того, чтобы немаскируемые прерыва
+					ния были запрещены, 
+     252				; устанавливаем в 1 старший бит при опр
+					еделении ячейки CMOS. 
+     253				 
+     254 0079  FA			        cli 
+1.ASM(254): error A2086: Data emitted with no segment
+     255 007A  B0 86			        mov     al,8f 
+1.ASM(255): error A2107: Non-digit in number
+     256 007C  E6 70			        out     CMOS_PORT,al 
+1.ASM(256): error A2086: Data emitted with no segment
+     257 007E  EB 01 90			        jmp     next1           ; небол
+					ьшая задержка 
+1.ASM(257): error A2086: Data emitted with no segment
+     258 0081				next1: 
+1.ASM(258): error A2062: Missing or unreachable CS
+     259				 
+     260 0081  B0 05			        mov     al,5 
+1.ASM(260): error A2086: Data emitted with no segment
+     261 0083  E6 71			        out     CMOS_PORT+1,al  ; код в
+					озврата 
+1.ASM(261): error A2086: Data emitted with no segment
+     262				 
+     263 0085  C3			        ret 
+1.ASM(263): error A2086: Data emitted with no segment
+     264				 
+     265				ENDP    init_protected_mode 
+1.ASM(265): error A2105: Expected: instruction or directive
+     266				 
+     267				; -------------------------------------
+					----------------------- 
+     268				; Процедура переключает процессор в защ
+					ищённый режим 
+     269				; -------------------------------------
+					----------------------- 
+     270				 
+     271				PROC    set_protected_mode      NEAR 
+1.ASM(271): error A2105: Expected: instruction or directive
+     272				 
+     273 0086  A1 00F7			        mov     ax,[rl_crt]     ; запис
+					ываем в es сегментный 
+1.ASM(273): error A2086: Data emitted with no segment
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-10
+
+
+     274 0089  8E C0			        mov     es,ax           ; адрес
+					 видеопамяти 
+1.ASM(274): error A2086: Data emitted with no segment
+     275				 
+     276 008B  E8 0000 U		        call    enable_a20      ; откры
+					ваем адресную линию A20 
+1.ASM(276): error A2009: Symbol not defined: ENABLE_A20
+     277				 
+     278 008E  8C 16 0008		        mov     [real_ss],ss    ; запом
+					инаем указатель стека 
+1.ASM(278): error A2086: Data emitted with no segment
+     279 0092  8C 06 000C		        mov     [real_es],es    ; для р
+					еального режима 
+1.ASM(279): error A2086: Data emitted with no segment
+     280				 
+     281				; Загружаем регистр GDTR 
+     282				 
+     283				        lgdt    [QWORD gdt_gdt] 
+1.ASM(283): error A2105: Expected: instruction or directive
+     284				 
+     285				; Устанавливаем защищённый режим работы
+					 процессора 
+     286				 
+     287 0096  B8 0001			        mov     ax,VIRTUAL_MODE 
+1.ASM(287): error A2086: Data emitted with no segment
+     288				        lmsw    ax 
+1.ASM(288): error A2105: Expected: instruction or directive
+     289				 
+     290				; Мы находимся в защищённом режиме 
+     291				 
+     292				; Очищаем внутреннюю очередь команд про
+					цессора 
+     293				; Выполняем команду межсегментного прер
+					хода, 
+     294				; в качестве селектора указываем селект
+					ор текущего 
+     295				; сегмента кода, в качестве смещения - 
+					метку flush 
+     296				 
+     297				;       jmp     far flush 
+     298 0099  FF			        db      0ea 
+1.ASM(298): error A2107: Non-digit in number
+     299 009A  0000 U			        dw      OFFSET flush 
+1.ASM(299): error A2009: Symbol not defined: FLUSH
+     300 009C  0000			        dw      CS_DESCR 
+1.ASM(300): error A2086: Data emitted with no segment
+     301				 
+     302				LABEL   flush   FAR 
+1.ASM(302): error A2105: Expected: instruction or directive
+     303				 
+     304				; Загружаем сегментные регистры SS и DS
+					 селекторами 
+     305				 
+     306 009E  B8 0000			        mov     ax,SS_DESCR 
+1.ASM(306): error A2086: Data emitted with no segment
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-11
+
+
+     307 00A1  8E D0			        mov     ss,ax 
+1.ASM(307): error A2086: Data emitted with no segment
+     308 00A3  B8 0000			        mov     ax,DS_DESCR 
+1.ASM(308): error A2086: Data emitted with no segment
+     309 00A6  8E D8			        mov     ds,ax 
+1.ASM(309): error A2086: Data emitted with no segment
+     310 00A8  C3			        ret 
+1.ASM(310): error A2086: Data emitted with no segment
+     311				 
+     312				ENDP    set_protected_mode 
+1.ASM(312): error A2105: Expected: instruction or directive
+     313				 
+     314				; -------------------------------------
+					----------------------- 
+     315				; Процедура возвращает процессор в реал
+					ьный режим 
+     316				; -------------------------------------
+					----------------------- 
+     317				 
+     318				PROC    set_real_mode   NEAR 
+1.ASM(318): error A2105: Expected: instruction or directive
+     319				 
+     320				; Запоминаем содержимое указателя стека
+					, так как после 
+     321				; сброса процессора оно будет потеряно 
+     322				 
+     323 00A9  89 26 000A		        mov     [real_sp],sp 
+1.ASM(323): error A2086: Data emitted with no segment
+     324				 
+     325				; Выполняем сброс процессора 
+     326				 
+     327 00AD  B0 FE			        mov     al,SHUT_DOWN 
+1.ASM(327): error A2086: Data emitted with no segment
+     328 00AF  E6 64			        out     STATUS_PORT,al 
+1.ASM(328): error A2086: Data emitted with no segment
+     329				 
+     330				; Ожидаем сброса процессора 
+     331				 
+     332 00B1				wait_reset: 
+1.ASM(332): error A2062: Missing or unreachable CS
+     333 00B1  F4			        hlt 
+1.ASM(333): error A2086: Data emitted with no segment
+     334 00B2  EB FD			        jmp     wait_reset 
+1.ASM(334): error A2086: Data emitted with no segment
+     335				 
+     336				; ------->> В это место мы попадём посл
+					е сброса процессора, 
+     337				; теперь мы снова в реальном режиме 
+     338				 
+     339				LABEL   shutdown_return FAR 
+1.ASM(339): error A2105: Expected: instruction or directive
+     340				 
+     341				; Инициализируем ds адресом сегмента да
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-12
+
+
+					нных 
+     342				 
+     343 00B4  A1 ---- R U		        mov     ax,DGROUP 
+1.ASM(343): error A2009: Symbol not defined: DGROUP
+     344 00B7  8E D8			        mov     ds,ax 
+1.ASM(344): error A2086: Data emitted with no segment
+     345				        assume  ds:DGROUP 
+1.ASM(345): error A2009: Symbol not defined: DGROUP
+     346				 
+     347				; Восстанавливаем указатель стека 
+     348				 
+     349 00B9  8E 16 0008		        mov     ss,[real_ss] 
+1.ASM(349): error A2086: Data emitted with no segment
+     350 00BD  8B 26 000A		        mov     sp,[real_sp] 
+1.ASM(350): error A2086: Data emitted with no segment
+     351				 
+     352				; Восстанавливаем содержимое регистра e
+					s 
+     353				 
+     354 00C1  8E 06 000C		        mov     es,[real_es] 
+1.ASM(354): error A2086: Data emitted with no segment
+     355				 
+     356				; Закрываем адресную линию A20 
+     357				 
+     358 00C5  E8 0000 U		        call    disable_a20 
+1.ASM(358): error A2009: Symbol not defined: DISABLE_A20
+     359				 
+     360				; Разрешаем все прерывания 
+     361				 
+     362 00C8  B8 000D			        mov     ax,000dh        ; разре
+					шаем немаскируемые прерывания 
+1.ASM(362): error A2086: Data emitted with no segment
+     363 00CB  E6 70			        out     CMOS_PORT,al 
+1.ASM(363): error A2086: Data emitted with no segment
+     364				 
+     365 00CD  E4 21			        in      al,INT_MASK_PORT ; разр
+					ешаем маскируемые прерывания 
+1.ASM(365): error A2086: Data emitted with no segment
+     366 00CF  24 00			        and     al,0 
+1.ASM(366): error A2086: Data emitted with no segment
+     367 00D1  E6 21			        out     INT_MASK_PORT,al 
+1.ASM(367): error A2086: Data emitted with no segment
+     368 00D3  FB			        sti 
+1.ASM(368): error A2086: Data emitted with no segment
+     369				 
+     370 00D4  C3			        ret 
+1.ASM(370): error A2086: Data emitted with no segment
+     371				ENDP    set_real_mode 
+1.ASM(371): error A2105: Expected: instruction or directive
+     372				 
+     373				; -------------------------------------
+					----------------------- 
+     374				; Процедура открывает адресную линию A2
+					0 
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-13
+
+
+     375				; -------------------------------------
+					----------------------- 
+     376				 
+     377				PROC    enable_a20      NEAR 
+1.ASM(377): error A2105: Expected: instruction or directive
+     378 00D5  B0 D1			        mov     al,A20_PORT 
+1.ASM(378): error A2086: Data emitted with no segment
+     379 00D7  E6 64			        out     STATUS_PORT,al 
+1.ASM(379): error A2086: Data emitted with no segment
+     380 00D9  B0 DF			        mov     al,A20_ON 
+1.ASM(380): error A2086: Data emitted with no segment
+     381 00DB  E6 60			        out     KBD_PORT_A,al 
+1.ASM(381): error A2086: Data emitted with no segment
+     382 00DD  C3			        ret 
+1.ASM(382): error A2086: Data emitted with no segment
+     383				ENDP    enable_a20 
+1.ASM(383): error A2105: Expected: instruction or directive
+     384				 
+     385				; -------------------------------------
+					----------------------- 
+     386				; Процедура закрывает адресную линию A2
+					0 
+     387				; -------------------------------------
+					----------------------- 
+     388				 
+     389				PROC    disable_a20     NEAR 
+1.ASM(389): error A2105: Expected: instruction or directive
+     390 00DE  B0 D1			        mov     al,A20_PORT 
+1.ASM(390): error A2086: Data emitted with no segment
+     391 00E0  E6 64			        out     STATUS_PORT,al 
+1.ASM(391): error A2086: Data emitted with no segment
+     392 00E2  B0 DD			        mov     al,A20_OFF 
+1.ASM(392): error A2086: Data emitted with no segment
+     393 00E4  E6 60			        out     KBD_PORT_A,al 
+1.ASM(393): error A2086: Data emitted with no segment
+     394 00E6  C3			        ret 
+1.ASM(394): error A2086: Data emitted with no segment
+     395				ENDP    disable_a20 
+1.ASM(395): error A2105: Expected: instruction or directive
+     396				 
+     397				; -------------------------------------
+					----------------------- 
+     398				; Процедура выполняет небольшую временн
+					ую задержку 
+     399				; -------------------------------------
+					----------------------- 
+     400				 
+     401				PROC    pause           NEAR 
+1.ASM(401): error A2105: Expected: instruction or directive
+     402 00E7  51			        push    cx 
+1.ASM(402): error A2086: Data emitted with no segment
+     403 00E8  B9 0032			        mov     cx,50 
+1.ASM(403): error A2086: Data emitted with no segment
+     404 00EB				ploop0: 
+1.ASM(404): error A2062: Missing or unreachable CS
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-14
+
+
+     405 00EB  51			        push    cx 
+1.ASM(405): error A2086: Data emitted with no segment
+     406 00EC  33 C9			        xor     cx,cx 
+1.ASM(406): error A2086: Data emitted with no segment
+     407 00EE				ploop1: 
+1.ASM(407): error A2062: Missing or unreachable CS
+     408 00EE  E2 FE			        loop    ploop1 
+1.ASM(408): error A2086: Data emitted with no segment
+     409 00F0  59			        pop     cx 
+1.ASM(409): error A2086: Data emitted with no segment
+     410 00F1  E2 F8			        loop    ploop0 
+1.ASM(410): error A2086: Data emitted with no segment
+     411				 
+     412 00F3  59			        pop     cx 
+1.ASM(412): error A2086: Data emitted with no segment
+     413 00F4  C3			        ret 
+1.ASM(413): error A2086: Data emitted with no segment
+     414				ENDP    pause 
+1.ASM(414): error A2105: Expected: instruction or directive
+     415				 
+     416				; -------------------------------------
+					----------------------- 
+     417				; Сегмент данных для процедур обслужива
+					ния видеоадаптера 
+     418				; -------------------------------------
+					----------------------- 
+     419				 
+     420				DATASEG 
+1.ASM(420): error A2105: Expected: instruction or directive
+     421 00F5  50			        columns db      80d     ; колич
+					ество столбцов на экране 
+1.ASM(421): error A2024: Segment parameters are changed
+     422 00F6  19			        rows    db      25d     ; колич
+					ество строк на экране 
+1.ASM(422): error A2024: Segment parameters are changed
+     423				 
+     424 00F7  C670			        rl_crt  dw      COLOR_SEG      
+					 ; сегментный адрес видеобуфера 
+1.ASM(424): error A2024: Segment parameters are changed
+     425 00F9  0000			        vir_crt dw      CRT_DESCR      
+					 ; селектор видеобуфера 
+1.ASM(425): error A2024: Segment parameters are changed
+     426				 
+     427 00FB  0000			        curr_line       dw      0d     
+					 ; номер текущей строки 
+1.ASM(427): error A2024: Segment parameters are changed
+     428				 
+     429				CODESEG 
+1.ASM(429): error A2105: Expected: instruction or directive
+     430				 
+     431				; -------------------------------------
+					----------------------- 
+     432				; Определение базового адреса видеобуфе
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-15
+
+
+					ра 
+     433				; -------------------------------------
+					----------------------- 
+     434				 
+     435				PROC    set_crt_base    NEAR 
+1.ASM(435): error A2105: Expected: instruction or directive
+     436				 
+     437				; Определяем количество столбцов на экр
+					ане и записываем  
+     438				; в переменную columns 
+     439				 
+     440 00FD  B8 0028			        mov     ax,40 
+1.ASM(440): error A2086: Data emitted with no segment
+     441 0100  8E C0			        mov     es,ax 
+1.ASM(441): error A2086: Data emitted with no segment
+     442 0102  26: 8B 1E 005B		        mov     bx,[WORD es:4a] 
+1.ASM(442): error A2107: Non-digit in number
+     443 0107  88 1E 00F5		        mov     [columns],bl 
+1.ASM(443): error A2086: Data emitted with no segment
+     444				 
+     445				; То же для количества строк, записывае
+					м в переменную rows 
+     446				 
+     447 010B  26: 8A 1E 0055		        mov     bl,[BYTE es:84] 
+1.ASM(447): error A2061: Improper use of segment register
+     448 0110  FE C3			        inc     bl 
+1.ASM(448): error A2086: Data emitted with no segment
+     449 0112  88 1E 00F6		        mov     [rows],bl 
+1.ASM(449): error A2086: Data emitted with no segment
+     450				 
+     451				; Для того чтобы определить тип видеоко
+					нтроллера (цветной 
+     452				; или монохромный), считываем адрес мик
+					росхемы 6845 
+     453				 
+     454 0116  26: 8B 1E 0065		        mov     bx,[WORD es:PORT_6845] 
+1.ASM(454): error A2061: Improper use of segment register
+     455 011B  81 FB 03D4		        cmp     bx,COLOR_PORT 
+1.ASM(455): error A2086: Data emitted with no segment
+     456 011F  74 0C			        je      set_crt_exit 
+1.ASM(456): error A2086: Data emitted with no segment
+     457				 
+     458				; Если видеоконтроллер монохромный, изм
+					еняем адрес сегмента 
+     459				; и селектор, заданные по умолчанию 
+     460				 
+     461 0121  C7 06 00F7 C350		        mov     [rl_crt],MONO_SEG 
+1.ASM(461): error A2107: Non-digit in number
+     462 0127  C7 06 00F9 0000		        mov     [vir_crt],MDA_DESCR 
+1.ASM(462): error A2086: Data emitted with no segment
+     463				 
+     464 012D				set_crt_exit: 
+1.ASM(464): error A2062: Missing or unreachable CS
+     465 012D  C3			        ret 
+1.ASM(465): error A2086: Data emitted with no segment
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-16
+
+
+     466				ENDP    set_crt_base 
+1.ASM(466): error A2105: Expected: instruction or directive
+     467				 
+     468				; -------------------------------------
+					----------------------- 
+     469				; Вывод строки на экран 
+     470				; Параметры: 
+     471				;       (ax, bx) - координаты (x, y) вы
+					водимой строки 
+     472				;       ds:si   - адрес выводимой строк
+					и 
+     473				;       cx      - длина выводимой строк
+					и 
+     474				;       dh      - атрибут выводимой стр
+					оки 
+     475				;       es      - сегмент или селектор 
+					видеопамяти 
+     476				; -------------------------------------
+					----------------------- 
+     477				 
+     478				PROC    writexy         NEAR 
+1.ASM(478): error A2105: Expected: instruction or directive
+     479 012E  56			        push    si 
+1.ASM(479): error A2086: Data emitted with no segment
+     480 012F  57			        push    di 
+1.ASM(480): error A2086: Data emitted with no segment
+     481				 
+     482				; Вычисляем смещение в видеобуфере для 
+					записи строки, 
+     483				; используем формулу ((y * columns) + x
+					) * 2 
+     484				 
+     485 0130  8A 16 00F5		        mov     dl,[columns] 
+1.ASM(485): error A2086: Data emitted with no segment
+     486 0134  F6 E2			        mul     dl 
+1.ASM(486): error A2086: Data emitted with no segment
+     487 0136  03 C3			        add     ax,bx 
+1.ASM(487): error A2086: Data emitted with no segment
+     488 0138  D1 E0			        shl     ax,1 
+1.ASM(488): error A2086: Data emitted with no segment
+     489 013A  8B F8			        mov     di,ax 
+1.ASM(489): error A2086: Data emitted with no segment
+     490 013C  8A E6			        mov     ah,dh   ; записываем в 
+					ah байт атрибута 
+1.ASM(490): error A2086: Data emitted with no segment
+     491				 
+     492				; Выполняем запись в видеобуфер 
+     493				 
+     494 013E				wxy_write: 
+1.ASM(494): error A2062: Missing or unreachable CS
+     495 013E  AC			        lodsb   ; очередной символ в al
+					 
+1.ASM(495): error A2086: Data emitted with no segment
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-17
+
+
+     496 013F  AB			        stosw   ; записываем его в виде
+					опамять 
+1.ASM(496): error A2086: Data emitted with no segment
+     497 0140  E2 FC			        loop    wxy_write       ; цикл 
+					до конца строки 
+1.ASM(497): error A2086: Data emitted with no segment
+     498				 
+     499 0142  5F			        pop     di 
+1.ASM(499): error A2086: Data emitted with no segment
+     500 0143  5E			        pop     si 
+1.ASM(500): error A2086: Data emitted with no segment
+     501 0144  C3			        ret 
+1.ASM(501): error A2086: Data emitted with no segment
+     502				ENDP    writexy 
+1.ASM(502): error A2105: Expected: instruction or directive
+     503				 
+     504				; -------------------------------------
+					----------------------- 
+     505				; Процедура стирания экрана 
+     506				;       Параметр: bh - атрибут для запо
+					лнения экрана 
+     507				; -------------------------------------
+					----------------------- 
+     508				 
+     509				 
+     510				PROC    clrscr          NEAR 
+1.ASM(510): error A2105: Expected: instruction or directive
+     511 0145  33 C9			        xor     cx,cx 
+1.ASM(511): error A2086: Data emitted with no segment
+     512 0147  8A 16 00F5		        mov     dl,[columns] 
+1.ASM(512): error A2086: Data emitted with no segment
+     513 014B  8A 36 00F6		        mov     dh,[rows] 
+1.ASM(513): error A2086: Data emitted with no segment
+     514 014F  B8 0600			        mov     ax,0600h         
+1.ASM(514): error A2086: Data emitted with no segment
+     515 0152  CD 10			        int     10h 
+1.ASM(515): error A2086: Data emitted with no segment
+     516 0154  C3			        ret 
+1.ASM(516): error A2086: Data emitted with no segment
+     517				ENDP    clrscr 
+1.ASM(517): error A2105: Expected: instruction or directive
+     518				 
+     519				DATASEG 
+1.ASM(519): error A2105: Expected: instruction or directive
+     520				 
+     521 0155  20 50 72 6F 74 65 63	hello_msg db " Protected mode monitor *
+					TINY/OS*,  
+1.ASM(521): error A2024: Segment parameters are changed
+     522       74 65 64 20 6D 6F 64	
+     523       65 20 6D 6F 6E 69 74	
+     524       6F 72 20 2A 54 49 4E	
+     525       59 2F 4F 53 2A 2C 20	
+     526       20			
+1.ASM(521): error A2086: Data emitted with no segment
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-18
+
+
+     527				                v.1.0 for CPU 80286  ¦ 
+					© Frolov A.V., 1992 " 
+1.ASM(522): error A2105: Expected: instruction or directive
+     528				 
+     529				CODESEG 
+1.ASM(524): error A2105: Expected: instruction or directive
+     530				 
+     531				; -------------------------------------
+					----------------------- 
+     532				; Процедура выводит сообщение в защищён
+					ном режиме 
+     533				; -------------------------------------
+					----------------------- 
+     534				 
+     535				PROC    write_hello_msg NEAR 
+1.ASM(530): error A2105: Expected: instruction or directive
+     536				 
+     537 0179  A1 00F9			        mov     ax,[vir_crt]    ; загру
+					жаем селектор видеопамяти  
+1.ASM(532): error A2086: Data emitted with no segment
+     538 017C  8E C0			        mov     es,ax           ; в рег
+					истр es 
+1.ASM(533): error A2086: Data emitted with no segment
+     539				 
+     540				; Выводим сообщение в верхний левый уго
+					л экрана (x=y=0) 
+     541				 
+     542 017E  BB 0000			        mov     bx,0            ;(X,Y) 
+					= (AX,BX) 
+1.ASM(537): error A2086: Data emitted with no segment
+     543 0181  A1 00FB			        mov     ax,[curr_line] 
+1.ASM(538): error A2086: Data emitted with no segment
+     544 0184  FF 06 00FB		        inc     [curr_line]     ; увели
+					чиваем номер текущей строки 
+1.ASM(539): error A2086: Data emitted with no segment
+     545				 
+     546				; Загружаем адрес выводимой строки и её
+					 длину 
+     547				 
+     548 0188  BE 0155			        mov     si,OFFSET hello_msg 
+1.ASM(543): warning A4031: Operand types must match
+     549 018B  B9 0001			        mov     cx,SIZE hello_msg 
+1.ASM(544): error A2086: Data emitted with no segment
+     550				 
+     551 018E  B6 30			        mov     dh,30h  ; аттрибут - че
+					рный текст на голубом фоне 
+1.ASM(546): error A2086: Data emitted with no segment
+     552				 
+     553 0190  E8 0000 U		        call    writexy ; выводим строк
+					у 
+1.ASM(548): error A2009: Symbol not defined: WRITEXY
+     554				 
+     555 0193  C3			        ret 
+1.ASM(550): error A2086: Data emitted with no segment
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Page     1-19
+
+
+     556				ENDP    write_hello_msg 
+1.ASM(551): error A2105: Expected: instruction or directive
+     557				 
+     558				 
+     559 = 0194				CSEG_SIZE       = ($ - start) ; размер 
+					сегмента кода 
+1.ASM(554): error A2009: Symbol not defined: START
+     560				 
+     561				DATASEG 
+1.ASM(556): error A2105: Expected: instruction or directive
+     562				 
+     563 = 018C				DSEG_SIZE       = ($ - DSEG_BEG) ; разм
+					ер сегмента данных 
+     564				 
+     565				        END     start 
+1.ASM(560): error A2009: Symbol not defined: START
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+DGROUP . . . . . . . . . . . . .  	0000	FAR	Segments and Groups:	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+A20_OFF  . . . . . . . . . . . .  	NUMBER	00DD	
+A20_ON . . . . . . . . . . . . .  	NUMBER	00DF	
+A20_PORT . . . . . . . . . . . .  	NUMBER	00D1	
+ACCESS . . . . . . . . . . . . .  	L BYTE	0005	
+ACC_CONFORM  . . . . . . . . . .  	NUMBER	0004	
+ACC_CSEG . . . . . . . . . . . .  	NUMBER	0018	
+ACC_DATAWR . . . . . . . . . . .  	NUMBER	0002	
+ACC_DSEG . . . . . . . . . . . .  	NUMBER	0010	
+ACC_EXPDOWN  . . . . . . . . . .  	NUMBER	0004	
+ACC_PRESENT  . . . . . . . . . .  	NUMBER	0080	
+
+BASE_H . . . . . . . . . . . . .  	L BYTE	0004	
+BASE_L . . . . . . . . . . . . .  	L WORD	0002	
+BIOS_DESCR . . . . . . . . . . .  	NUMBER	0000	
+B_DATA_ADDR  . . . . . . . . . .  	NUMBER	0190	
+B_DATA_SIZE  . . . . . . . . . .  	NUMBER	012C	
+
+CMOS_PORT  . . . . . . . . . . .  	NUMBER	0070	
+CODE_ACC . . . . . . . . . . . .  	NUMBER	009C	
+COLOR_PORT . . . . . . . . . . .  	NUMBER	03D4	
+COLOR_SEG  . . . . . . . . . . .  	TEXT  0b800		
+COLUMNS  . . . . . . . . . . . .  	L BYTE	00F5	
+CRT_DESCR  . . . . . . . . . . .  	NUMBER	0000	
+CRT_LOW  . . . . . . . . . . . .  	NUMBER	1F40	
+CRT_SEG  . . . . . . . . . . . .  	NUMBER	000B	
+CRT_SIZE . . . . . . . . . . . .  	NUMBER	0FA0	
+CSEG_SIZE  . . . . . . . . . . .  	NUMBER	0194	
+CS_DESCR . . . . . . . . . . . .  	NUMBER	0000	
+CURR_LINE  . . . . . . . . . . .  	L WORD	00FB	
+
+DATA_ACC . . . . . . . . . . . .  	NUMBER	0092	
+DSEG_BEG . . . . . . . . . . . .  	NUMBER	0008	
+DSEG_SIZE  . . . . . . . . . . .  	NUMBER	018C	
+DS_DESCR . . . . . . . . . . . .  	NUMBER	0000	
+
+GDT_BEG  . . . . . . . . . . . .  	NUMBER	000E	
+GDT_SIZE . . . . . . . . . . . .  	NUMBER	0000	
+
+HELLO_MSG  . . . . . . . . . . .  	L BYTE	0155	
+
+INT_MASK_PORT  . . . . . . . . .  	NUMBER	0021	
+
+KBD_PORT_A . . . . . . . . . . .  	NUMBER	0060	
+KBD_PORT_B . . . . . . . . . . .  	NUMBER	0061	
+Microsoft (R) Macro Assembler Version 5.00                  1/19/16 21:40:29
+                                                             Symbols-2
+
+
+
+LIMIT  . . . . . . . . . . . . .  	L WORD	0000	
+
+MDA_DESCR  . . . . . . . . . . .  	NUMBER	0000	
+MONO_LOW . . . . . . . . . . . .  	NUMBER	0000	
+MONO_PORT  . . . . . . . . . . .  	NUMBER	03B4	
+MONO_SEG . . . . . . . . . . . .  	TEXT  0b000		
+MONO_SIZE  . . . . . . . . . . .  	NUMBER	03E8	
+
+NEXT1  . . . . . . . . . . . . .  	L NEAR	0081	
+
+PLOOP0 . . . . . . . . . . . . .  	L NEAR	00EB	
+PLOOP1 . . . . . . . . . . . . .  	L NEAR	00EE	
+PORT_6845  . . . . . . . . . . .  	NUMBER	0063	
+
+REAL_ES  . . . . . . . . . . . .  	L WORD	000C	
+REAL_SP  . . . . . . . . . . . .  	L WORD	000A	
+REAL_SS  . . . . . . . . . . . .  	L WORD	0008	
+RL_CRT . . . . . . . . . . . . .  	L WORD	00F7	
+ROWS . . . . . . . . . . . . . .  	L BYTE	00F6	
+RSRV . . . . . . . . . . . . . .  	L WORD	0006	
+
+SET_CRT_EXIT . . . . . . . . . .  	L NEAR	012D	
+SHUT_DOWN  . . . . . . . . . . .  	NUMBER	00FE	
+SS_DESCR . . . . . . . . . . . .  	NUMBER	0000	
+STACK_ACC  . . . . . . . . . . .  	NUMBER	0096	
+STACK_SIZE . . . . . . . . . . .  	NUMBER	0190	
+STATUS_PORT  . . . . . . . . . .  	NUMBER	0064	
+
+VIRTUAL_MODE . . . . . . . . . .  	NUMBER	0001	
+VIR_CRT  . . . . . . . . . . . .  	L WORD	00F9	
+
+WAIT_RESET . . . . . . . . . . .  	L NEAR	00B1	
+WXY_WRITE  . . . . . . . . . . .  	L NEAR	013E	
+
+@FILENAME  . . . . . . . . . . .  	TEXT  1		
+
+
+    560 Source  Lines
+    560 Total   Lines
+     65 Symbols
+
+  49260 + 418660 Bytes symbol space free
+
+      1 Warning Errors
+    226 Severe  Errors

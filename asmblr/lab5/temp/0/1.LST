@@ -1,0 +1,192 @@
+Microsoft (R) Macro Assembler Version 5.00                  11/30/15 20:26:03
+WORD	                                                       Page     1-1
+
+
+       1				Title WORD	 
+       2				  
+       3 0000				  Dat Segment			 
+       4 0000  48 65 6C 6C 6F 20 57	  Greet DB 'Hello Word', 13,10,'$'  
+       5       6F 72 64 0D 0A 24	
+       6 000D  29 2A 2B 2C 2D		        DB 41, 42, 43, 44, 45	 
+       7 0012  000A[			  A     DW 10 Dup(?) 
+       8	   ????			
+       9			 ]	
+      10				
+      11 0026  00			  b     db 0   
+      12 0027  ????			  x     dw ?   
+      13 0029  ????			  y     dw ? 
+      14 002B  ????			  z     dw ? 
+      15 002D  09			  masc db 9		 
+      16 002E				  Dat   Ends			 
+      17				  	 
+      18 0000				  Code Segment			 
+      19				  Assume cs:Code, ds:Dat 
+      20				   
+      21 0000				handler proc far 
+      22 0000  1E			push ds 
+      23 0001  0E			push cs 
+      24 0002  1F			pop ds 
+      25				;запись в es адреса начала видеопамяти 
+      26 0003  B8 B800			mov ax,0b800h 
+      27 0006  8E C0			mov es,ax 
+      28				 
+      29 0008  B8 ---- R		mov ax,seg greet 
+      30 000B  8E D8			mov ds,ax 
+      31				 
+      32				 
+      33 000D  B4 09			mov ah,09h 
+      34 000F  B0 6B				mov al,'k' 
+      35 0011  8A 1E 002D R			mov bl,masc 
+      36 0015  B7 00				mov bh,0 
+      37 0017  B9 0019				mov cx,25 
+      38 001A  CD 10			m1:	int 10h      
+      39				 
+      40				 
+      41 001C  FE 06 002D R		inc masc 
+      42				 
+      43 0020  E2 F8			loop m1 
+      44				 
+      45					;mov	ah,02h	; вывести точку
+					 
+      46					;mov	dx,32h 
+      47					;int	10h 
+      48					;mov	ax,1	; показать курс
+					ор 
+      49					;;int	33h 
+      50				; 
+      51 0022  1F			pop ds 
+      52				 
+Microsoft (R) Macro Assembler Version 5.00                  11/30/15 20:26:03
+WORD	                                                       Page     1-2
+
+
+      53 0023  CB			ret 
+      54				 
+      55 0024				handler endp 
+      56				 
+      57				 
+      58				 
+      59				 
+      60 0024  B8 ---- R		 Start: mov ax, Dat	         
+      61 0027  8E D8			  	 mov ds, ax 	        
+      62				  	 
+      63 0029  B4 00				    mov ah,00 
+      64 002B  B0 03			  	    mov al,03h 
+      65 002D  CD 10			  	    int 10h 
+      66				 
+      67 002F  B4 01				mov ah,01h 
+      68 0031  B9 0007				mov cx,0007h 
+      69					;int 10h 
+      70				  	     
+      71 0034  B4 02			  	    mov ah,02h 
+      72 0036  B7 00			  	    mov bh,00h 
+      73 0038  B6 00			  	    mov dh,00h 
+      74 003A  B2 00			  	    mov dl,00h 
+      75 003C  CD 10			  	    int 10h  
+      76					 
+      77 003E  B4 09				mov ah,09h 
+      78 0040  B0 6B				mov al,'k' 
+      79 0042  B3 4F				mov bl,4fh 
+      80 0044  B7 00				mov bh,0 
+      81 0046  B9 0019				mov cx,25 
+      82 0049  CD 10				int 10h       
+      83 004B  B4 02				mov ah,02h 
+      84 004D  B7 00				mov bh,0 
+      85 004F  BA 0200				mov dx,0200h 
+      86 0052  CD 10				int 10h 
+      87				 
+      88 0054  B4 09				mov ah,09h 
+      89 0056  BA 0000 R			mov dx, offset Greet 
+      90 0059  CD 21				int 21h 
+      91					 
+      92				;	mov ah,0 
+      93				;	mov al, 12h 
+      94				;	int 10h 
+      95				 
+      96				 
+      97 005B  B8 0000				mov ax,0000h 
+      98 005E  CD 33				int 33h 
+      99				 
+     100 0060  B8 0001				mov ax,0001h 
+     101 0063  CD 33				int 33h 
+     102				 
+     103 0065  B8 0002				mov ax,0002h 
+     104 0068  CD 33				int 33h 
+     105				     
+     106				  	     
+Microsoft (R) Macro Assembler Version 5.00                  11/30/15 20:26:03
+WORD	                                                       Page     1-3
+
+
+     107				  	     	     
+     108 006A  B8 0003			  	    mov ax,0003h 
+     109 006D  CD 33			 	    int 33h          
+     110 006F  89 1E 002B R			    mov   z,bx 
+     111 0073  89 16 0027 R		  	    mov x,dx 
+     112 0077  89 0E 0029 R		  	    mov y,cx         
+     113				  	     
+     114 007B  B8 000C				mov	ax,000ch	 
+     115 007E  B9 0004				mov	cx,0004h 
+     116 0081  BA 0000 R			mov	dx,offset handler 
+     117 0084  0E				push cs 
+     118 0085  07				pop es 
+     119 0086  CD 33				int	33h 
+     120				 
+     121 0088  B4 01				mov ah,1 
+     122 008A  CD 21				int 21h 
+     123				 
+     124 008C  B8 000C				mov ax,000ch 
+     125 008F  B9 0000				mov cx,0 
+     126 0092  CD 33				int 33h 
+     127					 
+     128				 
+     129				  	 	 	 
+     130 0094  B4 4C				 mov ah, 4ch		  
+     131 0096  CD 21			  	 int 21h		 
+     132 0098				  Code 	 Ends 
+     133				  End 	 Start 
+Microsoft (R) Macro Assembler Version 5.00                  11/30/15 20:26:03
+WORD	                                                       Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	0098	PARA	NONE	
+DAT  . . . . . . . . . . . . . .  	002E	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+A  . . . . . . . . . . . . . . .  	L WORD	0012	DAT	Length = 000A
+
+B  . . . . . . . . . . . . . . .  	L BYTE	0026	DAT
+
+GREET  . . . . . . . . . . . . .  	L BYTE	0000	DAT
+
+HANDLER  . . . . . . . . . . . .  	F PROC	0000	CODE	Length = 0024
+
+M1 . . . . . . . . . . . . . . .  	L NEAR	001A	CODE
+MASC . . . . . . . . . . . . . .  	L BYTE	002D	DAT
+
+START  . . . . . . . . . . . . .  	L NEAR	0024	CODE
+
+X  . . . . . . . . . . . . . . .  	L WORD	0027	DAT
+
+Y  . . . . . . . . . . . . . . .  	L WORD	0029	DAT
+
+Z  . . . . . . . . . . . . . . .  	L WORD	002B	DAT
+
+@FILENAME  . . . . . . . . . . .  	TEXT  1		
+
+
+    129 Source  Lines
+    129 Total   Lines
+     14 Symbols
+
+  49450 + 434918 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

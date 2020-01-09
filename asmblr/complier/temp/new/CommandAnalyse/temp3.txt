@@ -1,0 +1,11 @@
+data segment
+Data1 segment
+Data1 ends
+Dat2 segment
+Dat2 ends
+data ends
+code segment
+code1 segment
+code1 ends
+code ends
+end 

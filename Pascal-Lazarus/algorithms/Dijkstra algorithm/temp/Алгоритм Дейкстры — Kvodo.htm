@@ -1,0 +1,690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0039)http://kvodo.ru/dijkstra-algorithm.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" class="wf-pontanosans-n4-active wf-cousine-n4-active wf-active" data-find="_8"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Алгоритм Дейкстры — Kvodo</title>
+    
+<!-- Start: injected by Adguard -->
+
+<style type="text/css">
+#Ad1, #AdHeader, #Adbanner, #AdvertiseFrame, #BannerDiv, #Tadspacehead, #TopBanner, #ad-container, #ad-wrapper, #ad1, #ad3, #ad728x90, #adBanner, #adContainer, #adDiv, #adTop, #adWrapper, #ad_container, #ad_space, #ad_square, #ad_wrapper, #adbox, #adposition3, #adriver_banner, #ads, #adspace, #advblock, #advertise, #advertisement, #advertising, #adverts, #banner-wrap, #banner_container, #contentAd, #content_ad, #dle-content noindex > div[style], #dle-content noindex > table[style], #featuread, #footer_ads, #head-ad, #header_ad, #mediaget_box, #printads, #promo-ad, #sidebar_ads, #sponsored, #teasers, #topBannerAd, #top_ad, #top_banners, #topad, .AdBox, .AdInfo, .AdTitle, .Ads, .Advert, .BannerTop, .Table_01, .ad-box, .ad-button, .ad-container, .ad2, .ad468, .adBox, .adContainer, .adDiv, .adElement, .adHolder, .adModule, .adSpace, .adSummary, .adText, .adTitle, .ad_Right, .ad_block, .ad_body, .ad_content, .ad_header, .ad_links, .ad_right, .ad_space, .ad_text, .adbox, .addiv, .adframe, .adholder, .adinfo, .adleft, .adlink, .adlist, .adpic, .adright, .adsense, .adtable, .adtext, .adv, .advert-horizontal, .advert_list, .advertise, .advertisement, .advertiser, .advertising, .advertisment, .adverts, .adwrapper, .affiliate, .b-advert, .b-article-aside__banner, .b-banner, .baner, .banner-body, .banner-right, .block_ad, .bnr, .bottom_ad_block, .contentAd, .headerAd, .header_ad_center, .horizontal_ad, .mediaget, .mid_ad, .module-ad, .mpu, .rekl, .right-banner, .show_ads, .sponsored, .sponsoredtextlink_container, .textads, .top-banner, .topAds, .top_ads, .topad, .topbanner, div[id^="informer_"], embed[width="640"][height="160"], iframe[width="100%"][height="250"], iframe[width="100%"][height="60"], img[width="240"][height="400"], object[width="100"][height="100"], object[width="1000"][height="250"], object[width="1000"][height="270"], object[width="200"][height="200"], object[width="260"][height="130"], object[width="300"][height="60"], object[width="640"][height="100"], object[width="640"][height="160"], #ad_global_below_navbar, #ads_c_tpc, #gg1, #kfivtwin, .a_mu, .a_pt, .ad_footerbanner, .baiduad, .wp.a_t, div[id^="ad_thread"], img[width="960"][src*=".sinaimg."], #ad-content, #adt, #banner-container, #banner_top, #header-banner, #sponsors, .adblock, .ads2, .banner-hold, .banner240, .bannerblock, .banners-block, .brand-link, .ins_banner-part, .leftbanner, .sponsors, .top_banner, .top_banners, div[id^="AdFox_banner_"], noindex .download_btn, embed[width="240"][height="400"], iframe[width="240"][height="400"], iframe[width="300"][height="250"], iframe[width="600"][height="90"], object[width="100%"][height="150"], object[width="100%"][height="250"], object[width="200"][height="150"], object[width="220"][height="160"], object[width="240"][height="400"], object[width="300"][height="300"], object[width="500"][height="250"], object[width="600"][height="90"], .ads-ad, .banners_block, #AD_banner, #AdColumn, #AdContainer, #AdDiv, #AdHeader, #AdImage, #AdTop, #Adcode, #AdvertiseFrame, #Advertisements, #BottomAdContainer, #BottomAds, #ContentAd, #ContentAd1, #HeroAd, #PreRollAd, #RightAdBlock, #TopAd, #WNAd41, #ab_adblock, #ad-area, #ad-background, #ad-bg, #ad-bottom, #ad-buttons, #ad-container, #ad-header, #ad-header-728x90, #ad-leaderboard, #ad-main, #ad-right, #ad-text, #ad-top, #ad-top-banner-placeholder, #ad-top-wrapper, #ad-unit, #ad-wrapper, #ad468, #ad728, #ad728x90, #adBanner, #adBelt, #adBox, #adComponentWrapper, #adDiv, #adFrame, #adGallery, #adHeader, #adHolder, #adIframe, #adLayer, #adLeader, #adPosition0, #adSense, #adSet, #adText, #adTop, #ad_0, #ad_02, #ad_1, #ad_160, #ad_2, #ad_3 { display: none!important; }
+#ad_4, #ad_5, #ad_728_90, #ad_area, #ad_banner, #ad_big, #ad_bottom, #ad_center, #ad_content, #ad_global_above_footer, #ad_header, #ad_img, #ad_leaderboard, #ad_left, #ad_overlay, #ad_right, #ad_space, #ad_square, #ad_table, #ad_unit, #ad_wrap, #ad_wrapper, #adaptv_ad_player_div, #adbackground, #adbanner, #adbar, #adblock, #adboard, #adbody, #adbox, #adbrite, #adcode, #adcontainer, #adcontainer1, #adcontent, #adhead, #adheader, #adimg1, #adlabel, #adlayer, #admain, #adnews, #adposition3, #adright, #ads-col, #ads-wrapper, #adsHeader, #ads_bottom, #ads_right, #ads_top, #ads_wrapper, #adsdiv, #adsense, #adsense_block, #adsense_inline, #adsensewide, #adspace, #adspace_top, #adspot-300x250-pos-1, #adspot-300x250-pos-2, #adtext, #adtop, #adv-masthead, #adv-top, #advert-1, #advert1, #advert2, #advert_box, #advertbox3, #advertise, #advertisement1, #advertisetop, #advertising_wrapper, #adverts, #advtop, #adwrapper, #banner-ad, #bannerAd, #bannerAdWrapper, #banner_topad, #bannerad, #bigAd, #bigad, #body_ad, #bottomAd, #bottomAds, #bottom_ad, #centerads, #cmn_ad_tag_head, #companionAd, #content-header-ad, #contentAd, #content_ads, #content_adv, #contentad, #dart-container-728x90, #dfp_ad_Entry_728x90, #dfp_ad_Home_728x90, #divAd, #div_prerollAd_1, #download_ad, #featuread, #featured-ads, #featuredAds, #footer_ad, #footer_ads, #gAds, #game-ad, #google-ad, #googlead, #googleadsense, #gridAdSidebar, #head-ad, #head_ad, #header-ads, #headerAd, #headerAdContainer, #header_ad, #homead, #index_ad, #ka_adRightSkyscraperWide, #leaderAd, #leaderBoardAd, #leaderboard-ad, #leaderboard-advertisement, #leaderboardad, #left-ad, #left_ads, #leftad, #leftads, #logoAd, #logo_ad, #mainAd, #main_ad, #mini-ad, #mpu2, #mpu2_container, #mpu_container, #msad, #myAd, #player_ads, #pre_advertising_wrapper, #prerollAd, #promo-ad, #publicidad, #reklama, #rh-ad, #rightAd, #right_ad, #right_ads, #right_adsense, #search-sponsor, #searchAd, #search_ad, #search_ads, #showAd, #sideAd, #side_ads, #sidebar-ads, #sidebar_ad, #sidebar_ads, #sky_advert, #skybox-ad, #sponsorAdDiv, #sponsorText, #sponsoredTop, #sponsoredlinks, #sponsors-home, #takeover_ad, #theAd, #top-ad, #topAd, #topAdSpace, #topAdSpace_div, #topAdvert, #topBannerAd, #top_ad, #top_ad_game, #top_ads, #topad, #topadvert, #topbannerad, #under_story_ad, #video-adv, #videoAd, .ADBAR, .AdBody:not(body), .AdBox, .AdInfo, .AdSidebar, .AdTitle, .AdvertContainer, .HomeAds, .IM_ad_unit, .RelatedAds, .SponsoredContent, .ad-1, .ad-300x250, .ad-4, .ad-a, .ad-b, .ad-banner, .ad-block, .ad-body, .ad-border, .ad-btn, .ad-button, .ad-cat, .ad-cell, .ad-display, .ad-enabled, .ad-footer, .ad-header, .ad-holder, .ad-icon, .ad-img, .ad-inner, .ad-item, .ad-leader-top, .ad-leaderboard, .ad-left, .ad-link, .ad-links, .ad-panel, .ad-placement, .ad-right, .ad-s, .ad-section, .ad-served, .ad-sidebar, .ad-square, .ad-stack, .ad-text, .ad-top, .ad-unit, .ad-unit-300-wrapper, .ad-vertical-container, .ad-wide, .ad-wrap, .ad-wrapper, .ad04, .ad250, .ad300, .ad310, .ad350, .ad468, .ad728, .ad90, .ad960, .ad980, .adArea, .adBlock, .adBottomBoard, .adBox, .adContent { display: none!important; }
+.adDiv, .adElement, .adFrame, .adFrameCnt, .adHead, .adHeader, .adHeaderblack, .adHeadline, .adHolder, .adHoldert, .adImg, .adItem, .adLeft, .adLink, .adMessage, .adMiddle, .adMod, .adModule, .adOne, .adOverlay, .adPanel, .adPod, .adResult, .adRight, .adRotator, .adSpace, .adSpot, .adText, .adTitle, .adTopHome, .adTwo, .adWidget, .adWrap, .ad_1, .ad_160, .ad_160x600, .ad_2, .ad_250, .ad_3, .ad_728x90, .ad_960, .ad_Right, .ad_block, .ad_body, .ad_box, .ad_container, .ad_content, .ad_description, .ad_global_header, .ad_head_rectangle, .ad_header, .ad_img, .ad_item, .ad_leaderboard, .ad_line, .ad_main, .ad_middle, .ad_outer, .ad_pic, .ad_position, .ad_promo, .ad_slug_table, .ad_space, .ad_spot, .ad_text, .ad_title, .ad_top, .ad_trick_header, .ad_trick_left, .ad_wrap, .ad_wrapper, .adarea, .adbanner, .adbar, .adbottom, .adbutton, .adchange, .adclass, .adcolumn, .adcont, .addiv, .adframe, .adfree, .adheader, .adholder, .adinfo, .adkit, .adlink, .adlist, .admain, .admiddle, .adpic, .adright, .adrow1, .adrow2, .ads-1, .ads-2, .ads-3, .ads-ad, .ads-area, .ads-bg, .ads-col, .ads-header, .ads-holder, .ads-inline, .ads-item, .ads-right, .ads-section, .ads-title, .ads-top, .ads01, .ads1, .ads3, .adsBlock, .adsBox, .adsWidget, .ads_catDiv, .ads_div, .ads_top, .ads_wrapper, .adsbottombox, .adsbox, .adsbygoogle, .adscontainer, .adshome, .adside, .adslot, .adslot_blurred, .adspace, .adtable, .adtile, .adtop, .adv-right, .adv300, .adv_300, .adver, .advert-block, .advert-box, .advert-container, .advert-content, .advert-horizontal, .advert-wrapper, .advert2, .advertColumn, .advertContainer, .advertLink, .advertText, .advert_area, .advert_container, .advert_list, .advertbox, .advertisement-1, .advertisement-block, .advertisement-swimlane, .advertiser, .advertising_banner, .advertising_block, .advertisment, .advertorial, .adverts, .adverttext, .adwords, .afs_ads, .after-post-ad, .article_ad, .aseadn, .b-advert, .banner-ad, .banner-ads, .banner160x600, .banner300, .bannerAd, .banner_728x90, .banner_ad, .banner_ads, .bannerad, .bigads, .block-ad, .block-simpleads, .block_ad, .blog-ads, .bottom-ad, .bottom-ads, .bottom-left-ad, .bottomAds, .bottom_ad, .bottom_ad_block, .box-ads, .box-radvert, .boxad, .can_ad_slug, .category-ad, .category-advertorial, .center_ad, .change_AdContainer, .chitikaAdBlock, .container_ad, .container_row_ad, .contentAd, .contentAds, .content_ads, .content_tagsAdTech, .cp-adsInited, .custom-ad, .desktop-ad, .displayAd, .download-ad, .download_ad, .featured-ad, .featuredAdBox, .flash-advertisement, .footer-ad, .footer-ads, .footerad, .forumAd, .gallery-ad, .google-sponsored, .googleAdSense, .googleAds, .has-ad, .header-ad, .headerAd, .header_ad, .header_ad_center, .header_advert, .headerad, .headerads, .home-ad, .home-ads, .homeAd, .homead, .homepage-ad, .homepage_ads, .horizontal_ad, .img_ad, .imgad, .inner_ad, .innerad, .interstitial_ad_wrapper, .ipsAd, .item-ads, .item-container-ad, .label-ad, .leaderboard-ad, .leaderboard-ads, .leftAd, .leftad, .list-ad, .list-ads, .listad, .logo-ad, .main-ads, .mainAd, .main_adv, .marketing-ad { display: none!important; }
+.mid_ad, .midad, .middle_AD, .mod-ad, .mod-adopenx, .module-ad, .navad, .newsAd, .oasad, .openx, .page-ad, .page_ad, .pfAd, .player_ad, .player_hover_ad, .pm-ad, .post-ad, .post-sponsored, .post_ad, .post_ads, .postad, .premiumAdOverlay, .premiumAdOverlayClose, .promoAd, .pub_300x250, .pub_300x250m, .pub_728x90, .pushdown-ad, .rail-ad, .rbRectAd, .rectangle_ad, .refreshAds, .region-top-ad-position, .reklam, .reklama, .reportAdLink, .resultad, .right-ad, .rightAd, .right_ad, .right_ads_column, .rightad, .rightadv, .searchAds, .searchad, .searchads, .showAd, .side-ad, .side-bar-ad-position1, .single-ad, .singleAd, .skinAd, .sky_ad, .skyscraperAd, .slide-ad, .smallAd, .small_ad, .smallads, .sponsor-box, .sponsor-right, .sponsorBlock, .sponsorBottom, .sponsoredLinks, .sponsoredTop, .sponsorlink, .sticky-ad, .story-ad, .text-ad, .text-ad-links, .text-ads, .textAd, .text_ad, .text_ads, .textad, .textads, .top-ad, .top-ad-wrapper, .topAD, .topAds, .top_ad, .top_ad_div, .top_ad_wrap, .top_ads, .topads, .tower-ad, .txtAd, .type_ads_default, .view_ad, .wideAd, .withAds, .wnad, .wpInsertInPostAd, .wrapad, .yom-ad, a[href*="/adrotate-out.php?"], a[href^="http://ad-emea.doubleclick.net/"], a[href^="http://ad.doubleclick.net/"], a[href^="http://adfarm.mediaplex.com/"], a[href^="http://ads.betfair.com/redirect.aspx?"], a[href^="http://ads2.williamhill.com/redirect.aspx?"], a[href^="http://adserving.unibet.com/"], a[href^="http://adultfriendfinder.com/p/register.cgi?pid="], a[href^="http://affiliate.coral.co.uk/processing/"], a[href^="http://marketgid.com"], a[href^="http://mgid.com/"], a[href^="http://online.ladbrokes.com/promoRedirect?"], a[href^="http://pubads.g.doubleclick.net/"], a[href^="http://us.marketgid.com"], a[href^="http://websitedhoome.com/"], a[href^="http://www.bet365.com/home/?affiliate"], a[href^="http://www.fbooksluts.com/"], a[href^="http://www.fleshlight.com/"], a[href^="http://www.google.com/aclk?"], a[href^="http://www.liutilities.com/"], a[href^="http://www.socialsex.com/"], a[href^="http://www.yourfuckbook.com/?"], div[id^="MarketGid"], div[id^="div-gpt-ad-"], iframe[id^="google_ads_frame"], iframe[id^="google_ads_iframe"], iframe[src^="http://ad.yieldmanager.com/"], #rhs_block > #mbEnd, #tads.c, #ad_headerbanner, .a_fr { display: none!important; }
+
+</style>
+
+
+<script type="text/javascript" async="" src="./Алгоритм Дейкстры — Kvodo_files/ga.js"></script><script src="./Алгоритм Дейкстры — Kvodo_files/webfont.js" type="text/javascript" async=""></script><script type="text/javascript">
+window.AG_onLoad = function(func) { if (window.addEventListener) { window.addEventListener('DOMContentLoaded', func); } };
+window.AG_removeElementById = function(id) { var element = document.getElementById(id); if (element && element.parentNode) { element.parentNode.removeChild(element); }};
+window.AG_removeElementBySelector = function(selector) { if (!document.querySelectorAll) { return; } var nodes = document.querySelectorAll(selector); if (nodes) { for (var i = 0; i < nodes.length; i++) { if (nodes[i] && nodes[i].parentNode) { nodes[i].parentNode.removeChild(nodes[i]); } } } };
+window.AG_each = function(selector, fn) { if (!document.querySelectorAll) return; var elements = document.querySelectorAll(selector); for (var i = 0; i < elements.length; i++) { fn(elements[i]); }; };
+var AdFox_getCodeScript = function() {};
+AG_onLoad(function() { window.AG_each('iframe[id^="AdFox_iframe_"]', function(el) { if (el && el.parentNode) { el.parentNode.removeChild(el); } }); });
+</script>
+
+<link media="all" rel="stylesheet" type="text/css" charset="utf-8" href="./Алгоритм Дейкстры — Kvodo_files/adg_css_0.css"><link media="all" rel="stylesheet" type="text/css" charset="utf-8" href="./Алгоритм Дейкстры — Kvodo_files/adg_css_1.css"><link media="all" rel="stylesheet" type="text/css" charset="utf-8" href="./Алгоритм Дейкстры — Kvodo_files/adg_css_2.css"><link media="all" rel="stylesheet" type="text/css" charset="utf-8" href="./Алгоритм Дейкстры — Kvodo_files/adg_css_3.css"><link media="all" rel="stylesheet" type="text/css" charset="utf-8" href="./Алгоритм Дейкстры — Kvodo_files/adg_css_4.css"><link media="all" rel="stylesheet" type="text/css" charset="utf-8" href="./Алгоритм Дейкстры — Kvodo_files/adg_css_5.css"><script type="text/javascript" charset="utf-8" src="./Алгоритм Дейкстры — Kvodo_files/Adguard Popup Blocker"></script><script type="text/javascript" charset="utf-8" src="./Алгоритм Дейкстры — Kvodo_files/Web of Trust"></script><script type="text/javascript">(function(){'use strict'; try{var c=window.self!=window.top,m=window.innerWidth||document.documentElement.clientWidth,n=window.innerHeight||document.documentElement.clientHeight;if(!(c&&1E5>m*n)){var a=eval("[{ styles: [ { tagName: 'link', attributes: [{ name: 'media', value: 'all' }, { name: 'rel', value: 'stylesheet' }, { name: 'type', value: 'text/css' }, { name: 'charset', value: 'utf-8' }, { name: 'href', value: '/adguard-ajax-api/injections/adg_css_0.css?rand=635761220905360506' } ] }, { tagName: 'link', attributes: [{ name: 'media', value: 'all' }, { name: 'rel', value: 'stylesheet' }, { name: 'type', value: 'text/css' }, { name: 'charset', value: 'utf-8' }, { name: 'href', value: '/adguard-ajax-api/injections/adg_css_1.css?rand=635761220905450511' } ] }, { tagName: 'link', attributes: [{ name: 'media', value: 'all' }, { name: 'rel', value: 'stylesheet' }, { name: 'type', value: 'text/css' }, { name: 'charset', value: 'utf-8' }, { name: 'href', value: '/adguard-ajax-api/injections/adg_css_2.css?rand=635761220905560542' } ] }, { tagName: 'link', attributes: [{ name: 'media', value: 'all' }, { name: 'rel', value: 'stylesheet' }, { name: 'type', value: 'text/css' }, { name: 'charset', value: 'utf-8' }, { name: 'href', value: '/adguard-ajax-api/injections/adg_css_3.css?rand=635761220905630523' } ] }, { tagName: 'link', attributes: [{ name: 'media', value: 'all' }, { name: 'rel', value: 'stylesheet' }, { name: 'type', value: 'text/css' }, { name: 'charset', value: 'utf-8' }, { name: 'href', value: '/adguard-ajax-api/injections/adg_css_4.css?rand=635761220905720508' } ] }, { tagName: 'link', attributes: [{ name: 'media', value: 'all' }, { name: 'rel', value: 'stylesheet' }, { name: 'type', value: 'text/css' }, { name: 'charset', value: 'utf-8' }, { name: 'href', value: '/adguard-ajax-api/injections/adg_css_5.css?rand=635761220905740508' } ] } ], documentStart: [  ], documentEnd: [ { tagName: 'script', attributes: [{ name: 'type', value: 'text/javascript' }, { name: 'charset', value: 'utf-8' }, { name: 'src', value: '/adguard-ajax-api/injections/Adguard Popup Blocker?rand=635761218453873849' } ] }, { tagName: 'script', attributes: [{ name: 'type', value: 'text/javascript' }, { name: 'charset', value: 'utf-8' }, { name: 'src', value: '/adguard-ajax-api/injections/Web of Trust?rand=635761218454273851' } ] } ]  }]")[0],h=document.getElementsByTagName("script"),k=h[h.length-1],p=k.parentNode,b=function(a){if("undefined"!=typeof a)for(var b=0;b<a.length;b++){for(var e=a[b],c=document.createElement(e.tagName),f=0;f<e.attributes.length;f++){var d=e.attributes[f],g=d.value;if("src"==d.name||"href"==d.name)g=
+document.location.protocol+"//injections.adguard.com"+g;c.setAttribute(d.name,g)}p.insertBefore(c,k)}};b(a.styles);if(window.addEventListener&&!c&&function(){return eval("var __temp = null"),"undefined"===typeof __temp}()){b(a.documentStart);var l=function(){document.body?b(a.documentEnd):"uninitialized"!=document.readyState&&"loading"!=document.readyState||setTimeout(l,10)};l()}}}catch(q){console&&console.log&&console.log(q)}})();</script>
+<!-- End: injected by Adguard -->
+<link rel="pingback" href="http://kvodo.ru/xmlrpc.php"> 
+    
+<!-- All in One SEO Pack 2.2.5.1 by Michael Torbert of Semper Fi Web Design[350,374] -->
+<link rel="author" href="https://plus.google.com/111759038389270044595">
+<meta name="description" content="Алгоритм голландского ученого Эдсгера Дейкстры находит все кратчайшие пути из одной изначально заданной вершины графа до всех остальных. Код на C++ и Паскаль.">
+
+<meta name="keywords" content="Алгоритм Дейкстры,код c++,код Паскаль">
+
+<link rel="canonical" href="./Алгоритм Дейкстры — Kvodo_files/Алгоритм Дейкстры — Kvodo.htm">
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="Kvodo.ru » Лента" href="http://kvodo.ru/feed">
+<link rel="alternate" type="application/rss+xml" title="Kvodo.ru » Лента комментариев" href="http://kvodo.ru/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Kvodo.ru » Лента комментариев к «Алгоритм Дейкстры»" href="http://kvodo.ru/dijkstra-algorithm.html/feed">
+	<script type="text/javascript">
+	WebFontConfig = {
+		google: { families: ['Pontano+Sans::latin', 'Cousine::cyrillic-ext,latin,cyrillic'] }
+	};
+	(function() {
+		var wf = document.createElement('script');
+		wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})(); 
+    </script>
+    <link rel="stylesheet" id="yarppWidgetCss-css" href="./Алгоритм Дейкстры — Kvodo_files/widget.css" type="text/css" media="all">
+<link rel="stylesheet" id="cptch_stylesheet-css" href="./Алгоритм Дейкстры — Kvodo_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Алгоритм Дейкстры — Kvodo_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="./Алгоритм Дейкстры — Kvodo_files/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="graphene-stylesheet-css" href="./Алгоритм Дейкстры — Kvodo_files/style(1).css" type="text/css" media="screen">
+<link rel="stylesheet" id="codecolorer-css" href="./Алгоритм Дейкстры — Kvodo_files/codecolorer.css" type="text/css" media="screen">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Pontano+Sans%7CCousine&subset=latin,cyrillic-ext,latin,cyrillic" media="all"><script type="text/javascript" src="./Алгоритм Дейкстры — Kvodo_files/jquery.js"></script>
+<script type="text/javascript" src="./Алгоритм Дейкстры — Kvodo_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Алгоритм Дейкстры — Kvodo_files/jquery.tools.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var grapheneJS = {"templateUrl":"http:\/\/kvodo.ru\/wp-content\/themes\/graphene","isSingular":"1","shouldShowComments":"1","commentsOrder":"newest","sliderDisable":"","sliderAnimation":"vertical-slide","sliderTransSpeed":"400","sliderInterval":"4000","sliderDisplay":"bgimage-excerpt","infScroll":"","infScrollClick":"1","infScrollComments":"","totalPosts":"1","postsPerPage":"20","isPageNavi":"1","infScrollMsgText":"\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u043c \u0435\u0449\u0435 window.grapheneInfScrollItemsPerPage \u0448\u0442\u0443\u043a\u0443. \u0412\u0441\u0435\u0433\u043e \u043e\u0441\u0442\u0430\u043b\u043e\u0441\u044c window.grapheneInfScrollItemsLeft...","infScrollMsgTextPlural":"\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u043c \u0435\u0449\u0435 window.grapheneInfScrollItemsPerPage \u0448\u0442\u0443\u043a. \u0412\u0441\u0435\u0433\u043e \u043e\u0441\u0442\u0430\u043b\u043e\u0441\u044c window.grapheneInfScrollItemsLeft...","infScrollFinishedText":"\u041d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043e\u0441\u0442\u0430\u043b\u043e\u0441\u044c \u0434\u043b\u044f \u0434\u043e\u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438","commentsPerPage":"50","totalComments":"1","infScrollCommentsMsg":"\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u043c \u0435\u0449\u0435 window.grapheneInfScrollCommentsPerPage \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439. \u0412\u0441\u0435\u0433\u043e \u043e\u0441\u0442\u0430\u043b\u043e\u0441\u044c window.grapheneInfScrollCommentsLeft...","infScrollCommentsMsgPlural":"\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u043c \u0435\u0449\u0435 window.grapheneInfScrollCommentsPerPage \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0435\u0432. \u0412\u0441\u0435\u0433\u043e \u043e\u0441\u0442\u0430\u043b\u043e\u0441\u044c window.grapheneInfScrollCommentsLeft...","infScrollCommentsFinishedMsg":"\u041d\u0435 \u043e\u0441\u0442\u0430\u043b\u043e\u0441\u044c \u043d\u0438\u043a\u0430\u043a\u0438\u0445 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0435\u0432 \u0434\u043b\u044f \u0434\u043e\u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Алгоритм Дейкстры — Kvodo_files/graphene.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://kvodo.ru/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://kvodo.ru/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Поиск в глубину" href="http://kvodo.ru/dfs.html">
+<link rel="next" title="Алгоритм Флойда – Уоршелла" href="http://kvodo.ru/algoritm-floyda-uorshella.html">
+<meta name="generator" content="WordPress 4.1.1">
+<link rel="shortlink" href="http://kvodo.ru/?p=905">
+<style type="text/css">
+.sidebar h3{border-color: #022328}.sidebar h3{text-shadow: 0 -1px #04343a}.sidebar h3{ background: #06454c; background: -moz-linear-gradient(#005F6B, #06454c); background: -webkit-linear-gradient(#005F6B, #06454c); background: -o-linear-gradient(#005F6B, #06454c); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#005F6B', EndColorStr='#06454c')"; background: linear-gradient(#005F6B, #06454c); }.block-button, .block-button:visited, .Button, .button, input[type="submit"], button[type="submit"], #commentform #submit, .wpsc_buy_button{ background: #004551; background: -moz-linear-gradient(#005F6B,#004551); background: -webkit-linear-gradient(#005F6B,#004551); background: -o-linear-gradient(#005F6B, #004551); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#005F6B', EndColorStr='#004551')"; background: linear-gradient(#005F6B,#004551); border-color: #004551; text-shadow: 0 -1px 1px #053a41; color: #ffffff; } .block-button:hover, .button:hover, input[type="submit"]:hover, button[type="submit"]:hover, #commentform #submit:hover,.wpsc_buy_button:hover{ background: #004551; background: -moz-linear-gradient(#005F6B,#002B37); background: -webkit-linear-gradient(#005F6B,#002B37); background: -o-linear-gradient(#005F6B, #002B37); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#005F6B', EndColorStr='#002B37')"; background: linear-gradient(#005F6B,#002B37); color: #ffffff; }.page-title{ -pie-background: linear-gradient(left top,#06454c,#005F6B); background: #005F6B; background: -moz-linear-gradient(left top,#06454c, #005F6B); background: -webkit-linear-gradient(left top,#06454c, #005F6B); background: -o-linear-gradient(left top,#06454c, #005F6B); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(gradientType=1,startColorStr='#06454c', EndColorStr='#005F6B')"; background: linear-gradient(left top,#06454c, #005F6B); }.page-title{color: #b6d2d5}.page-title span{color: #eae9e9}.page-title{text-shadow: 0 -1px 0 #033c42}#comments ol.children li.comment{border-color: #DDDDDD} #comments ol.children li.bypostauthor, #comments li.bypostauthor.comment{border-color: #005F6B}.header_title, .header_title a, .header_title a:visited, .header_title a:hover, .header_desc {color:#blank}#sidebar_bottom .sidebar-wrap{width:311px}.home #sidebar_bottom .sidebar-wrap{width:311px}#nav li ul{width:200px} #nav li ul ul{margin-left:200px}#header-menu ul li a, #secondary-menu ul li a{width:180px}#header .header_desc{ font-family:Verdana;font-size:120%;line-height:20px; }.entry-content, .sidebar, .comment-entry{ font-family:Verdana;font-size:110%;line-height:23px; }.featured_slider #slider_root{height:36px}#header{height:105px}#header_img_link{width:1054px; height:105px}a,.post-title,.post-title a,#comments > h4.current a{color: #008C9E}a:visited,.post-title a:visited{color: #008C9E}a:hover,.post-title a:hover{color: #005F6B}.post-title, .post-title a, .post-title a:hover, .post-title a:visited{ color: #008C9E }.container_16 {width:1054px}.container_16 .grid_1{width:45.875px}.container_16 .prefix_1{padding-left:65.875px}.container_16 .suffix_1{padding-right:65.875px}.container_16 .push_1{left:65.875px}.container_16 .pull_1{left:-65.875px}.container_16 .grid_2{width:111.75px}.container_16 .prefix_2{padding-left:131.75px}.container_16 .suffix_2{padding-right:131.75px}.container_16 .push_2{left:131.75px}.container_16 .pull_2{left:-131.75px}.container_16 .grid_3{width:177.625px}.container_16 .prefix_3{padding-left:197.625px}.container_16 .suffix_3{padding-right:197.625px}.container_16 .push_3{left:197.625px}.container_16 .pull_3{left:-197.625px}.container_16 .grid_4{width:243.5px}.container_16 .prefix_4{padding-left:263.5px}.container_16 .suffix_4{padding-right:263.5px}.container_16 .push_4{left:263.5px}.container_16 .pull_4{left:-263.5px}.container_16 .grid_5{width:309.375px}.container_16 .prefix_5{padding-left:329.375px}.container_16 .suffix_5{padding-right:329.375px}.container_16 .push_5{left:329.375px}.container_16 .pull_5{left:-329.375px}.container_16 .grid_6{width:375.25px}.container_16 .prefix_6{padding-left:395.25px}.container_16 .suffix_6{padding-right:395.25px}.container_16 .push_6{left:395.25px}.container_16 .pull_6{left:-395.25px}.container_16 .grid_7{width:441.125px}.container_16 .prefix_7{padding-left:461.125px}.container_16 .suffix_7{padding-right:461.125px}.container_16 .push_7{left:461.125px}.container_16 .pull_7{left:-461.125px}.container_16 .grid_8{width:507px}.container_16 .prefix_8{padding-left:527px}.container_16 .suffix_8{padding-right:527px}.container_16 .push_8{left:527px}.container_16 .pull_8{left:-527px}.container_16 .grid_9{width:572.875px}.container_16 .prefix_9{padding-left:592.875px}.container_16 .suffix_9{padding-right:592.875px}.container_16 .push_9{left:592.875px}.container_16 .pull_9{left:-592.875px}.container_16 .grid_10{width:638.75px}.container_16 .prefix_10{padding-left:658.75px}.container_16 .suffix_10{padding-right:658.75px}.container_16 .push_10{left:658.75px}.container_16 .pull_10{left:-658.75px}.container_16 .grid_11{width:704.625px}.container_16 .prefix_11{padding-left:724.625px}.container_16 .suffix_11{padding-right:724.625px}.container_16 .push_11{left:724.625px}.container_16 .pull_11{left:-724.625px}.container_16 .grid_12{width:770.5px}.container_16 .prefix_12{padding-left:790.5px}.container_16 .suffix_12{padding-right:790.5px}.container_16 .push_12{left:790.5px}.container_16 .pull_12{left:-790.5px}.container_16 .grid_13{width:836.375px}.container_16 .prefix_13{padding-left:856.375px}.container_16 .suffix_13{padding-right:856.375px}.container_16 .push_13{left:856.375px}.container_16 .pull_13{left:-856.375px}.container_16 .grid_14{width:902.25px}.container_16 .prefix_14{padding-left:922.25px}.container_16 .suffix_14{padding-right:922.25px}.container_16 .push_14{left:922.25px}.container_16 .pull_14{left:-922.25px}.container_16 .grid_15{width:968.125px}.container_16 .prefix_15{padding-left:988.125px}.container_16 .suffix_15{padding-right:988.125px}.container_16 .push_15{left:988.125px}.container_16 .pull_15{left:-988.125px}.container_16 .grid_16{width:1034px}.container_16 .prefix_16{padding-left:1054px}.container_16 .suffix_16{padding-right:1054px}.container_16 .push_16{left:1054px}.container_16 .pull_16{left:-1054px}.header-img {margin-left: -527px}#content-main, #content-main .grid_8, .container_16 .slider_post, #comments #respond {width:594px}#sidebar1 {width:200px}#sidebar2 {width:200px}.three-columns .comment-form-author, .three-columns .comment-form-email, .three-columns .comment-form-url {width:178px}.three-columns .graphene-form-field {width:170px}.three-columns #commentform textarea {width:566px}body{ margin-top: 20px; } img{ border: none !important; } .archive .page-title{ display: none; } .post-title a{ font-family: 'Cousine', sans-serif; font-size: 19px; } .entry-content{ font-family: Arial, Tahoma !important; font-size: 15px; } .more-link{ display: none; } #top-bar{ position: absolute !important; width: 178px; height: 0px; margin-top: -33px; z-index: 20; border: 0px; background: #000000 !important; } #header{ margin-top: 50px; } .entry-content .excerpt-thumb{ display: none !important; } #text-20{ background: none; box-shadow: none; } #text-18{ background: none; box-shadow: none; }
+</style>
+		<link rel="icon" href="http://kvodo.ru/wp-content/uploads/2012/07/favicon.ico" type="image/x-icon">
+		<!--[if lte IE 7]>
+      <style type="text/css" media="screen">
+      	#footer, div.sidebar-wrap, .block-button, .featured_slider, #slider_root, #nav li ul, .pie{behavior: url(http://kvodo.ru/wp-content/themes/graphene/js/PIE.php);}
+        .featured_slider{margin-top:0 !important;}
+        #header-menu-wrap {z-index:5}
+      </style>
+    <![endif]-->
+    <style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #000000; background-image: url('http://kvodo.ru/wp-content/uploads/FFFFFF000000000000000000000000_38.png'); background-repeat: repeat-x; background-position: top left; background-attachment: fixed; }
+</style>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+jQuery('body').append('<div class="button-up" style="display: none;opacity: 0.7; width: 90px;height:100%;position: fixed;left: 0px;top: 0px;cursor: pointer;  line-height: 30px; color: white; font-size: 14px; font-weight: bold;"><div style="position: fixed;top: 20px; margin: 10px; font-family: tahoma">▲ Вверх</div></div>');
+jQuery (window).scroll (function () {
+if (jQuery (this).scrollTop () > 100) {
+jQuery ('.button-up').fadeIn();
+} else {
+jQuery ('.button-up').fadeOut();
+}
+});
+jQuery('.button-up').click(function(){
+jQuery('body,html').animate({
+scrollTop: 0
+}, 800);
+return false;
+});
+jQuery('.button-up').hover(function() {
+jQuery(this).animate({
+'opacity':'1',
+}).css({'background-color':'#e3e3e3','color':'black'});
+}, function(){
+jQuery(this).animate({
+'opacity':'0.7'
+}).css({'background':'none','color':'white'});;
+});
+});
+</script>    <!-- BEGIN Google Analytics script -->
+    	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40315575-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>    <!-- END Google Analytics script -->
+    <style type="text/css" id="ya_share_style">.b-share-popup-wrap{z-index:1073741823;position:absolute;width:500px}.b-share-popup{position:absolute;z-index:1073741823;border:1px solid #888;background:#FFF;color:#000}.b-share-popup-wrap .b-share-popup_down{top:0}.b-share-popup-wrap .b-share-popup_up{bottom:0}.b-share-popup-wrap_state_hidden{position:absolute!important;top:-9999px!important;right:auto!important;bottom:auto!important;left:-9999px!important;visibility:hidden!important}.b-share-popup,x:nth-child(1){border:0;padding:1px!important}@media all and (resolution=0){.b-share-popup,x:nth-child(1),x:-o-prefocus{padding:0!important;border:1px solid #888}}.b-share-popup__i{display:-moz-inline-box;display:inline-block;padding:5px 0!important;overflow:hidden;vertical-align:top;white-space:nowrap;visibility:visible;background:#FFF;-webkit-box-shadow:0 2px 9px rgba(0,0,0,.6);-moz-box-shadow:0 2px 9px rgba(0,0,0,.6);box-shadow:0 2px 9px rgba(0,0,0,.6)}.b-share-popup__item{font:1em/1.25em Arial,sans-serif;display:block;padding:5px 15px!important;white-space:nowrap;background:#FFF}.b-share-popup__item,a.b-share-popup__item:link,a.b-share-popup__item:visited{text-decoration:none!important;border:0!important}a.b-share-popup__item{cursor:pointer}a.b-share-popup__item .b-share-popup__item__text{display:inline;text-decoration:underline;color:#1A3DC1}a.b-share-popup__item:hover{word-spacing:0}a.b-share-popup__item:hover .b-share-popup__item__text{color:red;cursor:pointer}.b-share-popup__icon{display:-moz-inline-box;display:inline-block;margin:-3px 0 0;padding:0 5px 0 0!important;vertical-align:middle}.b-share-popup__icon_input{width:21px;height:16px;margin-top:-6px;padding:0!important}.b-share-popup__icon__input{margin-right:0;margin-left:2px;vertical-align:top}.b-share-popup__spacer{display:block;padding-top:10px!important}.b-share-popup__header{font:86%/1em Verdana,sans-serif;display:block;padding:10px 15px 5px!important;color:#999}.b-share-popup__header_first{padding-top:5px!important}.b-share-popup__input{font:86%/1em Verdana,sans-serif;display:block;padding:5px 15px!important;color:#999;text-align:left}.b-share-popup__input__input{font:1em/1em Verdana,sans-serif;display:block;width:10px;margin:5px 0 0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;resize:none;text-align:left;direction:ltr}.b-share-popup_down .b-share-popup_with-link .b-share-popup__input_link{position:absolute;top:5px;right:0;left:0}.b-share-popup_up .b-share-popup_with-link .b-share-popup__input_link{position:absolute;right:0;bottom:5px;left:0}.b-share-popup_down .b-share-popup_with-link{padding-top:55px!important}.b-share-popup_up .b-share-popup_with-link{padding-bottom:55px!important}.b-share-popup_down .b-share-popup_expandable .b-share-popup__main{padding-bottom:25px!important}.b-share-popup_up .b-share-popup_expandable .b-share-popup__main{padding-top:25px!important}.b-share-popup_down .b-share-popup_yandexed{padding-bottom:10px!important}.b-share-popup_up .b-share-popup_yandexed{padding-top:10px!important}.b-share-popup__yandex{position:absolute;right:4px;bottom:2px;font:78.125%/1em Verdana,sans-serif;padding:3px!important;background:0 0}a.b-share-popup__yandex:link,a.b-share-popup__yandex:visited{color:#C6C5C5;text-decoration:none}a.b-share-popup__yandex:link:hover,a.b-share-popup__yandex:visited:hover{color:red;text-decoration:underline}.b-share-popup_up .b-share-popup__yandex{top:2px;bottom:auto}.b-share-popup_expandable .b-share-popup__yandex{right:auto;left:4px}.b-share-popup_to-right .b-share-popup_expandable .b-share-popup__yandex{right:4px;left:auto}.b-share-popup__expander .b-share-popup__item{position:absolute;bottom:5px;font:86%/1em Verdana,sans-serif;margin:10px 0 0;padding:5px 10px!important;cursor:pointer;color:#999;background:0 0}.b-share-popup_to-right,.b-share-popup_to-right .b-share-popup__expander{direction:rtl}.b-share-popup_to-right .b-share-popup__expander .b-share-popup__icon{padding:0 0 0 5px!important}.b-share-popup_up .b-share-popup__expander .b-share-popup__item{top:-5px;bottom:auto}.b-share-popup__expander .b-share-popup__item:hover .b-share-popup__item__text{text-decoration:underline}.b-share-popup__expander .b-ico_action_rarr,.b-share-popup_to-right .b-share-popup__expander .b-ico_action_larr,.b-share-popup_full .b-share-popup__expander .b-ico_action_larr,.b-share-popup_to-right .b-share-popup_full .b-share-popup__expander .b-ico_action_rarr,.b-share-popup__expander .b-share-popup__item__text_collapse,.b-share-popup_full .b-share-popup__item__text_expand{display:none}.b-share-popup_to-right .b-share-popup__expander .b-ico_action_rarr,.b-share-popup_full .b-share-popup__item__text_collapse,.b-share-popup_full .b-share-popup__expander .b-ico_action_rarr,.b-share-popup_to-right .b-share-popup_full .b-share-popup__expander .b-ico_action_larr{display:inline}.b-ico_action_rarr,.b-ico_action_larr{width:8px;height:7px;border:0}.b-share-popup__main,.b-share-popup__extra{direction:ltr;vertical-align:bottom;text-align:left}.b-share-popup_down .b-share-popup__main,.b-share-popup_down .b-share-popup__extra{vertical-align:top}.b-share-popup__main{display:-moz-inline-stack;display:inline-block}.b-share-popup__extra{display:none;margin:0 -10px 0 0}.b-share-popup_full .b-share-popup__extra{display:-moz-inline-stack;display:inline-block}.b-share-popup_to-right .b-share-popup__extra{margin:0 0 0 -10px}.b-share-popup__tail{position:absolute;width:21px;height:10px;margin:0 0 0 -11px}.b-share-popup_down .b-share-popup__tail{top:-10px;background:url("//yastatic.net/share/static/b-share-popup_down__tail.gif") 0 0 no-repeat}.b-share-popup_up .b-share-popup__tail{bottom:-10px;background:url("//yastatic.net/share/static/b-share-popup_up__tail.gif") 0 0 no-repeat}.b-share-popup_down .b-share-popup__tail,x:nth-child(1){top:-9px;background-image:url("//yastatic.net/share/static/b-share-popup_down__tail.png")}.b-share-popup_up .b-share-popup__tail,x:nth-child(1){bottom:-9px;background-image:url("//yastatic.net/share/static/b-share-popup_up__tail.png")}@media all and (resolution=0){.b-share-popup_down .b-share-popup__tail,x:nth-child(1),x:-o-prefocus{top:-10px;background-image:url("//yastatic.net/share/static/b-share-popup_down__tail.gif")}.b-share-popup_up .b-share-popup__tail,x:nth-child(1),x:-o-prefocus{bottom:-10px;background-image:url("//yastatic.net/share/static/b-share-popup_up__tail.gif")}}.b-share-popup .b-share-popup_show_form_mail,.b-share-popup .b-share-popup_show_form_html{padding:0!important}.b-share-popup .b-share-popup_show_form_mail .b-share-popup__main,.b-share-popup .b-share-popup_show_form_html .b-share-popup__main,.b-share-popup .b-share-popup_show_form .b-share-popup__main,.b-share-popup .b-share-popup_show_form_mail .b-share-popup__extra,.b-share-popup .b-share-popup_show_form_html .b-share-popup__extra,.b-share-popup .b-share-popup_show_form .b-share-popup__extra{height:15px;padding:0!important;overflow:hidden;visibility:hidden}.b-share-popup_show_form_mail .b-share-popup__expander,.b-share-popup_show_form_html .b-share-popup__expander,.b-share-popup_show_form .b-share-popup__expander,.b-share-popup_show_form_mail .b-share-popup__input_link,.b-share-popup_show_form_html .b-share-popup__input_link,.b-share-popup_show_form .b-share-popup__input_link{display:none}.b-share-popup__form{position:relative;display:none;overflow:hidden;padding:5px 0 0!important;margin:0 0 -15px;white-space:normal}.b-share-popup_show_form_mail .b-share-popup__form_mail,.b-share-popup_show_form_html .b-share-popup__form_html,.b-share-popup_show_form .b-share-popup__form{display:block}.b-share-popup__form__link{padding:5px!important;margin:0 0 5px 10px;text-decoration:underline;cursor:pointer;color:#1A3DC1}.b-share-popup__form__link,.b-share-popup__form__button{font:86%/1.4545em Verdana,sans-serif;float:left;display:inline}.b-share-popup__form__button{margin:5px 0 0 15px}.b-share-popup__form__close{font:86%/1.4545em Verdana,sans-serif;float:right;display:inline;padding:5px!important;margin:0 10px 5px 0;cursor:pointer;color:#999}a.b-share-popup__form__link:hover,a.b-share-popup__form__close:hover{text-decoration:underline;color:red}.b-share-popup_font_fixed .b-share-popup__item{font-size:12.8px}.b-share-popup_font_fixed .b-share-popup__header,.b-share-popup_font_fixed .b-share-popup__input,.b-share-popup_font_fixed .b-share-popup__expander .b-share-popup__item,.b-share-popup_font_fixed .b-share-popup__form__link,.b-share-popup_font_fixed .b-share-popup__form__button,.b-share-popup_font_fixed .b-share-popup__form__close{font-size:11px}.b-share-popup_font_fixed .b-share-popup__yandex{font-size:10px}.b-share-form-button{font:86%/17px Verdana,Arial,sans-serif;display:-moz-inline-box;display:inline-block;position:relative;height:19px;margin:0 3px;padding:0 4px;cursor:default;white-space:nowrap;text-decoration:none!important;color:#000!important;border:none;outline:none;background:url("//yastatic.net/share/static/b-share-form-button.png") 0 -20px repeat-x}.b-share-form-button:link:hover,.b-share-form-button:visited:hover{color:#000!important}.b-share-form-button__before,.b-share-form-button__after{position:absolute;width:3px;height:19px;background:url("//yastatic.net/share/static/b-share-form-button.png")}.b-share-form-button__before{margin-left:-7px}.b-share-form-button__after{margin-left:4px;background-position:-3px 0}.b-share-form-button::-moz-focus-inner{border:none}button.b-share-form-button .b-share-form-button__before,button.b-share-form-button .b-share-form-button__after{margin-top:-1px}@-moz-document url-prefix(){button.b-share-form-button .b-share-form-button__after{margin-top:-2px;margin-left:6px}button.b-share-form-button .b-share-form-button__before{margin-top:-2px;margin-left:-9px}}SPAN.b-share-form-button:hover,.b-share-form-button_state_hover{background-position:0 -60px}SPAN.b-share-form-button:hover .b-share-form-button__before,.b-share-form-button_state_hover .b-share-form-button__before{background-position:0 -40px}SPAN.b-share-form-button:hover .b-share-form-button__after,.b-share-form-button_state_hover .b-share-form-button__after{background-position:-3px -40px}.b-share-form-button_state_pressed,.b-share-form-button_state_pressed .b-share-form-button_share{background-position:0 -100px!important}.b-share-form-button_state_pressed .b-share-form-button__before{background-position:0 -80px!important}.b-share-form-button_state_pressed .b-share-form-button__after{background-position:-3px -80px!important}button.b-share-form-button_state_pressed{overflow:visible}.b-share-form-button_icons{position:relative;padding:0;background-position:0 -20px!important}.b-share-form-button_icons .b-share-form-button__before{left:0;margin-left:-3px;background-position:0 0!important}.b-share-form-button_icons .b-share-form-button__after{z-index:-1;margin-left:0;background-position:-3px 0!important}.b-share-form-button_icons .b-share__handle{padding:2px!important}.b-share-form-button_icons .b-share__handle_more{position:relative;padding-right:6px!important;margin-right:-4px}.b-share-form-button_icons .b-share-icon{opacity:.5;background-image:url("//yastatic.net/share/static/b-share-icon_size_14.png")}.b-share-form-button_icons A.b-share__handle:hover .b-share-icon{opacity:1}.b-share{font:86%/1.4545em Arial,sans-serif;display:-moz-inline-box;display:inline-block;padding:1px 3px 1px 4px!important;vertical-align:middle}.b-share .b-share-form-button{font-size:1em}.b-share__text .b-share-icon{margin:0 5px 0 0;border:none}.b-share__text{margin-right:5px}.b-share__handle{float:left;height:16px;padding:5px 3px 5px 2px!important;cursor:pointer;text-align:left;text-decoration:none!important}.b-share__handle_cursor_default{cursor:default}.b-share__handle .b-share-form-button{margin-top:-2px}.b-share__hr{display:none;float:left;width:1px;height:26px;margin:0 3px 0 2px}a.b-share__handle:hover .b-share__text{text-decoration:underline;color:red}.b-share_bordered{padding:0 2px 0 3px!important;border:1px solid #E4E4E4;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.b-share_bordered .b-share__hr{display:inline;background:#E4E4E4}.b-share_link{margin:-8px 0}a.b-share_link{margin:0}.b-share_link .b-share__text{text-decoration:underline;color:#1A3DC1}.b-share-form-button_share{padding-left:26px!important;vertical-align:top}.b-share-form-button_share .b-share-form-button__before{margin-left:-29px}.b-share-form-button_share .b-share-form-button__icon{position:absolute;width:20px;height:17px;margin:1px 0 0 -23px;background:url("//yastatic.net/share/static/b-share-form-button_share__icon.png") 0 0 no-repeat}.b-share-pseudo-link{border-bottom:1px dotted;cursor:pointer;text-decoration:none!important}.b-share_font_fixed{font-size:11px}.b-share__handle_more{font-size:9px;margin-top:-1px;color:#7B7B7B}A.b-share__handle_more:hover{color:#000}.b-share__group{float:left}.b-share-icon{float:left;display:inline;overflow:hidden;width:16px;height:16px;padding:0!important;vertical-align:top;border:0;background:url("//yastatic.net/share/static/b-share-icon.png") 0 99px no-repeat}.b-share-icon_vkontakte,.b-share-icon_custom{background-position:0 0}.b-share-icon_yaru,.b-share-icon_yaru_photo,.b-share-icon_yaru_wishlist{background-position:0 -17px}.b-share-icon_lj{background-position:0 -34px}.b-share-icon_twitter{background-position:0 -51px}.b-share-icon_facebook{background-position:0 -68px}.b-share-icon_moimir{background-position:0 -85px}.b-share-icon_friendfeed{background-position:0 -102px}.b-share-icon_mail{background-position:0 -119px}.b-share-icon_html{background-position:0 -136px}.b-share-icon_postcard{background-position:0 -153px}.b-share-icon_odnoklassniki{background-position:0 -170px}.b-share-icon_blogger{background-position:0 -187px}.b-share-icon_delicious{background-position:0 -221px}.b-share-icon_gbuzz{background-position:0 -238px}.b-share-icon_linkedin{background-position:0 -255px}.b-share-icon_myspace{background-position:0 -272px}.b-share-icon_evernote{background-position:0 -289px}.b-share-icon_digg{background-position:0 -306px}.b-share-icon_juick{background-position:0 -324px}.b-share-icon_moikrug{background-position:0 -341px}.b-share-icon_yazakladki{background-position:0 -358px}.b-share-icon_liveinternet{background-position:0 -375px}.b-share-icon_tutby{background-position:0 -392px}.b-share-icon_diary{background-position:0 -409px}.b-share-icon_gplus{background-position:0 -426px}.b-share-icon_pocket{background-position:0 -443px}.b-share-icon_surfingbird{background-position:0 -460px}.b-share-icon_pinterest{background-position:0 -477px}.b-share-icon_renren{background-position:0 0}.b-share-icon_renren,.b-share-icon_sina_weibo{background:url("//yastatic.net/share/static/b-share-icon__china.png") no-repeat}.b-share-icon_sina_weibo{background-position:-18px 0}.b-share-icon_qzone{background-position:-36px 0}.b-share-icon_qzone,.b-share-icon_tencent_weibo{background:url("//yastatic.net/share/static/b-share-icon__china.png") no-repeat}.b-share-icon_tencent_weibo{background-position:-54px 0}.b-share_theme_dark .b-share-icon{background:url("//yastatic.net/share/static/b-share-icons__theme_dark.png") 99px 0 no-repeat}.b-share_theme_dark .b-share-icon_odnoklassniki{background-position:-4px -3px}.b-share_theme_dark .b-share-icon_vkontakte{background-position:-24px -3px}.b-share_theme_dark .b-share-icon_twitter{background-position:-44px -3px}.b-share_theme_dark .b-share-icon_facebook{background-position:-64px -3px}.b-share_theme_dark .b-share-icon_lj{background-position:-85px -3px}.b-share_theme_dark .b-share-icon_yaru{background-position:-105px -3px}.b-share_theme_dark .b-share-popup .b-share-icon_odnoklassniki,.b-share_theme_dark .b-share-icon_odnoklassniki:hover{background-position:-4px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_vkontakte,.b-share_theme_dark .b-share-icon_vkontakte:hover{background-position:-24px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_twitter,.b-share_theme_dark .b-share-icon_twitter:hover{background-position:-44px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_facebook,.b-share_theme_dark .b-share-icon_facebook:hover{background-position:-64px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_lj,.b-share_theme_dark .b-share-icon_lj:hover{background-position:-85px -28px}.b-share_theme_dark .b-share-popup .b-share-icon_yaru,.b-share_theme_dark .b-share-icon_yaru:hover{background-position:-105px -28px}.b-share_theme_dark .b-share-form-button_share .b-share-form-button__icon{background-image:url("//yastatic.net/share/static/b-share-form-button_share__icon_dark.png")}.b-share_theme_dark .b-share-form-button{color:#fff!important;opacity:.8}.b-share_theme_dark .b-share__handle:hover .b-share-form-button,.b-share_theme_dark .b-share-form-button:hover{opacity:1;cursor:pointer}.b-share_theme_dark .b-share-form-button,.b-share_theme_dark .b-share-form-button__before,.b-share_theme_dark .b-share-form-button__after{background:0 0}.b-share_theme_dark .b-share-popup__i{background-color:#333;border-radius:10px;-webkit-box-shadow:0 2px 9px rgba(255,255,255,.6);-moz-box-shadow:0 2px 9px rgba(255,255,255,.6);box-shadow:0 2px 9px rgba(255,255,255,.6)}.b-share_theme_dark .b-share__text{color:#AAA}.b-share_theme_dark .b-share-popup{color:#AAA;border-radius:10px;background-color:#333;background-color:rgba(50,50,50,.3)}.b-share_theme_dark .b-share-popup__item{background:0 0;color:#ccc}.b-share_theme_dark .b-share-popup .b-share-popup__item__text{color:#ccc}.b-share_theme_counter .b-share{display:inline-block;vertical-align:middle;white-space:nowrap}.b-share-counter{font:14px Arial,sans-serif;line-height:18px;display:none;float:left;margin:3px 6px 3px 3px;color:#fff}.b-share_theme_counter .b-share_type_small .b-share-counter{font-size:11px;line-height:14px;margin:2px 6px 2px 1px}.b-share_theme_counter .b-share-btn__counter .b-share-counter{display:block}.b-share-btn__counter{text-decoration:none}.b-share_theme_counter .b-share-btn__wrap{position:relative;float:left;margin-left:5px}.b-share_theme_counter .b-share_type_small .b-share-btn__wrap{margin-left:4px}.b-share_theme_counter .b-share-btn__wrap:first-child{margin-left:0}.b-share_theme_counter .b-share__link{display:inline-block;cursor:pointer;-webkit-border-radius:3px;border-radius:3px}.b-share_theme_counter .b-share_type_small .b-share__link{-webkit-border-radius:2px;border-radius:2px}.b-share_theme_counter .b-share-icon{display:block;float:left;width:24px;height:24px;background-image:url("//yastatic.net/share/static/b-share_counter_large.png");background-position:-20px 0}.b-share_theme_counter .b-share_type_small .b-share-icon{width:18px;height:18px;background-image:url("//yastatic.net/share/static/b-share_counter_small.png")}.b-share_theme_counter .b-share-icon_facebook{background-position:0 0}.b-share_theme_counter .b-share-btn__facebook{background-color:#3c5a98}.b-share_theme_counter .b-share-btn__facebook:hover{background-color:#30487a}.b-share_theme_counter .b-share-btn__facebook:active{border-top:2px solid #24365a;background-color:#334d81}.b-share_theme_counter .b-share-icon_moimir{background-position:0 -29px}.b-share_theme_counter .b-share-btn__moimir{background-color:#226eb7}.b-share_theme_counter .b-share-btn__moimir:hover{background-color:#1b5892}.b-share_theme_counter .b-share-btn__moimir:active{border-top:2px solid #14426d;background-color:#1d5e9c}.b-share_theme_counter .b-share-icon_vkontakte{background-position:0 -58px}.b-share_theme_counter .b-share-btn__vkontakte{background-color:#48729e}.b-share_theme_counter .b-share-btn__vkontakte:hover{background-color:#3a5b7e}.b-share_theme_counter .b-share-btn__vkontakte:active{border-top:2px solid #2b445e;background-color:#3d6186}.b-share_theme_counter .b-share-icon_twitter{background-position:0 -87px}.b-share_theme_counter .b-share-btn__twitter{background-color:#00aced}.b-share_theme_counter .b-share-btn__twitter:hover{background-color:#008abe}.b-share_theme_counter .b-share-btn__twitter:active{border-top:2px solid #00668d;background-color:#0092ca}.b-share_theme_counter .b-share-icon_odnoklassniki{background-position:0 -116px}.b-share_theme_counter .b-share-btn__odnoklassniki{background-color:#ff9f4d}.b-share_theme_counter .b-share-btn__odnoklassniki:hover{background-color:#cc7f3e}.b-share_theme_counter .b-share-btn__odnoklassniki:active{border-top:2px solid #975e2e;background-color:#d98742}.b-share_theme_counter .b-share-icon_gplus{background-position:0 -145px}.b-share_theme_counter .b-share-btn__gplus{background-color:#c25234}.b-share_theme_counter .b-share-btn__gplus:hover{background-color:#9b422a}.b-share_theme_counter .b-share-btn__gplus:active{border-top:2px solid #73311f;background-color:#a5462c}.b-share_theme_counter .b-share-icon_yaru{background-position:0 -174px}.b-share_theme_counter .b-share-btn__yaru{background-color:#d83933}.b-share_theme_counter .b-share-btn__yaru:hover{background-color:#ad2e29}.b-share_theme_counter .b-share-btn__yaru:active{border-top:2px solid #80221e;background-color:#b8312b}.b-share_theme_counter .b-share-icon_pinterest{background-position:0 -203px}.b-share_theme_counter .b-share-btn__pinterest{background-color:#cd1e27}.b-share_theme_counter .b-share-btn__pinterest:hover{background-color:#a4181f}.b-share_theme_counter .b-share-btn__pinterest:active{border-top:2px solid #7b1217;background-color:#ae1921}.b-share_theme_counter .b-share__link:active{height:22px}.b-share_theme_counter .b-share_type_small .b-share__link:active{height:16px}.b-share_theme_counter .b-share__link:active .b-share-icon,.b-share_theme_counter .b-share__link:active .b-share-counter{position:relative;top:-1px}.b-share_theme_counter .b-share__link::after{position:absolute;top:0;right:0;bottom:0;left:0;content:"";background-image:url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==)}.b-share_theme_counter .b-share__handle{height:auto;padding:0!important}</style></head>
+<body class="single single-post postid-905 single-format-standard custom-background three_col_center three-columns have-secondary-menu" data-find="_7">
+
+
+
+<div id="container" class="container_16" data-find="_6">
+    
+            <div id="top-bar">
+                				<div id="profiles" class="clearfix gutter-left">
+                                <a href="http://feedburner.google.com/fb/a/mailverify?uri=kvodo-news&loc=ru_RU" title="Подписаться на RSS ленту" id="social-id-1" class="mysocial social-rss" target="_blank">
+            	<img src="./Алгоритм Дейкстры — Kvodo_files/rss.png" alt="RSS" title="Подписаться на RSS ленту">
+            </a>
+    	            <a href="https://twitter.com/KvodoRu" title="Мы в twitter" id="social-id-2" class="mysocial social-twitter" target="_blank">
+            	<img src="./Алгоритм Дейкстры — Kvodo_files/twitter.png" alt="Twitter" title="Мы в twitter">
+            </a>
+    	            <a href="https://www.facebook.com/KvodoRu" title="Мы в facebook" id="social-id-3" class="mysocial social-facebook" target="_blank">
+            	<img src="./Алгоритм Дейкстры — Kvodo_files/facebook.png" alt="Facebook" title="Мы в facebook">
+            </a>
+    	            <a href="http://vk.com/kvodo" title="Мы в VK" id="social-id-4" class="mysocial social-custom" target="_blank">
+            	<img src="./Алгоритм Дейкстры — Kvodo_files/vk.png" alt="Специальный" title="Мы в VK">
+            </a>
+    	                </div>
+                                    
+                        
+        </div>
+    
+        <div id="header">
+    	
+        <a href="http://kvodo.ru/" id="header_img_link" title="Вернуться на главную страницу"><img src="./Алгоритм Дейкстры — Kvodo_files/headersite1.jpg" alt="" width="1054" height="105" class="header-img"></a>        	       
+        		
+                
+		    </div>
+    <div id="nav">
+                <div id="header-menu-wrap" class="clearfix">
+				<ul id="header-menu" class="menu clearfix default-menu grid_12">
+				<li class="current_page_item current-menu-item">
+			<a href="http://kvodo.ru/">
+				<strong>				Домой				</strong>							</a>
+		</li>
+				<li class="page_item page-item-53"><a href="http://kvodo.ru/o-nas"><strong>О нас</strong></a></li>
+<li class="page_item page-item-50"><a href="http://kvodo.ru/obratnaya-svyaz"><strong>Контакты</strong></a></li>
+<li class="page_item page-item-735"><a href="http://kvodo.ru/dobavit-statyu"><strong>Добавить статью/файл</strong></a></li>
+<li class="page_item page-item-810"><a href="http://kvodo.ru/nashli-oshibku"><strong>Нашли ошибку</strong></a></li>
+<li class="page_item page-item-1033"><a href="http://kvodo.ru/donate"><strong>Помощь</strong></a></li>
+<li class="page_item page-item-1082"><a href="http://kvodo.ru/books"><strong>Книги</strong></a></li>
+	</ul>
+	            
+            <div class="clear"></div>
+            
+			                <div id="top_search" class="grid_4">
+                    <form id="searchform" class="searchform" method="get" action="http://kvodo.ru/">
+    <p class="clearfix default_searchform">
+        <input type="text" name="s" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Поиск&#39;;}" onfocus="if (this.value == &#39;Поиск&#39;) {this.value = &#39;&#39;;}" value="Поиск">
+        <button type="submit"><span>Поиск</span></button>
+    </p>
+    </form>                                    </div>
+                        
+                    
+        </div>
+		
+        <div id="secondary-menu-wrap" class="clearfix"><ul id="secondary-menu" class="menu clearfix"><li id="menu-item-957" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-957"><a target="_blank" href="http://kvodo.ru/category/algorithms">Алгоритмы</a></li>
+<li id="menu-item-958" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-958"><a target="_blank" href="http://kvodo.ru/category/kodirovki">Таблицы символов</a></li>
+<li id="menu-item-959" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-959"><a target="_blank" href="http://kvodo.ru/category/data-structures">Структуры данных</a></li>
+<li id="menu-item-960" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-960"><a target="_blank" href="http://kvodo.ru/category/lessons">Уроки программирования</a></li>
+<li id="menu-item-961" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-961"><a target="_blank" href="http://kvodo.ru/category/question-and-solutions">Задачи</a></li>
+</ul></div>        
+        <div class="menu-bottom-shadow">&nbsp;</div>
+
+
+        
+    </div>
+
+    
+    <div id="content" class="clearfix hfeed" data-find="_5">
+                
+            
+<div id="sidebar2" class="sidebar grid_4">
+
+	
+    <div id="mycategoryorder-2" class="sidebar-wrap clearfix widget_mycategoryorder"><h3>Разделы</h3>		<ul>
+			<li class="cat-item cat-item-21"><a href="http://kvodo.ru/category/algorithms" title="Зачастую, понятно объяснить алгоритм, используемый в программировании, оказывается достаточно проблематично. В статьях этого раздела предпринята попытка доступным языком донести до читателя суть работы алгоритмов сортировки, поиска, графов и т. д.">Алгоритмы</a>
+<ul class="children">
+	<li class="cat-item cat-item-22"><a href="http://kvodo.ru/category/algorithms/sorting" title="Разбор и листинг алгоритмов сортировки, таких как пузырьковая сортировка, сортировка выбором, слиянием, быстрая, Шелла и др.">• Сортировка</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://kvodo.ru/category/algorithms/search_algorithms" title="Понятное описание алгоритмов поиска, например, таких как двоичный поиск, линейный, интерполирующий поиск,  а также примеры программ, относящихся к данным и другим методам.">• Поиск</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="http://kvodo.ru/category/algorithms/teoretiko-chislovyie" title="Алгоритмы, относящиеся к разделу математики, изучающему свойства целых и натуральных чисел – теории чисел. С одним из таких сталкивались все те, кто знаком с теорией алгоритмов, а именно с алгоритмом Евклида.">• Теория чисел</a>
+</li>
+	<li class="cat-item cat-item-34"><a href="http://kvodo.ru/category/algorithms/graph" title="Подборка алгоритмов, используемых в теории графов. Или раздел о том, как найти кратчайший путь, остовное дерево минимального веса, максимальный поток, максимальное паросочетание...">• Графы</a>
+</li>
+	<li class="cat-item cat-item-46"><a href="http://kvodo.ru/category/algorithms/analysis-of-algorithms" title="Анализ сложности алгоритмов. Асимптотическая сложность.">• Анализ</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-36"><a href="http://kvodo.ru/category/data-structures" title="Описание структур данных – способов представления информации, посредствам которых она может быть сохранена в памяти компьютера и впоследствии обработана.">Структуры данных</a>
+<ul class="children">
+	<li class="cat-item cat-item-38"><a href="http://kvodo.ru/category/data-structures/tree" title="Рубрика о структурах данных называемых деревьями. Описание двоичных деревьев поиска, куч, АВЛ-деревьев
+Красно-чёрных деревьев и др.">• Деревья</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="http://kvodo.ru/category/data-structures/graph-data-structure" title="О графе как об одной из основных структур данных используемых в информатике. Разбор основных понятий и видов графов, а также различных способов их представления.">• Графы</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="http://kvodo.ru/category/data-structures/arrays">• Массивы</a>
+</li>
+	<li class="cat-item cat-item-43"><a href="http://kvodo.ru/category/data-structures/lists">• Списки</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://kvodo.ru/category/kodirovki" title="Простые таблицы и интересные статьи о разных кодировках, используемых в ЭВМ. Здесь Вы найдете информацию о ASCII, EBCDIC, ISO 8859, Windows-1251, UTF-8, UTF-16, UTF-32 и многих других наборах символов!">Кодировки</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://kvodo.ru/category/lessons" title="Важнейший шаг для желающего стать программистом - обучение языку или языкам программирования. Например, таким как Паскаль, C++, C#, PHP, Java и другим.">Языки программирования</a>
+<ul class="children">
+	<li class="cat-item cat-item-3"><a href="http://kvodo.ru/category/lessons/cplusplus" title="Статьи данного раздела содержат материалы книги Алексеева Е. Р. «MS Visual C++ и Turbo C++ Explorer». Сайты автора: teacher.dn-ua.com, old.teacher.dn-ua.com">• C++</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="http://kvodo.ru/category/lessons/pascal" title="Уроки по языку программирования Pascal для начинающих и тех, кто хочет подтянуть уже имеющиеся знания.">• Pascal</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://kvodo.ru/category/question-and-solutions" title="Интересные задачи для разных языков программирования (C++, Паскаль...), а также решения к ним.">Задачи по программированию</a>
+<ul class="children">
+	<li class="cat-item cat-item-10"><a href="http://kvodo.ru/category/question-and-solutions/on-cplusplus" title="Решенные задачи на языке программирования C++. Отличная возможность поверить свои знания и получить бесценную практику. Для просмотра решения задачи необходимо щелкнуть по заголовку статьи, к которому она относиться.">○ C++</a>
+</li>
+	<li class="cat-item cat-item-26"><a href="http://kvodo.ru/category/question-and-solutions/tasks-pascal" title="Задачи и решения для популярного в учебных заведениях языка программирования Pascal. Условие задачи описано в анонсе статьи, а за решением следует пройти на саму страницу.">○ Pascal</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://kvodo.ru/category/source_programs" title="Скачивайте исходный код программ и изменяйте его по собственному желанию. Но прежде убедитесь, что на вашей ЭВМ установлена необходимая среда разработки.">Исходники программ</a>
+<ul class="children">
+	<li class="cat-item cat-item-17"><a href="http://kvodo.ru/category/source_programs/source_visual_cplusplus" title="Исходники программ, написанные при помощи интегрированной среды разработки Visual C++">• Visual C++</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://kvodo.ru/category/reflections-on-information-technology" title="Разного рода статьи, которые хотя и относиться к информатике, но все же достаточно специфичны, и поэтому не нуждаются в собственном разделе.">Разное</a>
+</li>
+		</ul>
+		</div><div id="text-26" class="sidebar-wrap clearfix widget_text">			<div class="textwidget"><script type="text/topadvert">
+load_event: page_load
+feed_id: 11684
+pattern_id: 7844
+book_author: 
+book_name: 
+</script></div>
+		</div>    
+        
+    
+</div><!-- #sidebar2 -->        
+        <div id="content-main" class="clearfix grid_8" data-find="_4">
+        
+	
+	<div class="post-nav clearfix">
+		<p class="previous">« <a href="http://kvodo.ru/dfs.html" rel="prev">Поиск в глубину</a></p>
+		<p class="next-post"><a href="http://kvodo.ru/algoritm-floyda-uorshella.html" rel="next">Алгоритм Флойда – Уоршелла</a> »</p>
+			</div>
+	        
+<div id="post-905" class="post-905 post type-post status-publish format-standard has-post-thumbnail hentry category-graph tag-algorithms tag-algoritmyi-na-grafah tag-grafyi clearfix nodate" data-find="_3">
+	
+		
+	<div class="entry clearfix" data-find="_2">
+    	
+                		
+                
+                
+                
+		        <h1 class="post-title entry-title">
+			Алгоритм Дейкстры			        </h1>
+		
+				<div class="post-meta clearfix">
+			
+									
+						            
+                                    <span class="updated"><span class="value-title" title="2013-08-30T23:00"></span>
+            			
+									
+														
+						
+					</span></div>
+		
+				<div class="entry-content clearfix" data-find="_1">
+							
+										
+						<p><span id="more-905"></span></p>
+<p>Алгоритм голландского ученого Эдсгера Дейкстры находит все кратчайшие пути из одной изначально заданной вершины графа до всех остальных. С его помощью, при наличии всей необходимой информации, можно, например, узнать какую последовательность дорог лучше использовать, чтобы добраться из одного города до каждого из многих других, или в какие страны выгодней экспортировать нефть и тому подобное. Минусом данного метода является невозможность обработки графов, в которых имеются ребра с отрицательным весом, т. е. если, например, некоторая система предусматривает убыточные для Вашей фирмы маршруты, то для работы с ней следует воспользоваться отличным от алгоритма Дейкстры методом.</p>
+<p>Для программной реализации алгоритма понадобиться два массива: логический visited – для хранения информации о посещенных вершинах и численный distance, в который будут заноситься найденные кратчайшие пути. Итак, имеется граф G=(V, E). Каждая из вершин входящих во множество V, изначально отмечена как не посещенная, т. е. элементам массива visited присвоено значение false. Поскольку самые выгодные пути только предстоит найти, в каждый элемент вектора distance записывается такое число, которое заведомо больше любого потенциального пути (обычно это число называют бесконечностью, но в программе используют, например максимальное значение конкретного типа данных). В качестве исходного пункта выбирается вершина s и ей приписывается нулевой путь: distance[s]=0, т. к. нет ребра из s в s (метод не предусматривает петель). Далее, находятся все соседние вершины (в которые есть ребро из s) [пусть таковыми будут t и u] и поочередно исследуются, а именно вычисляется стоимость маршрута из s поочередно в каждую из них:</p>
+<ul>
+<li>distance[t]=distance[s]+весинцидентного s и t ребра;</li>
+<li>distance[u]=distance[s]+ весинцидентного s и u ребра.</li>
+</ul>
+<p style="padding-left: 60px;">Но вполне вероятно, что в ту или иную вершину из s существует несколько путей, поэтому цену пути в такую вершину в массиве distance придется пересматривать, тогда наибольшее (неоптимальное) значение игнорируется, а наименьшее ставиться в соответствие вершине.</p>
+<p>После обработки смежных с s вершин она помечается как посещенная: visited[s]=true, и активной становится та вершина, путь из s в которую минимален. Допустим, путь из s в u короче, чем из s в t, следовательно, вершина u становиться активной и выше описанным образом исследуются ее соседи, за исключением вершины s. Далее, u помечается как пройденная: visited[u]=true, активной становится вершина t, и вся процедура повторяется для нее. Алгоритм Дейкстры продолжается до тех пор, пока все доступные из s вершины не будут исследованы.</p>
+<p>Теперь на конкретном графе проследим работу алгоритма, найдем все кратчайшие пути между истоковой и всеми остальными вершинами. Размер (количество ребер) изображенного ниже графа равен 7 (|E|=7), а порядок (количество вершин) – 6 (|V|=6). Это взвешенный граф, каждому из его ребер поставлено в соответствие некоторое числовое значение, поэтому ценность маршрута необязательно определяется числом ребер, лежащих между парой вершин.</p>
+<p style="text-align: center;"><a href="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra.jpg"><img class="aligncenter size-full wp-image-906" title="Алгоритм Дейкстры" src="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra.jpg" alt="Алгоритм Дейкстры" width="291" height="235"></a></p>
+<p>Из всех вершин входящих во множество V выберем одну, ту, от которой необходимо найти кратчайшие пути до остальных доступных вершин. Пусть таковой будет вершина 1. Длина пути до всех вершин, кроме первой, изначально равна бесконечности, а до нее – 0, т. к. граф не имеет петель.</p>
+<p style="text-align: center;"><a href="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra1.jpg"><img class="aligncenter size-full wp-image-907" title="Алгоритм Дейкстры" src="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra1.jpg" alt="Алгоритм Дейкстры" width="291" height="235"></a></p>
+<p>У вершины 1 ровно 3 соседа (вершины 2, 3, 5), и чтобы вычислить длину пути до них нужно сложить вес дуг, лежащих между вершинами: 1 и 2, 1 и 3, 1 и 5 со значением первой вершины (с нулем):</p>
+<ul>
+<li>2←1+0</li>
+<li>3←4+0</li>
+<li>5←2+0</li>
+</ul>
+<p>Как уже отмечалось, получившиеся значения присваиваются вершинам, лишь в том случае если они «лучше» (меньше) тех которые значатся на настоящий момент. А так как каждое из трех чисел меньше бесконечности, они становятся новыми величинами, определяющими длину пути из вершины 1 до вершин 2, 3 и 5.</p>
+<p style="text-align: center;"><a href="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra2.jpg"><img class="aligncenter size-full wp-image-908" title="Алгоритм Дейкстры" src="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra2.jpg" alt="Алгоритм Дейкстры" width="291" height="235"></a></p>
+<p>Далее, активная вершина помечается как посещенная, статус «активной» (красный круг) переходит к одной из ее соседок, а именно к вершине 2, поскольку она ближайшая к ранее активной вершине.</p>
+<p style="text-align: center;"><a href="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra3.jpg"><img class="aligncenter size-full wp-image-909" title="Dijkstra’s algorithm" src="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra3.jpg" alt="Dijkstra’s algorithm" width="291" height="235"></a></p>
+<p>У вершины 2 всего один не рассмотренный сосед (вершина 1 помечена как посещенная), расстояние до которого из нее равно 9, но нам необходимо вычислить длину пути из истоковой вершины, для чего нужно сложить величину приписанную вершине 2 с весом дуги из нее в вершину 4:</p>
+<ul>
+<li>4←1+9</li>
+</ul>
+<p>Условие «краткости» (10&lt;∞) выполняется, следовательно, вершина 4 получает новое значение длины пути.</p>
+<p style="text-align: center;"><a href="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra4.jpg"><img class="aligncenter size-full wp-image-910" title="Dijkstra’s algorithm" src="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra4.jpg" alt="Dijkstra’s algorithm" width="291" height="235"></a></p>
+<p>Вершина 2 перестает быть активной, также как и вершина 1 удаляется из списка не посещённых. Теперь тем же способом исследуются соседи вершины 5, и вычисляется расстояние до них.<a href="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra11.jpg"><img class="aligncenter size-full wp-image-915" title="Dijkstra’s algorithm" src="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra11.jpg" alt="Dijkstra’s algorithm" width="530" height="235"></a></p>
+<p>Когда дело доходит до осмотра соседей вершины 3, то тут важно не ошибиться, т. к. вершина 4 уже была исследована и расстояние одного из возможных путей из истока до нее вычислено. Если двигаться в нее через вершину 3, то путь составит 4+7=11, а 11&gt;10, поэтому новое значение игнорируется, старое остается.</p>
+<p><a href="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra12.jpg"><img class="aligncenter size-full wp-image-916" title="Dijkstra’s algorithm" src="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra12.jpg" alt="Dijkstra’s algorithm" width="530" height="235"></a>Аналогичная ситуация с вершиной 6. Значение самого близкого пути до нее из вершины 1 равно 10, а оно получается только в том случае, если идти через вершину 5.<a href="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra13.jpg"><img class="aligncenter size-full wp-image-917" title="Dijkstra’s algorithm" src="./Алгоритм Дейкстры — Kvodo_files/algoritmh_dijkstra13.jpg" alt="Dijkstra’s algorithm" width="530" height="235"></a> Когда все вершины графа, либо все те, что доступны из истока, будут помечены как посещенные, тогда работа алгоритма Дейкстры завершится, и все найденные пути будут кратчайшими. Так, например, будет выглядеть список самых оптимальных расстояний лежащих между вершиной 1 и всеми остальными вершинами, рассматриваемого графа:</p>
+<p>1→1=0<br>
+1→2=1<br>
+1→3=4<br>
+1→4=10<br>
+1→5=2<br>
+1→6=10</p>
+<p>В программе, находящей ближайшие пути между вершинами посредством метода Дейкстры, граф будет представлен в виде не бинарной матрицы смежности. Вместо единиц в ней будут выставлены веса ребер, функция нулей останется прежней: показывать, между какими вершинами нет ребер или же они есть, но отрицательно направленны.</p>
+<h3>Код программы на C++:</h3>
+<p>&nbsp;</p>
+<div class="codecolorer-container cpp blackboard" style="overflow:auto;white-space:nowrap;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br></div></td><td><div class="cpp codecolorer"><span class="co2">#include "stdafx.h"</span><br>
+<span class="co2">#include &lt;iostream&gt;</span><br>
+<span class="kw2">using</span> <span class="kw2">namespace</span> std<span class="sy4">;</span><br>
+<span class="kw4">const</span> <span class="kw4">int</span> V<span class="sy1">=</span><span class="nu0">6</span><span class="sy4">;</span><br>
+<span class="co1">//алгоритм Дейкстры</span><br>
+<span class="kw4">void</span> Dijkstra<span class="br0">(</span><span class="kw4">int</span> GR<span class="br0">[</span>V<span class="br0">]</span><span class="br0">[</span>V<span class="br0">]</span>, <span class="kw4">int</span> st<span class="br0">)</span><br>
+<span class="br0">{</span><br>
+<span class="kw4">int</span> distance<span class="br0">[</span>V<span class="br0">]</span>, count, index, i, u, m<span class="sy1">=</span>st<span class="sy2">+</span><span class="nu0">1</span><span class="sy4">;</span><br>
+<span class="kw4">bool</span> visited<span class="br0">[</span>V<span class="br0">]</span><span class="sy4">;</span><br>
+<span class="kw1">for</span> <span class="br0">(</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>V<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span><br>
+<span class="br0">{</span><br>
+distance<span class="br0">[</span>i<span class="br0">]</span><span class="sy1">=</span><span class="kw2">INT_MAX</span><span class="sy4">;</span> visited<span class="br0">[</span>i<span class="br0">]</span><span class="sy1">=</span><span class="kw2">false</span><span class="sy4">;</span><br>
+<span class="br0">}</span><br>
+distance<span class="br0">[</span>st<span class="br0">]</span><span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span><br>
+<span class="kw1">for</span> <span class="br0">(</span>count<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> count<span class="sy1">&lt;</span>V<span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span> count<span class="sy2">++</span><span class="br0">)</span><br>
+<span class="br0">{</span><br>
+<span class="kw4">int</span> min<span class="sy1">=</span><span class="kw2">INT_MAX</span><span class="sy4">;</span><br>
+<span class="kw1">for</span> <span class="br0">(</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>V<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span><br>
+<span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span>visited<span class="br0">[</span>i<span class="br0">]</span> <span class="sy3">&amp;&amp;</span> distance<span class="br0">[</span>i<span class="br0">]</span><span class="sy1">&lt;=</span>min<span class="br0">)</span><br>
+<span class="br0">{</span><br>
+min<span class="sy1">=</span>distance<span class="br0">[</span>i<span class="br0">]</span><span class="sy4">;</span> index<span class="sy1">=</span>i<span class="sy4">;</span><br>
+<span class="br0">}</span><br>
+u<span class="sy1">=</span>index<span class="sy4">;</span><br>
+visited<span class="br0">[</span>u<span class="br0">]</span><span class="sy1">=</span><span class="kw2">true</span><span class="sy4">;</span><br>
+<span class="kw1">for</span> <span class="br0">(</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>V<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span><br>
+<span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span>visited<span class="br0">[</span>i<span class="br0">]</span> <span class="sy3">&amp;&amp;</span> GR<span class="br0">[</span>u<span class="br0">]</span><span class="br0">[</span>i<span class="br0">]</span> <span class="sy3">&amp;&amp;</span> distance<span class="br0">[</span>u<span class="br0">]</span><span class="sy3">!</span><span class="sy1">=</span><span class="kw2">INT_MAX</span> <span class="sy3">&amp;&amp;</span><br>
+distance<span class="br0">[</span>u<span class="br0">]</span><span class="sy2">+</span>GR<span class="br0">[</span>u<span class="br0">]</span><span class="br0">[</span>i<span class="br0">]</span><span class="sy1">&lt;</span>distance<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span><br>
+distance<span class="br0">[</span>i<span class="br0">]</span><span class="sy1">=</span>distance<span class="br0">[</span>u<span class="br0">]</span><span class="sy2">+</span>GR<span class="br0">[</span>u<span class="br0">]</span><span class="br0">[</span>i<span class="br0">]</span><span class="sy4">;</span><br>
+<span class="br0">}</span><br>
+<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">"Стоимость пути из начальной вершины до остальных:<span class="es1">\t</span><span class="es1">\n</span>"</span><span class="sy4">;</span><br>
+<span class="kw1">for</span> <span class="br0">(</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>V<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span> <span class="kw1">if</span> <span class="br0">(</span>distance<span class="br0">[</span>i<span class="br0">]</span><span class="sy3">!</span><span class="sy1">=</span><span class="kw2">INT_MAX</span><span class="br0">)</span><br>
+<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>m<span class="sy1">&lt;&lt;</span><span class="st0">" &gt; "</span><span class="sy1">&lt;&lt;</span>i<span class="sy2">+</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span><span class="st0">" = "</span><span class="sy1">&lt;&lt;</span>distance<span class="br0">[</span>i<span class="br0">]</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span><br>
+<span class="kw1">else</span> <span class="kw3">cout</span><span class="sy1">&lt;&lt;</span>m<span class="sy1">&lt;&lt;</span><span class="st0">" &gt; "</span><span class="sy1">&lt;&lt;</span>i<span class="sy2">+</span><span class="nu0">1</span><span class="sy1">&lt;&lt;</span><span class="st0">" = "</span><span class="sy1">&lt;&lt;</span><span class="st0">"маршрут недоступен"</span><span class="sy1">&lt;&lt;</span>endl<span class="sy4">;</span><br>
+<span class="br0">}</span><br>
+<span class="co1">//главная функция</span><br>
+<span class="kw4">void</span> main<span class="br0">(</span><span class="br0">)</span><br>
+<span class="br0">{</span><br>
+setlocale<span class="br0">(</span>LC_ALL, <span class="st0">"Rus"</span><span class="br0">)</span><span class="sy4">;</span><br>
+<span class="kw4">int</span> start, GR<span class="br0">[</span>V<span class="br0">]</span><span class="br0">[</span>V<span class="br0">]</span><span class="sy1">=</span><span class="br0">{</span><br>
+<span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">4</span>, <span class="nu0">0</span>, <span class="nu0">2</span>, <span class="nu0">0</span><span class="br0">}</span>,<br>
+<span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">9</span>, <span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">}</span>,<br>
+<span class="br0">{</span><span class="nu0">4</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">7</span>, <span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">}</span>,<br>
+<span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">9</span>, <span class="nu0">7</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">2</span><span class="br0">}</span>,<br>
+<span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">8</span><span class="br0">}</span>,<br>
+<span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">}</span><span class="br0">}</span><span class="sy4">;</span><br>
+<span class="kw3">cout</span><span class="sy1">&lt;&lt;</span><span class="st0">"Начальная вершина &gt;&gt; "</span><span class="sy4">;</span> <span class="kw3">cin</span><span class="sy1">&gt;&gt;</span>start<span class="sy4">;</span><br>
+Dijkstra<span class="br0">(</span>GR, start<span class="sy2">-</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span><br>
+<span class="kw3">system</span><span class="br0">(</span><span class="st0">"pause&gt;&gt;void"</span><span class="br0">)</span><span class="sy4">;</span><br>
+<span class="br0">}</span></div></td></tr></tbody></table></div>
+<p>&nbsp;</p>
+<h3>Код программы на Pascal:</h3>
+<p>&nbsp;</p>
+<div class="codecolorer-container pascal blackboard" style="overflow:auto;white-space:nowrap;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br></div></td><td><div class="pascal codecolorer"><span class="kw1">program</span> DijkstraAlgorithm;<br>
+<span class="kw1">uses</span> crt;<br>
+<span class="kw1">const</span> V<span class="sy0">=</span><span class="nu0">6</span>; inf<span class="sy0">=</span><span class="nu0">100000</span>;<br>
+<span class="kw1">type</span> vektor<span class="sy0">=</span><span class="kw4">array</span><span class="br0">[</span><span class="nu0">1</span>..<span class="me1">V</span><span class="br0">]</span> <span class="kw1">of</span> <span class="kw4">integer</span>;<br>
+<span class="kw1">var</span> start<span class="sy0">:</span> <span class="kw4">integer</span>;<br>
+<span class="kw1">const</span> GR<span class="sy0">:</span> <span class="kw4">array</span><span class="br0">[</span><span class="nu0">1</span>..<span class="me1">V</span><span class="sy0">,</span> <span class="nu0">1</span>..<span class="me1">V</span><span class="br0">]</span> <span class="kw1">of</span> <span class="kw4">integer</span><span class="sy0">=</span><span class="br0">(</span><br>
+<span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">2</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy0">,</span><br>
+<span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">9</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy0">,</span><br>
+<span class="br0">(</span><span class="nu0">4</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">7</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy0">,</span><br>
+<span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">9</span><span class="sy0">,</span> <span class="nu0">7</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">2</span><span class="br0">)</span><span class="sy0">,</span><br>
+<span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">8</span><span class="br0">)</span><span class="sy0">,</span><br>
+<span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span>;<br>
+<span class="coMULTI">{алгоритм Дейкстры}</span><br>
+<span class="kw1">procedure</span> Dijkstra<span class="br0">(</span>GR<span class="sy0">:</span> <span class="kw4">array</span><span class="br0">[</span><span class="nu0">1</span>..<span class="me1">V</span><span class="sy0">,</span> <span class="nu0">1</span>..<span class="me1">V</span><span class="br0">]</span> <span class="kw1">of</span> <span class="kw4">integer</span>; st<span class="sy0">:</span> <span class="kw4">integer</span><span class="br0">)</span>;<br>
+<span class="kw1">var</span> count<span class="sy0">,</span> <span class="kw1">index</span><span class="sy0">,</span> i<span class="sy0">,</span> u<span class="sy0">,</span> m<span class="sy0">,</span> min<span class="sy0">:</span> <span class="kw4">integer</span>;<br>
+distance<span class="sy0">:</span> vektor;<br>
+visited<span class="sy0">:</span> <span class="kw4">array</span><span class="br0">[</span><span class="nu0">1</span>..<span class="me1">V</span><span class="br0">]</span> <span class="kw1">of</span> <span class="kw4">boolean</span>;<br>
+<span class="kw1">begin</span><br>
+m<span class="sy0">:=</span>st;<br>
+<span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> V <span class="kw1">do</span><br>
+<span class="kw1">begin</span><br>
+distance<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">:=</span>inf; visited<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">:=</span><span class="kw2">false</span>;<br>
+<span class="kw1">end</span>;<br>
+distance<span class="br0">[</span>st<span class="br0">]</span><span class="sy0">:=</span><span class="nu0">0</span>;<br>
+<span class="kw1">for</span> count<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> V<span class="sy0">-</span><span class="nu0">1</span> <span class="kw1">do</span><br>
+<span class="kw1">begin</span><br>
+min<span class="sy0">:=</span>inf;<br>
+<span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> V <span class="kw1">do</span><br>
+<span class="kw1">if</span> <span class="br0">(</span><span class="kw1">not</span> visited<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span> <span class="kw3">and</span> <span class="br0">(</span>distance<span class="br0">[</span>i<span class="br0">]</span>&lt;<span class="sy0">=</span>min<span class="br0">)</span> <span class="kw1">then</span><br>
+<span class="kw1">begin</span><br>
+min<span class="sy0">:=</span>distance<span class="br0">[</span>i<span class="br0">]</span>; <span class="kw1">index</span><span class="sy0">:=</span>i;<br>
+<span class="kw1">end</span>;<br>
+u<span class="sy0">:=</span><span class="kw1">index</span>;<br>
+visited<span class="br0">[</span>u<span class="br0">]</span><span class="sy0">:=</span><span class="kw2">true</span>;<br>
+<span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> V <span class="kw1">do</span><br>
+<span class="kw1">if</span> <span class="br0">(</span><span class="kw1">not</span> visited<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span> <span class="kw3">and</span> <span class="br0">(</span>GR<span class="br0">[</span>u<span class="sy0">,</span> i<span class="br0">]</span>&lt;&gt;<span class="nu0">0</span><span class="br0">)</span> <span class="kw3">and</span> <span class="br0">(</span>distance<span class="br0">[</span>u<span class="br0">]</span>&lt;&gt;inf<span class="br0">)</span> <span class="kw3">and</span><br>
+<span class="br0">(</span>distance<span class="br0">[</span>u<span class="br0">]</span><span class="sy0">+</span>GR<span class="br0">[</span>u<span class="sy0">,</span> i<span class="br0">]</span>&lt;distance<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span> <span class="kw1">then</span><br>
+distance<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">:=</span>distance<span class="br0">[</span>u<span class="br0">]</span><span class="sy0">+</span>GR<span class="br0">[</span>u<span class="sy0">,</span> i<span class="br0">]</span>;<br>
+<span class="kw1">end</span>;<br>
+<span class="kw3">write</span><span class="br0">(</span><span class="st_h">'Стоимость пути из начальной вершины до остальных:'</span><span class="br0">)</span>; <span class="kw3">writeln</span>;<br>
+<span class="kw1">for</span> i<span class="sy0">:=</span><span class="nu0">1</span> <span class="kw1">to</span> V <span class="kw1">do</span><br>
+<span class="kw1">if</span> distance<span class="br0">[</span>i<span class="br0">]</span>&lt;&gt;inf <span class="kw1">then</span><br>
+<span class="kw3">writeln</span><span class="br0">(</span>m<span class="sy0">,</span><span class="st_h">' &gt; '</span><span class="sy0">,</span> i<span class="sy0">,</span><span class="st_h">' = '</span><span class="sy0">,</span> distance<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span><br>
+<span class="kw1">else</span> <span class="kw3">writeln</span><span class="br0">(</span>m<span class="sy0">,</span><span class="st_h">' &gt; '</span><span class="sy0">,</span> i<span class="sy0">,</span><span class="st_h">' = '</span><span class="sy0">,</span> <span class="st_h">'маршрут недоступен'</span><span class="br0">)</span>;<br>
+<span class="kw1">end</span>;<br>
+<span class="coMULTI">{основной блок программы}</span><br>
+<span class="kw1">begin</span><br>
+clrscr;<br>
+<span class="kw3">write</span><span class="br0">(</span><span class="st_h">'Начальная вершина &gt;&gt; '</span><span class="br0">)</span>; <span class="kw3">read</span><span class="br0">(</span>start<span class="br0">)</span>;<br>
+Dijkstra<span class="br0">(</span>GR<span class="sy0">,</span> start<span class="br0">)</span>;<br>
+<span class="kw1">end</span>.</div></td></tr></tbody></table></div>
+<div class="yarpp-related">
+<p></p><h3>Смотрите также:</h3><p></p><ol>
+<li><a href="http://kvodo.ru/bellman-ford-algorithm.html" rel="bookmark" title="Алгоритм Беллмана — Форда">Алгоритм Беллмана — Форда </a></li>
+<li><a href="http://kvodo.ru/algoritm-floyda-uorshella.html" rel="bookmark" title="Алгоритм Флойда – Уоршелла">Алгоритм Флойда – Уоршелла </a></li>
+<li><a href="http://kvodo.ru/pascal-lineynyie-algoritmyi-zadacha-11.html" rel="bookmark" title="Pascal. Линейные алгоритмы. Задача 11">Pascal. Линейные алгоритмы. Задача 11 </a></li>
+<li><a href="http://kvodo.ru/search-width.html" rel="bookmark" title="Поиск в ширину">Поиск в ширину </a></li>
+<li><a href="http://kvodo.ru/dfs.html" rel="bookmark" title="Поиск в глубину">Поиск в глубину </a></li>
+</ol>
+</div>
+			
+						
+						
+		</div>
+		
+				<div class="entry-footer clearfix">
+									
+			<div class="add-this-right"><script type="text/javascript" src="./Алгоритм Дейкстры — Kvodo_files/share.js" charset="utf-8"></script>
+<div class="yashare-auto-init" data-yasharel10n="ru" data-yasharetype="button" data-yasharequickservices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"><span class="b-share"><a class="b-share__handle" id="ya-share-0.3173765419051051-1440517120000" data-hdirection="" data-vdirection=""><span class="b-share-form-button b-share-form-button_share"><i class="b-share-form-button__before"></i><i class="b-share-form-button__icon"></i>Поделиться…<i class="b-share-form-button__after"></i></span></a><a rel="nofollow" target="_blank" title="ВКонтакте" class="b-share__handle b-share__link b-share-btn__vkontakte" href="https://share.yandex.net/go.xml?service=vkontakte&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" data-service="vkontakte"><span class="b-share-icon b-share-icon_vkontakte"></span></a><a rel="nofollow" target="_blank" title="Facebook" class="b-share__handle b-share__link b-share-btn__facebook" href="https://share.yandex.net/go.xml?service=facebook&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" data-service="facebook"><span class="b-share-icon b-share-icon_facebook"></span></a><a rel="nofollow" target="_blank" title="Twitter" class="b-share__handle b-share__link b-share-btn__twitter" href="https://share.yandex.net/go.xml?service=twitter&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" data-service="twitter"><span class="b-share-icon b-share-icon_twitter"></span></a><a rel="nofollow" target="_blank" title="Одноклассники" class="b-share__handle b-share__link b-share-btn__odnoklassniki" href="https://share.yandex.net/go.xml?service=odnoklassniki&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" data-service="odnoklassniki"><span class="b-share-icon b-share-icon_odnoklassniki"></span></a><a rel="nofollow" target="_blank" title="Мой Мир" class="b-share__handle b-share__link b-share-btn__moimir" href="https://share.yandex.net/go.xml?service=moimir&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" data-service="moimir"><span class="b-share-icon b-share-icon_moimir"></span></a><a rel="nofollow" target="_blank" title="Google Plus" class="b-share__handle b-share__link b-share-btn__gplus" href="https://share.yandex.net/go.xml?service=gplus&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" data-service="gplus"><span class="b-share-icon b-share-icon_gplus"></span></a></span></div></div>			
+					</div>
+	</div>
+</div>
+
+
+
+            <div class="post adsense_single clearfix" id="adsense-ad-1">
+                
+<!-- Блок №8 -->
+<ins class="adsbygoogle" style="width:590px;height:60px" data-ad-client="ca-pub-2504657905697397" data-ad-slot="5418752066"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>            </div>
+            		
+
+
+
+
+
+
+<div id="comments" class="clearfix no-ping">
+        	<h4 class="comments current">1 комментарий</h4>
+	        
+    
+	
+	    <div class="comments-list-wrapper">
+        <ol class="clearfix" id="comments_list">
+            		<li id="comment-3138" class="comment byuser comment-author-juli even thread-even depth-1 clearfix">
+						
+									
+				<div class="comment-wrap clearfix">
+					
+											<div class="comment-avatar-wrap">
+							<img alt="" src="./Алгоритм Дейкстры — Kvodo_files/814afac38e328378fea7d5805ad80ba2" class="avatar avatar-40 photo" height="40" width="40">													</div>
+										
+					<h5 class="comment-author">
+						<cite><a href="" rel="external">Juli</a></cite>
+											</h5>
+					<div class="comment-meta">
+						<p class="commentmetadata">
+														27.03.2014 в 7:58 пп							<span class="timezone">(UTC 4)</span>
+																					<span class="comment-permalink" style="display: none;"><a href="http://kvodo.ru/dijkstra-algorithm.html/comment-page-1#comment-3138">Ссылка на этот комментарий</a></span>
+							    
+						</p>
+						<p class="comment-reply-link">
+							<a class="comment-reply-link" href="http://kvodo.ru/dijkstra-algorithm.html?replytocom=3138#respond" onclick="return addComment.moveForm( &quot;comment-3138&quot;, &quot;3138&quot;, &quot;respond&quot;, &quot;905&quot; )" aria-label="Комментарий к записи Juli">Ответить</a>						
+													</p>
+						
+											</div>
+					<div class="comment-entry">
+												
+													<p>Спасибо за статью!<br>
+Вопрос по реализации, что делать если нужно пошаговое решение?</p>
+												
+											</div>
+				</div>
+			
+				</li><!-- #comment-## -->
+        </ol>
+       	
+            </div>
+        
+        
+    </div>
+
+
+
+
+
+	<div id="comment-form-wrap" class="clearfix">
+										<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Добавить комментарий <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://kvodo.ru/dijkstra-algorithm.html#respond" style="display:none;">Отменить ответ</a></small></h3>
+									<form action="http://kvodo.ru/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes"><span id="email-notes">Ваш e-mail не будет опубликован.</span> Обязательные поля помечены <span class="required">*</span></p>							<p class="comment-form-author clearfix">
+						<label for="author" class="graphene_form_label">Имя: <span class="required">*</span></label>
+						<input id="author" name="author" type="text" class="graphene-form-field" aria-required="true" value="">
+					</p>
+<p class="comment-form-email clearfix">
+						<label for="email" class="graphene_form_label">E-Mail: <span class="required">*</span></label>
+						<input id="email" name="email" type="text" class="graphene-form-field" aria-required="true" value="">
+					</p>
+<p class="comment-form-url clearfix">
+						<label for="url" class="graphene_form_label">Сайт: </label>
+						<input id="url" name="url" type="text" class="graphene-form-field" value="">
+					</p>
+<p class="cptch_block"><label>Проверка на человечность<span class="required"> *</span></label><br>		<input type="hidden" name="cptch_result" value="WLE=">
+		<input type="hidden" name="cptch_time" value="1424492840">
+		<input type="hidden" value="Version: 4.0.9">
+		восемь − <input id="cptch_input" class="cptch_input" type="text" autocomplete="off" name="cptch_number" value="" maxlength="2" size="2" aria-required="true" required="required" style="margin-bottom:0;display:inline;font-size: 12px;width: 40px;"> = 0</p>												<p class="comment-form-message comment-form-comment clearfix">
+										<label class="graphene_form_label" for="comment">Сообщение: <span class="required">*</span></label>
+										<textarea name="comment" id="comment" cols="40" rows="20" class="graphene-form-field" aria-required="true"></textarea>
+									 </p>						<p class="form-allowed-tags">Вы можете использовать эти теги <abbr title="HyperText Markup Language">HTML</abbr>: <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" class="submit" value="Добавить комментарий">
+							<input type="hidden" name="comment_post_ID" value="905" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a1336bd523"></p><p style="display: none;"></p><div class="clear"></div>					<input type="hidden" id="ak_js" name="ak_js" value="1440517119782"></form>
+							</div><!-- #respond -->
+				</div>
+    
+
+            
+  
+    </div><!-- #content-main -->
+    
+    	
+    
+<div id="sidebar1" class="sidebar grid_4">
+
+	
+    <div id="meta-3" class="sidebar-wrap clearfix widget_meta"><h3>Вход</h3>			<ul>
+			<li><a href="http://kvodo.ru/wp-login.php?action=register">Регистрация</a></li>			<li><a href="http://kvodo.ru/wp-login.php">Войти</a></li>
+
+			</ul>
+</div><div id="nav_menu-2" class="sidebar-wrap clearfix widget_nav_menu"><h3>Популярное</h3><div class="menu-populyarnoe-container"><ul id="menu-populyarnoe" class="menu"><li id="menu-item-370" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-370"><a target="_blank" href="http://kvodo.ru/tablitsa-ascii-3.html">Таблица ASCII</a></li>
+<li id="menu-item-926" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-926"><a href="http://kvodo.ru/tablitsa-alt-kodov-windows.html">Таблица Alt-кодов (Windows)</a></li>
+<li id="menu-item-924" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-924"><a href="./Алгоритм Дейкстры — Kvodo_files/Алгоритм Дейкстры — Kvodo.htm">Алгоритм Дейкстры</a></li>
+<li id="menu-item-925" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-925"><a href="http://kvodo.ru/gnome-sorting.html">Гномья сортировка</a></li>
+<li id="menu-item-527" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-527"><a target="_blank" href="http://kvodo.ru/sortirovka-vyiborom-2.html">Сортировка выбором</a></li>
+<li id="menu-item-616" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-616"><a target="_blank" href="http://kvodo.ru/sortirovka-vstavkami-2.html">Сортировка вставками</a></li>
+<li id="menu-item-614" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-614"><a target="_blank" href="http://kvodo.ru/dvoichnyiy-poisk.html">Двоичный поиск</a></li>
+<li id="menu-item-615" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-615"><a target="_blank" href="http://kvodo.ru/lineynyiy-poisk.html">Линейный поиск</a></li>
+<li id="menu-item-837" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-837"><a target="_blank" href="http://kvodo.ru/algoritm-evklida.html">Алгоритм Евклида</a></li>
+<li id="menu-item-664" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-664"><a target="_blank" href="http://kvodo.ru/urok-9-1-dinamicheskie-matritsyi.html">C++. Динамические матрицы</a></li>
+<li id="menu-item-663" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-663"><a target="_blank" href="http://kvodo.ru/urok-10-1-rabota-s-tekstovyimi-faylami-v-c.html">C++. Работа с текстовыми файлами</a></li>
+<li id="menu-item-838" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-838"><a target="_blank" href="http://kvodo.ru/urok-10-2-obrabotka-dvoichnyih-faylov.html">C++. Обработка двоичных файлов</a></li>
+<li id="menu-item-846" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-846"><a target="_blank" href="http://kvodo.ru/urok-10-2-obrabotka-dvoichnyih-faylov.html">C++. Обработка двоичных файлов</a></li>
+<li id="menu-item-839" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-839"><a target="_blank" href="http://kvodo.ru/pascal-custom-modules.html">Pascal. Пользовательские модули</a></li>
+<li id="menu-item-841" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-841"><a target="_blank" href="http://kvodo.ru/pascal-two-dimensional-arrays.html">Pascal. Двумерные массивы</a></li>
+<li id="menu-item-842" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-842"><a target="_blank" href="http://kvodo.ru/pascal-one-dimensional-arrays.html">Pascal. Одномерные массивы</a></li>
+<li id="menu-item-843" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-843"><a target="_blank" href="http://kvodo.ru/the-enclosed-cycles-in-pascal.html">Pascal. Вложенные циклы</a></li>
+<li id="menu-item-844" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-844"><a target="_blank" href="http://kvodo.ru/pascal-data-types.html">Pascal. Типы данных</a></li>
+<li id="menu-item-845" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-845"><a target="_blank" href="http://kvodo.ru/pascal-operators-io.html">Pascal. Операторы ввода-вывода</a></li>
+<li id="menu-item-840" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-840"><a target="_blank" href="http://kvodo.ru/pascal-typed-and-untyped-files.html">Pascal. Файлы. Типизированные и нетипизированные</a></li>
+</ul></div></div>    
+        
+    
+</div><!-- #sidebar1 -->    
+    
+</div><!-- #content -->
+
+
+
+<div id="footer" class="clearfix">
+    
+        <div id="copyright">
+    	<h3>Авторские права</h3>
+		        	<p>©  2012 — 2014  <a href="http://kvodo.ru/"> Kvodo.ru<br></a> Ссылка на первоисточник обязательна</p>
+<p>Выражаем благодарность Алексееву Е. Р. за предоставленное им право использовать материалы книги «MS Visual C++ и Turbo C++ Explorer»</p>
+ 	            
+        
+    	    </div>
+
+		
+        <div id="developer" class="grid_7">
+        <p>
+        
+        </p>
+
+	    </div>
+        
+        <div class="graphene-dynamic-widget" id="graphene-dynamic-widget-graphene_footer">
+        <div id="text-11" class="sidebar-wrap clearfix widget_text">			<div class="textwidget"><a rel="nofollow" href="http://feedburner.google.com/fb/a/mailverify?uri=kvodo-news&loc=ru_RU">Подписаться на Kvodo.ru</a></div>
+		</div><div id="text-13" class="sidebar-wrap clearfix widget_text">			<div class="textwidget"><div style="position: relative; bottom: 10px; left: 875px; width: 180px"><a href="http://want-site.ru/website-promotion" target="_blank">Заказать продвижение сайта</a></div></div>
+		</div><div id="text-12" class="sidebar-wrap clearfix widget_text">			<div class="textwidget"><div style="position: relative; bottom: 10px; left: 875px; width: 180px"><a href="http://want-site.ru/make-site" target="_blank">Заказать сайт</a></div>  </div>
+		</div>    </div>
+    </div><!-- #footer -->
+
+    <div class="graphene-dynamic-widget" id="graphene-dynamic-widget-graphene_after_footer">
+        <div id="text-7" class="sidebar-wrap clearfix widget_text">			<div class="textwidget"><p style="padding-bottom: 10px"><a href="http://kvodo.ru/" target="_blank"><img src="./Алгоритм Дейкстры — Kvodo_files/kvodo_baner.png" alt="Программирование на Kvodo"></a></p></div>
+		</div><div id="text-14" class="sidebar-wrap clearfix widget_text">			<div class="textwidget"><!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t26.5;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число посетителей за"+
+" сегодня' "+
+"border='0' width='88' height='15'><\/a>")
+//--></script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="./Алгоритм Дейкстры — Kvodo_files/hit" alt="" title="LiveInternet: показано число посетителей за сегодня" border="0" width="88" height="15"></a><!--/LiveInternet--></div>
+		</div>    </div>
+    
+</div><!-- #container -->
+
+
+	<!--[if IE 8]>
+    <script type="text/javascript">
+        (function($) {
+            var imgs, i, w;
+            var imgs = document.getElementsByTagName( 'img' );
+            maxwidth = 0.98 * $( '.entry-content' ).width();
+            for( i = 0; i < imgs.length; i++ ) {
+                w = imgs[i].getAttribute( 'width' );
+                if ( w > maxwidth ) {
+                    imgs[i].removeAttribute( 'width' );
+                    imgs[i].removeAttribute( 'height' );
+                }
+            }
+        })(jQuery);
+    </script>
+    <![endif]-->
+<script type="text/javascript" src="./Алгоритм Дейкстры — Kvodo_files/form.js"></script>
+<link rel="stylesheet" id="yarppRelatedCss-css" href="./Алгоритм Дейкстры — Kvodo_files/related.css" type="text/css" media="all">
+<script type="text/javascript" src="./Алгоритм Дейкстры — Kvodo_files/jquery.form.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/kvodo.ru\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"\u041e\u0442\u043f\u0440\u0430\u0432\u043a\u0430...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Алгоритм Дейкстры — Kvodo_files/scripts.js"></script>
+<script type="text/javascript" src="./Алгоритм Дейкстры — Kvodo_files/comment-reply.min.js"></script>
+
+
+<!-- Dynamic page generated in 0.555 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2015-02-21 08:27:20 -->
+
+<!-- super cache --><div class="button-up" style="opacity: 0.7; width: 90px; height: 100%; position: fixed; left: 0px; top: 0px; cursor: pointer; line-height: 30px; color: white; font-size: 14px; font-weight: bold; background-image: none; display: block; background-position: initial initial; background-repeat: initial initial;"><div style="position: fixed;top: 20px; margin: 10px; font-family: tahoma">▲ Вверх</div></div><div class="b-share-popup-wrap b-share-popup-wrap_state_hidden" id="ya-share-0.3173765419051051-1440517120000-popup"><div class="b-share-popup b-share-popup_down b-share-popup_to-right"><div class="b-share-popup__i"><div class="b-share-popup__main  b-share-popup_yandexed"><div class="b-share-popup__header b-share-popup__header_first">Поделитесь с друзьями</div><a rel="nofollow" target="_blank" href="https://share.yandex.net/go.xml?service=vkontakte&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" class="b-share-popup__item" data-service="vkontakte"><span class="b-share-popup__icon"><span class="b-share-icon b-share-icon_vkontakte"></span></span><span class="b-share-popup__item__text">ВКонтакте</span></a><a rel="nofollow" target="_blank" href="https://share.yandex.net/go.xml?service=odnoklassniki&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" class="b-share-popup__item" data-service="odnoklassniki"><span class="b-share-popup__icon"><span class="b-share-icon b-share-icon_odnoklassniki"></span></span><span class="b-share-popup__item__text">Одноклассники</span></a><a rel="nofollow" target="_blank" href="https://share.yandex.net/go.xml?service=twitter&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" class="b-share-popup__item" data-service="twitter"><span class="b-share-popup__icon"><span class="b-share-icon b-share-icon_twitter"></span></span><span class="b-share-popup__item__text">Twitter</span></a><a rel="nofollow" target="_blank" href="https://share.yandex.net/go.xml?service=facebook&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" class="b-share-popup__item" data-service="facebook"><span class="b-share-popup__icon"><span class="b-share-icon b-share-icon_facebook"></span></span><span class="b-share-popup__item__text">Facebook</span></a><a rel="nofollow" target="_blank" href="https://share.yandex.net/go.xml?service=moimir&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" class="b-share-popup__item" data-service="moimir"><span class="b-share-popup__icon"><span class="b-share-icon b-share-icon_moimir"></span></span><span class="b-share-popup__item__text">Мой Мир</span></a><a rel="nofollow" target="_blank" href="https://share.yandex.net/go.xml?service=lj&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" class="b-share-popup__item" data-service="lj"><span class="b-share-popup__icon"><span class="b-share-icon b-share-icon_lj"></span></span><span class="b-share-popup__item__text">LiveJournal</span></a><a rel="nofollow" target="_blank" href="https://share.yandex.net/go.xml?service=gplus&url=http%3A%2F%2Fkvodo.ru%2Fdijkstra-algorithm.html&title=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%94%D0%B5%D0%B9%D0%BA%D1%81%D1%82%D1%80%D1%8B%20%E2%80%94%20Kvodo" class="b-share-popup__item" data-service="gplus"><span class="b-share-popup__icon"><span class="b-share-icon b-share-icon_gplus"></span></span><span class="b-share-popup__item__text">Google Plus</span></a><a href="http://api.yandex.ru/share/" class="b-share-popup__yandex">Яндекс</a></div></div><div class="b-share-popup__tail"></div></div></div><iframe src="./Алгоритм Дейкстры — Kvodo_files/index.htm" style="display: none;"></iframe></body></html>

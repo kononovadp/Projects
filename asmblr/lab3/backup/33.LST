@@ -1,0 +1,273 @@
+Microsoft (R) Macro Assembler Version 5.00                  4/21/15 18:15:06
+                                                             Page     1-1
+
+
+       1				.model svart 
+       2				;.386 
+       3				 
+       4				Node struc 
+       5 0000  0004[			namex db 4 dup (0ffh)  
+       6	   FF			
+       7			 ]	
+       8				
+       9 0004  0002[			field1 dw 2 dup (3231h) 
+      10	   3231			
+      11			 ]	
+      12				
+      13 0008				Node ENDS 
+      14				 
+      15 0000				Data1 segment 
+      16 0000  12 13			a db 12h,13h 
+      17 0002  ??			I_struc db ? 
+      18				;pp1_8 pnt <> 
+      19				;pp1_16 pnt <> 
+      20				;pp1 ends 
+      21				 
+      22				 
+      23 0003  0004[			A0 Node <> 
+      24	   FF			
+      25			 ]	
+      26 0007  0002[			
+      27	   3231			
+      28			 ]	
+      29				
+      30 000B  0002[			A1 Node 2 dup (<>) 
+      31	0004[			
+      32	    FF			
+      33			]	
+      34	0002[			
+      35	    3231		
+      36			]	
+      37			 ]	
+      38				
+      39 001B  0004[			A2 Node 4 dup (<>) 
+      40	0004[			
+      41	    FF			
+      42			]	
+      43	0002[			
+      44	    3231		
+      45			]	
+      46			 ]	
+      47				
+      48 003B  0008[			A3 Node 8 dup (<>) 
+      49	0004[			
+      50	    FF			
+      51			]	
+      52	0002[			
+      53	    3231		
+      54			]	
+Microsoft (R) Macro Assembler Version 5.00                  4/21/15 18:15:06
+                                                             Page     1-2
+
+
+      55			 ]	
+      56				
+      57 007B				Data1 ends 
+      58				 
+      59 0000				data2 segment  
+      60 0000  14 15			b db 14h,15h 
+      61 0002  0004[			B0 Node <> 
+      62	   FF			
+      63			 ]	
+      64 0006  0002[			
+      65	   3231			
+      66			 ]	
+      67				
+      68 000A  0002[			B1 Node 2 dup (<>) 
+      69	0004[			
+      70	    FF			
+      71			]	
+      72	0002[			
+      73	    3231		
+      74			]	
+      75			 ]	
+      76				
+      77 001A  0004[			B2 Node 4 dup (<>) 
+      78	0004[			
+      79	    FF			
+      80			]	
+      81	0002[			
+      82	    3231		
+      83			]	
+      84			 ]	
+      85				
+      86 003A  0008[			B3 Node 8 dup (<>) 
+      87	0004[			
+      88	    FF			
+      89			]	
+      90	0002[			
+      91	    3231		
+      92			]	
+      93			 ]	
+      94				
+      95 007A				data2 ends 
+      96 0000				code1 segment   
+      97					assume ds:data1,cs:code1  
+      98 0000  B8 ---- R		start:	mov	ax,data1  
+      99 0003  8E D8				mov	ds,ax 
+     100 0005  B8 ---- R			mov	ax,data2 
+     101 0008  8E C0				mov	es,ax   
+     102 000A  33 C0				xor	ax,ax   
+     103 000C  B9 0002				mov	cx,length A1  
+     104 000F  BE 0000				mov	si,0  
+     105 0012  EA 0000 ---- R		jmp far ptr m2  
+     106 0017  BB 000B R			mov bx, offset A1  
+     107 001A					CA0: 
+     108 001A  89 9C 0007 R			mov A0.field1.[si],bx  
+Microsoft (R) Macro Assembler Version 5.00                  4/21/15 18:15:06
+                                                             Page     1-3
+
+
+     109 001E  83 C3 08				add bx,8  
+     110 0021  83 C6 02				add si,2  
+     111 0024  E2 F4				loop CA0 
+     112				;jmp m3 
+     113 0026  B9 0004				mov	cx,length A2  
+     114 0029  BE 0000				mov	si,0  
+     115 002C  BB 001B R			mov bx, offset A2  
+     116 002F					CA1: 
+     117 002F  89 9C 000F R			mov A1.field1.[si],bx  
+     118 0033  83 C3 08				add bx,8  
+     119 0036  83 F9 03				cmp cx,3  
+     120 0039  74 02				je @1  
+     121 003B  75 03				jne @2  
+     122 003D  83 C6 04				@1: add si,4  
+     123 0040  83 C6 02				@2: add si,2  
+     124 0043  E2 EA				loop CA1 
+     125				 
+     126				 
+     127 0045  B9 0004				mov	cx,4  
+     128 0048  BE 0000				mov	si,0  
+     129 004B  BB 003B R			mov bx, offset A3  
+     130 004E					CA2: 
+     131 004E  89 9C 001F R			mov A2.field1.[si],bx  
+     132 0052  83 C3 08				add bx,8  
+     133 0055  83 F9 03				cmp cx,3  
+     134 0058  74 02				je @3  
+     135 005A  75 03				jne @4  
+     136 005C  83 C6 04				@3: add si,4  
+     137 005F  83 C6 02				@4: add si,2  
+     138 0062  E2 EA				loop CA2 
+     139 0064  83 C6 04				add si,4  
+     140 0067  B9 0004				mov cx,4  
+     141 006A					CA2_1: 
+     142 006A  89 9C 001F R			mov A2.field1.[si],bx  
+     143 006E  83 C3 08				add bx,8  
+     144 0071  83 F9 03				cmp cx,3  
+     145 0074  74 02				je @5  
+     146 0076  75 03				jne @6  
+     147 0078  83 C6 04				@5: add si,4  
+     148 007B  83 C6 02				@6: add si,2  
+     149 007E  E2 EA				loop CA2_1 
+     150 0080					m3:  
+     151 0080  EA 0000 ---- R		jmp far ptr m2 
+     152				;	mov ax, 4c00h 
+     153				;	int 21h 
+     154 0085				code1 ends 
+     155				 
+     156 0000				code2 segment  
+     157				 
+     158				;m2 label far 
+     159				;	assume ds:data1,es:data2,cs:cod
+					e2  
+     160 0000				m2 label far  
+     161 0000  B8 ---- R			mov ax,data1  
+Microsoft (R) Macro Assembler Version 5.00                  4/21/15 18:15:06
+                                                             Page     1-4
+
+
+     162 0003  8E D8				mov ds,ax 
+     163 0005  B8 ---- R			mov ax,data2  
+     164 0008  8E C0				mov es,ax 
+     165				;m2 label far 
+     166 000A  FC				cld  
+     167 000B  8D 36 0007 R			lea si,A0.field1  
+     168 000F  8D 3E 0006 R			lea di,B0.field1 
+     169 0013  B9 0002				mov cx,2;length A0 
+     170				 
+     171 0016  F3/ A5			rep	movs b0+[di],a0+[si] ;field1,a0
+					.fild1 
+33.ASM(105): warning A4057: Illegal size for operand
+     172				 
+     173					 
+     174 0018  B8 4C00				mov ax,4c00h 
+     175 001B  CD 21				int 21h 
+     176 001D				code2 ends  
+     177				end start 
+Microsoft (R) Macro Assembler Version 5.00                  4/21/15 18:15:06
+                                                             Symbols-1
+
+
+Structures and Records:
+
+                N a m e                 Width   # fields
+                                        Shift   Width   Mask    Initial
+
+NODE . . . . . . . . . . . . . .  	0008	0002
+  NAMEX  . . . . . . . . . . . .  	0000
+  FIELD1 . . . . . . . . . . . .  	0004
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODE1  . . . . . . . . . . . . .  	0085	PARA	NONE	
+CODE2  . . . . . . . . . . . . .  	001D	PARA	NONE	
+DATA1  . . . . . . . . . . . . .  	007B	PARA	NONE	
+DATA2  . . . . . . . . . . . . .  	007A	PARA	NONE	
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	0000	WORD	PUBLIC	'DATA'
+_TEXT  . . . . . . . . . . . . .  	0000	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+A  . . . . . . . . . . . . . . .  	L BYTE	0000	DATA1
+A0 . . . . . . . . . . . . . . .  	L QWORD	0003	DATA1
+A1 . . . . . . . . . . . . . . .  	L QWORD	000B	DATA1	Length = 0002
+A2 . . . . . . . . . . . . . . .  	L QWORD	001B	DATA1	Length = 0004
+A3 . . . . . . . . . . . . . . .  	L QWORD	003B	DATA1	Length = 0008
+
+B  . . . . . . . . . . . . . . .  	L BYTE	0000	DATA2
+B0 . . . . . . . . . . . . . . .  	L QWORD	0002	DATA2
+B1 . . . . . . . . . . . . . . .  	L QWORD	000A	DATA2	Length = 0002
+B2 . . . . . . . . . . . . . . .  	L QWORD	001A	DATA2	Length = 0004
+B3 . . . . . . . . . . . . . . .  	L QWORD	003A	DATA2	Length = 0008
+
+CA0  . . . . . . . . . . . . . .  	L NEAR	001A	CODE1
+CA1  . . . . . . . . . . . . . .  	L NEAR	002F	CODE1
+CA2  . . . . . . . . . . . . . .  	L NEAR	004E	CODE1
+CA2_1  . . . . . . . . . . . . .  	L NEAR	006A	CODE1
+
+I_STRUC  . . . . . . . . . . . .  	L BYTE	0002	DATA1
+
+M2 . . . . . . . . . . . . . . .  	L FAR 	0000	CODE2
+M3 . . . . . . . . . . . . . . .  	L NEAR	0080	CODE1
+
+START  . . . . . . . . . . . . .  	L NEAR	0000	CODE1
+
+@1 . . . . . . . . . . . . . . .  	L NEAR	003D	CODE1
+@2 . . . . . . . . . . . . . . .  	L NEAR	0040	CODE1
+@3 . . . . . . . . . . . . . . .  	L NEAR	005C	CODE1
+@4 . . . . . . . . . . . . . . .  	L NEAR	005F	CODE1
+@5 . . . . . . . . . . . . . . .  	L NEAR	0078	CODE1
+Microsoft (R) Macro Assembler Version 5.00                  4/21/15 18:15:06
+                                                             Symbols-2
+
+
+@6 . . . . . . . . . . . . . . .  	L NEAR	007B	CODE1
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  0		
+@FILENAME  . . . . . . . . . . .  	TEXT  33		
+
+
+    111 Source  Lines
+    111 Total   Lines
+     44 Symbols
+
+  48558 + 400354 Bytes symbol space free
+
+      1 Warning Errors
+      0 Severe  Errors

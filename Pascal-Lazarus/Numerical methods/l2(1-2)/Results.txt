@@ -1,0 +1,44 @@
+a= -2.0  b= -1.5
+Method of Iterations
+Specified accuracy  0.001 Root value -1.910 Achived accuracy -0.3340 Step 1
+Specified accuracy  0.001 Root value -1.876 Achived accuracy -0.1418 Step 2
+Specified accuracy  0.001 Root value -1.862 Achived accuracy -0.0635 Step 3
+Specified accuracy  0.001 Root value -1.856 Achived accuracy -0.0290 Step 4
+Specified accuracy  0.001 Root value -1.853 Achived accuracy -0.0134 Step 5
+Specified accuracy  0.001 Root value -1.851 Achived accuracy -0.0062 Step 6
+Specified accuracy  0.001 Root value -1.851 Achived accuracy -0.0029 Step 7
+Specified accuracy  0.001 Root value -1.851 Achived accuracy -0.0013 Step 8
+Specified accuracy  0.001 Root value -1.850 Achived accuracy -0.0006 Step 9
+Method of Newton
+Specified accuracy  0.001 Root value -1.850 Achived accuracy 0.0001 Step 1
+a= -1.0  b= -0.5
+Method of Iterations
+Specified accuracy  0.001 Root value -0.938 Achived accuracy 0.4181 Step 1
+Specified accuracy  0.001 Root value -0.897 Achived accuracy 0.2763 Step 2
+Specified accuracy  0.001 Root value -0.869 Achived accuracy 0.1804 Step 3
+Specified accuracy  0.001 Root value -0.851 Achived accuracy 0.1171 Step 4
+Specified accuracy  0.001 Root value -0.839 Achived accuracy 0.0758 Step 5
+Specified accuracy  0.001 Root value -0.832 Achived accuracy 0.0490 Step 6
+Specified accuracy  0.001 Root value -0.827 Achived accuracy 0.0316 Step 7
+Specified accuracy  0.001 Root value -0.824 Achived accuracy 0.0204 Step 8
+Specified accuracy  0.001 Root value -0.821 Achived accuracy 0.0132 Step 9
+Specified accuracy  0.001 Root value -0.820 Achived accuracy 0.0085 Step 10
+Specified accuracy  0.001 Root value -0.819 Achived accuracy 0.0055 Step 11
+Specified accuracy  0.001 Root value -0.819 Achived accuracy 0.0035 Step 12
+Specified accuracy  0.001 Root value -0.818 Achived accuracy 0.0023 Step 13
+Specified accuracy  0.001 Root value -0.818 Achived accuracy 0.0015 Step 14
+Method of Newton
+Specified accuracy  0.001 Root value -0.818 Achived accuracy 0.0006 Step 1
+a= 0.0  b= 0.5
+Method of Iterations
+Specified accuracy  0.001 Root value  0.100 Achived accuracy -0.6350 Step 1
+Specified accuracy  0.001 Root value  0.164 Achived accuracy -0.3364 Step 2
+Specified accuracy  0.001 Root value  0.197 Achived accuracy -0.1576 Step 3
+Specified accuracy  0.001 Root value  0.213 Achived accuracy -0.0690 Step 4
+Specified accuracy  0.001 Root value  0.220 Achived accuracy -0.0293 Step 5
+Specified accuracy  0.001 Root value  0.223 Achived accuracy -0.0123 Step 6
+Specified accuracy  0.001 Root value  0.224 Achived accuracy -0.0051 Step 7
+Specified accuracy  0.001 Root value  0.224 Achived accuracy -0.0021 Step 8
+Specified accuracy  0.001 Root value  0.225 Achived accuracy -0.0009 Step 9
+Method of Newton
+Specified accuracy  0.001 Root value  0.225 Achived accuracy 0.0004 Step 1

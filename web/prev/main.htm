@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://
+www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style>@import url("styles.css"); </style>
+<head>
+<script type="text/javascript" src="nicetitle.js"></script> 
+<style type="text/css"> 
+.block1 
+{ 
+width: 200px;
+background: #ccc; 
+padding: 5px; 
+padding-right: 20px; 
+border: solid 1px black; 
+float: left; 
+} 
+.block2 
+{ 
+width: 200px; 
+background: #fc0; 
+padding: 5px; 
+border: solid 1px black; 
+float: left; 
+position: fixed; 
+top: 40px; 
+left: -70px;  
+} </style>
+<title>Головна сторінка</title>
+</head>
+<body>
+<div class="main_page">
+Головна сторінка</div>
+<h1 onmouseover="tooltip(this,'Заголовок')" onmouseout="hide_info(this)">
+Любко Дереш - головна сторінка</h1>
+<div class="image1">
+<img src="foto.jpg"
+onmouseover="tooltip(this,'Основний вміст')" 
+onmouseout="hide_info(this)"> 
+</div>
+<div class="menu1">
+<ul onmouseover="tooltip(this,'Меню')" onmouseout="hide_info(this)">
+<ol>1. Про автора</ol>
+<ol>2. Контакти</ol>
+</ul> </div>
+<div class="menu2">
+<ul onmouseover="tooltip(this,'Меню')" onmouseout="hide_info(this)">
+<ol>3. Основні роботи</ol>
+<ol>4. Корисні посилання</ol>
+</ul> </div>
+<div class="textcontent">
+<p onmouseover="tooltip(this,'Основний вміст')" onmouseout="hide_info(this)">
+Дереш Любко (або Любомир Андрійович Дереш) – письменник, телеведучий, яскравий представник сучасної української культури. Основною темою його творів є опис життя сучасної молоді. Описуючи буденні історії звичайних школярів та підлітків, їх пристрасть до згубних звичок (вживання алкоголю, наркотиків та галюциногенів) , Л. Дереш намагається найбільше наблизитися до реальності, тож не соромлячись використовує сленг та слова, що знаходяться поза цензурою.
+Твори Л. Дереша були перекладені на десятки іноземних мов ( зокрема, англійська, сербська, німецька, французька тощо). Найбільш відомими серед них є: «Голова Якова», «Трохи пітьми», «Миротворець», «Архе» і т. ін.
+</p> <div class="block2" id="mess"></div> <div class="adw">
+<img src="ad.jpg"
+onmouseover="tooltip(this,'Додаткова секція')" onmouseout="hide_info(this)"> </div>
+<div class="footer">
+<footer onmouseover="tooltip(this,'Нижній колонтикул')" onmouseout="hide_info(this)">
+<p>Виконав студент заочного відділення групи ЗКІ-31 Кононов М. А.</p></footer>
+</div> </div>
+
+
+</body>
+</html>

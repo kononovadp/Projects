@@ -1,0 +1,125 @@
+Microsoft (R) Macro Assembler Version 12.00.31101.0	    05/28/15 15:09:26
+							     First Pass 1 - 1
+
+
+ 0000				data segment
+ 0000				Data1 segment
+				const db 1101b
+				const8 dd 1010
+ 0000				Data1 ends
+ 0000				data ends
+ 0000				code segment
+ 0000				code1 segment
+				assume ds:data1,cs:code1
+				or const8,9fffh
+				or const8,9fffh
+				jb m1
+				jb m2
+				or const8,9fffh
+				m4: or const8,9fffh
+				m3: or const8,9fffh
+				or const8,9fffh
+				or const8,9fffh
+				or const8,9fffh
+				or const8,9fffh
+				or const8,9fffh
+				or const8,9fffh
+				or const8,9fffh
+				or const8,9fffh
+				or const8,9fffh
+				m1: or const8,9fffh
+				or const8,9fffh
+				or const8,9fffh
+				m2: or const8,9fffh
+				jb m3
+				jb m4
+				cli
+ 0000				code1 ends
+ 0000				code ends
+				end
+Microsoft (R) Macro Assembler Version 12.00.31101.0	    05/28/15 15:09:26
+1.asm							     Page 1 - 1
+
+
+ 0000				data segment
+ 0000				Data1 segment
+ 0000 0D			const db 1101b
+ 0001 000003F2			const8 dd 1010
+ 0000				Data1 ends
+ 0000				data ends
+ 0000				code segment
+ 0000				code1 segment
+				assume ds:data1,cs:code1
+ 0000  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0009  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0012  72 70			jb m1
+ 0014  0F 82 0087		jb m2
+ 0018  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0021  66| 81 0E 0001 R		m4: or const8,9fffh
+       00009FFF
+ 002A  66| 81 0E 0001 R		m3: or const8,9fffh
+       00009FFF
+ 0033  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 003C  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0045  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 004E  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0057  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0060  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0069  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0072  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 007B  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0084  66| 81 0E 0001 R		m1: or const8,9fffh
+       00009FFF
+ 008D  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 0096  66| 81 0E 0001 R		or const8,9fffh
+       00009FFF
+ 009F  66| 81 0E 0001 R		m2: or const8,9fffh
+       00009FFF
+ 00A8  72 80			jb m3
+ 00AA  0F 82 FF73		jb m4
+ 00AE  FA			cli
+ 0000				code1 ends
+ 0000				code ends
+				end
+Microsoft (R) Macro Assembler Version 12.00.31101.0	    05/28/15 15:09:26
+1.asm							     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+Data1  . . . . . . . . . . . . .	16 Bit	 0005	  	  Private 
+code1  . . . . . . . . . . . . .	16 Bit	 00AF	  	  Private 
+code . . . . . . . . . . . . . .	16 Bit	 0000	  	  Private 
+data . . . . . . . . . . . . . .	16 Bit	 0000	  	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+const8 . . . . . . . . . . . . .	DWord	 0001	  Data1	
+const  . . . . . . . . . . . . .	Byte	 0000	  Data1	
+m1 . . . . . . . . . . . . . . .	L Near	 0084	  code1	
+m2 . . . . . . . . . . . . . . .	L Near	 009F	  code1	
+m3 . . . . . . . . . . . . . . .	L Near	 002A	  code1	
+m4 . . . . . . . . . . . . . . .	L Near	 0021	  code1	
+
+	   0 Warnings
+	   0 Errors

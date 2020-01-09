@@ -1,0 +1,73 @@
+body.splat {
+  background: transparent url(/images/widget/result/stripe-back.gif) repeat scroll 0 0;
+}
+
+#splatMsg, #errorMsg {
+  width: 256px;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  color: #555555;
+  font-family: arial,sans-serif;
+}
+
+#splatMsg {
+  height: 85px;
+  background: transparent url(/images/widget/result/splat-back.png) no-repeat scroll 0 0;
+  padding: 38px 10px 0 8px;
+}
+
+#errorMsg {
+  width: 325px;
+  border: 1px solid #999;
+  background: white;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -173px;
+  margin-top: -50px;
+}
+
+#errorMsg h1,
+#errorMsg h1 a {
+  font-size: 12px;
+  line-height: 20px;
+  font-family: arial, sans-serif;
+}
+
+#errorMsg h2 {
+  font-size: 11px;
+}
+
+
+#serverMsg {
+  width: 177px;
+  height: 107px;
+  margin: 80px auto 0;
+  padding: 150px 25px 0 35px;
+  font-size: 13px;
+  color: #555555;
+  font-family: arial,sans-serif;
+  background: transparent url(http://www.wolframcdn.com/widget/server-unavailable.png) no-repeat scroll 0 0;
+}
+
+#serverMsg h1 {
+  font-size: 13px;
+  color: #DB0303;
+}
+
+#serverMsg h2 {
+  font-size: 12px;
+  font-weight: normal;
+  color: #777;
+}
+
+#serverMsg a,
+#serverMsg a:hover {
+  font-size: 12px;
+  font-weight: bold;
+  color: #DB0303;
+}

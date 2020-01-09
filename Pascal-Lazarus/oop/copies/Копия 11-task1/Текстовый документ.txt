@@ -1,0 +1,21 @@
+begin
+    addhead(phead);
+    q:=phead;
+    while q<>nil do begin
+      writeln(q^.Info_head);
+      q:=q^.next;
+    end;
+    AddMiddle(pmiddle);
+    q:=pmiddle;
+    while q<>nil do begin
+      writeln(q^.Info_middle);
+      q:=q^.next;
+    end;
+    addend(pend);
+    q:=pend;
+    while q<>nil do begin
+      writeln(q^.Info_end);
+      q:=q^.next;
+    end;
+    readln;
+    end.                    

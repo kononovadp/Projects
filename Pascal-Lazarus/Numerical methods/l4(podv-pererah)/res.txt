@@ -1,0 +1,19 @@
+Exact integral value
+integralT= 855.7705
+Integral Simpson
+step 0.02089 integral= 856.4512 inaccuracy= -0.68075
+Double recalculation
+step 0.18000 integral= 919.8725 inaccuracy= 4.27362
+step 0.09000 integral= 887.8214 inaccuracy= 2.13674
+step 0.04500 integral= 871.7959 inaccuracy= 1.06837
+step 0.02250 integral= 863.7832 inaccuracy= 0.53418
+step 0.01125 integral= 859.7768 inaccuracy= 0.26709
+step 0.00563 integral= 857.7736 inaccuracy= 0.13355
+step 0.00281 integral= 856.7720 inaccuracy= 0.06677
+step 0.00141 integral= 856.2713 inaccuracy= 0.03339
+step 0.00070 integral= 856.0209 inaccuracy= 0.01669
+step 0.00035 integral= 855.8957 inaccuracy= 0.00835
+step 0.00018 integral= 855.8331 inaccuracy= 0.00417
+step 0.00009 integral= 855.8018 inaccuracy= 0.00209
+step 0.00004 integral= 855.7861 inaccuracy= 0.00104
+step 0.00002 integral= 855.7783 inaccuracy= 0.00052

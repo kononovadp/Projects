@@ -1,0 +1,11 @@
+step 0.04000 integral= 200.0308 inaccuracy= 0.84623
+step 0.02000 integral= 193.6840 inaccuracy= 0.42312
+step 0.01000 integral= 190.5106 inaccuracy= 0.21156
+step 0.00500 integral= 188.9239 inaccuracy= 0.10578
+step 0.00250 integral= 188.1306 inaccuracy= 0.05289
+step 0.00125 integral= 187.7339 inaccuracy= 0.02645
+step 0.00063 integral= 187.5355 inaccuracy= 0.01322
+step 0.00031 integral= 187.4364 inaccuracy= 0.00661
+step 0.00016 integral= 187.3868 inaccuracy= 0.00331
+step 0.00008 integral= 187.3620 inaccuracy= 0.00165
+step 0.00004 integral= 187.3496 inaccuracy= 0.00083

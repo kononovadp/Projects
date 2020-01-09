@@ -1,0 +1,78 @@
+body 
+{
+	background: url(background.jpg);
+	background-size: 100%;
+}
+.main_page
+{
+	font-size: 15pt;
+	color: blue;
+}
+h1
+{ 
+    position: absolute;
+	top: 20px;
+    left: 5px;
+	font-size: 25pt;
+}
+.menu1
+{ 
+    position: absolute;
+	top: 16px;
+    left: 450px;
+	font-size: 22pt;
+}
+.menu2
+{
+    position: absolute;
+	top: 16px;
+    left: 630px;
+	font-size: 22pt;
+}
+.image1
+{ 
+    position: absolute;
+	top: 100px;
+    left: 0px;
+}
+.adw
+{ 
+    position: relative;
+    left: -430px;
+}
+.textcontent
+{ 
+	width: 570px;
+	position: absolute;
+	top: 85px;
+    left: 430px;
+	font-size: 18pt;
+	font-style: italic
+}
+.footer
+{
+    position: relative;
+	font-size: 15pt;
+    left: -430px;
+	width: 670px;
+}
+.block1 
+{ 
+width: 200px; 
+background: #ccc; 
+padding: 5px; 
+padding-right: 20px; 
+border: solid 1px black; 
+float: left; 
+} 
+.block2 
+{ 
+width: 200px; 
+background: #fc0; 
+padding: 5px; 
+border: solid 1px black; 
+float: left; 
+position: fixed; 
+top: 40px; 
+left: -70px;  
+}

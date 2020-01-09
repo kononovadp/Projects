@@ -1,0 +1,90 @@
+Microsoft (R) Macro Assembler Version 5.00                  5/18/15 22:36:08
+                                                             Page     1-1
+
+
+       1 0000				data segment 
+       2 0000				Data1 segment 
+       3 0000  0D			const db 1101b 
+       4 0001  7D			const1 db 125 
+       5 0002  85			const2 db 85h 
+       6 0003  48 65 6C 6C 6F		const3 db 'Hello' 
+       7 0008  000A			const4 dw 1010b 
+       8 000A  07DF			const5 dw 2015d 
+       9 000C  0098			const6 dw 98h 
+      10 000E  0B000000			const7 dd 1011b 
+      11 0012  C5070000			const8 dd 1989 
+      12 0016  39020000			const9 dd 239h 
+      13 001A				Data1 ends 
+      14 0000				Dat2 segment 
+      15 0000  77 6F 72 6C 64 21	const10 db 'world!' 
+      16 0006  14			const11 db 14h 
+      17 0007  39			const12 db 57 
+      18 0008  2E			const13 db 101110b 
+      19 0009  0980			const14 dw 980h 
+      20 000B  00CD			const15 dw 205d 
+      21 000D  0033			const16 dw 110011b 
+      22 000F  68450000			const17 dd 4568h 
+      23 0013  DA070000			const18 dd 2010 
+      24 0017  F1000000			const19 dd 11110001b 
+      25 001B				Dat2 ends 
+      26 0000				data ends 
+      27 0000				code segment 
+      28 0000				code1 segment 
+      29				assume ds:data1,cs:code1 
+      30 0000  FE 0E 0001 R		dec const1 
+      31 0004  FF 0E 000C R		dec const6 
+      32 0008  FF 0E 000E R		dec const7 
+7.ASM(32): warning A4057: Illegal size for operand
+      33 000C				code1 ends 
+      34 0000				code ends 
+      35				end 
+Microsoft (R) Macro Assembler Version 5.00                  5/18/15 22:36:08
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	0000	PARA	NONE	
+CODE1  . . . . . . . . . . . . .  	000C	PARA	NONE	
+DAT2 . . . . . . . . . . . . . .  	001B	PARA	NONE	
+DATA . . . . . . . . . . . . . .  	0000	PARA	NONE	
+DATA1  . . . . . . . . . . . . .  	001A	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+CONST  . . . . . . . . . . . . .  	L BYTE	0000	DATA1
+CONST1 . . . . . . . . . . . . .  	L BYTE	0001	DATA1
+CONST10  . . . . . . . . . . . .  	L BYTE	0000	DAT2
+CONST11  . . . . . . . . . . . .  	L BYTE	0006	DAT2
+CONST12  . . . . . . . . . . . .  	L BYTE	0007	DAT2
+CONST13  . . . . . . . . . . . .  	L BYTE	0008	DAT2
+CONST14  . . . . . . . . . . . .  	L WORD	0009	DAT2
+CONST15  . . . . . . . . . . . .  	L WORD	000B	DAT2
+CONST16  . . . . . . . . . . . .  	L WORD	000D	DAT2
+CONST17  . . . . . . . . . . . .  	L DWORD	000F	DAT2
+CONST18  . . . . . . . . . . . .  	L DWORD	0013	DAT2
+CONST19  . . . . . . . . . . . .  	L DWORD	0017	DAT2
+CONST2 . . . . . . . . . . . . .  	L BYTE	0002	DATA1
+CONST3 . . . . . . . . . . . . .  	L BYTE	0003	DATA1
+CONST4 . . . . . . . . . . . . .  	L WORD	0008	DATA1
+CONST5 . . . . . . . . . . . . .  	L WORD	000A	DATA1
+CONST6 . . . . . . . . . . . . .  	L WORD	000C	DATA1
+CONST7 . . . . . . . . . . . . .  	L DWORD	000E	DATA1
+CONST8 . . . . . . . . . . . . .  	L DWORD	0012	DATA1
+CONST9 . . . . . . . . . . . . .  	L DWORD	0016	DATA1
+
+@FILENAME  . . . . . . . . . . .  	TEXT  7		
+
+
+     35 Source  Lines
+     35 Total   Lines
+     27 Symbols
+
+  49172 + 434332 Bytes symbol space free
+
+      1 Warning Errors
+      0 Severe  Errors

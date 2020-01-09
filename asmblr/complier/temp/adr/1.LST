@@ -1,0 +1,66 @@
+Microsoft (R) Macro Assembler Version 5.00                  4/26/15 00:30:17
+                                                             Page     1-1
+
+
+       1 0000				data segment  
+       2				;Data1 segment 
+       3 0000  000A[			a db 10 dup(?) 
+       4	    ??			
+       5			 ]	
+       6				
+       7				;Data1 ends 
+       8 000A				data ends 
+       9 0000				code segment 
+      10				;code1 segment  ;выполнение задания 1 
+      11				assume ds:data,cs:code 
+      12 0000				@start: 
+      13 0000  B8 ---- R		mov ax,data 
+      14 0003  8E D8			mov ds,ax 
+      15 0005  B9 000A			mov cx,10 
+      16 0008  BE 0000			mov si,0 
+      17 000B  BF 0000			mov di,0 
+      18 000E  BB 0000 U		mov bx,offset start;cs:0000 
+1.ASM(15): error A2009: Symbol not defined: START
+      19 0011				m1: 
+      20 0011  8A 00			mov al,[bx+si] 
+      21 0013  88 85 0000 R		mov a.[di],al 
+      22 0017  47			inc di 
+      23 0018  46			inc si 
+      24 0019  E2 F6			loop m1 
+      25				;code1 ends ;конец первого сегмента код
+					ов 
+      26 001B  B8 4C00			mov ax,4c00h 
+      27 001E  CD 21			int 21h 
+      28 0020				code ends 
+      29				end @start 
+Microsoft (R) Macro Assembler Version 5.00                  4/26/15 00:30:17
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	0020	PARA	NONE	
+DATA . . . . . . . . . . . . . .  	000A	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+A  . . . . . . . . . . . . . . .  	L BYTE	0000	DATA	Length = 000A
+
+M1 . . . . . . . . . . . . . . .  	L NEAR	0011	CODE
+
+@FILENAME  . . . . . . . . . . .  	TEXT  1		
+@START . . . . . . . . . . . . .  	L NEAR	0000	CODE
+
+
+     26 Source  Lines
+     26 Total   Lines
+      7 Symbols
+
+  48940 + 434564 Bytes symbol space free
+
+      0 Warning Errors
+      1 Severe  Errors

@@ -1,0 +1,22 @@
+program z1;
+var s,b:string; i,n,p:byte;
+  begin
+    read(s); n:=length(s);
+  while (s[i]<s[i+1]) and (i<n) do i:=i+1;
+
+  if i=n then write ('true') else
+   begin  //начинается обратная сортировка
+    writeln('false');
+    for p:=1 to n-1 do  //количество проходов
+      for i:= 1 to n-p do   //количество проверяемых пар
+        if s[i]<s[i+1] then
+              begin
+                b:=s[i];
+                s[i]:=s[i+1];
+                s[i+1]:=b[1];
+              end;
+    write(s); readln;
+   end;
+    readln;
+  end.
+

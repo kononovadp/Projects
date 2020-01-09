@@ -1,0 +1,8 @@
+0;0;Dummy;Smith;61;IT;1000
+1;1;John;Jackson;53;IT;1500
+0;2;Earl;Simpson;35;PR;750
+0;3;Monty;Johnson;61;IT;800
+0;4;Nicky;Earl;61;IT;1000
+1;5;Mike;Noske;53;PR;1500
+0;6;Tom;Clark;35;PR;750
+0;7;Smith;Earl;61;IT;800

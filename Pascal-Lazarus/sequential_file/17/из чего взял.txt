@@ -1,0 +1,54 @@
+{http://www.cyberforum.ru/pascal/thread83684.html}
+uses crt;
+var f:file of integer;//типизированный файл целых чисел
+    a,b,i,j,x:integer;
+begin
+clrscr;
+assign(f,'fileF');//связываем переменную с файлом
+rewrite(f);//открываем для записи
+writeln('Введите в файл целые числа, окончание ввода 0:');
+repeat
+write('a=');
+readln(a);//читаем числа
+write(f,a);//пишем в файл
+until a=0;//ноль - заканчивается ввод
+clrscr;//очищаем экран от ввода
+writeln('Содержание исходного файла:');
+reset(f);//открывпем для чтения
+while not eof(f) do//пока не конец файла
+ begin
+  read(f,a);//читаем числа
+  write(a,' ');//выводим на экран в строку через пробел
+ end;
+writeln;
+close(f);//закрываем прочитанный файл
+reset(f);//снова открываем для чтения
+for i:=0 to filesize(f)-2 do//с начала и до предпоследнего элемента(нумерация с ноля)
+for j:=i+1 to filesize(f)-1 do//смотрим все элементы впереди
+  begin
+    seek(f,i);//становимся в позицию
+    read(f,a);//читаем число
+    seek(f,j);//идем вперед
+    read(f,b);//читаем число впереди
+    if a>b then//если первое больше
+      begin
+       x:=a;//меняем их значения
+       a:=b;
+       b:=x;
+       seek(f,i);//снова назад
+       write(f,a);//пишем второе число
+       seek(f,j);//вперед
+       write(f,x);//пишем первое число
+      end;
+   end;
+close(f);//закрываем
+writeln('Содержание отсортированного файла:');
+reset(f);//открываем
+while not eof(f) do//читаем и на экран
+ begin
+  read(f,a);
+  write(a,' ');
+ end;
+close(f);//окончательно закрываем
+readln
+end.

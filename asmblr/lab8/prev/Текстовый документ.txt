@@ -1,0 +1,136 @@
+return_dos:
+assume ds:GDT; 
+cli
+mov ax, offset descr_GDT
+; в режимі реальних адрес в цьому випадку виконували команду mov ax,GDT
+mov ds,ax
+mov descr_cs.limit_1,0ffffh
+mov descr_ds.limit_1,0ffffh
+mov descr_ss. attrib,   data_seg
+; перезавантаження тіньових регістрів
+mov ax,offset descr_ds
+mov ds,ax
+mov ax,offset descr_es
+mov es,ax
+mov ax,offset descr_ss
+mov ss,ax
+db 0eah
+dw offset jumpt
+dw offset descr_cs
+jumpt:
+;переключення в режим реальних адрес
+mov eax,cr0
+and al,0feh
+mov cr0,eax
+db 0eah
+dw offset r_mode
+;dw _CODE
+r_mode:
+        assume     ds:_DATA
+        mov        ax,_data
+        mov        ds,ax
+        lss sp,Top_real_mode
+        sti
+               mov        ah,01h
+                int 21h   ; чекать введення з клавіатури 
+	                mov        ax,3
+                int        10h ; переключить відеоконтролер
+;закінчення роботи програми (стандартно)
+        mov        ax,4c00h
+        int        21h
+
+
+Int_code	segment	para public 'code' use16
+		Assume	cs:Int_code
+Vector=0
+I_beg:
+		Pusha
+		Mov		ax,vector
+		Jmp		common_int
+I_end:
+Proc_int_size  =  I_end  -  I_beg
+; Процедура обробки 0-го переривання виділена виключно
+; для автоматичного визначення її розміру (Proc_int_size)
+;
+; 
+Vector=1
+		Rept		255
+		pusha
+		Mov		ax,vector
+		Jmp		common_int
+Vector = Vector + 1
+		Endm
+;
+Mes_int	Db		'INTERUPT N'
+
+;
+common_int:
+; формування номера переривання в Mes_int
+		
+		mov		cl,10
+		div		cl; молодша цифра в ah
+		or		ah,30h ;формування текстового коду цифри
+		mov		bh,ah
+		xor		ah,ah
+div		cl; середня цифра в ah, старша - в al
+		or		ax,3030h ;формування текстового коду цифр
+		mov		dx,ax
+; виведення повідомлення на екран
+push 		offset descr_es; селектор дескриптора із 1-го етапу
+		pop		es
+		mov		si,offset Mes_int
+		mov		cx,10
+mov        di,2620       ;початкова адреса для виведення 
+mov        ah,07h        ;атрибут символів
+outstr:
+mov        al,CS:[si]
+stosw
+inc        si
+loop        outstr
+mov	   al,' '
+stosw
+mov	   al,dl ;старша десяткова цифра номера вектора 
+stosw
+mov	   al,dh ;середня десяткова цифра номера вектора
+stosw
+mov	   al,bh ;молодша десяткова цифра номера вектора
+stosw
+; після виведення повідомлення організуємо передачу управління
+; в основний сегмент для переключення в режим реальних адрес
+; Для цього використаємо команду IRET
+; В даній точці програми в стек записано вміст всіх регістрів, адреса 
+;команди, яка визвала виключення, та вміст регістра ознак. 
+; Ми все це проігноруємо і запишемо в стек нові дані
+pushf
+push       offset descr_cs; селектор дескриптора сегмента
+					; кодів із 1-го етапу
+push       offset return_dos
+iret; передача управління по адресі return_dos основного сегмента кодів
+common_end:
+Int_code_size =common_end; - l_beg
+
+jmp exit
+MOD_error:
+mov ah,9
+mov dx,offset mes1
+int 21h
+;------------------
+exit:
+mov ah,1
+int 21h
+mov ah, 4ch		 
+int 21h		
+mov ax,_data
+mov ds,ax
+; формування  IDT
+xor          eax,eax
+mov         ax,IDT
+shl           eax,4
+mov         pidt.adr,eax
+mov         pidt.lim,8*256
+; завантаження  IDT
+lidt          pidt
+xor        eax,eax
+mov        pidt.adr,eax
+mov        pidt.lim,3ffh
+lidt       pidt

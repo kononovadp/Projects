@@ -1,0 +1,79 @@
+Microsoft (R) Macro Assembler Version 5.00                  6/3/15 15:48:59
+                                                             Page     1-1
+
+
+       1				.286 
+       2				; 7 6 5 4 3 2 1 0 - DL 
+       3				; 1 0 1 0 1 0 1 0 - DL 
+       4				; 6 1 2 5 6 0 5 7 - DH 
+       5 0000				code SEGMENT 
+       6 0000  B2 FF			mov DL,11111111b;10101010b 
+       7 0002  B6 00			mov DH,00000000b 
+       8				 
+       9 0004  8A CA			mov CL,DL; 7>0 
+      10 0006  80 E1 80			and CL,80h 
+      11 0009  C0 E9 07			shr CL,7 
+      12 000C  0A F1			or DH,CL 
+      13				 
+      14 000E  8A CA			mov CL,DL; 5>1  
+      15 0010  80 E1 60			and CL,60h 
+      16 0013  C0 E9 04			shr CL,4 
+      17 0016  0A F1			or DH,CL 
+      18				 
+      19 0018  8A CA			mov CL,DL; 0>2  
+      20 001A  80 E1 10			and CL,10h 
+      21 001D  C0 E1 02			shl CL,2 
+      22 0020  0A F1			or DH,CL 
+      23				 
+      24 0022  8A CA			mov CL,DL; 6>3 
+      25 0024  80 E1 70			and CL,70h 
+      26 0027  C0 E9 03			shr CL,3 
+      27 002A  0A F1			or DH,CL 
+      28				 
+      29 002C  8A CA			mov CL,DL; 5>4  
+      30 002E  80 E1 60			and CL,60h 
+      31 0031  D0 E9			shr CL,1 
+      32 0033  0A F1			or DH,CL 
+      33				 
+      34 0035  8A CA			mov CL,DL; 2>5  
+      35 0037  80 E1 30			and CL,30h 
+      36 003A  C0 E1 03			shl CL,3 
+      37 003D  0A F1			or DH,CL 
+      38				 
+      39 003F  8A CA			mov CL,DL; 1>6  
+      40 0041  80 E1 20			and CL,20h 
+      41 0044  C0 E1 05			shl CL,5 
+      42 0047  0A F1			or DH,CL 
+      43				 
+      44 0049  8A CA			mov CL,DL; 6>7  
+      45 004B  80 E1 70			and CL,70h 
+      46 004E  D0 E1			shl CL,1 
+      47 0050  0A F1			or DH,CL 
+      48				 
+      49 0052				code ENDS 
+      50				end 
+Microsoft (R) Macro Assembler Version 5.00                  6/3/15 15:48:59
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+CODE . . . . . . . . . . . . . .  	0052	PARA	NONE	
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+@FILENAME  . . . . . . . . . . .  	TEXT  1		
+
+
+     50 Source  Lines
+     50 Total   Lines
+      3 Symbols
+
+  49266 + 399758 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

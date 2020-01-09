@@ -1,0 +1,59 @@
+program z1;
+var i:byte; p:string;
+
+function constant(s:string):boolean;
+var h1,d1,b1:set of char;
+    h,d,b,t:boolean;
+    k:byte; ch:char;
+label m1;
+begin
+h:=false; d:=false; b:=false;
+for i:= 48 to 57 do h1:=h1+[chr(i)]; i:=0;
+for i:= 97 to 102 do h1:=h1+[chr(i)]; i:=0;
+for i:= 48 to 57 do d1:=d1+[chr(i)]; i:=0;
+if s[length(s)]<>'h' then goto m1 {begin readln; exit; end} else begin
+for i:=0 to length(s)-1 do begin
+ch:=s[i]; if not (ch in h1) then k:=pos(ch,s); end; {readln; exit;} end;
+if k>0 then writeln('Incorrect hexadecimal constant');
+i:=0; k:=0;
+
+m1:if (s[length(s)]<>'d') or (not(s[length(s)] in d1)) then begin writeln('Incorrect constant');
+readln; exit; end else begin
+for i:=1 to length(s)-1 do begin
+ch:=s[i]; if not (ch in d1) then k:=pos(ch,s); end; {readln; exit;} end;
+if k>0 then writeln('Incorrect decimal constant ',k);
+
+
+readln;
+constant:=false;
+end;
+begin
+readln(p);
+constant(p);
+//readln;
+end.
+
+
+{function constant(s:string):boolean;
+var h1,d1,b1:set of char;
+h,d,b,t:boolean;
+begin
+h:=false; d:=false; b:=false; t:=false;
+for i:= 48 to 57 do h1:=h1+[chr(i)]; i:=0;
+for i:= 65 to 70 do h1:=h1+[chr(i)]; i:=0;
+for i:= 48 to 57 do d1:=d1+[chr(i)]; i:=0;
+for i:= 48 to 49 do b1:=b1+[chr(i)]; i:=0;
+if s[length(s)]='h' then begin
+  for i:=1 to length(s) do if not (s[i] in h1) then h:=true; end;
+if s[1]<>chr(39) then begin
+  for i:=1 to length(s) do if not (s[i] in d1) then d:=true; end;
+if s[length(s)]='b' then begin
+  for i:=1 to length(s) do if not (s[i] in b1) then b:=true; end;
+if (s[1]<>chr(39)) and (s[(length(s))]<>chr(39)) then t:= true;
+if h=true then writeln('Incorrect hexadecimal constant') else writeln('0');
+if d=true then writeln('Incorrect decimal constant') else writeln('0');
+if b=true then writeln('Incorrect binary constant') else writeln('0');
+if t=true then writeln('Incorrect text constant') else writeln('0');
+if (h=true) or (d=true) or (b=true) or (t=true)
+then constant:=false else constant:=true;
+end;}

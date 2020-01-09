@@ -1,0 +1,80 @@
+try {
+(function() {
+var AdguardSettings = { "feedbackUrl":"http://adtidy.org","appVersion":"5.10.1167.5997","applicationId":"d8b7b61e62904e6c8b1133c5c2e07d33","licenseStatus":"Active","locale":"ru","sendAnonymousStatistic":"true","uniqueName":"Adguard Popup Blocker","version":"1.0.11" }; var unsafeWindow = window; var settings = { apiurl: "/adguard-ajax-api", apiType: "/api", feedbackUrl: "/api/1.0/url-report.html", exceptionRulePrefix: "@@||", exceptionAttributes: ["elemhide", "content", "urlblock", "jsinject"], croppedDomain: null, urlInfo: null, path: null, testDomain: null };
+var utils = { getHostWithProtocol: function () { var hostname = document.location.hostname; var protocol = document.location.protocol; var port = document.location.port == "80" ? "" : ":" + document.location.port; return protocol + "//" + hostname + port }, cropDomain: function (domain) { return domain.replace("www.", "") }, getUrl: function (url) { var pattern = "^(([^:/\\?#]+):)?(//(([^:/\\?#]*)(?::([^/\\?#]*))?))?([^\\?#]*)(\\?([^#]*))?(#(.*))?$"; var rx = new RegExp(pattern); var parts = rx.exec(url); return { host: parts[4] || "", path: parts[7] || "" } } };
+var Base64 = {
+    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encode: function (input) {
+        var output = ""; var chr1, chr2, chr3, enc1, enc2, enc3, enc4; var i = 0; input = Base64._utf8_encode(input); while (i < input.length) {
+            chr1 = input.charCodeAt(i++); chr2 = input.charCodeAt(i++); chr3 = input.charCodeAt(i++); enc1 = chr1 >> 2; enc2 = (chr1 & 3) << 4 | chr2 >> 4; enc3 = (chr2 & 15) << 2 | chr3 >> 6; enc4 = chr3 & 63; if (isNaN(chr2)) enc3 = enc4 = 64; else if (isNaN(chr3)) enc4 = 64; output = output + Base64._keyStr.charAt(enc1) + Base64._keyStr.charAt(enc2) +
+            Base64._keyStr.charAt(enc3) + Base64._keyStr.charAt(enc4)
+        } return output
+    }, decode: function (input) {
+        var output = ""; var chr1, chr2, chr3; var enc1, enc2, enc3, enc4; var i = 0; input = input.replace(/[^A-Za-z0-9\+\/\=]/g, ""); while (i < input.length) {
+            enc1 = Base64._keyStr.indexOf(input.charAt(i++)); enc2 = Base64._keyStr.indexOf(input.charAt(i++)); enc3 = Base64._keyStr.indexOf(input.charAt(i++)); enc4 = Base64._keyStr.indexOf(input.charAt(i++)); chr1 = enc1 << 2 | enc2 >> 4; chr2 = (enc2 & 15) << 4 | enc3 >> 2; chr3 = (enc3 & 3) << 6 | enc4; output = output + String.fromCharCode(chr1);
+            if (enc3 != 64) output = output + String.fromCharCode(chr2); if (enc4 != 64) output = output + String.fromCharCode(chr3)
+        } output = Base64._utf8_decode(output); return output
+    }, _utf8_encode: function (string) {
+        string = string.replace(/\r\n/g, "\n"); var utftext = ""; for (var n = 0; n < string.length; n++) {
+            var c = string.charCodeAt(n); if (c < 128) utftext += String.fromCharCode(c); else if (c > 127 && c < 2048) { utftext += String.fromCharCode(c >> 6 | 192); utftext += String.fromCharCode(c & 63 | 128) } else {
+                utftext += String.fromCharCode(c >> 12 | 224); utftext += String.fromCharCode(c >>
+                6 & 63 | 128); utftext += String.fromCharCode(c & 63 | 128)
+            }
+        } return utftext
+    }, _utf8_decode: function (utftext) { var string = ""; var i = 0; var c = c1 = c2 = 0; while (i < utftext.length) { c = utftext.charCodeAt(i); if (c < 128) { string += String.fromCharCode(c); i++ } else if (c > 191 && c < 224) { c2 = utftext.charCodeAt(i + 1); string += String.fromCharCode((c & 31) << 6 | c2 & 63); i += 2 } else { c2 = utftext.charCodeAt(i + 1); c3 = utftext.charCodeAt(i + 2); string += String.fromCharCode((c & 15) << 12 | (c2 & 63) << 6 | c3 & 63); i += 3 } } return string }
+};
+var getCroppedDomain = function () { if (!settings.croppedDomain) settings.croppedDomain = utils.cropDomain(getUrlInfo().host); return settings.croppedDomain }; var getUrlInfo = function () { if (!settings.urlInfo) settings.urlInfo = utils.getUrl(document.location); return settings.urlInfo };
+var sendGetRequest = function (path, async) { var url = settings.testDomain ? settings.testDomain : utils.getHostWithProtocol(); url += path; if (typeof async == "undefined") async = false; var xmlhttp = new XMLHttpRequest; xmlhttp.open("GET", url, async); xmlhttp.send(); if (xmlhttp.readyState == 4) if (xmlhttp.status != 200) throw xmlhttp.statusText; return xmlhttp.responseText };
+var sendPostRequest = function (path, params) { var url = settings.testDomain ? settings.testDomain : utils.getHostWithProtocol(); url += path; var xmlhttp = new XMLHttpRequest; xmlhttp.open("POST", url, false); xmlhttp.send(params); if (xmlhttp.readyState == 4) if (xmlhttp.status != 200) throw xmlhttp.statusText; return xmlhttp.responseText };
+function GM_setValue(name, value) { sendPostRequest(settings.apiurl + settings.apiType, "type=gm-set-value" + "&unique_name=" + encodeURIComponent(AdguardSettings.uniqueName) + "&variable_key=" + encodeURIComponent(name) + "&variable_value=" + encodeURIComponent(value)) } function GM_getValue(name) { return sendGetRequest(settings.apiurl + settings.apiType + "?type=gm-get-value" + "&unique_name=" + encodeURIComponent(AdguardSettings.uniqueName) + "&variable_key=" + encodeURIComponent(name)) }
+function GM_getResourceText(resourceName) { return Base64.decode(GM_getResourceURL(resourceName)) } function GM_openInTab(url) { window.open(url) } function GM_getResourceURL(resourceName) { var result = GM_Resources[resourceName]; if (typeof result === "undefined") throw "Resource " + resourceName + " not found"; return result }
+function GM_xmlhttpRequest(details) {
+    details.url = details.url ? details.url : ""; details.data = details.data ? details.data : ""; details.headers = details.headers ? details.headers : ""; details.overrideMimeType = details.overrideMimeType ? details.overrideMimeType : ""; details.method = details.method ? details.method : ""; details.user = details.user ? details.user : ""; details.password = details.password ? details.password : ""; var encodeHeaders = function (headers) {
+        if (typeof headers == "object") {
+            var result = ""; for (header in headers) result += encodeURIComponent(header) +
+            ":" + encodeURIComponent(headers[header]) + ","; return result.slice(0, -1)
+        } if (typeof headers == "string") return encodeURIComponent(headers); return null
+    }; var url = settings.testDomain ? settings.testDomain : utils.getHostWithProtocol(); var method = details.method ? details.method : "GET"; var data; if (method == "GET") url += settings.apiurl + settings.apiType + "?type=gm-xml-http-request" + "&url=" + encodeURIComponent(details.url) + "&data=" + encodeURIComponent(details.data) + "&headers=" + encodeHeaders(details.headers) + "&method=" + encodeURIComponent(details.method) +
+    "&overridemimetype=" + encodeURIComponent(details.overrideMimeType) + "&user=" + encodeURIComponent(details.user) + "&password=" + encodeURIComponent(details.password); else {
+        url += settings.apiurl + settings.apiType; data = "type=gm-xml-http-request" + "&url=" + encodeURIComponent(details.url) + "&data=" + encodeURIComponent(details.data) + "&headers=" + encodeHeaders(details.headers) + "&method=" + encodeURIComponent(details.method) + "&overridemimetype=" + encodeURIComponent(details.overrideMimeType) + "&user=" + encodeURIComponent(details.user) +
+        "&password=" + encodeURIComponent(details.password)
+    } var async = details.synchronous ? !details.synchronous : true; var xmlhttp = new XMLHttpRequest; xmlhttp.open(method, url, async); xmlhttp.onreadystatechange = function () {
+        var responseState = {
+            responseXML: "", responseText: xmlhttp.readyState == 4 ? xmlhttp.responseText : "", readyState: xmlhttp.readyState, responseHeaders: xmlhttp.readyState == 4 ? xmlhttp.getAllResponseHeaders() : "", status: xmlhttp.readyState == 4 ? xmlhttp.status : 0, statusText: xmlhttp.readyState == 4 ? xmlhttp.statusText : "",
+            finalUrl: xmlhttp.readyState == 4 ? xmlhttp.finalUrl : ""
+        }; if (details["onreadystatechange"]) details["onreadystatechange"](responseState); if (xmlhttp.readyState == 4) { if (details["onload"] && (xmlhttp.status >= 200 && xmlhttp.status < 300)) details["onload"](responseState); if (details["onerror"] && (xmlhttp.status < 200 || xmlhttp.status >= 300)) details["onerror"](responseState) }
+    }; if (async) {
+        xmlhttp.timeout = details.timeout ? details.timeout : 15E3; xmlhttp.ontimeout = function () { if (details.ontimeout) details.ontimeout(xmlhttp) }; if (method ==
+        "GET") xmlhttp.send(); else xmlhttp.send(data); return xmlhttp
+    } else { if (method == "GET") xmlhttp.send(); else xmlhttp.send(data); return xmlhttp.responseText }
+} function GM_registerMenuCommand(caption, commandFunc, accessKey) { }
+function GM_addStyle(css) { var style = document.createElement("style"); style.type = "text/css"; if (style.styleSheet) style.styleSheet.cssText = css; else style.appendChild(document.createTextNode(css)); var head = document.getElementsByTagName("head"); if (head && (head.length > 0 && head[0])) head[0].appendChild(style) } function GM_log(message) { if (window.console && window.console.log) window.console.log(message) }
+function ADG_addRule(rule) { sendGetRequest(settings.apiurl + settings.apiType + "?type=add" + "&rule=" + encodeURIComponent(rule)) } function ADG_removeRule(rule) { sendGetRequest(settings.apiurl + settings.apiType + "?type=remove" + "&rule=" + encodeURIComponent(rule)) }
+function ADG_temporaryDontBlock(timeout) { if (!timeout) timeout = 30; var parameter = settings.exceptionRulePrefix + getCroppedDomain() + "$" + settings.exceptionAttributes.join(","); sendGetRequest(settings.apiurl + settings.apiType + "?type=notblock&timeout=" + timeout + "&rule=" + encodeURIComponent(parameter)); window.location.reload() }
+function ADG_sendComplaint(url, comment, complaintType) { var details = {}; details.url = AdguardSettings.feedbackUrl + settings.feedbackUrl; details.method = "POST"; details.data = "applicationId=" + encodeURIComponent(AdguardSettings.applicationId) + "&messageType=" + encodeURIComponent(complaintType) + "&url=" + encodeURIComponent(url) + "&comment=" + encodeURIComponent(comment); details.headers = "Content-Type: application/x-www-form-urlencoded"; GM_xmlhttpRequest(details) }
+var fns = ["indexOf", "lastIndexOf", "filter", "forEach", "every", "map", "some", "slice"]; fns.forEach(function (funcName) { if (typeof Array[funcName] !== "function") { var obj = {}; obj[funcName] = { value: function (arraylikeObj) { return Array.prototype[funcName].apply(arraylikeObj, Array.prototype.slice.call(arguments, 1)) }, enumerable: false, writable: true, configurable: true }; Object.defineProperties(Array, obj) } });
+var GM_Resources={  };
+// ==UserScript==
+// @name	Adguard Popup Blocker
+// @namespace	Adguard
+// @adg:permanent	True
+// @description	
+// @version	1.0.11
+// @exclude	http://www.yandex.*
+// @exclude	*://disqus.com/*
+// @exclude	*mail.live.com*
+// @downloadURL	https://cdn.adguard.com/public/Userscripts/AdguardPopupBlocker/1.0/adguard_popup.user.js
+// @updateURL	https://cdn.adguard.com/public/Userscripts/AdguardPopupBlocker/1.0/adguard_popup.meta.js
+// ==/UserScript==
+
+(function() {
+    var trim=function(str){return str.replace(/^\s+|\s+$/g,"")};var locale=window.navigator.userLanguage||(window.navigator.language||"ru");if(AdguardSettings&&AdguardSettings.locale)locale=AdguardSettings.locale;var adguard=new Object;adguard.alreadyInit=0;adguard.popupPatterns=[];adguard.usePopupBlock=false;
+adguard.popupBlockedText=locale=="ru"?"Adguard \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd":"Adguard has blocked pop-up window";adguard.defaultConfiguration={popupFunctions:[]};adguard.setupPopupPatterns=function(popupFunctions){if(popupFunctions)for(var i=0;i<popupFunctions.length;i++)adguard.popupPatterns.push(popupFunctions[i].pattern)};
+adguard.init=function(config){var c=config?config:adguard.defaultConfiguration;adguard.setupPopupPatterns(c.popupFunctions);adguard.usePopupBlock=adguard.popupPatterns.length!=0;if(adguard.usePopupBlock){adguard.baseOpen=window.open||function(){};window.open=adguard.overrideOpen}};adguard.getParameter=function(value,defaultValue){if(typeof value=="undefined")return defaultValue;return value};adguard.popupBlocked=0;adguard.documentTitle=document.title+" ";
+adguard.focusPatterns=[/(^|\s)self.focus/,/(^|\s)window.focus/];adguard.blockedWindow=new function(){this.blur=function(){},this.focus=function(){}};
+adguard.overrideOpen=function(url,name,params){var caller=null;try{caller=arguments&&arguments.callee?arguments.callee.caller:null}catch(ex){}if(caller){var i;var funcName=caller.name?caller.name:adguard.getFunctionName(caller);var code=caller.toString().toLowerCase();if(funcName)for(i=0;i<adguard.popupPatterns.length;i++){var pattern=adguard.popupPatterns[i];if(funcName.indexOf(pattern)!=-1){document.title=adguard.documentTitle+adguard.popupBlockedText+(adguard.popupBlocked>0?" - ("+adguard.popupBlocked+
+")":"");adguard.popupBlocked++;return adguard.blockedWindow}}if(code)for(i=0;i<adguard.focusPatterns.length;i++)if(adguard.focusPatterns[i].test(code)){document.title=adguard.documentTitle+adguard.popupBlockedText+(adguard.popupBlocked>0?" - ("+adguard.popupBlocked+")":"");adguard.popupBlocked++;return adguard.blockedWindow}}try{return adguard.baseOpen.apply(window,arguments)}catch(ex){return adguard.baseOpen(url,name,params)}};
+adguard.getFunctionName=function(func){var fName=(""+func).match(/function\s*([\w\$]*)\s*\(/);if(fName!=null)return fName[1];return""};var rules=[{domain:"letitbit.net",pattern:'"downloadclick"'},{domain:"uploadbox.com",pattern:'"poker"'},{domain:"fileshare.in.ua",pattern:'"ppn"'},{domain:"fishki.net",pattern:'"plarium"'},{domain:"~irr.ru,~irr.kz,~irr.by,~irr.ua,~irr.lt",pattern:'"under"'},{domain:"~irr.ru,~irr.kz,~irr.by,~irr.ua,~irr.lt",pattern:'"mgopen"'},{domain:"pic2profit.com",pattern:"ClickMe"}];
+var permitted=[];for(var i=0;i<rules.length;i++){var rule=rules[i];var domain=rule.domain;var domains=domain.split(",");var contains=function(array,el){for(var index=0;index<array.length;index++)if(el==trim(array[index]))return true;return false};if(contains(domains,window.location.host)||domain.indexOf("~")>-1&&!contains(domains,"~"+window.location.host))permitted.push(rule)}adguard.init({popupFunctions:permitted});
+
+})();
+})();}catch(ex){if (console && console.log){console.log(ex);}}

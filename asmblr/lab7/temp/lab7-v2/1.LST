@@ -1,0 +1,325 @@
+Turbo Assembler	 Version 3.2	    30/12/15 18:46:17	    Page 1
+1.asm
+
+
+
+      1	    0000			 model small
+      2	    0000			 .stack	100h
+      3					 .386
+      4		  =0006			 Mode_6	= 6 ; 640 X 200, 2 colors
+      5		  =000D			 Mode_13 = 0Dh ; 320 X 200, 16 colors
+      6		  =000E			 Mode_14 = 0Eh ; 640 X 200, 16 colors
+      7		  =000F			 Mode_15 = 0Fh ; 640 X 350, 2 colors
+      8		  =0010			 Mode_16 = 10h ; 640 X 350, 16 colors
+      9		  =0011			 Mode_17 = 11h ; 640 X 480, 2 colors
+     10		  =0012			 Mode_18 = 12h ; 640 X 480, 16 colors
+     11		  =0013			 Mode_19 = 13h ; 320 X 200, 256	colors
+     12		  =006A			 Mode_6A = 6Ah ; 800 X 600, 16 colors
+     13	    0000			 .data
+     14	    0000  ??			 SaveMode db ?
+     15	    0001  000A			 currentX dw 10
+     16	    0003  000A			 currentY dw 10
+     17	    0005  00000000000000000000	 x dt 0
+     18	    000F  00000000000000000000	 y dt 0
+     19	    0019  00BE			 current_gy dw 190
+     20	    001B  000A			 current_gx dw 10
+     21	    001D  0A			 color db 10
+     22	    001E  0D			 color_g db 13
+     23	    001F  0140			 max_x dw 320
+     24	    0021  00C8			 max_y dw 200
+     25	    0023  0008			 scalemax_x dw 8
+     26	    0025  FFF8			 scalemin_x dw -8
+     27	    0027  0004			 scalemax_y dw 4
+     28	    0029  FFFC			 scalemin_y dw -4
+     29	    002B  00000000000000000000	 kx dt 0
+     30	    0035  00000000000000000000	 ky dt 0
+     31	    003F  0014			 scalex	dw 20
+     32	    0041  0019			 scaley	dw 25
+     33	    0043  00000000000000000001	 sd dt 1
+     34	    004D  ????			 LineLengthx dw	?
+     35	    004F  ????			 LineLengthY dw	?
+     36	    0051  0000			 gradq_x dw 0
+     37	    0053  0000			 gradq_y dw 0
+     38	    0055  00000000000000000000	 temp dt 0
+     39	    005F			 .code
+     40	    0000			 line_x	proc
+     41	    0000  8B 16	001Fr		 mov dx,max_x
+     42	    0004  2B 16	0001r		 sub dx,currentx
+     43	    0008  2B 16	0001r		 sub dx, currentx
+     44	    000C  89 16	004Dr		 mov linelengthx,dx
+     45	    0010  A1 0021r		 mov ax,max_y
+     46	    0013  B3 02			 mov bl,2
+     47	    0015  F6 F3			 div bl
+     48	    0017  98			 cbw
+     49	    0018  A3 0003r		 mov currenty,ax
+     50	    001B  8B 16	0003r		 mov dx,currentY
+     51	    001F  8B 0E	004Dr		 mov cx,LineLengthx
+     52	    0023			 L1:
+     53	    0023  51			 push cx
+     54	    0024  B4 0C			 mov ah,0Ch
+     55	    0026  A0 001Dr		 mov al,color
+     56	    0029  B7 00			 mov bh,0
+     57	    002B  8B 0E	0001r		 mov cx,currentX
+Turbo Assembler	 Version 3.2	    30/12/15 18:46:17	    Page 2
+1.asm
+
+
+
+     58	    002F  CD 10			 int 10h
+     59	    0031  FF 06	0001r		 inc currentx
+     60	    0035  59			 pop cx
+     61	    0036  E2 EB			 loop L1
+     62	    0038  C3			 ret
+     63	    0039			 line_x	endp
+     64
+     65	    0039			 line_y	proc
+     66		  =00B4			 LineLength = 180
+     67	    0039  BA 000A		 mov dx,10
+     68	    003C  89 16	0003r		 mov currentY,dx
+     69	    0040  B9 00B4		 mov cx,LineLength
+     70	    0043			 L2:
+     71	    0043  51			 push cx
+     72	    0044  B4 0C			 mov ah,0Ch
+     73	    0046  A0 001Dr		 mov al,color
+     74	    0049  B7 00			 mov bh,0
+     75	    004B  B9 00A0		 mov cx,160
+     76	    004E  8B 16	0003r		 mov dx,currenty
+     77	    0052  CD 10			 int 10h
+     78	    0054  FF 06	0003r		 inc currenty
+     79	    0058  59			 pop cx
+     80	    0059  E2 E8			 loop L2
+     81	    005B  C3			 ret
+     82	    005C			 line_y	endp
+     83
+     84	    005C			 scale_x proc
+     85		  =000A			 LineLength = 10
+     86	    005C  BA 005F		 mov dx,95
+     87	    005F  89 16	0003r		 mov currentY,dx
+     88	    0063  B9 000A		 mov cx,LineLength
+     89	    0066			 L3:
+     90	    0066  51			 push cx
+     91	    0067  B4 0C			 mov ah,0Ch
+     92	    0069  A0 001Dr		 mov al,color
+     93	    006C  B7 00			 mov bh,0
+     94	    006E  8B 0E	0051r		 mov cx,gradq_x
+     95	    0072  8B 16	0003r		 mov dx,currenty
+     96	    0076  CD 10			 int 10h
+     97	    0078  FF 06	0003r		 inc currenty
+     98	    007C  59			 pop cx
+     99	    007D  E2 E7			 loop L3
+    100	    007F  C3			 ret
+    101	    0080			 scale_x endp
+    102
+    103	    0080			 scale_y proc
+    104		  =000A			 LineLength = 10
+    105					 ;mov gradq_y,10
+    106	    0080  BA 009B		 mov dx,155;95
+    107	    0083  89 16	0003r		 mov currentY,dx
+    108	    0087  B9 000A		 mov cx,LineLength
+    109	    008A			 L4:
+    110	    008A  51			 push cx
+    111	    008B  B4 0C			 mov ah,0Ch
+    112	    008D  A0 001Dr		 mov al,color
+    113	    0090  B7 00			 mov bh,0
+    114	    0092  8B 0E	0003r		 mov cx,currenty;gradq_y
+Turbo Assembler	 Version 3.2	    30/12/15 18:46:17	    Page 3
+1.asm
+
+
+
+    115	    0096  8B 16	0053r		 mov dx,gradq_y;currenty
+    116	    009A  CD 10			 int 10h
+    117	    009C  FF 06	0003r		 inc currenty
+    118	    00A0  59			 pop cx
+    119	    00A1  E2 E7			 loop L4
+    120	    00A3  C3			 ret
+    121	    00A4			 scale_y endp
+    122
+    123					 ;функция x=y
+    124	    00A4			 xeqy proc
+    125		  =00B4			 LineLength = 180
+    126	    00A4  A1 0025r		 mov ax,scalemin_x
+    127	    00A7  A3 0005r		 mov x,ax;10;70
+**Error** 1.asm(127) Operand types do not match
+    128	    00AA  A1 0029r		 mov ax,scalemin_y
+    129	    00AD  A3 0003r		 mov currenty,ax;190
+    130	    00B0  8B 16	001Br		 mov dx,current_gx;current_gy
+    131	    00B4  8B 0E	0019r		 mov cx,current_gy;LineLength
+    132	    00B8			 L5:
+    133	    00B8  51			 push cx
+    134	    00B9  B4 0C			 mov ah,0Ch
+    135	    00BB  A0 001Er		 mov al,color_g
+    136	    00BE  B7 00			 mov bh,0
+    137	    00C0  8B 0E	001Br		 mov cx,current_gx
+    138	    00C4  8B 16	0019r		 mov dx,current_gy
+    139	    00C8  CD 10			 int 10h
+    140	    00CA  FF 06	001Br		 inc current_gx
+    141	    00CE  01 06	0005r		 add x,kx
+**Error** 1.asm(141) Argument to operation or instruction has illegal size
+    142	    00D2  DB 2E	0005r		 fld x
+    143	    00D6  D9 FE			 fsin
+    144	    00D8  DB 3E	0055r		 fstp temp
+    145	    00DC  DB 2E	0005r		 fld x
+    146	    00E0  D9 FF			 fcos
+    147	    00E2  DB 3E	000Fr		 fstp y
+    148	    00E6  DB 2E	0055r		 fld temp
+    149					 fmult y
+**Error** 1.asm(149) Illegal instruction
+    150	    00EA  DB 3E	000Fr		 fstp y
+    151
+    152	    00EE  FF 0E	0019r		 dec current_gy
+    153	    00F2  59			 pop cx
+    154	    00F3  E2 C3			 loop L5
+    155	    00F5  C3			 ret
+    156	    00F6			 xeqy endp
+    157	    00F6			 start:
+    158	    00F6  B8 0000s		 mov ax,@data
+    159	    00F9  8E D8			 mov ds,ax
+    160					 ;mov ah,0Fh
+    161					 ;int 10h
+    162					 ;mov saveMode,al
+    163	    00FB  B4 00			 mov ah,0
+    164	    00FD  B0 13			 mov al,Mode_19
+    165	    00FF  CD 10			 int 10h
+    166	    0101  E8 FEFC		 call line_x
+    167	    0104  E8 FF32		 call line_y
+    168	    0107  9B DB	E3		 finit
+Turbo Assembler	 Version 3.2	    30/12/15 18:46:17	    Page 4
+1.asm
+
+
+
+    169	    010A  DF 06	0023r		 fild scalemax_x
+    170	    010E  DE 26	0025r		 fisub scalemin_x
+    171	    0112  DB 3E	002Br		 fstp kx
+    172	    0116  DB 2E	002Br		 fld kx
+    173	    011A  DE 36	001Fr		 fidiv max_x
+    174	    011E  DB 3E	002Br		 fstp kx
+    175
+    176
+    177	    0122  DF 06	0027r		 fild scalemax_y
+    178	    0126  DE 26	0029r		 fisub scalemin_y
+    179	    012A  DB 3E	0035r		 fstp ky
+    180	    012E  DB 2E	0035r		 fld ky
+    181	    0132  DE 36	0021r		 fidiv max_y
+    182	    0136  DB 3E	0035r		 fstp ky
+    183
+    184					 ;fild sd
+    185					 ;fdiv kx
+    186					 ;frndint
+    187					 ;fbstp	scalex
+    188	    013A			 m2:
+    189	    013A  8B 36	003Fr		 mov si,scalex
+    190	    013E  01 36	0051r		 add gradq_x,si
+    191	    0142  E8 FF17		 call scale_x
+    192	    0145  81 3E	0051r 0140	 cmp gradq_x,320
+    193	    014B  75 ED			 jne m2
+    194	    014D			 m3:
+    195	    014D  8B 36	0041r		 mov si,scaley
+    196	    0151  01 36	0053r		 add gradq_y,si
+    197	    0155  E8 FF28		 call scale_y
+    198	    0158  81 3E	0053r 00C8	 cmp gradq_y,200
+    199	    015E  75 ED			 jne m3
+    200	    0160  E8 FF41		 call xeqy
+    201					 ;====================
+    202	    0163  B4 00			 mov ah,0
+    203	    0165  CD 16			 int 16h
+    204	    0167  B4 00			 mov ah,0
+    205	    0169  A0 0000r		 mov al,saveMode
+    206	    016C  CD 10			 int 10h
+    207	    016E  B8 4C00		 mov ax,4c00h
+    208	    0171  CD 21			 int 21h
+    209					 end start
+Turbo Assembler	 Version 3.2	    30/12/15 18:46:17	    Page 5
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "30/12/15"
+??FILENAME			  Text	 "1	  "
+??TIME				  Text	 "18:46:17"
+??VERSION			  Number 0314
+@32BIT				  Text	 0
+@CODE				  Text	 _TEXT
+@CODESIZE			  Text	 0
+@CPU				  Text	 0F0FH
+@CURSEG				  Text	 _TEXT
+@DATA				  Text	 DGROUP
+@DATASIZE			  Text	 0
+@FILENAME			  Text	 1
+@INTERFACE			  Text	 00H
+@MODEL				  Text	 2
+@STACK				  Text	 DGROUP
+@WORDSIZE			  Text	 2
+COLOR				  Byte	 DGROUP:001D
+COLOR_G				  Byte	 DGROUP:001E
+CURRENTX			  Word	 DGROUP:0001
+CURRENTY			  Word	 DGROUP:0003
+CURRENT_GX			  Word	 DGROUP:001B
+CURRENT_GY			  Word	 DGROUP:0019
+GRADQ_X				  Word	 DGROUP:0051
+GRADQ_Y				  Word	 DGROUP:0053
+KX				  Tbyte	 DGROUP:002B
+KY				  Tbyte	 DGROUP:0035
+L1				  Near	 _TEXT:0023
+L2				  Near	 _TEXT:0043
+L3				  Near	 _TEXT:0066
+L4				  Near	 _TEXT:008A
+L5				  Near	 _TEXT:00B8
+LINELENGTH			  Number 00B4
+LINELENGTHX			  Word	 DGROUP:004D
+LINELENGTHY			  Word	 DGROUP:004F
+LINE_X				  Near	 _TEXT:0000
+LINE_Y				  Near	 _TEXT:0039
+M2				  Near	 _TEXT:013A
+M3				  Near	 _TEXT:014D
+MAX_X				  Word	 DGROUP:001F
+MAX_Y				  Word	 DGROUP:0021
+MODE_13				  Number 000D
+MODE_14				  Number 000E
+MODE_15				  Number 000F
+MODE_16				  Number 0010
+MODE_17				  Number 0011
+MODE_18				  Number 0012
+MODE_19				  Number 0013
+MODE_6				  Number 0006
+MODE_6A				  Number 006A
+SAVEMODE			  Byte	 DGROUP:0000
+SCALEMAX_X			  Word	 DGROUP:0023
+SCALEMAX_Y			  Word	 DGROUP:0027
+SCALEMIN_X			  Word	 DGROUP:0025
+SCALEMIN_Y			  Word	 DGROUP:0029
+Turbo Assembler	 Version 3.2	    30/12/15 18:46:17	    Page 6
+Symbol Table
+
+
+
+SCALEX				  Word	 DGROUP:003F
+SCALEY				  Word	 DGROUP:0041
+SCALE_X				  Near	 _TEXT:005C
+SCALE_Y				  Near	 _TEXT:0080
+SD				  Tbyte	 DGROUP:0043
+START				  Near	 _TEXT:00F6
+TEMP				  Tbyte	 DGROUP:0055
+X				  Tbyte	 DGROUP:0005
+XEQY				  Near	 _TEXT:00A4
+Y				  Tbyte	 DGROUP:000F
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  STACK				  16  0100 Para	  Stack	  STACK
+  _DATA				  16  005F Word	  Public  DATA
+_TEXT				  16  0173 Word	  Public  CODE
+Turbo Assembler	 Version 3.2	    30/12/15 18:46:17	    Page 7
+Error Summary
+
+
+
+**Error** 1.asm(127) Operand types do not match
+**Error** 1.asm(141) Argument to operation or instruction has illegal size
+**Error** 1.asm(149) Illegal instruction
+

@@ -1,0 +1,30 @@
+Tap Back Up Now. Stay connected to your Wi-Fi network
+until the process completes. You can check the progress
+and confirm the backup completed. Go to Settings > [your
+name] > iCloud > iCloud Backup. Under Back Up Now, you'll
+see the date and time of your last backup. Get help
+making a backup or manage your available space in iCloud.
+Automatically back up with iCloud Backup To let iCloud
+automatically back up your device each day, here's what
+you need to do: Make sure that iCloud Backup is turned on
+in Settings > [your name] > iCloud > iCloud Backup. If
+you’re using iOS 10.2 or earlier, go to Settings > iCloud
+> Backup. Connect your device to a power source. Connect
+your device to a Wi-Fi network. Make sure that your
+device's screen is locked. Check that you have enough
+available space in iCloud for the backup. When you sign in
+to iCloud, you get 5GB of iCloud storage for free. If you
+need more iCloud storage, you can buy more from your iPhone,
+iPad, iPod touch, or Mac. Plans start at 50GB for $0.99 (USD)
+a month. Learn more about prices in your region. How to back
+up with iTunes Open iTunes and connect your device to your
+computer. If a message asks for your device passcode or to
+Trust This Computer, follow the onscreen steps. If you forgot
+your passcode, get help. Select your iPhone, iPad, or iPod
+when it appears in iTunes. If your device doesn't appear in
+iTunes, learn what to do. If you want to save Health and
+Activity data from your iOS device or Apple Watch, you need
+to encrypt your backup: Select the box called Encrypt [device]
+backup and create a memorable password. If you don't need to
+save your Health and Activity data, you can make a backup that
+isn't encrypted. Just click Back Up Now.

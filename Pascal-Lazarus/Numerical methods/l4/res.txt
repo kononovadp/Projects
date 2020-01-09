@@ -1,0 +1,15 @@
+steps 200 integral= 1379.8100 inaccuracy= 26.38888
+steps 400 integral= 887.8214 inaccuracy= 32.79924
+steps 800 integral= 871.7959 inaccuracy= 1.06837
+steps 1600 integral= 863.7832 inaccuracy= 0.53418
+steps 3200 integral= 859.7768 inaccuracy= 0.26709
+steps 6400 integral= 857.7736 inaccuracy= 0.13355
+steps 12800 integral= 856.7720 inaccuracy= 0.06677
+steps 25600 integral= 856.2713 inaccuracy= 0.03339
+steps 51200 integral= 856.0209 inaccuracy= 0.01669
+steps 102400 integral= 855.8957 inaccuracy= 0.00835
+steps 204800 integral= 855.8331 inaccuracy= 0.00417
+steps 409600 integral= 855.8018 inaccuracy= 0.00209
+steps 819200 integral= 855.7861 inaccuracy= 0.00104
+steps 1638400 integral= 855.7783 inaccuracy= 0.00052
+integral= 855.7705

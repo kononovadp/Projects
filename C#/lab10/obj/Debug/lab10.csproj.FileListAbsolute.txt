@@ -1,0 +1,9 @@
+C:\Users\Maximka\Desktop\lab10\bin\Debug\lab10.exe.config
+C:\Users\Maximka\Desktop\lab10\bin\Debug\lab10.exe
+C:\Users\Maximka\Desktop\lab10\bin\Debug\lab10.pdb
+C:\Users\Maximka\Desktop\lab10\obj\Debug\lab10.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\lab10\obj\Debug\lab10.Form1.resources
+C:\Users\Maximka\Desktop\lab10\obj\Debug\lab10.Properties.Resources.resources
+C:\Users\Maximka\Desktop\lab10\obj\Debug\lab10.csproj.GenerateResource.Cache
+C:\Users\Maximka\Desktop\lab10\obj\Debug\lab10.exe
+C:\Users\Maximka\Desktop\lab10\obj\Debug\lab10.pdb

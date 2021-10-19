@@ -1,0 +1,12 @@
+C:\Users\Maximka\Desktop\lab12\obj\Debug\lab12.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\lab12\obj\Debug\lab12.Form1.resources
+C:\Users\Maximka\Desktop\lab12\obj\Debug\lab12.Properties.Resources.resources
+C:\Users\Maximka\Desktop\lab12\obj\Debug\lab12.csproj.GenerateResource.Cache
+C:\Users\Maximka\Desktop\lab12\obj\Debug\lab12.exe
+C:\Users\Maximka\Desktop\lab12\obj\Debug\lab12.pdb
+C:\Users\Maximka\Desktop\lab12\lab12.exe.config
+C:\Users\Maximka\Desktop\lab12\lab12.exe
+C:\Users\Maximka\Desktop\lab12\lab12.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 2\Основи програмування 2\lab12\lab12.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 2\Основи програмування 2\lab12\obj\Debug\lab12.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 2\Основи програмування 2\lab12\obj\Debug\lab12.pdb

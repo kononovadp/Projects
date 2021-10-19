@@ -1,0 +1,6 @@
+lab8.cpp;25.08.2016;694
+lab8.mdsp;25.08.2016;14
+OOP_LabsGuide_pII_ru.doc;28.06.2016;423
+OOP_LectNotes_ru.doc;18.04.2016;4380
+lab8.exe;11.09.2016;739
+lab8.o;10.09.2016;118

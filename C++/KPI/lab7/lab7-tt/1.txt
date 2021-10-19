@@ -1,0 +1,4 @@
+127;Nikolaev;22.20
+13;Kiev;23.00
+234;Ochakiv;16.00
+414;Odessa;18.00

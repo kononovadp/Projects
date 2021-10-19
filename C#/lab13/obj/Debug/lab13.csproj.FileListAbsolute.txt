@@ -1,0 +1,9 @@
+C:\Users\Maximka\Desktop\lab13\obj\Debug\lab13.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\lab13\obj\Debug\lab13.Form1.resources
+C:\Users\Maximka\Desktop\lab13\obj\Debug\lab13.Properties.Resources.resources
+C:\Users\Maximka\Desktop\lab13\obj\Debug\lab13.csproj.GenerateResource.Cache
+C:\Users\Maximka\Desktop\lab13\obj\Debug\lab13.exe
+C:\Users\Maximka\Desktop\lab13\obj\Debug\lab13.pdb
+C:\Users\Maximka\Desktop\lab13\lab13.exe.config
+C:\Users\Maximka\Desktop\lab13\lab13.exe
+C:\Users\Maximka\Desktop\lab13\lab13.pdb

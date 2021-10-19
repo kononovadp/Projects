@@ -1,0 +1,12 @@
+C:\Users\Maximka\Desktop\lab7\lab7\bin\Debug\lab7.exe.config
+C:\Users\Maximka\Desktop\lab7\lab7\bin\Debug\lab7.exe
+C:\Users\Maximka\Desktop\lab7\lab7\bin\Debug\lab7.pdb
+C:\Users\Maximka\Desktop\lab7\lab7\obj\Debug\lab7.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\lab7\lab7\obj\Debug\lab7.Form1.resources
+C:\Users\Maximka\Desktop\lab7\lab7\obj\Debug\lab7.Properties.Resources.resources
+C:\Users\Maximka\Desktop\lab7\lab7\obj\Debug\lab7.csproj.GenerateResource.Cache
+C:\Users\Maximka\Desktop\lab7\lab7\obj\Debug\lab7.exe
+C:\Users\Maximka\Desktop\lab7\lab7\obj\Debug\lab7.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab7\lab7\bin\Debug\lab7.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab7\lab7\obj\Debug\lab7.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab7\lab7\obj\Debug\lab7.pdb

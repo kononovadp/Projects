@@ -1,0 +1,9 @@
+C:\Users\Maximka\Desktop\lab11\lab11.exe.config
+C:\Users\Maximka\Desktop\lab11\obj\Debug\lab11.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\lab11\obj\Debug\lab11.Form1.resources
+C:\Users\Maximka\Desktop\lab11\obj\Debug\lab11.Properties.Resources.resources
+C:\Users\Maximka\Desktop\lab11\obj\Debug\lab11.csproj.GenerateResource.Cache
+C:\Users\Maximka\Desktop\lab11\obj\Debug\lab11.exe
+C:\Users\Maximka\Desktop\lab11\obj\Debug\lab11.pdb
+C:\Users\Maximka\Desktop\lab11\lab11.exe
+C:\Users\Maximka\Desktop\lab11\lab11.pdb

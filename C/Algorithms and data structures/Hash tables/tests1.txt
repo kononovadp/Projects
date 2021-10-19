@@ -1,0 +1,61 @@
+HASH FUNCTIONS AND METHODS OF COLLISION RESOLUTION:
+SEPARATE CHAINING: SUM OF EVENNESS AND THE LAST DIGIT
+SEPARATE CHAINING: AVERAGE SUM OF NUMBER AND INDEX
+SEPARATE CHAINING: MURMURHASH 2
+OPEN ADDRESSING: LINEAR PROBING: SUM OF EVENNESS AND THE LAST DIGIT
+OPEN ADDRESSING: LINEAR PROBING: AVERAGE SUM OF NUMBER AND INDEX
+OPEN ADDRESSING: LINEAR PROBING: MURMURHASH 2
+OPEN ADDRESSING: DOUBLE HASHING: SUM OF EVENNESS AND THE LAST DIGIT, AVERAGE SUM OF NUMBER AND INDEX
+OPEN ADDRESSING: DOUBLE HASHING: AVERAGE SUM OF NUMBER AND INDEX, SUM OF EVENNESS AND THE LAST DIGIT
+OPEN ADDRESSING: DOUBLE HASHING: MURMURHASH 2, AVERAGE SUM OF NUMBER AND INDEX
+OPEN ADDRESSING: DOUBLE HASHING: AVERAGE SUM OF NUMBER AND INDEX, MURMURHASH 2
+OPEN ADDRESSING: DOUBLE HASHING: MURMURHASH 2, SUM OF EVENNESS AND THE LAST DIGIT
+OPEN ADDRESSING: DOUBLE HASHING: SUM OF EVENNESS AND THE LAST DIGIT, MURMURHASH 2
+TITLES OF COLUMNS
+COUNT OF COLLISIONS
+COUNT OF FOUND ITEMS
+COUNT OF NOT FOUND ITEMS
+TIME OF ADDING OF ALL ITEMS
+AVERAGE TIME OF ADDING OF ONE ITEM
+TIME OF SEARCH OF ALL ITEMS
+AVERAGE TIME OF SEARCH OF ONE ITEM
+TIME OF REMOVING OF ALL ITEMS
+AVERAGE TIME OF REMOVING OF ONE ITEM
+___________________________________________________________________________________________________
+DATA TYPE:                                     array of chars;
+SIZE OF ONE ITEM:                                         100;
+SIZE OF THE HASH TABLE:                                 10000;
+COUNT OF ITEMS IN THE HASH TABLE:                       10000;
+___________________________________________________________________________________________________
+        COC       COFI      CONFI     TOAOAI    ATOAOOI     TOSOAI    ATOSOOI     TOROAI    ATOROOI
+       9894      10000          0         31          0         47          0         31          0
+       9982      10000          0         78          0        141          0        156          0
+       5625      10000          0         16          0          0          0         16          0
+       9955      10000          0        312          0       1014          0       2340          0
+       9996      10000          0        328          0       1014          0       2324          0
+       7360      10000          0        156          0        639          0       2137          0
+       9112       9203        797        109          0        281          0        796          0
+       9798       9814        186         47          0         78          0        795          0
+       7330       9998          2         31          0         31          0        765          0
+       9968       9984         16         16          0         15          0        858          0
+       7032       9988         12         32          0         31          0        811          0
+       9010       9114        886        109          0        327          0       1092          0
+___________________________________________________________________________________________________
+DATA TYPE:                                  array of integers;
+SIZE OF ONE ITEM:                                         100;
+SIZE OF THE HASH TABLE:                                 10000;
+COUNT OF ITEMS IN THE HASH TABLE:                       10000;
+___________________________________________________________________________________________________
+        COC       COFI      CONFI     TOAOAI    ATOAOOI     TOSOAI    ATOSOOI     TOROAI    ATOROOI
+       9898      10000          0         31          0         31          0         31          0
+       9444      10000          0         15          0         15          0         16          0
+       5619       9999          1         15          0         16          0         16          0
+       9952      10000          0        296          0       1014          0       2403          0
+       9817      10000          0        265          0       1014          0       2387          0
+       7366      10000          0        156          0        702          0       2403          0
+       8711       8802       1198        141          0        484          0       1030          0
+       9411       9948         52         31          0         47          0        671          0
+       6515       9995          5         16          0         16          0        904          0
+       9459       9985         15         32          0         31          0        890          0
+       7017       9988         12         31          0         32          0        842          0
+       9075       9172        828        125          0        343          0       1138          0

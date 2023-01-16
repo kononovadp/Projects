@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django web page</title>
+	<style>
+		table,td
+		{
+			border-collapse:collapse;
+			overflow:hidden;
+			white-space: nowrap;
+			width: auto;
+			border: 2px solid black;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size:12px;
+		}
+		select,input
+		{
+			border: none;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size:12px;
+		}
+		button
+		{
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size:12px;			
+		}
+		#AddStreet,#RemoveStreet
+		{
+			height:45px;
+			width:45px;
+			font-size:30px;
+		}		
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		var states = new Array("","Проектується","Будується","Призупинений","Невдала будівля","Зданий");
+		var streets = new Array("вул. Ракетна","шосе Стратегічне","вул. Тихорецька","просп. Науки","просп. Григоренка Петра","вул. Здолбунівська","вул. Світла","вул. Драйзера Теодора","вул. Милославська","шосе Харківське","пров. Лобачевського","бульв. Гашека Ярослава","вул. Сивашська","вул. Каунаська","вул. Будівельників","вул. Сім’ї Кульженків","просп. Правди","просп. Гонгадзе Георгія","вул. Петропавлівська","вул. Володимира Брожка","вул. Борщагівська","вул. Олевська","вул. Сосніних Сім’ї","просп. Перемоги","вул. Булгакова","вул. Руданського Степана","вул. Магістральна","вул. Хмельницького Богдана","вул. Жабаєва Жамбила","вул. Жилянська","вул. Соляна");
+		function GetTownsOrStreets(request,ColumnNumber,ContainerID,FieldID)
+		{
+			$.ajax({type: 'post',url: 'GetOneColumn/',
+			data:{request: request,ColumnNumber:ColumnNumber,
+			csrfmiddlewaretoken: '{{ csrf_token }}'},dataType:'json',
+			success: function(data)
+			{
+				var MaxLength=15;
+				var container=document.getElementById(ContainerID);
+				container.innerHTML='';
+				for(i in data['data'])
+				{
+					option = document.createElement('option');
+					option.value = data['data'][i];
+					container.appendChild(option);
+					if(data['data'][i].length>MaxLength)
+						MaxLength=data['data'][i].length;
+				}
+				field=document.getElementById(FieldID);
+				field.style.width=(MaxLength+"ch");
+				field.value=data['data'][0];
+			},});
+		}
+		function GetBuildings(request,FirstColumnIndex,CountOfColumns)
+		{
+			$.ajax({type: 'post',url: 'GetSeveralColumns/',
+			data:{request: request,FirstColumnIndex:FirstColumnIndex,CountOfColumns:CountOfColumns,
+			csrfmiddlewaretoken: '{{ csrf_token }}'},dataType: 'json',
+			success: function(data)
+			{
+				var table = document.getElementById("rows");
+				BuildingsCount=data['data'].length;				
+				var TableSize=table.rows.length;
+				for(i=0; i<BuildingsCount; i++)
+				{
+					var RowExists=0;
+					for(j=0; j<table.rows.length; j++)
+						if(table.rows[j].cells[2].value==data['data'][i][0] && table.rows[j].cells[3].value==data['data'][i][1])
+						{
+							RowExists=1;
+							break;
+						}
+					if(RowExists==1)
+						continue;
+					NewRow = table.insertRow(table.rows.length);
+					cell = NewRow.insertCell(0);
+					CellField=document.createElement('input');
+					CellField.type = "checkbox";
+					cell.appendChild(CellField);
+					CellField.readOnly = true;
+					cell = NewRow.insertCell(1); //№
+					CellField=document.createElement("input");
+					CellField.style.width=(4+"ch");
+					CellField.value=TableSize+i+1;
+					CellField.readOnly=true;
+					cell.appendChild(CellField);					
+					cell = NewRow.insertCell(2); //Вулиця 
+					CellField=document.createElement("input");
+					CellField.style.width=document.getElementById("street").style.width;
+					CellField.value=data['data'][i][0];
+					CellField.readOnly=true;
+					cell.appendChild(CellField);					
+					cell = NewRow.insertCell(3); //№ буд.
+					CellField=document.createElement("input");
+					CellField.style.width=4+"ch";
+					CellField.value=data['data'][i][1];
+					CellField.readOnly=true;
+					cell.appendChild(CellField);					
+					cell = NewRow.insertCell(4); //Рік
+					CellField=document.createElement("input");
+					CellField.style.width=(4+"ch");
+					CellField.value=data['data'][i][2];
+					cell.appendChild(CellField);					
+					cell = NewRow.insertCell(5); //Матеріали
+					cell.style.width=(26+"ch");
+					CellField=document.createElement("select"); //Список матеріалів
+					CellField.style.width=(10+"ch");
+					for(j in data['data'][i][3])
+					{						
+						var opt = document.createElement('option');
+						opt.innerHTML = data['data'][i][3][j];
+						CellField.appendChild(opt);
+					}
+					cell.appendChild(CellField);					
+					CellField=document.createElement("button"); //Видалити матеріал
+					CellField.innerText ="–";
+					CellField.style.width=(3+"ch");
+					CellField.onclick = (function()
+					{
+						table.rows[this.parentNode.parentNode.rowIndex].cells[5].children[0].remove(table.rows[this.parentNode.parentNode.rowIndex].cells[5].children[0].selectedIndex);
+					});
+					cell.appendChild(CellField);					
+					CellField=document.createElement("input"); //Назва матеріалу для додавання
+					CellField.style.width=(10+"ch");
+					cell.appendChild(CellField);					
+					CellField=document.createElement("button"); //Додати матерал
+					CellField.innerText ="+";
+					CellField.style.width=(3+"ch");					
+					CellField.onclick = (function()
+					{
+						var RowIndex = this.parentNode.parentNode;
+						if(table.rows[RowIndex.rowIndex].cells[5].children[2].value.length>0)
+						{
+							var opt = document.createElement('option');
+							opt.innerHTML = table.rows[RowIndex.rowIndex].cells[5].children[2].value;
+							table.rows[RowIndex.rowIndex].cells[5].children[0].appendChild(opt);
+						}
+					});
+					cell.appendChild(CellField);
+					cell = NewRow.insertCell(6); //Кількість поверхів
+					CellField=document.createElement("input");
+					CellField.style.width=(8+"ch");
+					CellField.value=data['data'][i][4];
+					cell.appendChild(CellField);
+					var cell = NewRow.insertCell(7); //Висота стелі
+					CellField=document.createElement("input");
+					CellField.style.width=(7+"ch");
+					CellField.value=data['data'][i][5];
+					cell.appendChild(CellField);					
+					cell = NewRow.insertCell(8); //Стан
+					CellField=document.createElement("select");
+					CellField.style.width=(17+"ch");
+					for(j in states)
+					{
+						var opt = document.createElement('option');
+						opt.innerHTML = states[j];
+						CellField.appendChild(opt);
+					}
+					CellField.value=data['data'][i][6];
+					cell.appendChild(CellField);					
+					cell = NewRow.insertCell(9); //Прогноз
+					CellField=document.createElement("input");
+					CellField.style.width=(13+"ch");
+					cell.appendChild(CellField);	
+				}
+			},});
+		}
+		document.addEventListener('DOMContentLoaded',()=>
+		{
+			const promise = new Promise(resolve =>
+			{
+				setTimeout(() => resolve(1),100);
+			});
+			promise.then(value =>
+			{
+				GetTownsOrStreets("SELECT * from \"Населені пункти\" where \"Область\"=\'"+document.getElementById('district').value+"\';",1,"towns","town");
+				return new Promise(resolve=>
+				{
+					setTimeout(() => resolve(1),100);
+				});
+			})
+			.then(value =>
+			{
+				GetTownsOrStreets("SELECT * from \"Вулиці\" where \"Область\"=\'"+document.getElementById('district').value+"\' and \"Населений пункт\"=\'"+document.getElementById('town').value+"\';",2,"streets","street");
+				return new Promise(resolve=>
+				{
+					setTimeout(() => resolve(1),100);
+				});
+			})
+			.then(value =>
+			{				
+				var table = document.getElementById("columns");
+				NewRow = table.insertRow(0);				
+				cell = NewRow.insertCell(0);				
+				CellField=document.createElement('input');
+				CellField.id="SelectAllRows";				
+				CellField.type = "checkbox";				
+				CellField.onclick = (function(){SelectAllRows();});				
+				cell.rowSpan=2;
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(1); //№
+				cell.rowSpan=2;
+				CellField=document.createElement("input");
+				CellField.style.width=(4+"ch");
+				CellField.readOnly=true;
+				CellField.value="№";
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(2); //Вулиця
+				cell.rowSpan=2;
+				CellField=document.createElement('input');
+				CellField.style.width=document.getElementById('street').style.width;
+				CellField.value="Вулиця";
+				CellField.readOnly=true;
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(3); //№ (буд.)
+				cell.style.borderBottomColor = "transparent";
+				CellField=document.createElement("input");
+				CellField.style.width=(4+"ch");
+				CellField.readOnly=true;
+				CellField.value="№";
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(4); //Рік
+				cell.rowSpan=2;
+				CellField=document.createElement("input");
+				CellField.style.width=(4+"ch");
+				CellField.readOnly=true;
+				CellField.value="Рік";
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(5); //Матеріали				
+				cell.rowSpan=2;
+				CellField=document.createElement("input");
+				CellField.style.width=(26+"ch");
+				CellField.readOnly=true;
+				CellField.value="Матеріали";
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(6); //Кількість (поверхів)
+				cell.style.borderBottomColor = "transparent";
+				CellField=document.createElement("input");
+				CellField.style.width=(8+"ch");
+				CellField.readOnly=true;
+				CellField.value="Кількість";
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(7); //Висота (стелі)
+				cell.style.borderBottomColor = "transparent";
+				CellField=document.createElement("input");
+				CellField.style.width=(7+"ch");
+				CellField.readOnly=true;
+				CellField.value="Висота";
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(8); //Стан
+				cell.rowSpan=2;
+				CellField=document.createElement("input");
+				CellField.style.width=(16.5+"ch");
+				CellField.readOnly=true;
+				CellField.value="Стан";
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(9); //Прогноз
+				cell.rowSpan=2;
+				CellField=document.createElement("input");
+				CellField.style.width=(13+"ch");
+				CellField.readOnly=true;
+				CellField.value="Прогноз";
+				cell.appendChild(CellField);
+				NewRow = table.insertRow(1); //------------------------
+				cell = NewRow.insertCell(0); //(№)буд.
+				CellField=document.createElement("input");
+				CellField.style.width=(4+"ch");
+				CellField.readOnly=true;
+				CellField.value="буд.";
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(1); //(Кількість) поверхів
+				CellField=document.createElement("input");
+				CellField.style.width=(8+"ch");
+				CellField.readOnly=true;
+				CellField.value="поверхів";
+				cell.appendChild(CellField);				
+				cell = NewRow.insertCell(2); //(Висота) стелі
+				CellField=document.createElement("input");
+				CellField.style.width=(7+"ch");
+				CellField.readOnly=true;
+				CellField.value="стелі";
+				cell.appendChild(CellField);		
+				return new Promise(resolve=>
+				{
+					setTimeout(() => resolve()),100;
+				});
+			})
+			.then(value =>
+			{
+				//GetBuildings("SELECT * from \"Будинки\" where \"Область\"=\'"+document.getElementById('district').value+"\' and \"Населений пункт\"=\'"+document.getElementById('town').value+"\' and \"Вулиця\"=\'"+document.getElementById('street').value+"\';",2,9);
+				for(i=0; i<streets.length; i++)
+				//for(i=0; i<2; i++)
+					GetBuildings("SELECT * from \"Будинки\" where \"Область\"=\'"+document.getElementById('district').value+"\' and \"Населений пункт\"=\'"+document.getElementById('town').value+"\' and \"Вулиця\"=\'"+streets[i]+"\';",2,9);		
+				return new Promise(resolve=>
+				{
+					setTimeout(() => resolve()),100;
+				});
+			})
+		})
+		function SelectAllRows()
+		{
+			var table = document.getElementById("rows");
+			if(document.getElementById('SelectAllRows').checked==1)			
+				for(i=0; i<table.rows.length; i++)
+					table.rows[i].cells[0].children[0].checked=1;
+			else
+				for(i=0; i<table.rows.length; i++)
+					table.rows[i].cells[0].children[0].checked=0;			
+		}
+		function AddStreet(street)
+		{
+			GetBuildings("SELECT * from \"Будинки\" where \"Область\"=\'"+document.getElementById('district').value+"\' and \"Населений пункт\"=\'"+document.getElementById('town').value+"\' and \"Вулиця\"=\'"+document.getElementById('street').value+"\';",2,9);
+		}
+		function RemoveStreet(street)
+		{			
+			var table = document.getElementById("rows");
+			var AllRowsRemoved=0;
+			while(AllRowsRemoved!=1)
+			{
+				AllRowsRemoved=1;
+				for(i=0; i<table.rows.length; i++)			
+					if(document.getElementById('street').value==table.rows[i].cells[2].children[0].value)
+					{
+						table.rows[i].remove();
+						AllRowsRemoved=0;
+					}
+			}
+			for(i=0; i<table.rows.length; i++)
+				table.rows[i].cells[1].children[0].value=i+1;
+		}
+		function AddBuilding()
+		{
+			var table = document.getElementById("rows");
+			NewRow = table.insertRow(table.rows.length);
+			cell = NewRow.insertCell(0);
+			CellField=document.createElement('input');
+			CellField.type = "checkbox";
+			cell.appendChild(CellField);
+			cell = NewRow.insertCell(1); //№
+			CellField=document.createElement('input');			
+			CellField.style.width=4+"ch";
+			CellField.value=table.rows.length;
+			CellField.readOnly=true;
+			cell.appendChild(CellField);
+			cell = NewRow.insertCell(2); //Вулиця			
+			CellField=document.createElement('input');
+			CellField.style.width=document.getElementById('street').style.width;
+			CellField.classList.add('form-autocomplete');
+			CellField.setAttribute('list', 'streets');
+			cell.appendChild(CellField);			
+			cell = NewRow.insertCell(3); //№ буд.
+			CellField=document.createElement('input');
+			CellField.style.width=4+"ch";
+			cell.appendChild(CellField);
+			cell = NewRow.insertCell(4); //Рік
+			CellField=document.createElement('input');
+			CellField.style.width=4+"ch";
+			cell.appendChild(CellField);
+			cell = NewRow.insertCell(5); //Матеріали
+			cell.style.width=26+"ch";
+			CellField=document.createElement("select"); //Список матеріалів
+			CellField.style.width=10+"ch";
+			cell.appendChild(CellField);					
+			CellField=document.createElement("button"); //Видалити матеріал
+			CellField.style.width=3+"ch";
+			CellField.innerText ="–";
+			CellField.onclick = (function()
+			{
+				table.rows[this.parentNode.parentNode.rowIndex].cells[5].children[0].remove(table.rows[this.parentNode.parentNode.rowIndex].cells[5].children[0].selectedIndex);
+			});
+			cell.appendChild(CellField);					
+			CellField=document.createElement("input"); //Назва матеріалу для додавання
+			CellField.style.width=10+"ch";
+			cell.appendChild(CellField);					
+			CellField=document.createElement("button"); //Додати матерал
+			CellField.style.width=3+"ch";
+			CellField.innerText ="+";
+			CellField.onclick = (function()
+			{
+				var RowIndex = this.parentNode.parentNode;
+				if(table.rows[RowIndex.rowIndex].cells[5].children[2].value.length>0)
+				{
+					var opt = document.createElement('option');
+					opt.innerHTML = document.getElementById("rows").rows[RowIndex.rowIndex].cells[5].children[2].value;
+					table.rows[RowIndex.rowIndex].cells[5].children[0].appendChild(opt);
+				}						
+			});
+			cell.appendChild(CellField);
+			cell = NewRow.insertCell(6); //Кількість поверхів
+			CellField=document.createElement("input");
+			CellField.style.width=(8+"ch");
+			cell.appendChild(CellField);					
+			var cell = NewRow.insertCell(7); //Висота стелі
+			CellField=document.createElement("input");
+			CellField.style.width=(7+"ch");
+			cell.appendChild(CellField);
+			cell = NewRow.insertCell(8); //Стани
+			CellField=document.createElement("select");
+			CellField.style.width=17+"ch";
+			for(j in states)
+			{
+				var opt = document.createElement('option');
+				opt.innerHTML = states[j];
+				CellField.appendChild(opt);
+			}
+			cell.appendChild(CellField);
+			
+			cell = NewRow.insertCell(9); //Прогноз
+			CellField=document.createElement("input");
+			CellField.style.width=(13+"ch");
+			cell.appendChild(CellField);	
+		}		
+		function UpdateDatabase()
+		{
+			var data=new Array()
+			var string="";
+			var table = document.getElementById("rows");
+			for(i=0; i<table.rows.length; i++)
+			{
+				for(j=2; j<5; j++)
+					string=string+table.rows[i].cells[j].children[0].value+";";
+				/*if(table.rows[i].cells[5].children[0].length>1) //несколько материалов в одной ячейке
+				{
+					string=string+"\"";
+					for(j=0; j<table.rows[i].cells[5].children[0].length-1; j++)
+						string=string+table.rows[i].cells[5].children[0][j].value+"\n";
+					string=string+table.rows[i].cells[5].children[0][j].value+"\";";
+				}*/
+				if(table.rows[i].cells[5].children[0].length>0)
+				{
+					for(j=0; j<table.rows[i].cells[5].children[0].length; j++)
+						string=string+table.rows[i].cells[5].children[0][j].value+",";
+					string=string.substring(0,string.length-1)+";";
+				}
+				else
+					string=string+";";
+				for(j=6; j<10; j++)
+					string=string+table.rows[i].cells[j].children[0].value+";";
+				string=string.substring(0,string.length-1)+"\n";				
+				data.push(string);
+				string="";
+			}
+			$.ajax({type: 'post',url: 'UpdateDatabase/',
+			data:
+			{
+				'district':document.getElementById('district').value,
+				'town':document.getElementById('town').value,
+				'data[]': data,
+				csrfmiddlewaretoken: '{{ csrf_token }}'
+			},dataType:'json',});
+		}
+		function RemoveSelectedFromTable()
+		{
+			var table = document.getElementById("rows");
+			AllSelectedRowsRemoved=false;
+			while(AllSelectedRowsRemoved!=true)
+			{
+				AllSelectedRowsRemoved=true;
+				for(i=0; i<table.rows.length; i++)				
+					if(table.rows[i].cells[0].children[0].checked==1)
+					{
+						table.rows[i].remove();
+						AllSelectedRowsRemoved=false
+					}
+			}
+		}
+		function RemoveSelectedFromDatabase()
+		{
+			var data=new Array()
+			var string="";
+			var table = document.getElementById("rows");
+			for(i=0; i<table.rows.length; i++)
+			{
+				if(table.rows[i].cells[0].children[0].checked==1)
+				{
+					for(j=2; j<4; j++)
+						string=string+table.rows[i].cells[j].children[0].value+";";
+					data.push(string);
+					string="";
+				}
+			}			
+			$.ajax({type: 'post',url: 'DeleteFromDatabase/',
+			data:
+			{
+				'district':document.getElementById('district').value,
+				'town':document.getElementById('town').value,
+				'data[]': data,
+				csrfmiddlewaretoken: '{{ csrf_token }}'
+			},dataType:'json',});
+			RemoveSelectedFromTable()
+		}
+		function SaveToCSV()
+		{			
+			var data="Вулиця;№ буд.;Рік;Матеріали;Кількість поверхів;Висота стелі;Стан;Прогноз\n";
+			var string="";
+			var table = document.getElementById("rows");
+			for(i=0; i<table.rows.length; i++)
+			{
+				for(j=2; j<5; j++)
+					string=string+table.rows[i].cells[j].children[0].value+";";
+				/*if(table.rows[i].cells[5].children[0].length>1) //несколько материалов в одной ячейке
+				{
+					string=string+"\"";
+					for(j=0; j<table.rows[i].cells[5].children[0].length-1; j++)
+						string=string+table.rows[i].cells[5].children[0][j].value+"\n";
+					string=string+table.rows[i].cells[5].children[0][j].value+"\";";
+				}*/
+				if(table.rows[i].cells[5].children[0].length>0)
+				{
+					for(j=0; j<table.rows[i].cells[5].children[0].length; j++)
+						string=string+table.rows[i].cells[5].children[0][j].value+",";
+					string=string.substring(0,string.length-1)+";";
+				}
+				else
+					string=string+";";
+				for(j=6; j<10; j++)
+					string=string+table.rows[i].cells[j].children[0].value+";";
+				string=string.substring(0,string.length-1)+"\n";				
+				data+=string;
+				string="";
+			}
+			var universalBOM = "\uFEFF";
+			var a = window.document.createElement('a');
+			a.setAttribute('href', 'data:text/csv; charset=utf-8,' + encodeURIComponent(universalBOM+data));
+			TownName=document.getElementById('town').value;
+			a.setAttribute('download',"Нерухомість у "+document.getElementById('town').value+".csv");
+			window.document.body.appendChild(a);
+			a.click();			
+		}
+		function GetRandomInt(min, max)
+		{
+			min = Math.ceil(min);
+			max = Math.floor(max);
+			return Math.floor(Math.random() * (max - min) + min);
+		}
+		function GetRandomFloat(min, max)
+		{
+			return min + Math.random() * (max - min);
+		}
+		function ShuffleArray(array,n)
+		{
+			for(var i=0; i<n; i++)
+			{
+				j=GetRandomInt(0,10);
+				t=array[i];
+				array[i]=array[j];
+				array[j]=t;
+			}
+		}
+		function GenerateRandomData()
+		{
+			var table = document.getElementById("rows");
+			var materials = new Array("цегла","цегла сілікатна","к/б панель","з/б панель","газоблок","утеплювач","шлакоблок","вентильований фасад","керамблок","монолітно-каркасний");			
+			for(i=0; i<table.rows.length; i++)
+			{
+				if(table.rows[i].cells[8].children[0].value=="Невдала будівля")
+					continue;
+				table.rows[i].cells[4].children[0].value=GetRandomInt(1960,2025);
+				while(table.rows[i].cells[5].children[0].length>0)
+					table.rows[i].cells[5].children[0].remove(table.rows[i].cells[5].children[0].selectedIndex);
+
+				ShuffleArray(materials,10);
+				if(materials[0]=="утеплювач" || materials[0]=="вентильований фасад")
+					CountOfMaterials=GetRandomInt(2,4);
+				else
+					CountOfMaterials=GetRandomInt(1,3);
+				for(j=0; j<CountOfMaterials; j++)
+				{
+					var opt = document.createElement('option');
+					opt.innerHTML = materials[j];
+					table.rows[i].cells[5].children[0].appendChild(opt);
+				}
+				table.rows[i].cells[6].children[0].value=GetRandomInt(1,25);
+				table.rows[i].cells[7].children[0].value=GetRandomFloat(2.4,3.2);
+				if(table.rows[i].cells[7].children[0].value.length>4)
+					table.rows[i].cells[7].children[0].value=table.rows[i].cells[7].children[0].value.substring(0,4);
+				if(table.rows[i].cells[4].children[0].value>=2022)
+				{
+					RandomChoice=GetRandomInt(5,10);
+					if(RandomChoice<=5)						
+						table.rows[i].cells[8].children[0].value="Проектується";
+					else
+						table.rows[i].cells[8].children[0].value="Будується";
+				}
+				else
+					table.rows[i].cells[8].children[0].value="Зданий";
+				table.rows[i].cells[9].children[0].value="";
+			}
+		}
+		function PredictState()
+		{
+			//var DataForLearning="Вулиця;Кількість недобудов на вулиці;№ буд.;Рік;Кількість недобудов за рік;Матеріали;Рейтинг матеріалів;Кількість поверхів;Висота стелі;Стан\n";
+			var DataForLearning=new Array();
+			var DataForPrediction=new Array();
+			var string="";
+			var table = document.getElementById("rows");
+			var streets=new Map();
+			var years=new Map();
+			for(i=0; i<table.rows.length; i++)
+			{
+				if(table.rows[i].cells[8].children[0].value=="Невдала будівля")
+				{
+					if(streets.has(table.rows[i].cells[2].children[0].value)==true)
+						streets.set(table.rows[i].cells[2].children[0].value,streets.get(table.rows[i].cells[2].children[0].value)+1);
+					else				
+						streets.set(table.rows[i].cells[2].children[0].value,1);
+					if(years.has(table.rows[i].cells[4].children[0].value)==true)					
+						years.set(table.rows[i].cells[4].children[0].value,years.get(table.rows[i].cells[4].children[0].value)+1);					
+					else					
+						years.set(table.rows[i].cells[4].children[0].value,1);					
+				}
+			}
+			for(i=0; i<table.rows.length; i++)
+			{
+				string=string+table.rows[i].cells[2].children[0].value+";" //Вулиця				
+				if(streets.has(table.rows[i].cells[2].children[0].value)==true)//Кількість недобудов на вулиці
+					string=string+streets.get(table.rows[i].cells[2].children[0].value)+";";
+				else
+					string=string+"0;";
+				string=string+table.rows[i].cells[3].children[0].value+";"; //№ буд.
+				string=string+table.rows[i].cells[4].children[0].value+";"; //Рік				
+				if(years.has(table.rows[i].cells[4].children[0].value)==true)//Кількість недобудов за рік
+					string=string+years.get(table.rows[i].cells[4].children[0].value)+";";
+				else
+					string=string+"0;";
+				RatingOfMaterials=0;				
+				for(j=0; j<table.rows[i].cells[5].children[0].length; j++)//Матеріали
+					for(j=0; j<table.rows[i].cells[5].children[0].length; j++)
+					{
+						string=string+table.rows[i].cells[5].children[0][j].value+",";
+						switch(table.rows[i].cells[5].children[0][j].value)
+						{
+							case "цегла":RatingOfMaterials+=2; break
+							case "цегла сілікатна":RatingOfMaterials+=1.5; break;
+							case "к/б панель":RatingOfMaterials+=1.7; break
+							case "з/б панель":RatingOfMaterials+=1.7; break;
+							case "газоблок":RatingOfMaterials+=1.4; break
+							case "утеплювач":RatingOfMaterials+=0.7; break;
+							case "шлакоблок":RatingOfMaterials+=1; break
+							case "вентильований фасад":RatingOfMaterials+=0.9; break;
+							case "керамблок":RatingOfMaterials+=1.2; break
+							case "монолітно-каркасний":RatingOfMaterials+=1.3; break;
+						}						
+					}
+				if(table.rows[i].cells[5].children[0].length>0)
+					string=string.substring(0,string.length-1);
+				string=string+";"+RatingOfMaterials.toFixed(2)+";"; //Рейтинг матеріалів
+				for(j=6; j<9; j++) //Кількість поверхів, Висота стелі, Стан
+					string=string+table.rows[i].cells[j].children[0].value+";";
+				string=string.substring(0,string.length-1)+"\n";
+				if(table.rows[i].cells[4].children[0].value<2022)
+					DataForLearning.push(string);
+				else
+					DataForPrediction.push(string);
+				string="";
+			}		
+			$.ajax({type: 'post',url: 'PredictUsingLogisticRegression/',
+			data:{'DataForLearning[]': DataForLearning,'DataForPrediction[]':DataForPrediction,
+			csrfmiddlewaretoken: '{{ csrf_token }}'},dataType:'json',
+			success: function(data)
+			{
+				psn=0;
+				for(i=0; i<table.rows.length; i++)
+				{
+					if(table.rows[i].cells[4].children[0].value>=2022)
+					{
+						table.rows[i].cells[9].children[0].value=data['data'][psn];
+						psn++;
+					}
+				}
+			},});
+			//---------------save to file for running python script---------------			
+			/*DataForLearning.unshift("Вулиця;Кількість недобудов на вулиці;№ буд.;Рік;Кількість недобудов за рік;Матеріали;Рейтинг матеріалів;Кількість поверхів;Висота стелі;Стан\n");
+			DataForPrediction.unshift("Вулиця;Кількість недобудов на вулиці;№ буд.;Рік;Кількість недобудов за рік;Матеріали;Рейтинг матеріалів;Кількість поверхів;Висота стелі;Стан\n");
+			DataForLearningStr="";
+			DataForPredictionStr="";
+			for(i=0; i<DataForLearning.length; i++)
+				DataForLearningStr+=DataForLearning[i];
+			for(i=0; i<DataForPrediction.length; i++)
+				DataForPredictionStr+=DataForPrediction[i];
+			var universalBOM = "\uFEFF";
+			var a = window.document.createElement('a');
+			a.setAttribute('href', 'data:text/csv; charset=utf-8,' + encodeURIComponent(universalBOM+DataForLearningStr));
+			a.setAttribute('download', 'DataForLearning.csv');
+			window.document.body.appendChild(a);
+			a.click();
+			a.setAttribute('href', 'data:text/csv; charset=utf-8,' + encodeURIComponent(universalBOM+DataForPredictionStr));
+			a.setAttribute('download', 'DataForPrediction.csv');
+			window.document.body.appendChild(a);
+			a.click();*/
+		}
+	</script>
+</head>
+<body>
+    <datalist id="towns"></datalist>
+	<datalist id="streets"></datalist>
+	</input>
+	<table>
+		{% csrf_token %}		
+		<tr>
+			<td>Область</td>
+			<td>Населений пункт</td>
+			<td>Вулиця</td>
+			<td rowspan="2">
+				<button id="AddStreet" onClick="CallAddStreet()">
+				<script>
+					function CallAddStreet()
+					{
+						AddStreet(document.getElementById("street").value);
+					}
+				</script>
+				+</button>
+				<button id="RemoveStreet"onClick="CallRemoveStreet()">
+				<script>
+					function CallRemoveStreet()
+					{
+						RemoveStreet(document.getElementById("street").value);
+					}
+				</script>
+				–</button>
+		</tr>
+		<tr>
+			<td>
+				<select id="district" onchange="DistrictChanged()">
+					{% for district in districts %}
+						<option value="{{district}}">{{district}}</option>
+					{% endfor %}
+					<script>
+						document.getElementById('district').value = "Київ";
+					</script>
+				</select>
+			</td>
+			<td>
+				<input id="town" autoComplete="on" list="towns"></input>
+			</td>
+			<td>
+				<input id="street" autoComplete="on" list="streets"></input>
+			</td>			
+		</tr>
+	</table>
+	<button style="width:8ch" onClick="AddBuilding()">Додати будинок</button>
+	<button style="width:12ch" onClick="UpdateDatabase()">Зберегти зміни в БД</button>
+	<button style="width:10ch" onClick="RemoveSelectedFromTable()">Видалити з таблиці</button>
+	<button style="width:11ch" onClick="RemoveSelectedFromDatabase()">Видалити з бази даних</button>
+	<button style="width:17ch" onClick="SaveToCSV()">Зберегти таблицю у CSV-файл</button>
+	<button style="width:15ch" onClick="GenerateRandomData()">Генерувати випадкові дані</button>
+	<button style="width:13ch" onClick="PredictState()">Спрогнозувати стан</button>
+	<table id="columns">{% csrf_token %}</table>	
+	<table id="rows">{% csrf_token %}</table>
+</body>
+</html>

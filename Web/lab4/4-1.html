@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Масиви</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>ЛАБОРАТОРНА РОБОТА №4. Завдання 1 </h1>
+
+<p>Створити два одновимірних масивів, кількість елементів яких задана користувачем. Знайти найменший серед тих елементів першого вектора, які співпадають із значеннями елементів другого вектора.
+
+<p>Упорядкувати масив у порядку зростання методом бульбашки. Надрукувати вхідний та вихідний масив.
+<p>Застосувати функції
+ <div class="form">
+   <label> Вкажіть довжину масиву</label><br>
+ 
+      <input type="text" id="len" class="len">
+      <input type="submit" value="Ok" class="OK">
+    </div>
+
+    <div><p class="Ar1"></p>
+	   <p class="Ar11"></p>
+      <p class="Ar2"></p>
+      <p class="Res"></p>
+    </div>
+
+    <script>
+
+
+var x= Math.floor(Math.random() * 100) + 1;
+
+var mas1 = document.querySelector('.Ar1');
+var mas11 = document.querySelector('.Ar11');
+var mas2 = document.querySelector('.Ar2');
+var OK= document.querySelector('.OK');
+var Len= document.querySelector('.len');
+var rez = document.querySelector('.Res');
+len.focus();
+var arr1=[]; 
+var arr2=[]; 
+var n=0;
+
+
+function bubbleSort(arr) {
+  for (let j = arr.length - 1; j > 0; j--) {
+    for (let i = 0; i < j; i++) {
+      if (arr[i] > arr[i + 1]) {
+        let temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+      }
+    }
+  }
+}
+
+function poisk(){
+var i=0;
+while (i<n && !(arr2.includes(arr1[i],0))) {i++;}
+if (i==n){return -1;}
+else{return arr1[i];}
+ 
+}
+function work() {
+var n = Number(Len.value);
+ for (let i = 0; i < n; i++) {
+  arr1.push(Math.floor(Math.random() * 100) + 1);}
+  for (let i = 0; i < n; i++) {
+  arr2.push(Math.floor(Math.random() * 100) + 1);}
+  
+  mas1.textContent='1 масив до сортування: ';
+  mas11.textContent='1 масив відсортований: ';
+  mas2.textContent='2 масив: ';
+  for (let i = 0; i < n; i++) mas1.textContent +=arr1[i]+' ' ;
+  for (let i = 0; i < n; i++) mas2.textContent +=arr2[i]+' ' ;
+  bubbleSort(arr1);
+   for (let i = 0; i < n; i++) mas11.textContent +=arr1[i]+' ' ;  
+   var y= poisk();
+  if (y>0) {rez.textContent='Найменьший елемент, що співпадає = '+ y;}
+  else{rez.textContent='Співпадаючих елементів не знайдено.';}
+ }
+ 
+
+OK.addEventListener('click', work);
+   </script>
+  </body>
+

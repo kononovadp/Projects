@@ -1,0 +1,50 @@
+#ctime *, #tpick * {
+  font-family: Impact, sans-serif;
+  box-sizing: border-box;
+  text-align: center;
+}
+#ctime, #tpick, .square { padding: 10px; }
+#ctime, #tpick {
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.header {
+  font-weight: normal;
+  width: 100%;
+  margin: 10px 0;
+}
+.square, #tpick-h, #tpick-m, #tpick-s { width: 33%; }
+.text, #tset, #treset { margin-top:10px; }
+.digits, .square select {
+  font-size: 24px;
+  background: #fff;
+  color: #000;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 0;
+}
+
+
+#ctime { background: #000080; }
+#ctime .header { color: #ADFF2F; }
+#ctime .text { color: #ddd; }
+
+
+#tpick { background: #F0E68C; }
+
+#tset, #treset {
+  width: 50%;
+  background: #000080;
+  color: #fff;
+  border: 0;
+  padding: 15px 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+#tset:disabled, #treset:disabled {
+  background: #aaa;
+  color: #888;
+}

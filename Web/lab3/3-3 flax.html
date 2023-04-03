@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>Flexbox 0 — starting code</title>
+    <style>
+    * {font-family:Arial, sans-serif;}
+
+    body { margin: 20px; }
+	  
+	section {  display: flex; background: #444; }
+    .Rimg { width:25% ;float:right; margin: 10px;}
+    .layer1 { position: relative; background: #f0f0fa;   }
+	.layer2 { position: relative; background: #444; }
+	
+    header { height: 50%;   }
+     footer { height: 10%;   background: black;   color:white; margin-top:20px;}
+    h1 {font-size:2vw;  line-height: 50px;  font-weight: 900; margin-bottom:5% }
+	h2 {font-size:1vw;   font-weight: 900; text-align:center;margin:0% ;padding-top:5%;}
+	h3 {font-size:2vw;  color:#ff9900;  font-weight: 900; text-align:center; margin:0% }
+	h4 {font-size:1vw;  color:#0066ff;  font-weight: 900; text-align:center; margin:0% }
+	h5 {font-size:0.9vw;  color:#ff9900;  font-weight: 900; text-align:center; margin:0% }
+
+     article {  padding: 2%;   margin: 5%;   background: black;   color:white; }
+
+    
+      button { background:black; 
+        font-size: 1.5vw; color:white;
+        line-height: 1.5;
+        width: 18%;}
+	button.det { 
+        font-size: 0.7vw; 
+        width: 100%;}
+      div {  align-items: center;
+    
+      }
+
+
+      
+    </style>
+  </head>
+  <body>
+   <div>
+      <button>Форми навчання</button>
+      <button>Заходи</button>
+      <button>Про Академію</button>
+      <button>Контакти</button>
+      <button>Київ</button>
+    </div>
+    <header>
+	 <img src="31.jpg" class="Rimg">
+      <h1>КУРСИ ПРОГРАМУВАННЯ <BR> <font color="0000FF">З 100% ГАРАНТІЄЮ </FONT>ПРАЦЕВЛАШТУВАННЯ</h1>
+	  <p> З SCHOOL  ти отримаєш високооплачувальну роботу своєї мрії.
+	  <br> Ми готуємо висококласних ІТ-спеціалістів.
+    </header>
+	
+<div class="layer1">
+<h2>ВІДГУКИ ВІД РОБОТОДАВЦІВ</h2>
+<h3> ПІДТВЕРДЖЕНА ЯКІСТЬ</h3>
+<P  style="padding-left:20%"> Школа програмування - єдина, що має відгуки від роботодавців, які входять до списку найкращіх компаній DOU.UA.
+ А випускники курсів з інкубатором отримують гарантії працевлаштування впродовж 6 місяців після успішного закінчення навчання. Алк зазвичай їх забирають до себе наші офіційні партнери ще до закінчення курсу.
+<p> <img src="32.jpg" width="100%">
+</div>
+   
+	<div class="layer2">
+	<H2>ПОПУЛЯРНІ НАПРЯМКИ </H2>
+	<H3>КУРСІВ ПРОГРАМУВАННЯ</H3>
+	</div>
+    <section>  <article>
+	<p align="center"><img src="33.jpg" >
+        <h4>Complex</h4>
+        <h2>JAVASCRIPT</h2>
+		<h5>Комплексний курс</h5>
+        <p>Стартовий рівень: початківець<br> Тривалість:5-11 місяців <br> Ціна: від 14500 грн.</p>
+		
+		<h4>Залишилось 3 місця</h4>
+		<button class="det">Детальніше</button>
+      </article>
+
+      <article><p align="center"><img src="34.jpg" >
+        <h4>Complex</h4>
+        <h2>JAVA</h2>
+		<h5>Комплексний курс</h5>
+        <p>Стартовий рівень: початківець<br> Тривалість:6-11 місяців <br> Ціна: від 14500 грн.</p>
+		
+		<h4>Залишилось 6 місць</h4>
+		<button class="det">Детальніше</button>
+      </article>
+
+      <article><p align="center"><img src="35.jpg" >
+	  <h4>Complex</h4>
+        <h2>PYTHON</h2>
+		<h5>Комплексний курс</h5>
+        <p>Стартовий рівень: початківець<br> Тривалість:6-11 місяців <br> Ціна: від 14500 грн.</p>
+		
+		<h4>Залишилось 4 місця</h4>
+		<button class="det">Детальніше</button>
+         </article>
+    </section>
+	
+	<footer> 2023 </footer>
+  </body>
+</html>

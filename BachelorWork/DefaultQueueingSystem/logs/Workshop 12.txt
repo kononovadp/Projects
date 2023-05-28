@@ -1,0 +1,54 @@
+ 115.36. WORKSHOP 12: the task 1/1 was executed for 20.00% (1.82/9.11)
+ 117.18. WORKSHOP 12: the task 1/1 was executed for 40.00% (3.64/9.11)
+ 119.00. WORKSHOP 12: the task 1/1 was executed for 60.00% (5.47/9.11)
+ 120.82. WORKSHOP 12: the task 1/1 was executed for 80.00% (7.29/9.11)
+ 122.65. WORKSHOP 12: the task 1/1 was executed for 100.00% (9.11/9.11)
+ 124.47. WORKSHOP 12: the task 1/1 (robot 1, work time 9.11) was finished
+ 147.14. Workshop 12: the state was changed to BROKEN 
+ 166.49. Workshop 12: the state was changed to active
+ 258.83. WORKSHOP 12: the task 1/1 was executed for 20.00% (4.21/21.05)
+ 263.04. WORKSHOP 12: the task 1/1 was executed for 40.00% (8.42/21.05)
+ 267.25. WORKSHOP 12: the task 1/1 was executed for 60.00% (12.63/21.05)
+ 271.46. WORKSHOP 12: the task 1/1 was executed for 80.00% (16.84/21.05)
+ 275.67. WORKSHOP 12: the task 1/1 was executed for 100.00% (21.05/21.05)
+ 279.88. WORKSHOP 12: the task 1/1 (robot 0, work time 21.05) was finished
+ 307.45. Workshop 12: the state was changed to BROKEN 
+ 328.53. Workshop 12: the state was changed to active
+ 348.29. WORKSHOP 12: the task 1/1 was executed for 20.00% (3.33/16.65)
+ 351.62. WORKSHOP 12: the task 1/1 was executed for 40.00% (6.66/16.65)
+ 354.95. WORKSHOP 12: the task 1/1 was executed for 60.00% (9.99/16.65)
+ 358.28. WORKSHOP 12: the task 1/1 was executed for 80.00% (13.32/16.65)
+ 361.61. WORKSHOP 12: the task 1/1 was executed for 100.00% (16.65/16.65)
+ 364.94. WORKSHOP 12: the task 1/1 (robot 4, work time 16.65) was finished
+ 379.69. Workshop 12: the state was changed to BROKEN 
+ 394.97. Workshop 12: the state was changed to active
+ 440.06. WORKSHOP 12: the task 1/1 was executed for 20.00% (5.91/29.54)
+ 445.97. WORKSHOP 12: the task 1/1 was executed for 40.00% (11.82/29.54)
+ 451.87. WORKSHOP 12: the task 1/1 was executed for 60.00% (17.72/29.54)
+ 457.78. WORKSHOP 12: the task 1/1 was executed for 80.00% (23.63/29.54)
+ 463.69. WORKSHOP 12: the task 1/1 was executed for 100.00% (29.54/29.54)
+ 469.60. WORKSHOP 12: the task 1/1 (robot 8, work time 29.54) was finished
+ 469.76. Workshop 12: the state was changed to BROKEN 
+ 476.29. Workshop 12: the state was changed to active
+ 521.83. WORKSHOP 12: the task 1/2 was executed for 20.00% (6.62/33.10)
+ 528.45. WORKSHOP 12: the task 1/2 was executed for 40.00% (13.24/33.10)
+ 535.07. WORKSHOP 12: the task 1/2 was executed for 60.00% (19.86/33.10)
+ 541.69. WORKSHOP 12: the task 1/2 was executed for 80.00% (26.48/33.10)
+ 546.96. Workshop 12: the state was changed to BROKEN 
+ 556.59. Workshop 12: the state was changed to active
+ 563.21. WORKSHOP 12: the task 1/2 was executed for 100.00% (33.10/33.10)
+ 569.83. WORKSHOP 12: the task 1/2 (robot 5, work time 33.10) was finished
+ 598.64. WORKSHOP 12: the task 2/2 was executed for 20.00% (8.48/42.42)
+ 607.13. WORKSHOP 12: the task 2/2 was executed for 40.00% (16.97/42.42)
+ 615.61. WORKSHOP 12: the task 2/2 was executed for 60.00% (25.45/42.42)
+ 624.10. WORKSHOP 12: the task 2/2 was executed for 80.00% (33.93/42.42)
+ 632.58. WORKSHOP 12: the task 2/2 was executed for 100.00% (42.42/42.42)
+ 636.00. Workshop 12: the state was changed to BROKEN 
+ 643.08. Workshop 12: the state was changed to active
+ 651.56. WORKSHOP 12: the task 2/2 (robot 9, work time 42.42) was finished
+ 723.98. Workshop 12: the state was changed to BROKEN 
+ 734.50. Workshop 12: the state was changed to active
+ 794.71. Workshop 12: the state was changed to BROKEN 
+ 801.18. Workshop 12: the state was changed to active
+ 899.12. Workshop 12: the state was changed to BROKEN 
+ 910.21. Workshop 12: the state was changed to active

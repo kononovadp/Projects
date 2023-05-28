@@ -1,0 +1,62 @@
+ 122.43. Workshop 05: the state was changed to BROKEN 
+ 148.42. Workshop 05: the state was changed to active
+ 149.08. WORKSHOP 05: the task 1/1 was executed for 20.00% (9.16/45.79)
+ 158.24. WORKSHOP 05: the task 1/1 was executed for 40.00% (18.32/45.79)
+ 167.40. WORKSHOP 05: the task 1/1 was executed for 60.00% (27.47/45.79)
+ 176.56. WORKSHOP 05: the task 1/1 was executed for 80.00% (36.63/45.79)
+ 185.72. WORKSHOP 05: the task 1/1 was executed for 100.00% (45.79/45.79)
+ 194.87. WORKSHOP 05: the task 1/1 was executed for 100.00% (45.79/45.79)
+ 194.87. WORKSHOP 05: the task 1/1 (robot 3, work time 45.79) was finished
+ 260.70. Workshop 05: the state was changed to BROKEN 
+ 294.26. Workshop 05: the state was changed to active
+ 367.72. Workshop 05: the state was changed to BROKEN 
+ 400.38. Workshop 05: the state was changed to active
+ 425.28. WORKSHOP 05: the task 1/2 was executed for 20.00% (0.77/3.83)
+ 426.05. WORKSHOP 05: the task 1/2 was executed for 40.00% (1.53/3.83)
+ 426.81. WORKSHOP 05: the task 1/2 was executed for 60.00% (2.30/3.83)
+ 427.58. WORKSHOP 05: the task 1/2 was executed for 80.00% (3.07/3.83)
+ 428.35. WORKSHOP 05: the task 1/2 was executed for 100.00% (3.83/3.83)
+ 429.11. WORKSHOP 05: the task 1/2 (robot 1, work time 3.83) was finished
+ 452.87. WORKSHOP 05: the task 2/2 was executed for 20.00% (8.46/42.31)
+ 461.33. WORKSHOP 05: the task 2/2 was executed for 40.00% (16.92/42.31)
+ 469.79. WORKSHOP 05: the task 2/2 was executed for 60.00% (25.39/42.31)
+ 478.25. WORKSHOP 05: the task 2/2 was executed for 80.00% (33.85/42.31)
+ 479.30. Workshop 05: the state was changed to BROKEN 
+ 493.90. Workshop 05: the state was changed to active
+ 502.36. WORKSHOP 05: the task 2/2 was executed for 100.00% (42.31/42.31)
+ 510.82. WORKSHOP 05: the task 2/2 was executed for 100.00% (42.31/42.31)
+ 510.82. WORKSHOP 05: the task 2/2 (robot 6, work time 42.31) was finished
+ 540.32. Workshop 05: the state was changed to BROKEN 
+ 556.47. Workshop 05: the state was changed to active
+ 638.26. Workshop 05: the state was changed to BROKEN 
+ 654.43. Workshop 05: the state was changed to active
+ 715.61. WORKSHOP 05: the task 1/1 was executed for 20.00% (2.90/14.48)
+ 718.51. WORKSHOP 05: the task 1/1 was executed for 40.00% (5.79/14.48)
+ 721.40. WORKSHOP 05: the task 1/1 was executed for 60.00% (8.69/14.48)
+ 724.30. WORKSHOP 05: the task 1/1 was executed for 80.00% (11.58/14.48)
+ 727.19. WORKSHOP 05: the task 1/1 was executed for 100.00% (14.48/14.48)
+ 729.00. Workshop 05: the state was changed to BROKEN 
+ 739.89. Workshop 05: the state was changed to active
+ 742.78. WORKSHOP 05: the task 1/1 (robot 2, work time 14.48) was finished
+ 815.18. Workshop 05: the state was changed to BROKEN 
+ 831.35. Workshop 05: the state was changed to active
+ 875.38. WORKSHOP 05: the task 1/1 was executed for 20.00% (2.34/11.71)
+ 877.73. WORKSHOP 05: the task 1/1 was executed for 40.00% (4.69/11.71)
+ 880.07. WORKSHOP 05: the task 1/1 was executed for 60.00% (7.03/11.71)
+ 882.41. WORKSHOP 05: the task 1/1 was executed for 80.00% (9.37/11.71)
+ 884.76. WORKSHOP 05: the task 1/1 was executed for 100.00% (11.71/11.71)
+ 887.10. WORKSHOP 05: the task 1/1 (robot 4, work time 11.71) was finished
+ 914.76. Workshop 05: the state was changed to BROKEN 
+ 926.54. Workshop 05: the state was changed to active
+ 954.03. WORKSHOP 05: the task 1/1 was executed for 20.00% (4.48/22.42)
+ 958.51. WORKSHOP 05: the task 1/1 was executed for 40.00% (8.97/22.42)
+ 962.99. WORKSHOP 05: the task 1/2 was executed for 60.00% (13.45/22.42)
+ 967.48. WORKSHOP 05: the task 1/2 was executed for 80.00% (17.94/22.42)
+ 971.96. WORKSHOP 05: the task 1/2 was executed for 100.00% (22.42/22.42)
+ 976.45. WORKSHOP 05: the task 1/2 (robot 7, work time 22.42) was finished
+ 976.69. WORKSHOP 05: the task 2/2 was executed for 20.00% (1.09/5.44)
+ 977.77. WORKSHOP 05: the task 2/2 was executed for 40.00% (2.17/5.44)
+ 978.86. WORKSHOP 05: the task 2/2 was executed for 60.00% (3.26/5.44)
+ 979.95. WORKSHOP 05: the task 2/2 was executed for 80.00% (4.35/5.44)
+ 981.04. WORKSHOP 05: the task 2/2 was executed for 100.00% (5.44/5.44)
+ 982.12. WORKSHOP 05: the task 2/2 (robot 9, work time 5.44) was finished

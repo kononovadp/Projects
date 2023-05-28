@@ -1,0 +1,439 @@
+  70.72. ROBOT 05: the task 1/19 (Workshop-10 27.20) was added
+  72.59. ROBOT 05: the task 2/19 (Workshop-04 31.31) was added
+  74.46. ROBOT 05: the task 3/19 (Workshop-18 9.16) was added
+  76.33. ROBOT 05: the task 4/19 (Workshop-06 8.87) was added
+  78.20. ROBOT 05: the task 5/19 (Workshop-12 33.10) was added
+  80.07. ROBOT 05: the task 6/19 (Workshop-20 4.48) was added
+  81.94. ROBOT 05: the task 7/19 (Workshop-15 32.19) was added
+  83.81. ROBOT 05: the task 8/19 (Workshop-14 23.92) was added
+  85.68. ROBOT 05: the task 9/19 (Workshop-11 49.59) was added
+  87.55. ROBOT 05: the task 10/19 (Workshop-05 4.12) was added
+  89.42. ROBOT 05: the task 11/19 (Workshop-07 16.98) was added
+  91.29. ROBOT 05: the task 12/19 (Workshop-17 19.30) was added
+  93.16. ROBOT 05: the task 13/19 (Workshop-08 21.32) was added
+  95.02. ROBOT 05: the task 14/19 (Workshop-13 9.85) was added
+  96.89. ROBOT 05: the task 15/19 (Workshop-16 20.46) was added
+  98.76. ROBOT 05: the task 16/19 (Workshop-02 8.62) was added
+ 100.63. ROBOT 05: the task 17/19 (Workshop-03 15.92) was added
+ 102.50. ROBOT 05: the task 18/19 (Workshop-09 7.93) was added
+ 104.37. ROBOT 05: the task 19/19 (Workshop-01 30.90) was added
+ 104.96. ROBOT 05: Moving to the workshop 1/19 started. Total distance: 43.19; route:
+Workshop-01->Workshop-05->Workshop-06->Workshop-09->Workshop-10
+ALL ROUTES:
+Workshop-01 -> Workshop-05: 11.20
+Workshop-05 -> Workshop-06: 12.50
+Workshop-06 -> Workshop-09: 11.70
+Workshop-09 -> Workshop-10: 7.79
+------------------------------------------------------------------------------------------
+Moving along the route 1/4 Workshop-01->Workshop-05 with the distance 11.20 started
+ 108.41. ROBOT 05: the total distance 3.29/43.19
+along the route 1/4 Workshop-01->Workshop-05 (dist. 3.29/11.20) was gone
+ 111.85. ROBOT 05: the total distance 6.58/43.19
+along the route 1/4 Workshop-01->Workshop-05 (dist. 6.58/11.20) was gone
+ 115.30. ROBOT 05: the total distance 9.87/43.19
+along the route 1/4 Workshop-01->Workshop-05 (dist. 9.87/11.20) was gone
+ 118.74. ROBOT 05: the total distance 11.20/43.19
+along the route 1/4 Workshop-01->Workshop-05 (dist. 11.20/11.20) was gone
+ 120.14. ROBOT 05: the total distance 11.20/43.19
+along the route 2/4 Workshop-05->Workshop-06 (dist. 0.00/12.50) was gone
+ 123.58. ROBOT 05: the total distance 14.49/43.19
+along the route 2/4 Workshop-05->Workshop-06 (dist. 3.29/12.50) was gone
+ 127.03. ROBOT 05: the total distance 17.78/43.19
+along the route 2/4 Workshop-05->Workshop-06 (dist. 6.58/12.50) was gone
+ 130.47. ROBOT 05: the total distance 21.07/43.19
+along the route 2/4 Workshop-05->Workshop-06 (dist. 9.87/12.50) was gone
+ 133.91. ROBOT 05: the total distance 23.70/43.19
+along the route 2/4 Workshop-05->Workshop-06 (dist. 12.50/12.50) was gone
+ 136.67. ROBOT 05: the total distance 23.70/43.19
+along the route 3/4 Workshop-06->Workshop-09 (dist. 0.00/11.70) was gone
+ 140.11. ROBOT 05: the total distance 26.99/43.19
+along the route 3/4 Workshop-06->Workshop-09 (dist. 3.29/11.70) was gone
+ 143.56. ROBOT 05: the total distance 30.28/43.19
+along the route 3/4 Workshop-06->Workshop-09 (dist. 6.58/11.70) was gone
+ 147.00. ROBOT 05: the total distance 33.57/43.19
+along the route 3/4 Workshop-06->Workshop-09 (dist. 9.87/11.70) was gone
+ 150.45. ROBOT 05: the total distance 35.40/43.19
+along the route 3/4 Workshop-06->Workshop-09 (dist. 11.70/11.70) was gone
+ 152.36. ROBOT 05: the total distance 35.40/43.19
+along the route 4/4 Workshop-09->Workshop-10 (dist. 0.00/7.79) was gone
+ 155.81. ROBOT 05: the total distance 38.69/43.19
+along the route 4/4 Workshop-09->Workshop-10 (dist. 3.29/7.79) was gone
+ 159.25. ROBOT 05: the total distance 41.98/43.19
+along the route 4/4 Workshop-09->Workshop-10 (dist. 6.58/7.79) was gone
+ 162.70. ROBOT 05: the total distance 43.19/43.19
+along the route 4/4 Workshop-09->Workshop-10 (dist. 7.79/7.79) was gone
+ 163.97. ROBOT 05: finishing of the task 1/19 Workshop-01->Workshop-10:
+the workshop Workshop-10 was missed
+ 167.41. ROBOT 05: Moving to the workshop 1/19 started. Total distance: 47.29; route:
+Workshop-10->Workshop-09->Workshop-06->Workshop-05->Workshop-04
+ALL ROUTES:
+Workshop-10 -> Workshop-09: 7.79
+Workshop-09 -> Workshop-06: 11.70
+Workshop-06 -> Workshop-05: 12.50
+Workshop-05 -> Workshop-04: 15.30
+------------------------------------------------------------------------------------------
+Moving along the route 1/4 Workshop-10->Workshop-09 with the distance 7.79 started
+ 170.85. ROBOT 05: the total distance 3.29/47.29
+along the route 1/4 Workshop-10->Workshop-09 (dist. 3.29/7.79) was gone
+ 174.30. ROBOT 05: the total distance 6.58/47.29
+along the route 1/4 Workshop-10->Workshop-09 (dist. 6.58/7.79) was gone
+ 177.74. ROBOT 05: the total distance 7.79/47.29
+along the route 1/4 Workshop-10->Workshop-09 (dist. 7.79/7.79) was gone
+ 179.01. ROBOT 05: the total distance 7.79/47.29
+along the route 2/4 Workshop-09->Workshop-06 (dist. 0.00/11.70) was gone
+ 182.46. ROBOT 05: the total distance 11.08/47.29
+along the route 2/4 Workshop-09->Workshop-06 (dist. 3.29/11.70) was gone
+ 185.90. ROBOT 05: the total distance 14.37/47.29
+along the route 2/4 Workshop-09->Workshop-06 (dist. 6.58/11.70) was gone
+ 189.35. ROBOT 05: the total distance 17.66/47.29
+along the route 2/4 Workshop-09->Workshop-06 (dist. 9.87/11.70) was gone
+ 192.79. ROBOT 05: the total distance 19.49/47.29
+along the route 2/4 Workshop-09->Workshop-06 (dist. 11.70/11.70) was gone
+ 194.71. ROBOT 05: the total distance 19.49/47.29
+along the route 3/4 Workshop-06->Workshop-05 (dist. 0.00/12.50) was gone
+ 198.15. ROBOT 05: the total distance 22.78/47.29
+along the route 3/4 Workshop-06->Workshop-05 (dist. 3.29/12.50) was gone
+ 201.60. ROBOT 05: the total distance 26.07/47.29
+along the route 3/4 Workshop-06->Workshop-05 (dist. 6.58/12.50) was gone
+ 205.04. ROBOT 05: the total distance 29.36/47.29
+along the route 3/4 Workshop-06->Workshop-05 (dist. 9.87/12.50) was gone
+ 208.49. ROBOT 05: the total distance 31.99/47.29
+along the route 3/4 Workshop-06->Workshop-05 (dist. 12.50/12.50) was gone
+ 211.24. ROBOT 05: the total distance 31.99/47.29
+along the route 4/4 Workshop-05->Workshop-04 (dist. 0.00/15.30) was gone
+ 214.68. ROBOT 05: the total distance 35.28/47.29
+along the route 4/4 Workshop-05->Workshop-04 (dist. 3.29/15.30) was gone
+ 218.13. ROBOT 05: the total distance 38.57/47.29
+along the route 4/4 Workshop-05->Workshop-04 (dist. 6.58/15.30) was gone
+ 221.57. ROBOT 05: the total distance 41.86/47.29
+along the route 4/4 Workshop-05->Workshop-04 (dist. 9.87/15.30) was gone
+ 225.02. ROBOT 05: the total distance 45.15/47.29
+along the route 4/4 Workshop-05->Workshop-04 (dist. 13.16/15.30) was gone
+ 228.46. ROBOT 05: the total distance 47.29/47.29
+along the route 4/4 Workshop-05->Workshop-04 (dist. 15.30/15.30) was gone
+ 230.70. ROBOT 05: finishing of the task 1/19 Workshop-10->Workshop-04:
+the task was added to the workshop Workshop-04
+ 260.26. Robot 05: the state was changed to BROKEN 
+ 286.84. Robot 05: the state was changed to active
+ 288.09. ROBOT 05: Moving to the workshop 2/19 started. Total distance: 39.00; route:
+Workshop-04->Workshop-01->Workshop-17->Workshop-18
+ALL ROUTES:
+Workshop-04 -> Workshop-01: 11.10
+Workshop-01 -> Workshop-17: 14.80
+Workshop-17 -> Workshop-18: 13.10
+------------------------------------------------------------------------------------------
+Moving along the route 1/3 Workshop-04->Workshop-01 with the distance 11.10 started
+ 291.54. ROBOT 05: the total distance 3.29/39.00
+along the route 1/3 Workshop-04->Workshop-01 (dist. 3.29/11.10) was gone
+ 294.98. ROBOT 05: the total distance 6.58/39.00
+along the route 1/3 Workshop-04->Workshop-01 (dist. 6.58/11.10) was gone
+ 298.43. ROBOT 05: the total distance 9.87/39.00
+along the route 1/3 Workshop-04->Workshop-01 (dist. 9.87/11.10) was gone
+ 301.87. ROBOT 05: the total distance 11.10/39.00
+along the route 1/3 Workshop-04->Workshop-01 (dist. 11.10/11.10) was gone
+ 303.16. ROBOT 05: the total distance 11.10/39.00
+along the route 2/3 Workshop-01->Workshop-17 (dist. 0.00/14.80) was gone
+ 306.61. ROBOT 05: the total distance 14.39/39.00
+along the route 2/3 Workshop-01->Workshop-17 (dist. 3.29/14.80) was gone
+ 310.05. ROBOT 05: the total distance 17.68/39.00
+along the route 2/3 Workshop-01->Workshop-17 (dist. 6.58/14.80) was gone
+ 313.50. ROBOT 05: the total distance 20.97/39.00
+along the route 2/3 Workshop-01->Workshop-17 (dist. 9.87/14.80) was gone
+ 316.94. ROBOT 05: the total distance 24.26/39.00
+along the route 2/3 Workshop-01->Workshop-17 (dist. 13.16/14.80) was gone
+ 320.39. ROBOT 05: the total distance 25.90/39.00
+along the route 2/3 Workshop-01->Workshop-17 (dist. 14.80/14.80) was gone
+ 322.10. ROBOT 05: the total distance 25.90/39.00
+along the route 3/3 Workshop-17->Workshop-18 (dist. 0.00/13.10) was gone
+ 325.55. ROBOT 05: the total distance 29.19/39.00
+along the route 3/3 Workshop-17->Workshop-18 (dist. 3.29/13.10) was gone
+ 328.99. ROBOT 05: the total distance 32.48/39.00
+along the route 3/3 Workshop-17->Workshop-18 (dist. 6.58/13.10) was gone
+ 332.44. ROBOT 05: the total distance 35.77/39.00
+along the route 3/3 Workshop-17->Workshop-18 (dist. 9.87/13.10) was gone
+ 335.88. ROBOT 05: the total distance 39.00/39.00
+along the route 3/3 Workshop-17->Workshop-18 (dist. 13.10/13.10) was gone
+ 339.26. ROBOT 05: finishing of the task 2/19 Workshop-04->Workshop-18:
+the workshop Workshop-18 was missed
+ 342.71. ROBOT 05: Moving to the workshop 2/19 started. Total distance: 51.60; route:
+Workshop-18->Workshop-17->Workshop-01->Workshop-05->Workshop-06
+ALL ROUTES:
+Workshop-18 -> Workshop-17: 13.10
+Workshop-17 -> Workshop-01: 14.80
+Workshop-01 -> Workshop-05: 11.20
+Workshop-05 -> Workshop-06: 12.50
+------------------------------------------------------------------------------------------
+Moving along the route 1/4 Workshop-18->Workshop-17 with the distance 13.10 started
+ 346.15. ROBOT 05: the total distance 3.29/51.60
+along the route 1/4 Workshop-18->Workshop-17 (dist. 3.29/13.10) was gone
+ 349.60. ROBOT 05: the total distance 6.58/51.60
+along the route 1/4 Workshop-18->Workshop-17 (dist. 6.58/13.10) was gone
+ 350.41. Robot 05: the state was changed to BROKEN 
+ 379.89. Robot 05: the state was changed to active
+ 383.33. ROBOT 05: the total distance 9.87/51.60
+along the route 1/4 Workshop-18->Workshop-17 (dist. 9.87/13.10) was gone
+ 386.78. ROBOT 05: the total distance 13.10/51.60
+along the route 1/4 Workshop-18->Workshop-17 (dist. 13.10/13.10) was gone
+ 390.16. ROBOT 05: the total distance 13.10/51.60
+along the route 2/4 Workshop-17->Workshop-01 (dist. 0.00/14.80) was gone
+ 393.60. ROBOT 05: the total distance 16.39/51.60
+along the route 2/4 Workshop-17->Workshop-01 (dist. 3.29/14.80) was gone
+ 397.05. ROBOT 05: the total distance 19.68/51.60
+along the route 2/4 Workshop-17->Workshop-01 (dist. 6.58/14.80) was gone
+ 400.49. ROBOT 05: the total distance 22.97/51.60
+along the route 2/4 Workshop-17->Workshop-01 (dist. 9.87/14.80) was gone
+ 403.94. ROBOT 05: the total distance 26.26/51.60
+along the route 2/4 Workshop-17->Workshop-01 (dist. 13.16/14.80) was gone
+ 407.38. ROBOT 05: the total distance 27.90/51.60
+along the route 2/4 Workshop-17->Workshop-01 (dist. 14.80/14.80) was gone
+ 409.10. ROBOT 05: the total distance 27.90/51.60
+along the route 3/4 Workshop-01->Workshop-05 (dist. 0.00/11.20) was gone
+ 412.55. ROBOT 05: the total distance 31.19/51.60
+along the route 3/4 Workshop-01->Workshop-05 (dist. 3.29/11.20) was gone
+ 415.99. ROBOT 05: the total distance 34.48/51.60
+along the route 3/4 Workshop-01->Workshop-05 (dist. 6.58/11.20) was gone
+ 419.44. ROBOT 05: the total distance 37.77/51.60
+along the route 3/4 Workshop-01->Workshop-05 (dist. 9.87/11.20) was gone
+ 422.88. ROBOT 05: the total distance 39.10/51.60
+along the route 3/4 Workshop-01->Workshop-05 (dist. 11.20/11.20) was gone
+ 424.27. ROBOT 05: the total distance 39.10/51.60
+along the route 4/4 Workshop-05->Workshop-06 (dist. 0.00/12.50) was gone
+ 427.72. ROBOT 05: the total distance 42.39/51.60
+along the route 4/4 Workshop-05->Workshop-06 (dist. 3.29/12.50) was gone
+ 431.16. ROBOT 05: the total distance 45.68/51.60
+along the route 4/4 Workshop-05->Workshop-06 (dist. 6.58/12.50) was gone
+ 434.61. ROBOT 05: the total distance 48.97/51.60
+along the route 4/4 Workshop-05->Workshop-06 (dist. 9.87/12.50) was gone
+ 438.05. ROBOT 05: the total distance 51.60/51.60
+along the route 4/4 Workshop-05->Workshop-06 (dist. 12.50/12.50) was gone
+ 440.81. ROBOT 05: finishing of the task 2/19 Workshop-18->Workshop-06:
+the workshop Workshop-06 was missed
+ 444.25. ROBOT 05: Moving to the workshop 2/19 started. Total distance: 47.10; route:
+Workshop-06->Workshop-09->Workshop-12
+ALL ROUTES:
+Workshop-06 -> Workshop-09: 11.70
+Workshop-09 -> Workshop-12: 35.40
+------------------------------------------------------------------------------------------
+Moving along the route 1/2 Workshop-06->Workshop-09 with the distance 11.70 started
+ 447.70. ROBOT 05: the total distance 3.29/47.10
+along the route 1/2 Workshop-06->Workshop-09 (dist. 3.29/11.70) was gone
+ 451.14. ROBOT 05: the total distance 6.58/47.10
+along the route 1/2 Workshop-06->Workshop-09 (dist. 6.58/11.70) was gone
+ 454.58. ROBOT 05: the total distance 9.87/47.10
+along the route 1/2 Workshop-06->Workshop-09 (dist. 9.87/11.70) was gone
+ 458.03. ROBOT 05: the total distance 11.70/47.10
+along the route 1/2 Workshop-06->Workshop-09 (dist. 11.70/11.70) was gone
+ 459.95. ROBOT 05: the total distance 11.70/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 0.00/35.40) was gone
+ 463.39. ROBOT 05: the total distance 14.99/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 3.29/35.40) was gone
+ 466.84. ROBOT 05: the total distance 18.28/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 6.58/35.40) was gone
+ 470.28. ROBOT 05: the total distance 21.57/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 9.87/35.40) was gone
+ 473.72. ROBOT 05: the total distance 24.86/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 13.16/35.40) was gone
+ 477.17. ROBOT 05: the total distance 28.15/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 16.45/35.40) was gone
+ 480.61. ROBOT 05: the total distance 31.44/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 19.74/35.40) was gone
+ 484.06. ROBOT 05: the total distance 34.73/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 23.03/35.40) was gone
+ 487.50. ROBOT 05: the total distance 38.02/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 26.32/35.40) was gone
+ 490.95. ROBOT 05: the total distance 41.31/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 29.61/35.40) was gone
+ 494.39. ROBOT 05: the total distance 44.60/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 32.90/35.40) was gone
+ 497.84. ROBOT 05: the total distance 47.10/47.10
+along the route 2/2 Workshop-09->Workshop-12 (dist. 35.40/35.40) was gone
+ 500.46. ROBOT 05: finishing of the task 2/19 Workshop-06->Workshop-12:
+the task was added to the workshop Workshop-12
+ 504.00. Robot 05: the state was changed to BROKEN 
+ 516.15. Robot 05: the state was changed to active
+ 573.20. ROBOT 05: Moving to the workshop 3/19 started. Total distance: 56.58; route:
+Workshop-12->Workshop-14->Workshop-15->Workshop-19->Workshop-20
+ALL ROUTES:
+Workshop-12 -> Workshop-14: 14.80
+Workshop-14 -> Workshop-15: 10.10
+Workshop-15 -> Workshop-19: 25.80
+Workshop-19 -> Workshop-20: 5.88
+------------------------------------------------------------------------------------------
+Moving along the route 1/4 Workshop-12->Workshop-14 with the distance 14.80 started
+ 576.64. ROBOT 05: the total distance 3.29/56.58
+along the route 1/4 Workshop-12->Workshop-14 (dist. 3.29/14.80) was gone
+ 580.09. ROBOT 05: the total distance 6.58/56.58
+along the route 1/4 Workshop-12->Workshop-14 (dist. 6.58/14.80) was gone
+ 581.40. Robot 05: the state was changed to BROKEN 
+ 591.86. Robot 05: the state was changed to active
+ 595.30. ROBOT 05: the total distance 9.87/56.58
+along the route 1/4 Workshop-12->Workshop-14 (dist. 9.87/14.80) was gone
+ 598.75. ROBOT 05: the total distance 13.16/56.58
+along the route 1/4 Workshop-12->Workshop-14 (dist. 13.16/14.80) was gone
+ 602.19. ROBOT 05: the total distance 14.80/56.58
+along the route 1/4 Workshop-12->Workshop-14 (dist. 14.80/14.80) was gone
+ 603.91. ROBOT 05: the total distance 14.80/56.58
+along the route 2/4 Workshop-14->Workshop-15 (dist. 0.00/10.10) was gone
+ 607.35. ROBOT 05: the total distance 18.09/56.58
+along the route 2/4 Workshop-14->Workshop-15 (dist. 3.29/10.10) was gone
+ 610.80. ROBOT 05: the total distance 21.38/56.58
+along the route 2/4 Workshop-14->Workshop-15 (dist. 6.58/10.10) was gone
+ 614.24. ROBOT 05: the total distance 24.67/56.58
+along the route 2/4 Workshop-14->Workshop-15 (dist. 9.87/10.10) was gone
+ 617.69. ROBOT 05: the total distance 24.90/56.58
+along the route 2/4 Workshop-14->Workshop-15 (dist. 10.10/10.10) was gone
+ 617.93. ROBOT 05: the total distance 24.90/56.58
+along the route 3/4 Workshop-15->Workshop-19 (dist. 0.00/25.80) was gone
+ 621.37. ROBOT 05: the total distance 28.19/56.58
+along the route 3/4 Workshop-15->Workshop-19 (dist. 3.29/25.80) was gone
+ 624.82. ROBOT 05: the total distance 31.48/56.58
+along the route 3/4 Workshop-15->Workshop-19 (dist. 6.58/25.80) was gone
+ 628.26. ROBOT 05: the total distance 34.77/56.58
+along the route 3/4 Workshop-15->Workshop-19 (dist. 9.87/25.80) was gone
+ 631.71. ROBOT 05: the total distance 38.06/56.58
+along the route 3/4 Workshop-15->Workshop-19 (dist. 13.16/25.80) was gone
+ 635.15. ROBOT 05: the total distance 41.35/56.58
+along the route 3/4 Workshop-15->Workshop-19 (dist. 16.45/25.80) was gone
+ 638.60. ROBOT 05: the total distance 44.64/56.58
+along the route 3/4 Workshop-15->Workshop-19 (dist. 19.74/25.80) was gone
+ 642.04. ROBOT 05: the total distance 47.93/56.58
+along the route 3/4 Workshop-15->Workshop-19 (dist. 23.03/25.80) was gone
+ 645.49. ROBOT 05: the total distance 50.70/56.58
+along the route 3/4 Workshop-15->Workshop-19 (dist. 25.80/25.80) was gone
+ 648.39. ROBOT 05: the total distance 50.70/56.58
+along the route 4/4 Workshop-19->Workshop-20 (dist. 0.00/5.88) was gone
+ 651.83. ROBOT 05: the total distance 53.99/56.58
+along the route 4/4 Workshop-19->Workshop-20 (dist. 3.29/5.88) was gone
+ 655.28. ROBOT 05: the total distance 56.58/56.58
+along the route 4/4 Workshop-19->Workshop-20 (dist. 5.88/5.88) was gone
+ 657.99. ROBOT 05: finishing of the task 3/19 Workshop-12->Workshop-20:
+the task was added to the workshop Workshop-20
+ 688.25. Robot 05: the state was changed to BROKEN 
+ 699.96. Robot 05: the state was changed to active
+ 704.08. ROBOT 05: Moving to the workshop 4/19 started. Total distance: 31.68; route:
+Workshop-20->Workshop-19->Workshop-15
+ALL ROUTES:
+Workshop-20 -> Workshop-19: 5.88
+Workshop-19 -> Workshop-15: 25.80
+------------------------------------------------------------------------------------------
+Moving along the route 1/2 Workshop-20->Workshop-19 with the distance 5.88 started
+ 707.52. ROBOT 05: the total distance 3.29/31.68
+along the route 1/2 Workshop-20->Workshop-19 (dist. 3.29/5.88) was gone
+ 710.97. ROBOT 05: the total distance 5.88/31.68
+along the route 1/2 Workshop-20->Workshop-19 (dist. 5.88/5.88) was gone
+ 713.68. ROBOT 05: the total distance 5.88/31.68
+along the route 2/2 Workshop-19->Workshop-15 (dist. 0.00/25.80) was gone
+ 717.13. ROBOT 05: the total distance 9.17/31.68
+along the route 2/2 Workshop-19->Workshop-15 (dist. 3.29/25.80) was gone
+ 720.57. ROBOT 05: the total distance 12.46/31.68
+along the route 2/2 Workshop-19->Workshop-15 (dist. 6.58/25.80) was gone
+ 724.02. ROBOT 05: the total distance 15.75/31.68
+along the route 2/2 Workshop-19->Workshop-15 (dist. 9.87/25.80) was gone
+ 727.46. ROBOT 05: the total distance 19.04/31.68
+along the route 2/2 Workshop-19->Workshop-15 (dist. 13.16/25.80) was gone
+ 730.91. ROBOT 05: the total distance 22.33/31.68
+along the route 2/2 Workshop-19->Workshop-15 (dist. 16.45/25.80) was gone
+ 734.35. ROBOT 05: the total distance 25.62/31.68
+along the route 2/2 Workshop-19->Workshop-15 (dist. 19.74/25.80) was gone
+ 737.79. ROBOT 05: the total distance 28.91/31.68
+along the route 2/2 Workshop-19->Workshop-15 (dist. 23.03/25.80) was gone
+ 741.24. ROBOT 05: the total distance 31.68/31.68
+along the route 2/2 Workshop-19->Workshop-15 (dist. 25.80/25.80) was gone
+ 744.14. ROBOT 05: finishing of the task 4/19 Workshop-20->Workshop-15:
+the workshop Workshop-15 was missed
+ 747.58. ROBOT 05: Moving to the workshop 4/19 started. Total distance: 10.10; route:
+Workshop-15->Workshop-14
+ALL ROUTES:
+Workshop-15 -> Workshop-14: 10.10
+------------------------------------------------------------------------------------------
+Moving along the route 1/1 Workshop-15->Workshop-14 with the distance 10.10 started
+ 751.03. ROBOT 05: the total distance 3.29/10.10
+along the route 1/1 Workshop-15->Workshop-14 (dist. 3.29/10.10) was gone
+ 754.47. ROBOT 05: the total distance 6.58/10.10
+along the route 1/1 Workshop-15->Workshop-14 (dist. 6.58/10.10) was gone
+ 757.92. ROBOT 05: the total distance 9.87/10.10
+along the route 1/1 Workshop-15->Workshop-14 (dist. 9.87/10.10) was gone
+ 761.36. ROBOT 05: the total distance 10.10/10.10
+along the route 1/1 Workshop-15->Workshop-14 (dist. 10.10/10.10) was gone
+ 761.60. ROBOT 05: finishing of the task 4/19 Workshop-15->Workshop-14:
+the task was added to the workshop Workshop-14
+ 770.15. Robot 05: the state was changed to BROKEN 
+ 785.70. Robot 05: the state was changed to active
+ 817.86. ROBOT 05: Moving to the workshop 5/19 started. Total distance: 40.10; route:
+Workshop-14->Workshop-12->Workshop-11
+ALL ROUTES:
+Workshop-14 -> Workshop-12: 14.80
+Workshop-12 -> Workshop-11: 25.30
+------------------------------------------------------------------------------------------
+Moving along the route 1/2 Workshop-14->Workshop-12 with the distance 14.80 started
+ 821.31. ROBOT 05: the total distance 3.29/40.10
+along the route 1/2 Workshop-14->Workshop-12 (dist. 3.29/14.80) was gone
+ 824.75. ROBOT 05: the total distance 6.58/40.10
+along the route 1/2 Workshop-14->Workshop-12 (dist. 6.58/14.80) was gone
+ 828.20. ROBOT 05: the total distance 9.87/40.10
+along the route 1/2 Workshop-14->Workshop-12 (dist. 9.87/14.80) was gone
+ 831.64. ROBOT 05: the total distance 13.16/40.10
+along the route 1/2 Workshop-14->Workshop-12 (dist. 13.16/14.80) was gone
+ 835.09. ROBOT 05: the total distance 14.80/40.10
+along the route 1/2 Workshop-14->Workshop-12 (dist. 14.80/14.80) was gone
+ 836.80. ROBOT 05: the total distance 14.80/40.10
+along the route 2/2 Workshop-12->Workshop-11 (dist. 0.00/25.30) was gone
+ 840.25. ROBOT 05: the total distance 18.09/40.10
+along the route 2/2 Workshop-12->Workshop-11 (dist. 3.29/25.30) was gone
+ 843.69. ROBOT 05: the total distance 21.38/40.10
+along the route 2/2 Workshop-12->Workshop-11 (dist. 6.58/25.30) was gone
+ 847.14. ROBOT 05: the total distance 24.67/40.10
+along the route 2/2 Workshop-12->Workshop-11 (dist. 9.87/25.30) was gone
+ 850.58. ROBOT 05: the total distance 27.96/40.10
+along the route 2/2 Workshop-12->Workshop-11 (dist. 13.16/25.30) was gone
+ 854.03. ROBOT 05: the total distance 31.25/40.10
+along the route 2/2 Workshop-12->Workshop-11 (dist. 16.45/25.30) was gone
+ 857.47. ROBOT 05: the total distance 34.54/40.10
+along the route 2/2 Workshop-12->Workshop-11 (dist. 19.74/25.30) was gone
+ 860.92. ROBOT 05: the total distance 37.83/40.10
+along the route 2/2 Workshop-12->Workshop-11 (dist. 23.03/25.30) was gone
+ 864.36. ROBOT 05: the total distance 40.10/40.10
+along the route 2/2 Workshop-12->Workshop-11 (dist. 25.30/25.30) was gone
+ 866.74. ROBOT 05: finishing of the task 5/19 Workshop-14->Workshop-11:
+the task was added to the workshop Workshop-11
+ 879.04. Robot 05: the state was changed to BROKEN 
+ 894.47. Robot 05: the state was changed to active
+ 951.60. ROBOT 05: Moving to the workshop 6/19 started. Total distance: 44.79; route:
+Workshop-11->Workshop-10->Workshop-09->Workshop-06->Workshop-05
+ALL ROUTES:
+Workshop-11 -> Workshop-10: 12.80
+Workshop-10 -> Workshop-09: 7.79
+Workshop-09 -> Workshop-06: 11.70
+Workshop-06 -> Workshop-05: 12.50
+------------------------------------------------------------------------------------------
+Moving along the route 1/4 Workshop-11->Workshop-10 with the distance 12.80 started
+ 955.05. ROBOT 05: the total distance 3.29/44.79
+along the route 1/4 Workshop-11->Workshop-10 (dist. 3.29/12.80) was gone
+ 958.49. ROBOT 05: the total distance 6.58/44.79
+along the route 1/4 Workshop-11->Workshop-10 (dist. 6.58/12.80) was gone
+ 961.94. ROBOT 05: the total distance 9.87/44.79
+along the route 1/4 Workshop-11->Workshop-10 (dist. 9.87/12.80) was gone
+ 965.38. ROBOT 05: the total distance 12.80/44.79
+along the route 1/4 Workshop-11->Workshop-10 (dist. 12.80/12.80) was gone
+ 968.45. ROBOT 05: the total distance 12.80/44.79
+along the route 2/4 Workshop-10->Workshop-09 (dist. 0.00/7.79) was gone
+ 971.90. ROBOT 05: the total distance 16.09/44.79
+along the route 2/4 Workshop-10->Workshop-09 (dist. 3.29/7.79) was gone
+ 975.34. ROBOT 05: the total distance 19.38/44.79
+along the route 2/4 Workshop-10->Workshop-09 (dist. 6.58/7.79) was gone
+ 978.79. ROBOT 05: the total distance 20.59/44.79
+along the route 2/4 Workshop-10->Workshop-09 (dist. 7.79/7.79) was gone
+ 980.05. ROBOT 05: the total distance 20.59/44.79
+along the route 3/4 Workshop-09->Workshop-06 (dist. 0.00/11.70) was gone
+ 983.50. ROBOT 05: the total distance 23.88/44.79
+along the route 3/4 Workshop-09->Workshop-06 (dist. 3.29/11.70) was gone
+ 986.94. ROBOT 05: the total distance 27.17/44.79
+along the route 3/4 Workshop-09->Workshop-06 (dist. 6.58/11.70) was gone
+ 990.39. ROBOT 05: the total distance 30.46/44.79
+along the route 3/4 Workshop-09->Workshop-06 (dist. 9.87/11.70) was gone
+ 993.83. ROBOT 05: the total distance 32.29/44.79
+along the route 3/4 Workshop-09->Workshop-06 (dist. 11.70/11.70) was gone
+ 995.75. ROBOT 05: the total distance 32.29/44.79
+along the route 4/4 Workshop-06->Workshop-05 (dist. 0.00/12.50) was gone
+ 999.19. ROBOT 05: the total distance 35.58/44.79
+along the route 4/4 Workshop-06->Workshop-05 (dist. 3.29/12.50) was gone

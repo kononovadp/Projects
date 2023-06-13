@@ -1,0 +1,35 @@
+ 158.08. Workshop 10: the state was changed to BROKEN 
+ 182.31. Workshop 10: the state was changed to active
+ 252.06. Workshop 10: the state was changed to BROKEN 
+ 282.07. Workshop 10: the state was changed to active
+ 389.96. Workshop 10: the state was changed to BROKEN 
+ 401.61. Workshop 10: the state was changed to active
+ 490.08. Workshop 10: the state was changed to BROKEN 
+ 500.99. Workshop 10: the state was changed to active
+ 520.67. WORKSHOP 10: the task 1/1 was executed for 20.00% (9.54/47.69)
+ 530.20. WORKSHOP 10: the task 1/1 was executed for 40.00% (19.08/47.69)
+ 539.74. WORKSHOP 10: the task 1/1 was executed for 60.00% (28.62/47.69)
+ 549.28. WORKSHOP 10: the task 1/1 was executed for 80.00% (38.16/47.69)
+ 558.82. WORKSHOP 10: the task 1/1 was executed for 100.00% (47.69/47.69)
+ 568.36. WORKSHOP 10: the task 1/1 (robot 0, work time 47.69) was finished
+ 625.21. Workshop 10: the state was changed to BROKEN 
+ 640.92. Workshop 10: the state was changed to active
+ 745.94. WORKSHOP 10: the task 1/1 was executed for 20.00% (1.98/9.89)
+ 747.91. WORKSHOP 10: the task 1/1 was executed for 40.00% (3.96/9.89)
+ 749.89. WORKSHOP 10: the task 1/1 was executed for 60.00% (5.94/9.89)
+ 751.87. WORKSHOP 10: the task 1/1 was executed for 80.00% (7.91/9.89)
+ 753.85. WORKSHOP 10: the task 1/1 was executed for 100.00% (9.89/9.89)
+ 755.83. WORKSHOP 10: the task 1/1 (robot 4, work time 9.89) was finished
+ 758.40. Workshop 10: the state was changed to BROKEN 
+ 767.23. Workshop 10: the state was changed to active
+ 826.12. WORKSHOP 10: the task 1/1 was executed for 20.00% (0.90/4.52)
+ 827.02. WORKSHOP 10: the task 1/1 was executed for 40.00% (1.81/4.52)
+ 827.93. WORKSHOP 10: the task 1/1 was executed for 60.00% (2.71/4.52)
+ 828.83. WORKSHOP 10: the task 1/1 was executed for 80.00% (3.62/4.52)
+ 829.74. WORKSHOP 10: the task 1/1 was executed for 100.00% (4.52/4.52)
+ 830.64. WORKSHOP 10: the task 1/1 (robot 9, work time 4.52) was finished
+ 872.95. Workshop 10: the state was changed to BROKEN 
+ 888.44. Workshop 10: the state was changed to active
+ 986.35. WORKSHOP 10: the task 1/1 was executed for 20.00% (5.39/26.93)
+ 991.74. WORKSHOP 10: the task 1/1 was executed for 40.00% (10.77/26.93)
+ 997.12. WORKSHOP 10: the task 1/1 was executed for 60.00% (16.16/26.93)

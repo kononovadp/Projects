@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="project1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="414"/>
+        <CursorPos Y="157"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="9" HistoryIndex="8">
+      <Position1>
+        <Filename Value="project1.pas"/>
+        <Caret Line="378" TopLine="358"/>
+      </Position1>
+      <Position2>
+        <Filename Value="project1.pas"/>
+        <Caret Line="373" Column="33" TopLine="353"/>
+      </Position2>
+      <Position3>
+        <Filename Value="project1.pas"/>
+        <Caret Line="377" Column="67" TopLine="357"/>
+      </Position3>
+      <Position4>
+        <Filename Value="project1.pas"/>
+        <Caret Line="429" Column="48" TopLine="359"/>
+      </Position4>
+      <Position5>
+        <Filename Value="project1.pas"/>
+        <Caret Line="65" Column="14" TopLine="37"/>
+      </Position5>
+      <Position6>
+        <Filename Value="project1.pas"/>
+        <Caret Line="331" Column="28" TopLine="302"/>
+      </Position6>
+      <Position7>
+        <Filename Value="project1.pas"/>
+        <Caret Line="64" Column="29" TopLine="40"/>
+      </Position7>
+      <Position8>
+        <Filename Value="project1.pas"/>
+        <Caret Line="156" Column="19" TopLine="129"/>
+      </Position8>
+      <Position9>
+        <Filename Value="project1.pas"/>
+        <Caret Line="437" TopLine="549"/>
+      </Position9>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

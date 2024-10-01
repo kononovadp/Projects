@@ -1,1 +1,0 @@
-int substr(char s1[],char s2[]);

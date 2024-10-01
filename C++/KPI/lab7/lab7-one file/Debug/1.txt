@@ -1,8 +1,0 @@
-5;Nikolaev;22.20
-4;Kiev;23.00
-6;Nikolaev;16.00
-2;Odessa;18.00
-7;Lviv;21.20
-8;Nikolaev;23.00
-3;Kiev;16.00
-9;Zaporizhia;18.00

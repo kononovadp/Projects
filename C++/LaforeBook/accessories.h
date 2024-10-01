@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <conio.h>
+#include <sstream>
+#include <cfloat>
+#include <cstring>
+using namespace std;
+const int FloatingPointNumberPrecision=2;
+void InitFloatingPointAndRandomNumbers();
+//int GetCountOfDigits(int n);
+template <class AnyNumber>
+int GetCountOfDigits(AnyNumber number)
+{
+	int i=0;
+	while(number>0)
+	{
+		number/=10;
+		i++;
+	}
+	return i;
+}
+int GetRandomInt(int min,int max);
+float GetRandomFloat(float min,float max);
+double GetRandomDouble(double min, double max);
+char GetRandomChar(char min,char max);
+void ShuffleArrayOfCharacters(char* array);
+void ShuffleArrayOfIntegers(int* array,int ArraySize);
+void ShuffleString(string& str);
+string GetKeyboardInputAsString();
+string GetKeyboardInputAsString(char* ExcludedCharacters);
+char* GetKeyboardInputAsArrayOfChars();
+int GetIntFromKeyboard();
+int GetIntFromKeyboard(int MinInt,int MaxInt);
+long GetLongFromKeyboard();
+long GetLongFromKeyboard(long MinInt,long MaxInt);
+float GetFloatFromKeyboard();
+long double GetLongDoubleFromKeyboard();

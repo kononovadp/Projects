@@ -1,0 +1,24 @@
+1. а, в;
+2. x3=minus(x2,x1) /x3.minus(x2,x1);
+3. x3=x2-x1;
+4. да;
+5. void operator--(){count--;}
+6. 0;
+7. б, г;
+8. void operator++(){++feet;}
+9. Distance Distance::operator++(){feet++; inches++;} /
+Distance Distance::operator ++(){int f=++feet;float i=inches; return Distance(f,i);}
+11. в, г, б, а, д / в, д, б, а, г;
+12. да;
+13. б, в;
+14. for(int i=0; i<strlen(str); i++) str[i]=toupper(str[i]);
+15. г;
+16. да;
+17. б;
+18. да;
+19. конструктор;
+20. да;
+21. г;
+22. атрибутами, операторами;
+23. нет;
+24. а.

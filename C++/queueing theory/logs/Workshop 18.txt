@@ -1,0 +1,26 @@
+ 171.97. Workshop 18: the state was changed to BROKEN 
+ 215.71. Workshop 18: the state was changed to active
+ 289.91. WORKSHOP 18: the task 1/1 was executed for 20.00% (3.18/15.90)
+ 291.50. Workshop 18: the state was changed to BROKEN 
+ 362.31. Workshop 18: the state was changed to active
+ 365.49. WORKSHOP 18: the task 1/1 was executed for 40.00% (6.36/15.90)
+ 368.67. WORKSHOP 18: the task 1/1 was executed for 60.00% (9.54/15.90)
+ 371.85. WORKSHOP 18: the task 1/1 was executed for 80.00% (12.72/15.90)
+ 375.03. WORKSHOP 18: the task 1/1 was executed for 100.00% (15.90/15.90)
+ 378.20. WORKSHOP 18: the task 1/1 (robot 6, work time 15.90) was finished
+ 452.66. Workshop 18: the state was changed to BROKEN 
+ 473.20. Workshop 18: the state was changed to active
+ 569.44. Workshop 18: the state was changed to BROKEN 
+ 598.76. Workshop 18: the state was changed to active
+ 655.01. Workshop 18: the state was changed to BROKEN 
+ 685.04. Workshop 18: the state was changed to active
+ 790.47. Workshop 18: the state was changed to BROKEN 
+ 814.60. Workshop 18: the state was changed to active
+ 822.48. WORKSHOP 18: the task 1/1 was executed for 20.00% (6.95/34.75)
+ 829.43. WORKSHOP 18: the task 1/1 was executed for 40.00% (13.90/34.75)
+ 836.38. WORKSHOP 18: the task 1/1 was executed for 60.00% (20.85/34.75)
+ 843.33. WORKSHOP 18: the task 1/1 was executed for 80.00% (27.80/34.75)
+ 850.27. WORKSHOP 18: the task 1/1 was executed for 100.00% (34.75/34.75)
+ 857.22. WORKSHOP 18: the task 1/1 (robot 2, work time 34.75) was finished
+ 887.92. Workshop 18: the state was changed to BROKEN 
+ 911.95. Workshop 18: the state was changed to active

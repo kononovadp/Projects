@@ -1,0 +1,6 @@
+https://www.w3.org/Style/Examples/007/center.ru.html#text
+http://chikuyonok.ru/2009/06/float-columns/
+https://גובהזול.נפ/css/kolonki-odnoj-vysoty-css-kak-sverstat-2-kolonki-s-raznym-fonom-neizvestnym-kolichestvom-kontenta-i-100-vysoty-minimum.html
+https://russianblogs.com/article/21261602259/
+https://matthewjamestaylor.com/equal-height-columns
+https://ru.stackoverflow.com/questions/812297/%D0%9A%D0%B0%D0%BA-%D0%BD%D0%B0-css-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-img-%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B8-div-%D0%BF%D0%BE-%D0%B2%D0%B5%D1%80%D1%82%D0%B8%D0%BA%D0%B0%D0%BB%D0%B8-%D0%B8-%D0%B3%D0%BE%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D1%82%D0%B0%D0%BB%D0%B8

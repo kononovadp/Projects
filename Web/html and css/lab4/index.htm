@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Autorepair</title>
+		<meta charset="UTF8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<script>
+		function SelectSlide(RadioButton)
+		{
+			const promise = new Promise(resolve =>
+			{
+				setTimeout(() => resolve(1),10);
+			});
+			promise.then(value =>
+			{
+				RadioButton.checked=false;
+				return new Promise(resolve=>
+				{
+					setTimeout(() => resolve(1),10);
+				});
+			})
+			.then(value =>
+			{
+				RadioButton.checked=true;
+			})
+		}
+	</script>	
+	<style>		
+		input,button {border:0;outline:0;}
+		body
+		{			
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			flex-direction: column;
+			margin: 0px;
+		}
+		:root{--HeadlineHeight: 100px;}		
+		.headline
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			padding-top: calc(var(--HeadlineHeight) / 4);
+			padding-bottom: calc(var(--HeadlineHeight) / 4);
+			background: black;
+		}
+		.HeadlineContent
+		{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			width: 930px;
+			padding-left: 15px;
+			padding-right: 15px;
+			background: black;
+		}
+		.CompanyName
+		{
+			display: flex;
+			padding-left: 0px;
+			margin-right: auto;
+			width: 10ch;			
+			font-size: calc(var(--HeadlineHeight) / 4);
+			font-family: Arial;
+			font-weight: bold;
+			text-decoration: none;
+			color: white;
+		}
+		.CompanyName:hover{color: black;}
+		.address,.CallUs
+		{
+			font-size: calc(var(--HeadlineHeight) / 8);
+			font-family: Arial;
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			height: calc(var(--HeadlineHeight) / 3 + 2px);
+			color: white;
+		}
+		.address{width: calc(21ch + 10px + var(--HeadlineHeight) / 3);}
+		.CallUs{width: calc(17ch + 10px + var(--HeadlineHeight) / 3);}
+		.ArrowFrame
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: 0px;
+			height: calc(var(--HeadlineHeight) / 3);
+			width: calc(var(--HeadlineHeight) / 3);
+			border-radius: 100%;
+			border: 1px solid #f79f24;
+		}
+		.SocialMedia
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;			
+			width: var(--HeadlineHeight);
+			height: calc(var(--HeadlineHeight) / 4);
+		}
+		.SocialMediaIconFrame
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: calc(var(--HeadlineHeight) / 4);
+			height: calc(var(--HeadlineHeight) / 4);
+			border-radius: 100%;
+		}
+		.SocialMediaIconFrame:hover{background: #f79f24;}
+		.SocialMediaIcon{height: calc(var(--HeadlineHeight) / 8);}				
+		.MainMenu
+		{			
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: calc(100% - 30px);
+			background: white;
+			z-index: 0;
+		}
+		.MainMenuContent
+		{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			height: calc(var(--HeadlineHeight) / 2);
+			width: 930px;
+		}
+		.MainMenuItems
+		{
+			display: flex;
+			flex-direction: row;			
+			height: 100%;
+			justify-content: space-between;
+		}
+		.MainMenuItem
+		{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			position: relative;
+			height: auto;
+			margin-top: 0px;
+			text-decoration: none;
+			color: black;
+			font-size: calc(var(--HeadlineHeight) / 8);
+			font-family: Arial;
+			font-weight: bold;			
+			padding-left: 3ch;
+			padding-right: 3ch;
+		}
+		.MainMenuItem::before
+		{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: calc(var(--HeadlineHeight) / 2);
+			background-color: #f79f24;
+			z-index: -1;
+			opacity: 0;
+			visibility: hidden;
+			transform: scale3d(0, 1, 0);
+			transition: 0.25s;
+		}
+		.MainMenuItem:hover
+		{
+			color: black;
+		}
+		.MainMenuItem:hover::before
+		{
+			opacity: 1;
+			transform: scale3d(1, 1, 1);
+			visibility: visible;
+		}
+		.search,.SearchInHamburgerMenu
+		{
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			font-size: calc(var(--HeadlineHeight) / 7);
+			font-family: Arial;
+			font-weight: bold;
+			height: calc(100% - 5px);
+			width: calc(32ch + 40px);			
+			background: #f2f2f2;
+			border-radius: 10px;
+		}
+		.SearchInHamburgerMenu
+		{
+			width: auto;
+			background: #b3b3b3;
+			flex-wrap: wrap;
+		}
+		.SearchField,.SearchFieldInHamburgerMenu
+		{			
+			font-size: calc(var(--HeadlineHeight) / 7);
+			font-family: Arial;
+			width: 32ch;
+			margin-left: 1ch;
+			background: #f2f2f2;			
+		}
+		.SearchFieldInHamburgerMenu
+		{
+			width: auto;
+			background: #b3b3b3;			
+		}
+		.SearchButton,.SearchButtonInHamburgerMenu
+		{
+			width: 46px;			
+			height: 100%;
+			border-radius: 10px;
+			background: #f2f2f2;
+		}
+		.SearchButtonInHamburgerMenu{background: #b3b3b3;}
+		.HamburgerMenu
+		{
+			display: none;
+			flex-direction: column;
+			align-items: start;
+			justify-content: start;
+			font-size: calc(var(--HeadlineHeight) / 4);
+			font-family: Arial;
+			font-weight: bold;
+		}
+		.HamburgerMenuItem
+		{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			color: #b3b3b3;
+			font-family: Arial;
+			font-size: calc(var(--HeadlineHeight) / 7);			
+			font-weight: bold;
+		}
+		.HamburgerMenuItem:hover{color: white}
+		#MenuToggle:checked ~ .HamburgerMenu{display: flex;}
+		.MenuToggleImage
+		{
+			background-image: url(images/fa-bars.svg);
+			background-position: left center;
+			background-size: 25px 25px;
+			height: inherit;
+			background-repeat: no-repeat;
+		}
+		.MenuToggleText
+		{
+			color: #808080;
+			margin-left: calc(var(--HeadlineHeight) / 4 + 0.5ch);
+			font-size: calc(var(--HeadlineHeight) / 4);
+			font-family: Arial;
+			font-weight: bold;
+		}
+		.slider
+		{
+			display: flex;			
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+		}
+		.slide
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			padding-top: 25%;
+			padding-bottom: 25%;
+			background-size: cover;	
+		}
+		#slide1 {background-image: url("images/SliderImage1.jpg");}
+		#slide2 {background-image: url("images/SliderImage2.jpg");}
+		@keyframes slide1anim
+		{
+			0%,10%,20%,30%,40%,50% {position: static;}
+			60%,70%,80%,90%,100% {position: absolute; top: -10000px;}
+		}
+		#CheckBox1:checked ~ #slide1 {animation: slide1anim 10000ms infinite;}
+		@keyframes slide2anim
+		{
+			0%,10%,20%,30%,40%,50% {position: absolute; top: -10000px;}
+			60%,70%,80%,90%,100% {position: static;}
+		}
+		#CheckBox1:checked ~ #slide2 {animation: slide2anim 10000ms infinite;}		
+		@keyframes slide3anim
+		{
+			0%,10%,20%,30%,40%,50% {position: absolute; top: -10000px;}
+			60%,70%,80%,90%,100% {position: static;}
+		}
+		#CheckBox2:checked ~ #slide1 {animation: slide3anim 10000ms infinite;}
+		@keyframes slide4anim
+		{
+			0%,10%,20%,30%,40%,50% {position: static;}
+			60%,70%,80%,90%,100% {position: absolute; top: -10000px;}
+		}
+		#CheckBox2:checked ~ #slide2 {animation: slide4anim 10000ms infinite;}
+		.SlideText
+		{
+			width: 930px;
+			padding-left: 15px;
+			padding-right: 15px;
+			user-select: none;		
+		}
+		.TopText
+		{
+			font-size: 16px;
+			letter-spacing: 4px;
+			color: #f79f24;
+			font-family: "Poppins",Arial,sans-serif;
+			margin-bottom: 15px;
+		}
+		.MiddleText
+		{
+			font-family: "Poppins",Arial,sans-serif;
+			font-size: 40px;
+			color: white;
+			font-weight: 600;
+			margin: 0px;
+		}
+		.BookAnAppointment
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			max-width: 156px;
+			margin-top: 15px;
+			background: #f79f24;
+			border: 1px solid #f79f24;
+			color: white;			
+			padding: 12px 16px;
+			padding-top: 12px;
+			padding-right: 16px;
+			padding-bottom: 12px;
+			padding-left: 16px;
+			cursor: pointer;
+			border-radius: 4px;
+			-webkit-box-shadow: none !important;
+			box-shadow: none !important;
+			font-size: 11px;
+			letter-spacing: 1px;
+			font-weight: 600;
+			text-align: center;
+			text-decoration: none;
+		}
+		.BookAnAppointment:hover {background: transparent;}
+		.BulletsWrapper
+		{			
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 20px;			
+			z-index: 30;
+			margin-top: -75px;
+		}
+		.bullets
+		{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 20px;
+			width: 50px;
+		}		
+		.bullet
+		{
+			cursor: pointer;
+			display: block;
+			width: 20px;
+			height: 20px;
+			margin: 0px;
+			border-radius: 50%;
+			border: 2px solid black;
+			background: transparent;
+		}
+		#CheckBox1:checked ~ .BulletsWrapper .bullets #bullet1 {background: white;}
+		#CheckBox2:checked ~ .BulletsWrapper .bullets #bullet2 {background: white;}
+		@keyframes bullet1
+		{
+			0%,10%,20%,30%,40%,50%{background: white;}
+			60%,70%,80%,90%,100%{background: transparent;}
+		}
+		#CheckBox1:checked ~ .BulletsWrapper .bullets #bullet1 {animation: bullet1 10000ms infinite 0ms;}
+		#CheckBox1:checked ~ .BulletsWrapper .bullets #bullet2 {animation: bullet1 10000ms infinite 5000ms;}
+		@keyframes bullet2
+		{
+			0%,10%,20%,30%,40%,50%{background: transparent;}
+			60%,70%,80%,90%,100%{background: white;}
+		}
+		#CheckBox2:checked ~ .BulletsWrapper .bullets #bullet1 {animation: bullet2 10000ms infinite 0ms;}
+		#CheckBox2:checked ~ .BulletsWrapper .bullets #bullet2 {animation: bullet2 10000ms infinite 5000ms;}
+		.BeforeSlideFooter
+		{
+			width: 100%;
+			height: 90px;
+			margin-top: -90px;
+			background: linear-gradient(to right, #064ACB 50%, transparent 50%);
+		}
+		.SlideFooter
+		{
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			align-items: center;
+			justify-content: start;
+			width: 930px;
+			max-width: 100%;
+			margin-top: 10px;			
+			z-index: 1;
+		}
+		.BluePart
+		{
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			flex-wrap: wrap;
+			width: 457.5px;
+			max-width: 100%;
+			height: 90px;			
+			background: #064ACB;
+		}
+		.BluePartIconFrame
+		{
+			display: flex;			
+			align-items: center;
+			justify-content: center;
+			width: 50px;
+			height: 50px;
+			border: 2px solid #0062CC;
+			border-radius: 100%;
+		}
+		.BluePartText
+		{			
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;			
+			max-width: 457.5px;
+			font-size: 18px;
+			color: white;
+			margin-left: 2ch;
+			background: #064ACB;
+		}
+		.BluePartBookAnAppointment
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #f79f24;			
+			text-decoration: none;
+			width: 240px;
+			height: 90px;
+			color: black;
+		}
+		.BluePartBookAnAppointment:hover {background: #0062CC;}		
+		@media(min-device-width: 1000px)
+		{
+			.MainMenuContent{display: flex;}			
+			.MenuToggleImage{display: none;}
+			.HamburgerMenuItem{display: none;}
+			.SearchInHamburgerMenu{display: none;}
+			.MainMenu
+			{
+				background: white;
+				align-items: center;
+			}
+			#MenuToggle{display: none; padding-left: 15px; padding-right: 15px;}
+		}
+		@media(max-device-width: 990px)
+		{
+			.MainMenuContent{display: none}			
+			.MainMenu
+			{
+				background: black;
+				align-items: start;				
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			#MenuToggle{display: flex;}
+			.HeadlineContent
+			{			
+				padding-left: 7.5px;
+				padding-right: 7.5px;
+				width: calc(100% - 30px);
+			}
+			.headline {padding: 0px;}			
+			.BluePart {padding-left: 15px; padding-right: 15px;}
+		}				
+		@media(max-device-width: 740px)
+		{
+			.BluePart {width: auto;}
+		}
+		@media(max-device-width: 600px)
+		{
+			.BluePart {width: 240px;}
+			.BluePartText {flex: 1; justify-content: start;}
+		}
+		@media(max-device-width: 530px)
+		{
+			.BluePart {width: 100%; max-width: 100%;}
+			.BluePartBookAnAppointment {width: 100%; max-width: 100%;}
+		}
+		@media(max-device-width: 400px)
+		{
+			.SlideFooter {margin-top: 5px;}
+			.BeforeSlideFooter {display: none;}
+			.BulletsWrapper {margin-top: -45px;}
+		}
+	</style>
+	<body>
+		<div class="headline">
+			<div class="HeadlineContent">
+				<div class="CompanyName">
+					<a href="https://preview.colorlib.com/#autorepair" target="_blank" class="CompanyName" style="margin: 0px;">
+						Autorepair<span style="color: #f79f24; font-family: Times;">.</span>
+					</a>
+				</div>			
+				<div class="address">
+					<div class="ArrowFrame">
+						<img class="SocialMediaIcon" src="images\fa-location-arrow.svg">
+					</div>
+					<p style="position: absolute; margin-left: calc(var(--HeadlineHeight) / 3 + 10px);"><span style="color: #808080;">Address</span></br>721 New York NY 10016</p>
+				</div>
+				<div class="CallUs">
+					<div class="ArrowFrame">
+						<img class="SocialMediaIcon" src="images\fa-location-arrow.svg">
+					</div>
+					<p style="position: absolute; margin-left: calc(var(--HeadlineHeight) / 3 + 10px);"><span style="color: #808080;">Call us</span></br>(+01) 123 456 7890</p>
+				</div>			
+				<div class="SocialMedia">
+					<a href="https://facebook.com/" target="_blank">
+						<div class="SocialMediaIconFrame">					
+							<img class="SocialMediaIcon" src="images\fa-facebook.svg">
+						</div>
+					</a>
+					<a href="https://twitter.com" target="_blank">
+						<div class="SocialMediaIconFrame">					
+							<img class="SocialMediaIcon" src="images\fa-twitter.svg">
+						</div>
+					</a>
+					<a href="https://instagram.com/" target="_blank">
+						<div class="SocialMediaIconFrame">					
+							<img class="SocialMediaIcon" src="images\fa-instagram.svg">
+						</div>
+					</a>
+					<a href="https://dribbble.com/" target="_blank">
+						<div class="SocialMediaIconFrame">					
+							<img class="SocialMediaIcon" src="images\fa-dribbble.svg">
+						</div>
+					</a>
+				</div>
+			</div>			
+		</div>
+		<div class="MainMenu">
+			<input id="MenuToggle" type="checkbox" style="display: none;">
+			<label for="MenuToggle" class="MenuToggleImage">
+				<div class="MenuToggleText">MENU</div>
+			</label>
+			<div class="HamburgerMenu">
+				<a href="index.htm" class="HamburgerMenuItem" style="color:#f79f24">HOME</a>
+				<a href="about.htm" class="HamburgerMenuItem">ABOUT</a>
+				<a href="team.htm" class="HamburgerMenuItem">TEAM</a>
+				<a href="services.htm" class="HamburgerMenuItem">SERVICES</a>
+				<a href="project.htm" class="HamburgerMenuItem">PROJECT</a>
+				<a href="blog.htm" class="HamburgerMenuItem">BLOG</a>
+				<a href="contact.htm" class="HamburgerMenuItem">CONTACT</a>
+				<div class="SearchInHamburgerMenu">
+					<input class="SearchFieldInHamburgerMenu" type="text" placeholder="Search"></input>
+					<button class="SearchButtonInHamburgerMenu" onClick="SearchAction()">
+						<img src="images/fa-search.svg"/ style="height: 25px;">
+					</button>
+				</div>
+			</div>
+			<div class="MainMenuContent">
+				<div class="MainMenuItems">
+					<a href="index.htm" class="MainMenuItem" style="background: #f79f24; color: white;">HOME</a>
+					<a href="about.htm" class="MainMenuItem" data-content="ABOUT">ABOUT</a>
+					<a href="team.htm" class="MainMenuItem">TEAM</a>
+					<a href="services.htm" class="MainMenuItem">SERVICES</a>
+					<a href="project.htm" class="MainMenuItem">PROJECT</a>
+					<a href="blog.htm" class="MainMenuItem">BLOG</a>
+					<a href="contact.htm" class="MainMenuItem">CONTACT</a>
+				</div>
+				<div class="search">
+					<input class="SearchField" type="text" placeholder="Search"></input>
+					<button class="SearchButton" onClick="SearchAction()">
+						<img src="images/fa-search.svg"/ style="height: 25px;">
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="slider">
+			<input type="radio" name="CheckBox" class="CheckBox" id="CheckBox1" hidden="" onclick="SelectSlide(this)" checked />
+			<input type="radio" name="CheckBox" class="CheckBox" id="CheckBox2" hidden="" onclick="SelectSlide(this)" />
+			<div class="slide slide1" id="slide1">
+				<div class="SlideText">
+					<p class="TopText">WE ARE BEST CAR REPAIR SERVICES</p>
+					<p class="MiddleText">Make your car last</br>longer</p>
+					<a class="BookAnAppointment" href="#">BOOK AN APPOINTMENT</a>
+				</div>
+			</div>
+			<div class="slide slide2" id="slide2">
+				<div class="SlideText">
+					<p class="TopText">WE CARE ABOUT YOUR CAR</p>
+					<p class="MiddleText">It's time to come to</br>repair your car</p>
+					<a class="BookAnAppointment" href="#">BOOK AN APPOINTMENT</a>
+				</div>
+			</div>
+			<div class="BulletsWrapper">
+				<div class="bullets">
+					<label for="CheckBox1" class="bullet" id="bullet1"></label>
+					<label for="CheckBox2" class="bullet" id="bullet2"></label>
+				</div>
+			</div>
+			<div class="SlideFooter">
+				<div class="BluePart">
+					<div class="BluePartIconFrame">
+						<img src="images\flaticon-repair.svg" style="width: 24px; height: 24px;" />
+					</div>
+					<div class="BluePartText">Are you ready?&nbsp;<span style="color:#6A93E0;">Let's repair it now!</span></div>
+				</div>
+				<a href="#" class="BluePartBookAnAppointment">BOOK AN APPOINTMENT</a>
+			</div>
+			<div class="BeforeSlideFooter"></div>
+		</div>
+	</body>
+</html>

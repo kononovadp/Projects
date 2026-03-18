@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Кононов М. А., ЗПІ-01</title>
+	</head>
+	<style>
+		.FlexRows
+		{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			display: flex;
+			flex-direction: column;
+		}
+		.HeadContainer
+		{
+			width: 100%;
+			background-color: #74d7f4;
+		}
+		.HeadAndFooterText
+		{
+			text-align:center;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size:28px;
+		}
+		.FlexColumns
+		{
+			display: flex;
+			flex-direction: row;
+		}		
+		.LeftImageContainer,.CentralImageContainer,.RightTextContainer
+		{		
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.LeftImageContainer,.RightTextContainer
+		{
+			width: 30%;
+		}
+		.LeftImageContainer
+		{
+			background-color: #94f8b2;
+		}
+		.CentralImageContainer
+		{
+			width: 40%;
+			background-color: #f7f793;
+		}	
+		.RightTextContainer
+		{
+			background-color: #f094f7;
+		}
+		img
+		{
+			max-width:100%;
+		}	
+		p
+		{		
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+		.RightText
+		{
+			text-align: center;		
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size:18px;
+		}
+		.footer
+		{
+			background-color: #f8e2b0;
+		}
+	</style>
+	<body>
+		<div class="FlexRows">
+			<div class=HeadContainer>
+				<div class="HeadAndFooterText">Миколаїв отримав почесну відзнаку "Місто-герой".</div>
+			</div>
+			<div class="FlexColumns">
+				<div class="LeftImageContainer">
+					<img src="lab3-img1.jpg"/>
+				</div>		
+				<div class="CentralImageContainer">
+					<img src="lab3-img2.jpg"/>
+				</div>
+				<div class="RightTextContainer">			
+					<div class="RightText">
+						<p>Про це у нічному відеозверненні 25 березня повідомив президент Володимир Зеленський.</p>
+						<p>"Я підписав декілька дуже важливих указів. Про присвоєння почесної відзнаки "Місто-герой України" ще чотирьом містам: Буча, Ірпінь, Охтирка, Миколаїв", — сказав Володимир Зеленський.</p>
+						<p>"З метою відзначення подвигу, масового героїзму та стійкості громадян, виявлених у захисті своїх міст під час відсічі збройній агресії Російської Федерації проти України, постановляю: присвоїти почесну відзнаку "Місто-герой України" таким містам: Буча (Київська область); Ірпінь (Київська область); Миколаїв (Миколаївська область); Охтирка (Сумська область)".</p>
+						<p>Про це у нічному відеозверненні 25 березня повідомив президент Володимир Зеленський.</p>
+						<p>"Я підписав декілька дуже важливих указів. Про присвоєння почесної відзнаки "Місто-герой України" ще чотирьом містам: Буча, Ірпінь, Охтирка, Миколаїв", — сказав Володимир Зеленський.</p>
+						<p>"З метою відзначення подвигу, масового героїзму та стійкості громадян, виявлених у захисті своїх міст під час відсічі збройній агресії Російської Федерації проти України, постановляю: присвоїти почесну відзнаку "Місто-герой України" таким містам: Буча (Київська область); Ірпінь (Київська область); Миколаїв (Миколаївська область); Охтирка (Сумська область)".</p>
+					</div>
+				</div>			
+			</div>			
+			<div class="footer">
+				<div class="HeadAndFooterText">
+					<p>Також президент підписав укази: Про відзначення державними нагородами 240 військовослужбовців Національної гвардії України.</p>
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>

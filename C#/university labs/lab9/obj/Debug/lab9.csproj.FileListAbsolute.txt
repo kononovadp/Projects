@@ -1,0 +1,12 @@
+C:\Users\Maximka\Desktop\lab9\bin\Debug\lab9.exe.config
+C:\Users\Maximka\Desktop\lab9\bin\Debug\lab9.exe
+C:\Users\Maximka\Desktop\lab9\bin\Debug\lab9.pdb
+C:\Users\Maximka\Desktop\lab9\obj\Debug\lab9.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\lab9\obj\Debug\lab9.Properties.Resources.resources
+C:\Users\Maximka\Desktop\lab9\obj\Debug\lab9.csproj.GenerateResource.Cache
+C:\Users\Maximka\Desktop\lab9\obj\Debug\lab9.exe
+C:\Users\Maximka\Desktop\lab9\obj\Debug\lab9.pdb
+C:\Users\Maximka\Desktop\lab9\obj\Debug\lab9.Form1.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab9\bin\Debug\lab9.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab9\obj\Debug\lab9.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab9\obj\Debug\lab9.pdb

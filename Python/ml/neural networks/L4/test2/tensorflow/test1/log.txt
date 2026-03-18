@@ -1,0 +1,91 @@
+Mounted at /content/drive
+----------AlexNet TENSORFLOW convolutional neural network----------
+Preparing dataset and model...
+
+/usr/local/lib/python3.11/dist-packages/keras/src/layers/convolutional/base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+
+Found 20938 images belonging to 10 classes.
+Found 5241 images belonging to 10 classes.
+Time of data preparations:  0 : 14 : 13
+
+/usr/local/lib/python3.11/dist-packages/keras/src/trainers/data_adapters/py_dataset_adapter.py:121: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+
+Epoch 1/100
+328/328 ???????????????????? 274s 805ms/step - accuracy: 0.1179 - loss: 2.2509 - val_accuracy: 0.2044 - val_loss: 2.1603 - learning_rate: 1.0000e-04
+Epoch 2/100
+328/328 ???????????????????? 252s 767ms/step - accuracy: 0.2615 - loss: 1.9913 - val_accuracy: 0.4232 - val_loss: 1.6394 - learning_rate: 1.0000e-04
+Epoch 3/100
+328/328 ???????????????????? 252s 769ms/step - accuracy: 0.3793 - loss: 1.7206 - val_accuracy: 0.4951 - val_loss: 1.4533 - learning_rate: 1.0000e-04
+Epoch 4/100
+328/328 ???????????????????? 255s 776ms/step - accuracy: 0.4323 - loss: 1.5925 - val_accuracy: 0.5491 - val_loss: 1.2710 - learning_rate: 1.0000e-04
+Epoch 5/100
+328/328 ???????????????????? 256s 780ms/step - accuracy: 0.4726 - loss: 1.4855 - val_accuracy: 0.5665 - val_loss: 1.2353 - learning_rate: 1.0000e-04
+Epoch 6/100
+328/328 ???????????????????? 257s 782ms/step - accuracy: 0.5068 - loss: 1.4039 - val_accuracy: 0.6010 - val_loss: 1.1590 - learning_rate: 1.0000e-04
+Epoch 7/100
+328/328 ???????????????????? 251s 764ms/step - accuracy: 0.5459 - loss: 1.2974 - val_accuracy: 0.6464 - val_loss: 1.0488 - learning_rate: 1.0000e-04
+Epoch 8/100
+328/328 ???????????????????? 251s 765ms/step - accuracy: 0.5790 - loss: 1.2249 - val_accuracy: 0.6499 - val_loss: 1.0039 - learning_rate: 1.0000e-04
+Epoch 9/100
+328/328 ???????????????????? 252s 767ms/step - accuracy: 0.5992 - loss: 1.1403 - val_accuracy: 0.6350 - val_loss: 1.0436 - learning_rate: 1.0000e-04
+Epoch 10/100
+328/328 ???????????????????? 255s 778ms/step - accuracy: 0.6160 - loss: 1.0936 - val_accuracy: 0.6712 - val_loss: 0.9722 - learning_rate: 1.0000e-04
+Epoch 11/100
+328/328 ???????????????????? 253s 772ms/step - accuracy: 0.6435 - loss: 1.0392 - val_accuracy: 0.7016 - val_loss: 0.8708 - learning_rate: 1.0000e-04
+Epoch 12/100
+328/328 ???????????????????? 254s 775ms/step - accuracy: 0.6837 - loss: 0.9186 - val_accuracy: 0.7092 - val_loss: 0.8555 - learning_rate: 5.0000e-05
+Epoch 13/100
+328/328 ???????????????????? 251s 764ms/step - accuracy: 0.7010 - loss: 0.8579 - val_accuracy: 0.7298 - val_loss: 0.7859 - learning_rate: 2.5000e-05
+Epoch 14/100
+328/328 ???????????????????? 247s 753ms/step - accuracy: 0.7224 - loss: 0.7941 - val_accuracy: 0.7430 - val_loss: 0.7606 - learning_rate: 1.2500e-05
+Epoch 15/100
+328/328 ???????????????????? 254s 775ms/step - accuracy: 0.7333 - loss: 0.7679 - val_accuracy: 0.7399 - val_loss: 0.7603 - learning_rate: 6.2500e-06
+Epoch 16/100
+328/328 ???????????????????? 254s 774ms/step - accuracy: 0.7410 - loss: 0.7440 - val_accuracy: 0.7443 - val_loss: 0.7472 - learning_rate: 3.1250e-06
+Epoch 17/100
+328/328 ???????????????????? 253s 771ms/step - accuracy: 0.7454 - loss: 0.7309 - val_accuracy: 0.7445 - val_loss: 0.7507 - learning_rate: 1.5625e-06
+Epoch 18/100
+328/328 ???????????????????? 252s 770ms/step - accuracy: 0.7455 - loss: 0.7309 - val_accuracy: 0.7436 - val_loss: 0.7517 - learning_rate: 7.8125e-07
+Epoch 19/100
+328/328 ???????????????????? 257s 784ms/step - accuracy: 0.7527 - loss: 0.7193 - val_accuracy: 0.7432 - val_loss: 0.7550 - learning_rate: 3.9062e-07
+Epoch 20/100
+328/328 ???????????????????? 257s 783ms/step - accuracy: 0.7475 - loss: 0.7350 - val_accuracy: 0.7434 - val_loss: 0.7539 - learning_rate: 1.9531e-07
+Epoch 21/100
+328/328 ???????????????????? 255s 778ms/step - accuracy: 0.7448 - loss: 0.7211 - val_accuracy: 0.7434 - val_loss: 0.7557 - learning_rate: 9.7656e-08
+Time of training:  1 : 29 : 6
+The history was saved into the file train_history_tensorflow.jpg
+Found 5241 images belonging to 10 classes.
+Model evaluation...
+
+/usr/local/lib/python3.11/dist-packages/keras/src/trainers/data_adapters/py_dataset_adapter.py:121: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+
+ Time:  0 : 0 : 26
+Total accuracy over the test set:  74.4324%
+accuracy over the class : cane (dog)           : 60.33%
+accuracy over the class : cavallo (horse)      : 72.95%
+accuracy over the class : elefante (elephant)  : 83.10%
+accuracy over the class : farfalla (butterfly) : 91.49%
+accuracy over the class : gallina (chicken)    : 85.48%
+accuracy over the class : gatto (cat)          : 62.28%
+accuracy over the class : mucca (cow)          : 70.32%
+accuracy over the class : pecora (sheep)       : 73.90%
+accuracy over the class : ragno                : 78.03%
+accuracy over the class : scoiattolo (squirrel): 75.07%
+Results of prediction for the image
+/content/drive/MyDrive/Colab Notebooks/L4/animals10_dataset/raw-img/elefante/OIP-ZlsZOeXQTrzCVP73WfyTQgAAAA.jpeg:
+Predicted class: elefante (elephant); original class: elefante (elephant)
+1. elefante (elephant)  : 94.1539%
+2. cavallo (horse)      : 2.0936%
+3. cane (dog)           : 1.9341%
+4. mucca (cow)          : 0.9439%
+5. pecora (sheep)       : 0.3976%
+6. scoiattolo (squirrel): 0.2128%
+7. gallina (chicken)    : 0.1605%
+8. gatto (cat)          : 0.0949%
+9. farfalla (butterfly) : 0.0048%
+10. ragno               : 0.0039%
+The prediction was saved as CNN_AlexNet_tensorflow_prediction_result.jpg
+

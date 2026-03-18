@@ -1,0 +1,439 @@
+Mounted at /content/drive
+----------AlexNet PYTORCH convolutional neural network----------
+Data preparation... Time:  0 : 0 : 46
+Count of classes: 10:
+cane       dog       |cavallo    horse     |elefante   elephant  |farfalla   butterfly |
+gallina    chicken   |gatto      cat       |mucca      cow       |pecora     sheep     |
+ragno                |scoiattolo squirrel  |
+Count of all images:  26179 ; training:  16754 ; validation:  4189 ; testing:  5236
+------------------------------------------------------------------------------------------
+Epoch 1 / 100... Time:  2 : 17 : 28
+Training accuracy: 0.2633; testing accuracy: 0.3927
+Training loss	: 2.0496; testing loss	: 1.7337
+------------------------------------------------------------------------------------------
+Epoch 2 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.4332; testing accuracy: 0.4693
+Training loss	: 1.6123; testing loss	: 1.4829
+------------------------------------------------------------------------------------------
+Epoch 3 / 100... Time:  0 : 1 : 25
+Training accuracy: 0.5284; testing accuracy: 0.5600
+Training loss	: 1.3531; testing loss	: 1.2671
+------------------------------------------------------------------------------------------
+Epoch 4 / 100... Time:  0 : 1 : 25
+Training accuracy: 0.5929; testing accuracy: 0.6147
+Training loss	: 1.1802; testing loss	: 1.1047
+------------------------------------------------------------------------------------------
+Epoch 5 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.6336; testing accuracy: 0.6362
+Training loss	: 1.0623; testing loss	: 1.0747
+------------------------------------------------------------------------------------------
+Epoch 6 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.6615; testing accuracy: 0.6696
+Training loss	: 0.9750; testing loss	: 0.9497
+------------------------------------------------------------------------------------------
+Epoch 7 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.6972; testing accuracy: 0.6634
+Training loss	: 0.8964; testing loss	: 0.9700
+------------------------------------------------------------------------------------------
+Epoch 8 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.7196; testing accuracy: 0.6868
+Training loss	: 0.8203; testing loss	: 0.9138
+------------------------------------------------------------------------------------------
+Epoch 9 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.7378; testing accuracy: 0.6897
+Training loss	: 0.7675; testing loss	: 0.9173
+------------------------------------------------------------------------------------------
+Epoch 10 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.7551; testing accuracy: 0.7040
+Training loss	: 0.7244; testing loss	: 0.8894
+------------------------------------------------------------------------------------------
+Epoch 11 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.7703; testing accuracy: 0.7298
+Training loss	: 0.6719; testing loss	: 0.8062
+------------------------------------------------------------------------------------------
+Epoch 12 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.7842; testing accuracy: 0.7183
+Training loss	: 0.6331; testing loss	: 0.8547
+------------------------------------------------------------------------------------------
+Epoch 13 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.8007; testing accuracy: 0.7369
+Training loss	: 0.5771; testing loss	: 0.8244
+------------------------------------------------------------------------------------------
+Epoch 14 / 100... Time:  0 : 1 : 25
+Training accuracy: 0.8134; testing accuracy: 0.7598
+Training loss	: 0.5461; testing loss	: 0.7339
+------------------------------------------------------------------------------------------
+Epoch 15 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.8281; testing accuracy: 0.7477
+Training loss	: 0.5112; testing loss	: 0.7659
+------------------------------------------------------------------------------------------
+Epoch 16 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.8384; testing accuracy: 0.7706
+Training loss	: 0.4699; testing loss	: 0.7304
+------------------------------------------------------------------------------------------
+Epoch 17 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.8511; testing accuracy: 0.7630
+Training loss	: 0.4318; testing loss	: 0.7630
+------------------------------------------------------------------------------------------
+Epoch 18 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.8616; testing accuracy: 0.7563
+Training loss	: 0.4055; testing loss	: 0.8042
+------------------------------------------------------------------------------------------
+Epoch 19 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.8716; testing accuracy: 0.7658
+Training loss	: 0.3757; testing loss	: 0.7780
+------------------------------------------------------------------------------------------
+Epoch 20 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.8789; testing accuracy: 0.7844
+Training loss	: 0.3583; testing loss	: 0.8026
+------------------------------------------------------------------------------------------
+Epoch 21 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.8877; testing accuracy: 0.7809
+Training loss	: 0.3250; testing loss	: 0.7341
+------------------------------------------------------------------------------------------
+Epoch 22 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.8990; testing accuracy: 0.7692
+Training loss	: 0.2962; testing loss	: 0.8373
+------------------------------------------------------------------------------------------
+Epoch 23 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9015; testing accuracy: 0.7797
+Training loss	: 0.2892; testing loss	: 0.7699
+------------------------------------------------------------------------------------------
+Epoch 24 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9118; testing accuracy: 0.7739
+Training loss	: 0.2585; testing loss	: 0.8555
+------------------------------------------------------------------------------------------
+Epoch 25 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9106; testing accuracy: 0.7894
+Training loss	: 0.2592; testing loss	: 0.8382
+------------------------------------------------------------------------------------------
+Epoch 26 / 100... Time:  0 : 1 : 25
+Training accuracy: 0.9233; testing accuracy: 0.7940
+Training loss	: 0.2205; testing loss	: 0.8157
+------------------------------------------------------------------------------------------
+Epoch 27 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9261; testing accuracy: 0.7835
+Training loss	: 0.2187; testing loss	: 0.8115
+------------------------------------------------------------------------------------------
+Epoch 28 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9316; testing accuracy: 0.7947
+Training loss	: 0.2023; testing loss	: 0.7856
+------------------------------------------------------------------------------------------
+Epoch 29 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9281; testing accuracy: 0.7778
+Training loss	: 0.2031; testing loss	: 0.8626
+------------------------------------------------------------------------------------------
+Epoch 30 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9377; testing accuracy: 0.7930
+Training loss	: 0.1824; testing loss	: 0.8415
+------------------------------------------------------------------------------------------
+Epoch 31 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9409; testing accuracy: 0.7916
+Training loss	: 0.1744; testing loss	: 0.8322
+------------------------------------------------------------------------------------------
+Epoch 32 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9404; testing accuracy: 0.7871
+Training loss	: 0.1757; testing loss	: 0.8764
+------------------------------------------------------------------------------------------
+Epoch 33 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9445; testing accuracy: 0.7906
+Training loss	: 0.1614; testing loss	: 0.8462
+------------------------------------------------------------------------------------------
+Epoch 34 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9493; testing accuracy: 0.7832
+Training loss	: 0.1505; testing loss	: 0.9611
+------------------------------------------------------------------------------------------
+Epoch 35 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9524; testing accuracy: 0.7968
+Training loss	: 0.1437; testing loss	: 0.8948
+------------------------------------------------------------------------------------------
+Epoch 36 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9534; testing accuracy: 0.7949
+Training loss	: 0.1414; testing loss	: 0.9203
+------------------------------------------------------------------------------------------
+Epoch 37 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9485; testing accuracy: 0.7887
+Training loss	: 0.1525; testing loss	: 0.8976
+------------------------------------------------------------------------------------------
+Epoch 38 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9574; testing accuracy: 0.7906
+Training loss	: 0.1248; testing loss	: 0.9267
+------------------------------------------------------------------------------------------
+Epoch 39 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9589; testing accuracy: 0.8033
+Training loss	: 0.1203; testing loss	: 0.8607
+------------------------------------------------------------------------------------------
+Epoch 40 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9599; testing accuracy: 0.8097
+Training loss	: 0.1165; testing loss	: 0.8928
+------------------------------------------------------------------------------------------
+Epoch 41 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9608; testing accuracy: 0.7947
+Training loss	: 0.1148; testing loss	: 0.9247
+------------------------------------------------------------------------------------------
+Epoch 42 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9614; testing accuracy: 0.7844
+Training loss	: 0.1154; testing loss	: 0.9952
+------------------------------------------------------------------------------------------
+Epoch 43 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9631; testing accuracy: 0.7966
+Training loss	: 0.1109; testing loss	: 0.9590
+------------------------------------------------------------------------------------------
+Epoch 44 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9630; testing accuracy: 0.7973
+Training loss	: 0.1107; testing loss	: 0.9015
+------------------------------------------------------------------------------------------
+Epoch 45 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9654; testing accuracy: 0.8057
+Training loss	: 0.1052; testing loss	: 0.9592
+------------------------------------------------------------------------------------------
+Epoch 46 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9680; testing accuracy: 0.7885
+Training loss	: 0.0976; testing loss	: 1.0101
+------------------------------------------------------------------------------------------
+Epoch 47 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9644; testing accuracy: 0.7863
+Training loss	: 0.1078; testing loss	: 0.9624
+------------------------------------------------------------------------------------------
+Epoch 48 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9676; testing accuracy: 0.7852
+Training loss	: 0.0962; testing loss	: 1.0306
+------------------------------------------------------------------------------------------
+Epoch 49 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9691; testing accuracy: 0.7871
+Training loss	: 0.0944; testing loss	: 1.0521
+------------------------------------------------------------------------------------------
+Epoch 50 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9705; testing accuracy: 0.7928
+Training loss	: 0.0893; testing loss	: 0.9711
+------------------------------------------------------------------------------------------
+Epoch 51 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9661; testing accuracy: 0.8014
+Training loss	: 0.1013; testing loss	: 0.9964
+------------------------------------------------------------------------------------------
+Epoch 52 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9705; testing accuracy: 0.7988
+Training loss	: 0.0866; testing loss	: 0.9858
+------------------------------------------------------------------------------------------
+Epoch 53 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9694; testing accuracy: 0.8014
+Training loss	: 0.0910; testing loss	: 1.0478
+------------------------------------------------------------------------------------------
+Epoch 54 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9707; testing accuracy: 0.8002
+Training loss	: 0.0902; testing loss	: 1.0300
+------------------------------------------------------------------------------------------
+Epoch 55 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9731; testing accuracy: 0.8002
+Training loss	: 0.0773; testing loss	: 1.0266
+------------------------------------------------------------------------------------------
+Epoch 56 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9725; testing accuracy: 0.7947
+Training loss	: 0.0823; testing loss	: 1.0080
+------------------------------------------------------------------------------------------
+Epoch 57 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9749; testing accuracy: 0.8033
+Training loss	: 0.0760; testing loss	: 0.9315
+------------------------------------------------------------------------------------------
+Epoch 58 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9722; testing accuracy: 0.7988
+Training loss	: 0.0862; testing loss	: 1.0098
+------------------------------------------------------------------------------------------
+Epoch 59 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9758; testing accuracy: 0.7957
+Training loss	: 0.0758; testing loss	: 0.9935
+------------------------------------------------------------------------------------------
+Epoch 60 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9758; testing accuracy: 0.7980
+Training loss	: 0.0718; testing loss	: 1.0695
+------------------------------------------------------------------------------------------
+Epoch 61 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9743; testing accuracy: 0.7995
+Training loss	: 0.0774; testing loss	: 0.9797
+------------------------------------------------------------------------------------------
+Epoch 62 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9767; testing accuracy: 0.8042
+Training loss	: 0.0753; testing loss	: 1.0059
+------------------------------------------------------------------------------------------
+Epoch 63 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9738; testing accuracy: 0.7990
+Training loss	: 0.0768; testing loss	: 1.0036
+------------------------------------------------------------------------------------------
+Epoch 64 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9734; testing accuracy: 0.8062
+Training loss	: 0.0794; testing loss	: 0.9898
+------------------------------------------------------------------------------------------
+Epoch 65 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9782; testing accuracy: 0.7842
+Training loss	: 0.0654; testing loss	: 1.1388
+------------------------------------------------------------------------------------------
+Epoch 66 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9764; testing accuracy: 0.8059
+Training loss	: 0.0751; testing loss	: 0.9160
+------------------------------------------------------------------------------------------
+Epoch 67 / 100... Time:  0 : 1 : 21
+Training accuracy: 0.9792; testing accuracy: 0.7985
+Training loss	: 0.0620; testing loss	: 1.0418
+------------------------------------------------------------------------------------------
+Epoch 68 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9792; testing accuracy: 0.7988
+Training loss	: 0.0662; testing loss	: 1.0324
+------------------------------------------------------------------------------------------
+Epoch 69 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9762; testing accuracy: 0.7921
+Training loss	: 0.0732; testing loss	: 1.2024
+------------------------------------------------------------------------------------------
+Epoch 70 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9771; testing accuracy: 0.8100
+Training loss	: 0.0692; testing loss	: 0.9725
+------------------------------------------------------------------------------------------
+Epoch 71 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9782; testing accuracy: 0.8035
+Training loss	: 0.0677; testing loss	: 0.9936
+------------------------------------------------------------------------------------------
+Epoch 72 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9780; testing accuracy: 0.8052
+Training loss	: 0.0648; testing loss	: 1.0522
+------------------------------------------------------------------------------------------
+Epoch 73 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9790; testing accuracy: 0.8081
+Training loss	: 0.0640; testing loss	: 1.0195
+------------------------------------------------------------------------------------------
+Epoch 74 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9805; testing accuracy: 0.8023
+Training loss	: 0.0582; testing loss	: 1.0056
+------------------------------------------------------------------------------------------
+Epoch 75 / 100... Time:  0 : 1 : 25
+Training accuracy: 0.9815; testing accuracy: 0.8107
+Training loss	: 0.0603; testing loss	: 1.0060
+------------------------------------------------------------------------------------------
+Epoch 76 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9796; testing accuracy: 0.8081
+Training loss	: 0.0636; testing loss	: 0.9953
+------------------------------------------------------------------------------------------
+Epoch 77 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9810; testing accuracy: 0.8042
+Training loss	: 0.0589; testing loss	: 1.0391
+------------------------------------------------------------------------------------------
+Epoch 78 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9818; testing accuracy: 0.8109
+Training loss	: 0.0561; testing loss	: 1.0928
+------------------------------------------------------------------------------------------
+Epoch 79 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9810; testing accuracy: 0.8002
+Training loss	: 0.0599; testing loss	: 1.0569
+------------------------------------------------------------------------------------------
+Epoch 80 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9779; testing accuracy: 0.8076
+Training loss	: 0.0658; testing loss	: 1.0436
+------------------------------------------------------------------------------------------
+Epoch 81 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9781; testing accuracy: 0.8019
+Training loss	: 0.0660; testing loss	: 1.0541
+------------------------------------------------------------------------------------------
+Epoch 82 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9822; testing accuracy: 0.7937
+Training loss	: 0.0518; testing loss	: 1.1260
+------------------------------------------------------------------------------------------
+Epoch 83 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9802; testing accuracy: 0.8004
+Training loss	: 0.0634; testing loss	: 1.0169
+------------------------------------------------------------------------------------------
+Epoch 84 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9843; testing accuracy: 0.8019
+Training loss	: 0.0479; testing loss	: 1.1638
+------------------------------------------------------------------------------------------
+Epoch 85 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9828; testing accuracy: 0.8026
+Training loss	: 0.0492; testing loss	: 1.1012
+------------------------------------------------------------------------------------------
+Epoch 86 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9807; testing accuracy: 0.7966
+Training loss	: 0.0601; testing loss	: 1.1503
+------------------------------------------------------------------------------------------
+Epoch 87 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9811; testing accuracy: 0.8031
+Training loss	: 0.0546; testing loss	: 1.0411
+------------------------------------------------------------------------------------------
+Epoch 88 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9830; testing accuracy: 0.7988
+Training loss	: 0.0488; testing loss	: 1.1072
+------------------------------------------------------------------------------------------
+Epoch 89 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9832; testing accuracy: 0.7997
+Training loss	: 0.0496; testing loss	: 1.1320
+------------------------------------------------------------------------------------------
+Epoch 90 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9852; testing accuracy: 0.8007
+Training loss	: 0.0442; testing loss	: 1.1734
+------------------------------------------------------------------------------------------
+Epoch 91 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9810; testing accuracy: 0.8042
+Training loss	: 0.0585; testing loss	: 1.0510
+------------------------------------------------------------------------------------------
+Epoch 92 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9828; testing accuracy: 0.7949
+Training loss	: 0.0549; testing loss	: 1.1657
+------------------------------------------------------------------------------------------
+Epoch 93 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9818; testing accuracy: 0.7945
+Training loss	: 0.0561; testing loss	: 1.0636
+------------------------------------------------------------------------------------------
+Epoch 94 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9836; testing accuracy: 0.8083
+Training loss	: 0.0503; testing loss	: 1.0778
+------------------------------------------------------------------------------------------
+Epoch 95 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9833; testing accuracy: 0.8131
+Training loss	: 0.0517; testing loss	: 1.0633
+------------------------------------------------------------------------------------------
+Epoch 96 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9825; testing accuracy: 0.7988
+Training loss	: 0.0553; testing loss	: 1.1111
+------------------------------------------------------------------------------------------
+Epoch 97 / 100... Time:  0 : 1 : 22
+Training accuracy: 0.9854; testing accuracy: 0.8000
+Training loss	: 0.0487; testing loss	: 1.1032
+------------------------------------------------------------------------------------------
+Epoch 98 / 100... Time:  0 : 1 : 24
+Training accuracy: 0.9886; testing accuracy: 0.8040
+Training loss	: 0.0339; testing loss	: 1.1634
+------------------------------------------------------------------------------------------
+Epoch 99 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9811; testing accuracy: 0.8000
+Training loss	: 0.0587; testing loss	: 1.1379
+------------------------------------------------------------------------------------------
+Epoch 100 / 100... Time:  0 : 1 : 23
+Training accuracy: 0.9860; testing accuracy: 0.7957
+Training loss	: 0.0445; testing loss	: 1.2232
+------------------------------------------------------------------------------------------
+Total time of training:  4 : 35 : 26
+The history was saved into the file train_history_pytorch.jpg
+Data preparation... Time:  0 : 0 : 9
+Count of classes: 10:
+cane       dog       |cavallo    horse     |elefante   elephant  |farfalla   butterfly |
+gallina    chicken   |gatto      cat       |mucca      cow       |pecora     sheep     |
+ragno                |scoiattolo squirrel  |
+Count of all images:  26179 ; training:  16754 ; validation:  4189 ; testing:  5236
+------------------------------------------------------------------------------------------
+Model evaluation... Time:  0 : 30 : 55
+Total accuracy over the test set:  81.3407%
+accuracy over the class cane (dog)           : 84.0771%
+accuracy over the class cavallo (horse)      : 81.0345%
+accuracy over the class elefante (elephant)  : 75.5700%
+accuracy over the class farfalla (butterfly) : 81.4286%
+accuracy over the class gallina (chicken)    : 90.0332%
+accuracy over the class gatto (cat)          : 71.4715%
+accuracy over the class mucca (cow)          : 75.7669%
+accuracy over the class pecora (sheep)       : 71.5789%
+accuracy over the class ragno                : 88.4655%
+accuracy over the class scoiattolo (squirrel): 70.6941%
+Results of prediction for the image
+/content/drive/MyDrive/Colab Notebooks/L4/animals10_dataset/raw-img/cane/OIP-v37BghNPYt1SxujMXiZQuwHaHa.jpeg:
+Predicted class: cane (dog); original class: cane (dog)
+1. cane (dog): 100.00%
+2. gatto (cat): 0.00%
+3. pecora (sheep): 0.00%
+4. mucca (cow): 0.00%
+5. gallina (chicken): 0.00%
+The prediction was saved as CNN_AlexNet_pytorch_prediction_result.jpg

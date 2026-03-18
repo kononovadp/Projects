@@ -1,0 +1,260 @@
+COUNT OF SAMPLES:  1000 ; COUNT OF ANOMALIES:  50
+========================================TASK 1========================================
+========================================TASK 2========================================
+========================================TASK 3========================================
+RANDOM_SAMPLE:
+---------------------------------------------------------------------------
+Method name         |Count of detected anomalies|Count of false detections|
+---------------------------------------------------------------------------
+Least Squares       |31 (62.00 %)               |0                        |
+Sliding Window      |38 (76.00 %)               |12                       |
+Median              |42 (84.00 %)               |8                        |
+Z-score             |41 (82.00 %)               |1                        |
+Hampel Filter       |42 (84.00 %)               |8                        |
+Modified Z-score    |42 (84.00 %)               |8                        |
+Rolling Std         |37 (74.00 %)               |6                        |
+Local Outlier Factor|39 (78.00 %)               |1                        |
+Isolation Forest    |39 (78.00 %)               |1                        |
+One-Class SVM       |15 (30.00 %)               |35                       |
+DBSCAN              |27 (54.00 %)               |2                        |
+Autoencoder         |34 (68.00 %)               |0                        |
+Ensemble (adaptive) |42 (84.00 %)               |8                        |
+Max-Recall Union    |45 (90.00 %)               |52                       |
+---------------------------------------------------------------------------
+Best method:     Max-Recall Union; detected anomalies: 45 (90.0%); false detections: 52
+Threshold-based comparison: 4.80% values differ (threshold = 0.0979); MAE: 0.1135
+Exact difference comparison: 50 values differ (5.00%)
+------------------------------------------------------------------------------------------
+LINEAR_TREND:
+---------------------------------------------------------------------------
+Method name         |Count of detected anomalies|Count of false detections|
+---------------------------------------------------------------------------
+Least Squares       |34 (68.00 %)               |0                        |
+Sliding Window      |41 (82.00 %)               |0                        |
+Median              |49 (98.00 %)               |0                        |
+Z-score             |36 (72.00 %)               |0                        |
+Hampel Filter       |50 (100.00%)               |0                        |
+Modified Z-score    |49 (98.00 %)               |0                        |
+Rolling Std         |38 (76.00 %)               |12                       |
+Local Outlier Factor|35 (70.00 %)               |5                        |
+Isolation Forest    |40 (80.00 %)               |0                        |
+One-Class SVM       |39 (78.00 %)               |4                        |
+DBSCAN              |49 (98.00 %)               |0                        |
+Autoencoder         |20 (40.00 %)               |0                        |
+Ensemble (adaptive) |49 (98.00 %)               |0                        |
+Max-Recall Union    |50 (100.00%)               |12                       |
+---------------------------------------------------------------------------
+Best method:        Hampel Filter; detected anomalies: 50 (100.0%); false detections: 0
+Threshold-based comparison: 0.00% values differ (threshold = 0.0100); MAE: 0.0000
+Exact difference comparison: 48 values differ (4.80%)
+------------------------------------------------------------------------------------------
+CUBIC_TREND:
+---------------------------------------------------------------------------
+Method name         |Count of detected anomalies|Count of false detections|
+---------------------------------------------------------------------------
+Least Squares       |34 (68.00 %)               |0                        |
+Sliding Window      |41 (82.00 %)               |0                        |
+Median              |45 (90.00 %)               |5                        |
+Z-score             |34 (68.00 %)               |0                        |
+Hampel Filter       |49 (98.00 %)               |0                        |
+Modified Z-score    |45 (90.00 %)               |5                        |
+Rolling Std         |37 (74.00 %)               |13                       |
+Local Outlier Factor|33 (66.00 %)               |7                        |
+Isolation Forest    |39 (78.00 %)               |0                        |
+One-Class SVM       |38 (76.00 %)               |12                       |
+DBSCAN              |43 (86.00 %)               |0                        |
+Autoencoder         |30 (60.00 %)               |0                        |
+Ensemble (adaptive) |46 (92.00 %)               |4                        |
+Max-Recall Union    |49 (98.00 %)               |34                       |
+---------------------------------------------------------------------------
+Best method:        Hampel Filter; detected anomalies: 49 (98.0%); false detections: 0
+Threshold-based comparison: 0.20% values differ (threshold = 0.0100); MAE: 0.0003
+Exact difference comparison: 66 values differ (6.60%)
+------------------------------------------------------------------------------------------
+LINEAR_ADDITIVE:
+---------------------------------------------------------------------------
+Method name         |Count of detected anomalies|Count of false detections|
+---------------------------------------------------------------------------
+Least Squares       |31 (62.00 %)               |0                        |
+Sliding Window      |38 (76.00 %)               |12                       |
+Median              |42 (84.00 %)               |8                        |
+Z-score             |41 (82.00 %)               |1                        |
+Hampel Filter       |42 (84.00 %)               |8                        |
+Modified Z-score    |42 (84.00 %)               |8                        |
+Rolling Std         |37 (74.00 %)               |6                        |
+Local Outlier Factor|39 (78.00 %)               |1                        |
+Isolation Forest    |39 (78.00 %)               |1                        |
+One-Class SVM       |17 (34.00 %)               |33                       |
+DBSCAN              |27 (54.00 %)               |3                        |
+Autoencoder         |34 (68.00 %)               |0                        |
+Ensemble (adaptive) |42 (84.00 %)               |8                        |
+Max-Recall Union    |45 (90.00 %)               |43                       |
+---------------------------------------------------------------------------
+Best method:     Max-Recall Union; detected anomalies: 45 (90.0%); false detections: 43
+Threshold-based comparison: 4.60% values differ (threshold = 0.2021); MAE: 0.1145
+Exact difference comparison: 50 values differ (5.00%)
+------------------------------------------------------------------------------------------
+CUBIC_ADDITIVE:
+---------------------------------------------------------------------------
+Method name         |Count of detected anomalies|Count of false detections|
+---------------------------------------------------------------------------
+Least Squares       |31 (62.00 %)               |0                        |
+Sliding Window      |38 (76.00 %)               |12                       |
+Median              |40 (80.00 %)               |10                       |
+Z-score             |40 (80.00 %)               |2                        |
+Hampel Filter       |42 (84.00 %)               |8                        |
+Modified Z-score    |40 (80.00 %)               |10                       |
+Rolling Std         |37 (74.00 %)               |7                        |
+Local Outlier Factor|39 (78.00 %)               |1                        |
+Isolation Forest    |39 (78.00 %)               |1                        |
+One-Class SVM       |18 (36.00 %)               |32                       |
+DBSCAN              |24 (48.00 %)               |0                        |
+Autoencoder         |28 (56.00 %)               |1                        |
+Ensemble (adaptive) |41 (82.00 %)               |9                        |
+Max-Recall Union    |44 (88.00 %)               |54                       |
+---------------------------------------------------------------------------
+Best method:     Max-Recall Union; detected anomalies: 44 (88.0%); false detections: 54
+Threshold-based comparison: 4.40% values differ (threshold = 0.2216); MAE: 0.1195
+Exact difference comparison: 57 values differ (5.70%)
+------------------------------------------------------------------------------------------
+========================================TASK 4========================================
+
+Model Quality Evaluation for random_sample
+Dataset: random_sample
+Best Anomaly Detection Method: IQR
+Best Polynomial Degree: 8
+Best MSE: 5.9288
+
+Model Quality Evaluation for linear_trend
+Dataset: linear_trend
+Best Anomaly Detection Method: Ensemble (vote≥4)
+Best Polynomial Degree: 1
+Best MSE: 0.0000
+
+Model Quality Evaluation for cubic_trend
+Dataset: cubic_trend
+Best Anomaly Detection Method: Hampel Filter
+Best Polynomial Degree: 3
+Best MSE: 0.0000
+
+Model Quality Evaluation for linear_additive
+Dataset: linear_additive
+Best Anomaly Detection Method: Hampel Filter
+Best Polynomial Degree: 8
+Best MSE: 5.9285
+
+Model Quality Evaluation for cubic_additive
+Dataset: cubic_additive
+Best Anomaly Detection Method: Hampel Filter
+Best Polynomial Degree: 8
+Best MSE: 5.9285
+========================================TASK 5========================================
+Statistical Learning Results for RANDOM_SAMPLE:
+Optimal Polynomial Degree: 1
+Mean Squared Error (MSE): 6.0313
+R² Score: 0.0010
+Cross-Validation MSE (5-fold): -6.0688
+Trend Type: none
+------------------------------------------------------------------------------------------
+Statistical Learning Results for LINEAR_TREND:
+Optimal Polynomial Degree: 1
+Mean Squared Error (MSE): 0.0001
+R² Score: 1.0000
+Cross-Validation MSE (5-fold): -0.0001
+Trend Type: linear
+------------------------------------------------------------------------------------------
+Statistical Learning Results for CUBIC_TREND:
+Optimal Polynomial Degree: 3
+Mean Squared Error (MSE): 0.0002
+R² Score: 1.0000
+Cross-Validation MSE (5-fold): -0.0002
+Trend Type: cubic
+------------------------------------------------------------------------------------------
+Statistical Learning Results for LINEAR_ADDITIVE:
+Optimal Polynomial Degree: 1
+Mean Squared Error (MSE): 6.0246
+R² Score: 0.7643
+Cross-Validation MSE (5-fold): -6.0619
+Trend Type: linear
+------------------------------------------------------------------------------------------
+Statistical Learning Results for CUBIC_ADDITIVE:
+Optimal Polynomial Degree: 4
+Mean Squared Error (MSE): 6.0149
+R² Score: 0.8032
+Cross-Validation MSE (5-fold): -6.2054
+Trend Type: cubic
+------------------------------------------------------------------------------------------
+========================================TASK 6========================================
+Extrapolation for RANDOM_SAMPLE:
+Number of extended time points: 1500
+Time range: 0 to 15.0
+Number of fitted points: 1000
+Number of extrapolated points: 500
+Prediction range (extended): Min = -0.06, Max = 0.34
+------------------------------------------------------------------------------------------
+Extrapolation for LINEAR_TREND:
+Number of extended time points: 1500
+Time range: 0 to 15.0
+Number of fitted points: 1000
+Number of extrapolated points: 500
+Prediction range (extended): Min = 5.00, Max = 27.50
+------------------------------------------------------------------------------------------
+Extrapolation for CUBIC_TREND:
+Number of extended time points: 1500
+Time range: 0 to 15.0
+Number of fitted points: 1000
+Number of extrapolated points: 500
+Prediction range (extended): Min = 3.00, Max = 60.02
+------------------------------------------------------------------------------------------
+Extrapolation for LINEAR_ADDITIVE:
+Number of extended time points: 1500
+Time range: 0 to 15.0
+Number of fitted points: 1000
+Number of extrapolated points: 500
+Prediction range (extended): Min = 4.93, Max = 27.88
+------------------------------------------------------------------------------------------
+Extrapolation for CUBIC_ADDITIVE:
+Number of extended time points: 1500
+Time range: 0 to 15.0
+Number of fitted points: 1000
+Number of extrapolated points: 500
+Prediction range (extended): Min = 2.20, Max = 31.18
+------------------------------------------------------------------------------------------
+========================================TASK 7========================================
+Smoothing random_sample with Alpha-Beta filter (polynomial_degree=8)
+MSE for Smoothed Clean Data: 2.7600
+MSE for Smoothed Anomalous Data: 26.4564
+Smoothing linear_trend with Alpha-Beta filter (polynomial_degree=1)
+MSE for Smoothed Clean Data: 0.0000
+MSE for Smoothed Anomalous Data: 20.8415
+Smoothing cubic_trend with Alpha-Beta-Gamma filter (polynomial_degree=3)
+MSE for Smoothed Clean Data: 0.0000
+MSE for Smoothed Anomalous Data: 19.7167
+Smoothing linear_additive with Alpha-Beta filter (polynomial_degree=8)
+MSE for Smoothed Clean Data: 2.5955
+MSE for Smoothed Anomalous Data: 22.3182
+Smoothing cubic_additive with Alpha-Beta filter (polynomial_degree=8)
+MSE for Smoothed Clean Data: 2.5955
+MSE for Smoothed Anomalous Data: 17.5294
+========================================TASK 8========================================
+Custom Nonlinear fit results: random_sample
+random_sample_clean: a=0.0483, b=nan, c=nan, MSE=5.986906, R²=-0.000
+random_sample_anomalies: a=0.2133, b=nan, c=nan, MSE=31.042220, R²=0.000
+--------------------------------------------------------------------------------------
+Custom Nonlinear fit results: linear_trend
+linear_trend_clean: a=1.5000, b=5.0000, c=nan, MSE=0.000000, R²=1.000
+linear_trend_anomalies: a=1.5780, b=4.7747, c=nan, MSE=25.078552, R²=0.453
+--------------------------------------------------------------------------------------
+Custom Nonlinear fit results: cubic_trend
+cubic_trend_clean: a=1.3505, b=0.2651, c=1.9595, MSE=0.005701, R²=1.000
+cubic_trend_anomalies: a=1.9032, b=0.2361, c=1.0930, MSE=25.043579, R²=0.505
+--------------------------------------------------------------------------------------
+Custom Nonlinear fit results: linear_additive
+linear_additive_clean: a=1.5300, b=4.8981, c=nan, MSE=5.979368, R²=0.766
+linear_additive_anomalies: a=1.6081, b=4.6728, c=nan, MSE=30.944664, R²=0.411
+--------------------------------------------------------------------------------------
+Custom Nonlinear fit results: cubic_additive
+cubic_additive_clean: a=1.3723, b=0.2653, c=1.8867, MSE=6.010915, R²=0.804
+cubic_additive_anomalies: a=1.9154, b=0.2372, c=1.0334, MSE=30.941724, R²=0.462
+--------------------------------------------------------------------------------------
+TIME:  0 : 1 : 19

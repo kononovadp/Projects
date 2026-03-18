@@ -1,0 +1,223 @@
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; MAX FRACT PART LENGTH:     10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS:   10000;
+-------------------------------------------------------------------------------------------
+Creating 10000 random bignum pairs... Time: 0.040 seconds
+Testing operation PLUS with check... Count of errors: 0 Time: 0.028 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.032 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.339 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.606 seconds
+Testing operation PLUS... Time: 0.014 seconds
+Testing operation MINUS... Time: 0.014 seconds
+Testing operation MULTIPLY... Time: 0.039 seconds
+Testing operation DIVIDE... Time: 0.463 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR)----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.716 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.707 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.706 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.873 seconds
+Testing operation PLUS... Time: 0.356 seconds
+Testing operation MINUS... Time: 0.356 seconds
+Testing operation MULTIPLY... Time: 0.358 seconds
+Testing operation DIVIDE... Time: 0.301 seconds
+Converting bignum pairs into mpq_t format... Time: 0.122 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR) MPQ_T format----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.063 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.063 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.063 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.061 seconds
+Testing operation PLUS... Time: 0.031 seconds
+Testing operation MINUS... Time: 0.033 seconds
+Testing operation MULTIPLY... Time: 0.031 seconds
+Testing operation DIVIDE... Time: 0.033 seconds
+DONE.
+
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; MAX FRACT PART LENGTH:     10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS:  100000;
+-------------------------------------------------------------------------------------------
+Creating 100000 random bignum pairs... Time: 0.378 seconds
+Testing operation PLUS with check... Count of errors: 0 Time: 0.278 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.319 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 3.290 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 6.339 seconds
+Testing operation PLUS... Time: 0.150 seconds
+Testing operation MINUS... Time: 0.132 seconds
+Testing operation MULTIPLY... Time: 0.374 seconds
+Testing operation DIVIDE... Time: 4.858 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR)----------
+Testing operation PLUS with check... Count of errors: 0 Time: 7.061 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 7.090 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 7.043 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 8.812 seconds
+Testing operation PLUS... Time: 3.592 seconds
+Testing operation MINUS... Time: 3.618 seconds
+Testing operation MULTIPLY... Time: 3.623 seconds
+Testing operation DIVIDE... Time: 3.036 seconds
+Converting bignum pairs into mpq_t format... Time: 1.236 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR) MPQ_T format----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.617 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.621 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.613 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.619 seconds
+Testing operation PLUS... Time: 0.318 seconds
+Testing operation MINUS... Time: 0.320 seconds
+Testing operation MULTIPLY... Time: 0.322 seconds
+Testing operation DIVIDE... Time: 0.323 seconds
+DONE.
+
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; MAX FRACT PART LENGTH:     10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS: 1000000;
+-------------------------------------------------------------------------------------------
+Creating 1000000 random bignum pairs... Time: 4.520 seconds
+Testing operation PLUS with check... Count of errors: 0 Time: 2.803 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 3.219 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 34.962 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 61.627 seconds
+Testing operation PLUS... Time: 1.499 seconds
+Testing operation MINUS... Time: 1.332 seconds
+Testing operation MULTIPLY... Time: 3.802 seconds
+Testing operation DIVIDE... Time: 46.269 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR)----------
+Testing operation PLUS with check... Count of errors: 0 Time: 73.142 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 72.471 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 74.307 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 92.352 seconds
+Testing operation PLUS... Time: 36.876 seconds
+Testing operation MINUS... Time: 36.353 seconds
+Testing operation MULTIPLY... Time: 37.211 seconds
+Testing operation DIVIDE... Time: 31.214 seconds
+Converting bignum pairs into mpq_t format... Time: 12.496 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR) MPQ_T format----------
+Testing operation PLUS with check... Count of errors: 0 Time: 6.250 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 6.341 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 6.432 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 6.465 seconds
+Testing operation PLUS... Time: 3.294 seconds
+Testing operation MINUS... Time: 3.293 seconds
+Testing operation MULTIPLY... Time: 3.362 seconds
+Testing operation DIVIDE... Time: 3.352 seconds
+DONE.
+==========================================================================================
+==========================================================================================
+MIN COUNT OF DIGITS:     100; MAX COUNT OF DIGITS  :    1000; FRACT PART LENGTH:    1000
+MAX BIGNUM LENGTH  :    2000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.001 seconds
+Testing operation PLUS with check... Count of errors: 0 Time: 0.000 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.001 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.312 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.726 seconds
+Testing operation PLUS... Time: 0.000 seconds
+Testing operation MINUS... Time: 0.000 seconds
+Testing operation MULTIPLY... Time: 0.126 seconds
+Testing operation DIVIDE... Time: 0.484 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR)----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.002 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.001 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.001 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.002 seconds
+Testing operation PLUS... Time: 0.001 seconds
+Testing operation MINUS... Time: 0.001 seconds
+Testing operation MULTIPLY... Time: 0.001 seconds
+Testing operation DIVIDE... Time: 0.000 seconds
+Converting bignum pairs into mpq_t format... Time: 0.001 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR) MPQ_T format----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.000 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.000 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.000 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.000 seconds
+Testing operation PLUS... Time: 0.000 seconds
+Testing operation MINUS... Time: 0.001 seconds
+Testing operation MULTIPLY... Time: 0.000 seconds
+Testing operation DIVIDE... Time: 0.000 seconds
+DONE.
+
+MIN COUNT OF DIGITS:    1000; MAX COUNT OF DIGITS  :   10000; FRACT PART LENGTH:   10000
+MAX BIGNUM LENGTH  :   20000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.007 seconds
+Testing operation PLUS with check... Count of errors: 0 Time: 0.002 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.002 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 13.331 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 78.812 seconds
+Testing operation PLUS... Time: 0.001 seconds
+Testing operation MINUS... Time: 0.001 seconds
+Testing operation MULTIPLY... Time: 5.588 seconds
+Testing operation DIVIDE... Time: 52.852 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR)----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.023 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.022 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.025 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.017 seconds
+Testing operation PLUS... Time: 0.009 seconds
+Testing operation MINUS... Time: 0.010 seconds
+Testing operation MULTIPLY... Time: 0.013 seconds
+Testing operation DIVIDE... Time: 0.008 seconds
+Converting bignum pairs into mpq_t format... Time: 0.006 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR) MPQ_T format----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.002 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.002 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.004 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.003 seconds
+Testing operation PLUS... Time: 0.001 seconds
+Testing operation MINUS... Time: 0.001 seconds
+Testing operation MULTIPLY... Time: 0.002 seconds
+Testing operation DIVIDE... Time: 0.002 seconds
+DONE.
+
+MIN COUNT OF DIGITS:   10000; MAX COUNT OF DIGITS  :  100000; FRACT PART LENGTH:  100000
+MAX BIGNUM LENGTH  :  200000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.083 seconds
+Testing operation PLUS with check... Count of errors: 0 Time: 0.018 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.020 seconds
+Testing operation PLUS... Time: 0.008 seconds
+Testing operation MINUS... Time: 0.008 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR)----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.179 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.176 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.272 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.201 seconds
+Testing operation PLUS... Time: 0.082 seconds
+Testing operation MINUS... Time: 0.083 seconds
+Testing operation MULTIPLY... Time: 0.137 seconds
+Testing operation DIVIDE... Time: 0.132 seconds
+Converting bignum pairs into mpq_t format... Time: 0.044 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR) MPQ_T format----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.028 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.028 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.058 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.095 seconds
+Testing operation PLUS... Time: 0.014 seconds
+Testing operation MINUS... Time: 0.014 seconds
+Testing operation MULTIPLY... Time: 0.033 seconds
+Testing operation DIVIDE... Time: 0.082 seconds
+DONE.
+
+MIN COUNT OF DIGITS:  100000; MAX COUNT OF DIGITS  : 1000000; FRACT PART LENGTH: 1000000
+MAX BIGNUM LENGTH  : 2000000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.657 seconds
+Testing operation PLUS with check... Count of errors: 0 Time: 0.037 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.038 seconds
+Testing operation PLUS... Time: 0.016 seconds
+Testing operation MINUS... Time: 0.018 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR)----------
+Testing operation PLUS with check... Count of errors: 0 Time: 2.681 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 2.652 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 3.613 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 2.306 seconds
+Testing operation PLUS... Time: 1.300 seconds
+Testing operation MINUS... Time: 1.297 seconds
+Testing operation MULTIPLY... Time: 1.925 seconds
+Testing operation DIVIDE... Time: 1.287 seconds
+Converting bignum pairs into mpq_t format... Time: 0.746 seconds
+----------GNU Multiple Precision Arithmetic Library (MPIR) MPQ_T format----------
+Testing operation PLUS with check... Count of errors: 0 Time: 0.637 seconds
+Testing operation MINUS with check... Count of errors: 0 Time: 0.641 seconds
+Testing operation MULTIPLY with check... Count of errors: 0 Time: 0.798 seconds
+Testing operation DIVIDE with check... Count of errors: 0 Time: 0.805 seconds
+Testing operation PLUS... Time: 0.319 seconds
+Testing operation MINUS... Time: 0.322 seconds
+Testing operation MULTIPLY... Time: 0.652 seconds
+Testing operation DIVIDE... Time: 0.492 seconds
+DONE.

@@ -1,0 +1,10 @@
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\obj\Debug\supermarket.Properties.Resources.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\obj\Debug\supermarket.csproj.GenerateResource.Cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\obj\Debug\supermarket.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\obj\Debug\supermarket.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\obj\Debug\supermarket.csprojResolveAssemblyReference.cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\supermarket.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\supermarket.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\supermarket.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\obj\Debug\supermarket.RoomOfSupermarket.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\supermarket\obj\Debug\supermarket.MainForm.resources

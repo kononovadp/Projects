@@ -1,0 +1,14 @@
+SIZE OF ARRAY			             5000;
+MINIMUM NUMBER:			                0;
+MAXIMUM NUMBER:			             5000;
+                                           Quick sort (opt.)            Radix sort        MSD Radix sort        LSD Radix sort Radix sort LSD (opt.)
+                         Random array                      1                     1                     1                     1                     0
+              Numbers in direct order                      0                     1                     1                     1                     0
+  One sorted part makes up 25 percent                      1                     1                     0                     1                     1
+      Array was sorted for 10 percent                      1                     2                     1                     1                     1
+      Array was sorted for 30 percent                      1                     1                     1                     1                     1
+      Array was sorted for 70 percent                      0                     1                     1                     1                     0
+          Array without equal numbers                      1                     1                     1                     0                     0
+Array with 10 percent of equal numbers                     1                     1                     1                     1                     0
+Array with 25 percent of equal numbers                     1                     1                     1                     1                     1
+Array with 80 percent of equal numbers                     1                     1                     1                     1                     0

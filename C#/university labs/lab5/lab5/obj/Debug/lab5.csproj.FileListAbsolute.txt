@@ -1,0 +1,18 @@
+C:\Users\Maximka\Desktop\lab5\lab5\bin\Debug\lab5.exe.config
+C:\Users\Maximka\Desktop\lab5\lab5\bin\Debug\lab5.exe
+C:\Users\Maximka\Desktop\lab5\lab5\bin\Debug\lab5.pdb
+C:\Users\Maximka\Desktop\lab5\lab5\obj\Debug\lab5.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\lab5\lab5\obj\Debug\lab5.Form1.resources
+C:\Users\Maximka\Desktop\lab5\lab5\obj\Debug\lab5.Properties.Resources.resources
+C:\Users\Maximka\Desktop\lab5\lab5\obj\Debug\lab5.csproj.GenerateResource.Cache
+C:\Users\Maximka\Desktop\lab5\lab5\obj\Debug\lab5.exe
+C:\Users\Maximka\Desktop\lab5\lab5\obj\Debug\lab5.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab5\lab5\bin\Debug\lab5.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab5\lab5\obj\Debug\lab5.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab5\lab5\obj\Debug\lab5.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab5\lab5\obj\Debug\lab5.csprojResolveAssemblyReference.cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab5\lab5\obj\Debug\lab5.Form1.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab5\lab5\obj\Debug\lab5.Properties.Resources.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab5\lab5\obj\Debug\lab5.csproj.GenerateResource.Cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab5\lab5\bin\Debug\lab5.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Основи програмування\lab5\lab5\bin\Debug\lab5.pdb

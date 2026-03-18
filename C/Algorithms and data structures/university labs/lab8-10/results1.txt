@@ -1,0 +1,6 @@
+Size of matrix:   1000; maximum count of nodes: 499500
+     TYPE OF GRAPH             Dijkstra         Bellman-Ford       Floyd-Warshall   Depth first search Breadth first search       Prim algorithm    Kruskal algorithm
+DISCONNECTED GRAPH                    0                 4828                18462                    1                    0 
+   CONNECTED GRAPH                    0                 5026                19952                    1                    1 
+   HALF FULL GRAPH                   18                14534                19600                                         3                   63                  140
+        FULL GRAPH                   18                10542                19614                                         0                   63                  296

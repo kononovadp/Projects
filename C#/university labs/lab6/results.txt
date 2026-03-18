@@ -1,0 +1,36 @@
+Array from the file numbers.txt:
+7 2 3 0 9 5 7 1 5 9 1 0 8 7 7 5 1 2 8 0 
+The first maximum element 9 is under index 4
+The first element of array was replaced with the first maximum element:
+9 2 3 0 7 5 7 1 5 9 1 0 8 7 7 5 1 2 8 0 
+The last maximum element 9 is under index 9
+
+Square matrix 12x12 of from the file numbers.txt:
+4 4 3 4 0 2 1 4 1 3 4 1 
+0 1 0 3 1 4 4 1 3 2 3 1 
+1 1 4 0 3 4 2 2 2 4 2 4 
+2 1 4 2 1 4 4 4 0 4 0 2 
+2 4 0 1 1 2 1 2 0 2 3 3 
+3 0 0 1 1 1 3 0 4 1 1 0 
+4 2 0 4 2 4 1 2 1 1 3 4 
+3 1 1 4 3 4 3 0 3 0 4 1 
+3 3 2 3 0 4 2 0 2 0 1 4 
+2 2 0 1 0 0 2 1 2 1 2 0 
+0 3 2 4 3 1 1 3 2 4 0 3 
+2 2 1 1 3 2 1 3 0 1 2 0 
+Numbers of the secondary diagonal and above it:
+4 4 3 4 0 2 1 4 1 3 4 1 
+0 1 0 3 1 4 4 1 3 2 3 
+1 1 4 0 3 4 2 2 2 4 
+2 1 4 2 1 4 4 4 0 
+2 4 0 1 1 2 1 2 
+3 0 0 1 1 1 3 
+4 2 0 4 2 4 
+3 1 1 4 3 
+3 3 2 3 
+2 2 0 
+0 3 
+2 
+
+Product of numbers in the secondary diagonal is 16014800274929483776
+

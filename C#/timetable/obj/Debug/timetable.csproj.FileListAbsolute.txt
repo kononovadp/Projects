@@ -1,0 +1,34 @@
+C:\Users\Maximka\Desktop\timetable\bin\Debug\timetable.exe.config
+C:\Users\Maximka\Desktop\timetable\bin\Debug\timetable.exe
+C:\Users\Maximka\Desktop\timetable\bin\Debug\timetable.pdb
+C:\Users\Maximka\Desktop\timetable\obj\Debug\timetable.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\timetable\obj\Debug\timetable.MainForm.resources
+C:\Users\Maximka\Desktop\timetable\obj\Debug\timetable.Properties.Resources.resources
+C:\Users\Maximka\Desktop\timetable\obj\Debug\timetable.csproj.GenerateResource.Cache
+C:\Users\Maximka\Desktop\timetable\obj\Debug\timetable.exe
+C:\Users\Maximka\Desktop\timetable\obj\Debug\timetable.pdb
+C:\Users\Maximka\Desktop\timetable\obj\Debug\timetable.SelectDateForm.resources
+C:\Users\Maximka\Desktop\timetable2\bin\Debug\timetable.exe.config
+C:\Users\Maximka\Desktop\timetable2\obj\Debug\timetable.exe
+C:\Users\Maximka\Desktop\timetable2\obj\Debug\timetable.pdb
+C:\Users\Maximka\Desktop\timetable2\bin\Debug\timetable.exe
+C:\Users\Maximka\Desktop\timetable2\bin\Debug\timetable.pdb
+C:\Users\Maximka\Desktop\timetable2\obj\Debug\timetable.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\timetable2\obj\Debug\timetable.SelectDateForm.resources
+C:\Users\Maximka\Desktop\timetable2\obj\Debug\timetable.MainForm.resources
+C:\Users\Maximka\Desktop\timetable2\obj\Debug\timetable.Properties.Resources.resources
+C:\Users\Maximka\Desktop\timetable2\obj\Debug\timetable.csproj.GenerateResource.Cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Дискретна математика\timetable2\bin\Debug\timetable.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Дискретна математика\timetable2\obj\Debug\timetable.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Дискретна математика\timetable2\obj\Debug\timetable.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\bin\Debug\timetable.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\obj\Debug\timetable.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\obj\Debug\timetable.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\bin\Debug\timetable.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\bin\Debug\timetable.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\obj\Debug\timetable.SelectDateForm.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\obj\Debug\timetable.MainForm.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\obj\Debug\timetable.Properties.Resources.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\obj\Debug\timetable.csproj.GenerateResource.Cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\obj\Debug\timetable.csproj.AssemblyReference.cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 1\Комп'ютерна дискретна математика\timetable\obj\Debug\timetable.csproj.CoreCompileInputs.cache

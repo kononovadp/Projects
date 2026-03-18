@@ -1,0 +1,12 @@
+Використання графових алгоритмів в Apache Spark
+
+Документація як зареєструватися в Community Edition
+https://docs.databricks.com/en/getting-started/community-edition.html
+Ноутбук по GraphFrame
+https://docs.databricks.com/_extras/notebooks/source/graph-analysis-graphframes.html
+
+Відеозапис лекції 
+
+ (з минулого року):
+https://us02web.zoom.us/rec/share/g9M5w5PtluuJCvMXMR5_XnHl8iW5WPNkPQT4f-zc_LcAzQ9TAPBOPVqyTMco6hAe.LkNH9sr7v1xS3R2Y?startTime=1696922887000
+Код доступа: wc=+wwj0

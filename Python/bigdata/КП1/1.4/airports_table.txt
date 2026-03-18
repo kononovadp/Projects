@@ -1,0 +1,15 @@
++----+--------------------------------------+---------------+---------------------------------------------------------+-----------+
+|    | name                                 | country       | name                                                    | country   |
++====+======================================+===============+=========================================================+===========+
+|  0 | John F Kennedy International Airport | United States | Montreal / Pierre Elliott Trudeau International Airport | Canada    |
++----+--------------------------------------+---------------+---------------------------------------------------------+-----------+
+|  1 | John F Kennedy International Airport | United States | Montreal / Pierre Elliott Trudeau International Airport | Canada    |
++----+--------------------------------------+---------------+---------------------------------------------------------+-----------+
+|  2 | John F Kennedy International Airport | United States | Montreal / Pierre Elliott Trudeau International Airport | Canada    |
++----+--------------------------------------+---------------+---------------------------------------------------------+-----------+
+|  3 | John F Kennedy International Airport | United States | Montreal / Pierre Elliott Trudeau International Airport | Canada    |
++----+--------------------------------------+---------------+---------------------------------------------------------+-----------+
+|  4 | John F Kennedy International Airport | United States | Montreal / Pierre Elliott Trudeau International Airport | Canada    |
++----+--------------------------------------+---------------+---------------------------------------------------------+-----------+
+|  5 | John F Kennedy International Airport | United States | Montreal / Pierre Elliott Trudeau International Airport | Canada    |
++----+--------------------------------------+---------------+---------------------------------------------------------+-----------+

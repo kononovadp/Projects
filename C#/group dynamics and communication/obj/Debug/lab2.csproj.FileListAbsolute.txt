@@ -1,0 +1,45 @@
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2\lab2.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2\obj\Debug\lab2.csprojResolveAssemblyReference.cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2\obj\Debug\lab2.MainForm.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2\obj\Debug\lab2.Properties.Resources.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2\obj\Debug\lab2.csproj.GenerateResource.Cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2\obj\Debug\lab2.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2\obj\Debug\lab2.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2\lab2.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2\lab2.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\lab2.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\obj\Debug\lab2.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\obj\Debug\lab2.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\obj\Debug\lab2.csprojResolveAssemblyReference.cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\obj\Debug\lab2.Properties.Resources.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\obj\Debug\lab2.csproj.GenerateResource.Cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\lab2.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\lab2.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\obj\Debug\lab2.MainForm.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\obj\Debug\lab2.EncryptAndDecryptWithPassword.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\obj\Debug\lab2.CaesarEncryptAndDecrypt.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab3\obj\Debug\lab2.QuestionsAndAnswersOfStudents.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\lab2.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\obj\Debug\lab2.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\obj\Debug\lab2.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\obj\Debug\lab2.csprojResolveAssemblyReference.cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\obj\Debug\lab2.CaesarEncryptAndDecrypt.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\obj\Debug\lab2.MainForm.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\obj\Debug\lab2.EncryptAndDecryptWithPassword.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\obj\Debug\lab2.Properties.Resources.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\obj\Debug\lab2.QuestionsAndAnswersOfStudents.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\obj\Debug\lab2.csproj.GenerateResource.Cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\lab2.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Мои настройки\Параметры Windows 7\Desktop\lab2-5\lab2.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\lab2.exe.config
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\obj\Debug\lab2.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\obj\Debug\lab2.pdb
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\obj\Debug\lab2.csprojResolveAssemblyReference.cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\obj\Debug\lab2.CaesarEncryptAndDecrypt.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\obj\Debug\lab2.MainForm.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\obj\Debug\lab2.EncryptAndDecryptWithPassword.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\obj\Debug\lab2.Properties.Resources.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\obj\Debug\lab2.QuestionsAndAnswersOfStudents.resources
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\obj\Debug\lab2.csproj.GenerateResource.Cache
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\lab2.exe
+D:\ЛИЧНЫЕ ДАННЫЕ\Документы\НТУУ КПИ\Семестр 3\Групова динаміка і комунікації\lab2-5\lab2.pdb

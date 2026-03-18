@@ -1,0 +1,10 @@
+DATA TYPE:                              int;
+SIZE OF ARRAY:                     50000000;
+MINIMUM NUMBER:                           1;
+MAXIMUM NUMBER:                    50000000;
+================================================================================
+                              Time of adding Time of removing
+                 Queue (array)           359             7738
+              Queue (pointers)          6568             6053
+    Double linked list (array)           453             7675
+ Double linked list (pointers)          8471             7348

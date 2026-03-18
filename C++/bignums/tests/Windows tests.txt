@@ -1,0 +1,568 @@
+GCC MSYS2
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; FRACT PART LENGTH :      10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS:    1000;
+------------------------------------------------------------------------------------------
+Creating 1000 random bignum pairs... Time: 0.001 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.002 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.011 s.
+Testing operation PLUS... Time: 0.001 s.
+Testing operation MINUS... Time: 0.000 s.
+Testing operation MULTIPLY... Time: 0.000 s.
+Testing operation DIVIDE... Time: 0.007 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.004 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.003 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.004 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.008 s.
+Testing operation PLUS... Time: 0.002 s.
+Testing operation MINUS... Time: 0.002 s.
+Testing operation MULTIPLY... Time: 0.002 s.
+Testing operation DIVIDE... Time: 0.002 s.
+Converting bignum pairs into mpq_t format... Time: 0.001 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.000 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.000 s.
+Testing operation PLUS... Time: 0.001 s.
+Testing operation MINUS... Time: 0.000 s.
+Testing operation MULTIPLY... Time: 0.000 s.
+Testing operation DIVIDE... Time: 0.000 s.
+----------Bignum expressions----------
+Creating an expression from 1000 bignum pairs... Time: 0.001 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.001 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 0.009 s.
+Generating 10 expressions... Total count of operations: 48: time: 0.000 s.
+Calculating random expressions (type bignum)... Time: 0.000 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.000 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; FRACT PART LENGTH :      10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS:   10000;
+------------------------------------------------------------------------------------------
+Creating 10000 random bignum pairs... Time: 0.006 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.005 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.005 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.024 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.072 s.
+Testing operation PLUS... Time: 0.003 s.
+Testing operation MINUS... Time: 0.003 s.
+Testing operation MULTIPLY... Time: 0.005 s.
+Testing operation DIVIDE... Time: 0.048 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.034 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.035 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.034 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.071 s.
+Testing operation PLUS... Time: 0.017 s.
+Testing operation MINUS... Time: 0.016 s.
+Testing operation MULTIPLY... Time: 0.017 s.
+Testing operation DIVIDE... Time: 0.019 s.
+Converting bignum pairs into mpq_t format... Time: 0.009 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.005 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.005 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.006 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.005 s.
+Testing operation PLUS... Time: 0.003 s.
+Testing operation MINUS... Time: 0.003 s.
+Testing operation MULTIPLY... Time: 0.003 s.
+Testing operation DIVIDE... Time: 0.003 s.
+----------Bignum expressions----------
+Creating an expression from 10000 bignum pairs... Time: 0.003 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.015 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 0.087 s.
+Generating 10 expressions... Total count of operations: 58: time: 0.000 s.
+Calculating random expressions (type bignum)... Time: 0.001 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.000 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; FRACT PART LENGTH :      10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS:  100000;
+------------------------------------------------------------------------------------------
+Creating 100000 random bignum pairs... Time: 0.057 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.051 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.053 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.238 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.710 s.
+Testing operation PLUS... Time: 0.023 s.
+Testing operation MINUS... Time: 0.022 s.
+Testing operation MULTIPLY... Time: 0.052 s.
+Testing operation DIVIDE... Time: 0.485 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.350 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.342 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.348 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.741 s.
+Testing operation PLUS... Time: 0.167 s.
+Testing operation MINUS... Time: 0.163 s.
+Testing operation MULTIPLY... Time: 0.170 s.
+Testing operation DIVIDE... Time: 0.189 s.
+Converting bignum pairs into mpq_t format... Time: 0.086 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.050 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.049 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.052 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.053 s.
+Testing operation PLUS... Time: 0.023 s.
+Testing operation MINUS... Time: 0.022 s.
+Testing operation MULTIPLY... Time: 0.027 s.
+Testing operation DIVIDE... Time: 0.026 s.
+----------Bignum expressions----------
+Creating an expression from 100000 bignum pairs... Time: 0.026 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.111 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 0.849 s.
+Generating 10 expressions... Total count of operations: 50: time: 0.000 s.
+Calculating random expressions (type bignum)... Time: 0.001 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.001 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; FRACT PART LENGTH :      10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS: 1000000;
+------------------------------------------------------------------------------------------
+Creating 1000000 random bignum pairs... Time: 0.578 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.495 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.519 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 2.344 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 7.170 s.
+Testing operation PLUS... Time: 0.212 s.
+Testing operation MINUS... Time: 0.212 s.
+Testing operation MULTIPLY... Time: 0.500 s.
+Testing operation DIVIDE... Time: 4.812 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 3.347 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 3.335 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 3.443 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 7.120 s.
+Testing operation PLUS... Time: 1.601 s.
+Testing operation MINUS... Time: 1.599 s.
+Testing operation MULTIPLY... Time: 1.650 s.
+Testing operation DIVIDE... Time: 1.855 s.
+Converting bignum pairs into mpq_t format... Time: 0.825 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.466 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.467 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.514 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.517 s.
+Testing operation PLUS... Time: 0.218 s.
+Testing operation MINUS... Time: 0.217 s.
+Testing operation MULTIPLY... Time: 0.249 s.
+Testing operation DIVIDE... Time: 0.263 s.
+----------Bignum expressions----------
+Creating an expression from 1000000 bignum pairs... Time: 0.246 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 1.058 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 8.461 s.
+Generating 10 expressions... Total count of operations: 56: time: 0.000 s.
+Calculating random expressions (type bignum)... Time: 0.000 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.000 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:     100; MAX COUNT OF DIGITS  :    1000; FRACT PART LENGTH :    1000
+MAX BIGNUM LENGTH  :    2000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.003 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.000 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.037 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.191 s.
+Testing operation PLUS... Time: 0.000 s.
+Testing operation MINUS... Time: 0.000 s.
+Testing operation MULTIPLY... Time: 0.020 s.
+Testing operation DIVIDE... Time: 0.110 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.006 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.001 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.007 s.
+Testing operation PLUS... Time: 0.002 s.
+Testing operation MINUS... Time: 0.001 s.
+Testing operation MULTIPLY... Time: 0.001 s.
+Testing operation DIVIDE... Time: 0.004 s.
+Converting bignum pairs into mpq_t format... Time: 0.000 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.003 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.000 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.000 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.000 s.
+Testing operation PLUS... Time: 0.000 s.
+Testing operation MINUS... Time: 0.000 s.
+Testing operation MULTIPLY... Time: 0.000 s.
+Testing operation DIVIDE... Time: 0.001 s.
+----------Bignum expressions----------
+Creating an expression from 10 bignum pairs... Time: 0.000 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.001 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 0.003 s.
+Generating 10 expressions... Total count of operations: 63: time: 0.001 s.
+Calculating random expressions (type bignum)... Time: 0.370 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.036 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:    1000; MAX COUNT OF DIGITS  :   10000; FRACT PART LENGTH :   10000
+MAX BIGNUM LENGTH  :   20000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.030 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 4.100 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 19.490 s.
+Testing operation PLUS... Time: 0.001 s.
+Testing operation MINUS... Time: 0.000 s.
+Testing operation MULTIPLY... Time: 2.496 s.
+Testing operation DIVIDE... Time: 10.806 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.042 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.034 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.041 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.501 s.
+Testing operation PLUS... Time: 0.026 s.
+Testing operation MINUS... Time: 0.024 s.
+Testing operation MULTIPLY... Time: 0.029 s.
+Testing operation DIVIDE... Time: 0.090 s.
+Converting bignum pairs into mpq_t format... Time: 0.002 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.003 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.004 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.003 s.
+Testing operation PLUS... Time: 0.000 s.
+Testing operation MINUS... Time: 0.000 s.
+Testing operation MULTIPLY... Time: 0.001 s.
+Testing operation DIVIDE... Time: 0.003 s.
+----------Bignum expressions----------
+Creating an expression from 10 bignum pairs... Time: 0.000 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.003 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 0.161 s.
+Generating 10 expressions... Total count of operations: 46: time: 0.008 s.
+Calculating random expressions (type bignum)... Time: 27.083 s.
+Calculating random expressions (type OptimizedBignum)... Time: 1.244 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:   10000; MAX COUNT OF DIGITS  :  100000; FRACT PART LENGTH :  100000
+MAX BIGNUM LENGTH  :  200000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.385 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.003 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.004 s.
+Testing operation PLUS... Time: 0.002 s.
+Testing operation MINUS... Time: 0.003 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.400 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.398 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.477 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 8.490 s.
+Testing operation PLUS... Time: 0.297 s.
+Testing operation MINUS... Time: 0.295 s.
+Testing operation MULTIPLY... Time: 0.367 s.
+Testing operation DIVIDE... Time: 1.490 s.
+Converting bignum pairs into mpq_t format... Time: 0.014 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.008 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.005 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.019 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.028 s.
+Testing operation PLUS... Time: 0.002 s.
+Testing operation MINUS... Time: 0.003 s.
+Testing operation MULTIPLY... Time: 0.009 s.
+Testing operation DIVIDE... Time: 0.026 s.
+----------Bignum expressions----------
+Creating an expression from 10 bignum pairs... Time: 0.001 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 155.336 s.
+Generating 10 expressions... Total count of operations: 48: time: 0.045 s.
+Calculating random expressions (type OptimizedBignum)... Time: 49.227 s.
+Count of division warnings: 0
+==========================================================================================
+------------------------------------------------------------------------------------------
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :       8; FRACT PART LENGTH :       8
+MAX BIGNUM LENGTH  :      16; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Testing power calculations... Time: 0.830 s.
+The file power_results.txt was created.
+TOTAL TIME: 346.294 s.
+
+==========================================================================================
+==========================================================================================
+
+Visual Studio 2022
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; FRACT PART LENGTH :      10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS:    1000;
+------------------------------------------------------------------------------------------
+Creating 1000 random bignum pairs... Time: 0.001 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.002 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.006 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.017 s.
+Testing operation PLUS... Time: 0.001 s.
+Testing operation MINUS... Time: 0.001 s.
+Testing operation MULTIPLY... Time: 0.001 s.
+Testing operation DIVIDE... Time: 0.008 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.005 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.004 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.005 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.011 s.
+Testing operation PLUS... Time: 0.003 s.
+Testing operation MINUS... Time: 0.002 s.
+Testing operation MULTIPLY... Time: 0.002 s.
+Testing operation DIVIDE... Time: 0.003 s.
+Converting bignum pairs into mpq_t format... Time: 0.001 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.000 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.001 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.001 s.
+Testing operation PLUS... Time: 0.000 s.
+Testing operation MINUS... Time: 0.000 s.
+Testing operation MULTIPLY... Time: 0.001 s.
+Testing operation DIVIDE... Time: 0.001 s.
+----------Bignum expressions----------
+Creating an expression from 1000 bignum pairs... Time: 0.000 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.002 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 0.013 s.
+Generating 10 expressions... Total count of operations: 50: time: 0.000 s.
+Calculating random expressions (type bignum)... Time: 0.000 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.000 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; FRACT PART LENGTH :      10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS:   10000;
+------------------------------------------------------------------------------------------
+Creating 10000 random bignum pairs... Time: 0.005 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.007 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.008 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.042 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.124 s.
+Testing operation PLUS... Time: 0.004 s.
+Testing operation MINUS... Time: 0.004 s.
+Testing operation MULTIPLY... Time: 0.009 s.
+Testing operation DIVIDE... Time: 0.077 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.046 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.045 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.051 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.107 s.
+Testing operation PLUS... Time: 0.022 s.
+Testing operation MINUS... Time: 0.023 s.
+Testing operation MULTIPLY... Time: 0.024 s.
+Testing operation DIVIDE... Time: 0.030 s.
+Converting bignum pairs into mpq_t format... Time: 0.012 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.007 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.007 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.010 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.011 s.
+Testing operation PLUS... Time: 0.003 s.
+Testing operation MINUS... Time: 0.003 s.
+Testing operation MULTIPLY... Time: 0.005 s.
+Testing operation DIVIDE... Time: 0.005 s.
+----------Bignum expressions----------
+Creating an expression from 10000 bignum pairs... Time: 0.003 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.022 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 0.122 s.
+Generating 10 expressions... Total count of operations: 31: time: 0.000 s.
+Calculating random expressions (type bignum)... Time: 0.000 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.000 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; FRACT PART LENGTH :      10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS:  100000;
+------------------------------------------------------------------------------------------
+Creating 100000 random bignum pairs... Time: 0.048 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.078 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.078 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.377 s.
+Testing operation DIVIDE with check... Count of errors: 40. Time: 1.250 s.
+Testing operation PLUS... Time: 0.032 s.
+Testing operation MINUS... Time: 0.032 s.
+Testing operation MULTIPLY... Time: 0.090 s.
+Testing operation DIVIDE... Time: 0.754 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.474 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.459 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.516 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 1.055 s.
+Testing operation PLUS... Time: 0.222 s.
+Testing operation MINUS... Time: 0.236 s.
+Testing operation MULTIPLY... Time: 0.255 s.
+Testing operation DIVIDE... Time: 0.296 s.
+Converting bignum pairs into mpq_t format... Time: 0.124 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.066 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.070 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.104 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.111 s.
+Testing operation PLUS... Time: 0.031 s.
+Testing operation MINUS... Time: 0.031 s.
+Testing operation MULTIPLY... Time: 0.052 s.
+Testing operation DIVIDE... Time: 0.060 s.
+----------Bignum expressions----------
+Creating an expression from 100000 bignum pairs... Time: 0.031 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.183 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 1.233 s.
+Generating 10 expressions... Total count of operations: 38: time: 0.000 s.
+Calculating random expressions (type bignum)... Time: 0.001 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.001 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :      10; FRACT PART LENGTH :      10
+MAX BIGNUM LENGTH  :      20; COUNT OF BIGNUM PAIRS: 1000000;
+------------------------------------------------------------------------------------------
+Creating 1000000 random bignum pairs... Time: 0.453 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.723 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.765 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 3.700 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 12.066 s.
+Testing operation PLUS... Time: 0.307 s.
+Testing operation MINUS... Time: 0.316 s.
+Testing operation MULTIPLY... Time: 0.897 s.
+Testing operation DIVIDE... Time: 7.581 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 4.580 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 4.589 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 5.050 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 10.555 s.
+Testing operation PLUS... Time: 2.214 s.
+Testing operation MINUS... Time: 2.216 s.
+Testing operation MULTIPLY... Time: 2.431 s.
+Testing operation DIVIDE... Time: 2.859 s.
+Converting bignum pairs into mpq_t format... Time: 1.198 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.648 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.651 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 1.044 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 1.070 s.
+Testing operation PLUS... Time: 0.306 s.
+Testing operation MINUS... Time: 0.304 s.
+Testing operation MULTIPLY... Time: 0.503 s.
+Testing operation DIVIDE... Time: 0.565 s.
+----------Bignum expressions----------
+Creating an expression from 1000000 bignum pairs... Time: 0.295 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 1.674 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 13.728 s.
+Generating 10 expressions... Total count of operations: 55: time: 0.000 s.
+Calculating random expressions (type bignum)... Time: 0.000 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.001 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:     100; MAX COUNT OF DIGITS  :    1000; FRACT PART LENGTH :    1000
+MAX BIGNUM LENGTH  :    2000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.002 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.090 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.473 s.
+Testing operation PLUS... Time: 0.001 s.
+Testing operation MINUS... Time: 0.000 s.
+Testing operation MULTIPLY... Time: 0.059 s.
+Testing operation DIVIDE... Time: 0.287 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.002 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.002 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.002 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.017 s.
+Testing operation PLUS... Time: 0.001 s.
+Testing operation MINUS... Time: 0.001 s.
+Testing operation MULTIPLY... Time: 0.001 s.
+Testing operation DIVIDE... Time: 0.003 s.
+Converting bignum pairs into mpq_t format... Time: 0.000 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.003 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.001 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.000 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.001 s.
+Testing operation PLUS... Time: 0.000 s.
+Testing operation MINUS... Time: 0.000 s.
+Testing operation MULTIPLY... Time: 0.001 s.
+Testing operation DIVIDE... Time: 0.000 s.
+----------Bignum expressions----------
+Creating an expression from 10 bignum pairs... Time: 0.000 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.000 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 0.008 s.
+Generating 10 expressions... Total count of operations: 56: time: 0.001 s.
+Calculating random expressions (type bignum)... Time: 0.920 s.
+Calculating random expressions (type OptimizedBignum)... Time: 0.075 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:    1000; MAX COUNT OF DIGITS  :   10000; FRACT PART LENGTH :   10000
+MAX BIGNUM LENGTH  :   20000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.021 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.002 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.002 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 9.283 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 44.350 s.
+Testing operation PLUS... Time: 0.001 s.
+Testing operation MINUS... Time: 0.001 s.
+Testing operation MULTIPLY... Time: 5.008 s.
+Testing operation DIVIDE... Time: 25.822 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.186 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.185 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.204 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 1.209 s.
+Testing operation PLUS... Time: 0.108 s.
+Testing operation MINUS... Time: 0.110 s.
+Testing operation MULTIPLY... Time: 0.125 s.
+Testing operation DIVIDE... Time: 0.250 s.
+Converting bignum pairs into mpq_t format... Time: 0.006 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.003 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.002 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.006 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.007 s.
+Testing operation PLUS... Time: 0.001 s.
+Testing operation MINUS... Time: 0.001 s.
+Testing operation MULTIPLY... Time: 0.003 s.
+Testing operation DIVIDE... Time: 0.005 s.
+----------Bignum expressions----------
+Creating an expression from 10 bignum pairs... Time: 0.000 s.
+Calculating an expression from bignum pairs (type bignum)... Time: 0.007 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 0.579 s.
+Generating 10 expressions... Total count of operations: 73: time: 0.007 s.
+Calculating random expressions (type bignum)... Time: 230.574 s.
+Calculating random expressions (type OptimizedBignum)... Time: 20.802 s.
+Count of division warnings: 0
+==========================================================================================
+MIN COUNT OF DIGITS:   10000; MAX COUNT OF DIGITS  :  100000; FRACT PART LENGTH :  100000
+MAX BIGNUM LENGTH  :  200000; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Creating 10 random bignum pairs... Time: 0.261 s.
+Testing operation PLUS with check... Count of errors: 0. Time: 0.009 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.010 s.
+Testing operation PLUS... Time: 0.004 s.
+Testing operation MINUS... Time: 0.005 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR)----------
+Testing operation PLUS with check... Count of errors: 0. Time: 1.805 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 1.802 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 2.786 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 28.928 s.
+Testing operation PLUS... Time: 1.189 s.
+Testing operation MINUS... Time: 1.186 s.
+Testing operation MULTIPLY... Time: 2.098 s.
+Testing operation DIVIDE... Time: 5.468 s.
+Converting bignum pairs into mpq_t format... Time: 0.057 s.
+----------Multiple Precision Arithmetic Libraries (GMP and MPFR) MPQ_T----------
+Testing operation PLUS with check... Count of errors: 0. Time: 0.035 s.
+Testing operation MINUS with check... Count of errors: 0. Time: 0.035 s.
+Testing operation MULTIPLY with check... Count of errors: 0. Time: 0.097 s.
+Testing operation DIVIDE with check... Count of errors: 0. Time: 0.120 s.
+Testing operation PLUS... Time: 0.014 s.
+Testing operation MINUS... Time: 0.014 s.
+Testing operation MULTIPLY... Time: 0.043 s.
+Testing operation DIVIDE... Time: 0.094 s.
+----------Bignum expressions----------
+Creating an expression from 10 bignum pairs... Time: 0.001 s.
+Calculating an expression from bignum pairs (type OptimizedBignum)... Time: 157.667 s.
+Generating 10 expressions... Total count of operations: 63: time: 0.039 s.
+Calculating random expressions (type OptimizedBignum)... Time: 267.248 s.
+Count of division warnings: 0
+==========================================================================================
+------------------------------------------------------------------------------------------
+MIN COUNT OF DIGITS:       1; MAX COUNT OF DIGITS  :       8; FRACT PART LENGTH :       8
+MAX BIGNUM LENGTH  :      16; COUNT OF BIGNUM PAIRS:      10;
+------------------------------------------------------------------------------------------
+Testing power calculations... Time: 0.286 s.
+The file power_results.txt was created.
+TOTAL TIME: 905.450 s.

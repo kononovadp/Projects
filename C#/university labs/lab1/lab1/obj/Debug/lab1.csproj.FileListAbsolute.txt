@@ -1,0 +1,9 @@
+C:\Users\Maximka\Desktop\lab1\lab1\bin\Debug\lab1.exe.config
+C:\Users\Maximka\Desktop\lab1\lab1\bin\Debug\lab1.exe
+C:\Users\Maximka\Desktop\lab1\lab1\bin\Debug\lab1.pdb
+C:\Users\Maximka\Desktop\lab1\lab1\obj\Debug\lab1.csprojResolveAssemblyReference.cache
+C:\Users\Maximka\Desktop\lab1\lab1\obj\Debug\lab1.Properties.Resources.resources
+C:\Users\Maximka\Desktop\lab1\lab1\obj\Debug\lab1.csproj.GenerateResource.Cache
+C:\Users\Maximka\Desktop\lab1\lab1\obj\Debug\lab1.exe
+C:\Users\Maximka\Desktop\lab1\lab1\obj\Debug\lab1.pdb
+C:\Users\Maximka\Desktop\lab1\lab1\obj\Debug\lab1.lab1.resources
